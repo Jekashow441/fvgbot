@@ -1,0 +1,10 @@
+fastapi
+uvicorn[standard]
+pandas
+numpy
+requests
+aiogram>=3.0.0
+pydantic
+pydantic-settings
+matplotlib
+mplfinance
