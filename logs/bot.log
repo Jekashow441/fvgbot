@@ -3510,3 +3510,4 @@
 2026-06-18 12:01:31,031 - INFO - Error processing ENJUSDT: 'BotSettings' object has no attribute 'rsi_overbought'
 2026-06-18 12:01:46,821 - INFO - Error processing ENJUSDT: 'BotSettings' object has no attribute 'rsi_overbought'
 2026-06-18 12:01:46,944 - INFO - Error processing XLMUSDT: 'BotSettings' object has no attribute 'rsi_overbought'
+2026-06-18 12:02:12,237 - INFO - Trading loop started.
