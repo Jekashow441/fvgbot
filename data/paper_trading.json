@@ -1,0 +1,1124 @@
+{
+    "active_trades": [
+        {
+            "id": "NEARUSDT_1781764200000",
+            "symbol": "NEARUSDT",
+            "signal": "LONG",
+            "entry_price": 2.1938,
+            "sl": 2.1732,
+            "tp": 2.2247,
+            "size_usdt": 11.677096368369202,
+            "entry_time": 1781766090084
+        },
+        {
+            "id": "HBARUSDT_1781755200000",
+            "symbol": "HBARUSDT",
+            "signal": "SHORT",
+            "entry_price": 0.08024,
+            "sl": 0.08059,
+            "tp": 0.07971500000000002,
+            "size_usdt": 11.65844943175236,
+            "entry_time": 1781767684006
+        },
+        {
+            "id": "THETAUSDT_1781755200000",
+            "symbol": "THETAUSDT",
+            "signal": "SHORT",
+            "entry_price": 0.15737,
+            "sl": 0.15815,
+            "tp": 0.1562,
+            "size_usdt": 11.6615053818,
+            "entry_time": 1781768250991
+        }
+    ],
+    "history": [
+        {
+            "id": "UNIUSDT_1781724600000",
+            "symbol": "UNIUSDT",
+            "signal": "SHORT",
+            "pnl": -1.8744142455481985,
+            "result": "LOSS \ud83d\udd34",
+            "exit_time": 1781726609890
+        },
+        {
+            "id": "XLMUSDT_1781724600000",
+            "symbol": "XLMUSDT",
+            "signal": "SHORT",
+            "pnl": 0.056925996204931585,
+            "result": "WIN \ud83d\udfe2",
+            "exit_time": 1781726760996
+        },
+        {
+            "id": "ALGOUSDT_1781724600000",
+            "symbol": "ALGOUSDT",
+            "signal": "SHORT",
+            "pnl": 0.02629007329112085,
+            "result": "WIN \ud83d\udfe2",
+            "exit_time": 1781726822260
+        },
+        {
+            "id": "UNIUSDT_1781724600000",
+            "symbol": "UNIUSDT",
+            "signal": "SHORT",
+            "pnl": -0.0031217472261224283,
+            "result": "LOSS \ud83d\udd34",
+            "exit_time": 1781727765998
+        },
+        {
+            "id": "ALGOUSDT_1781724600000",
+            "symbol": "ALGOUSDT",
+            "signal": "SHORT",
+            "pnl": 0.04491369135477964,
+            "result": "WIN \ud83d\udfe2",
+            "exit_time": 1781728041442
+        },
+        {
+            "id": "CHZUSDT_1781724600000",
+            "symbol": "CHZUSDT",
+            "signal": "SHORT",
+            "pnl": -0.059095952128762445,
+            "result": "LOSS \ud83d\udd34",
+            "exit_time": 1781728613652
+        },
+        {
+            "id": "XTZUSDT_1781726400000",
+            "symbol": "XTZUSDT",
+            "signal": "LONG",
+            "pnl": 0.04345293948079716,
+            "result": "WIN \ud83d\udfe2",
+            "exit_time": 1781729036190
+        },
+        {
+            "id": "XRPUSDT_1781727300000",
+            "symbol": "XRPUSDT",
+            "signal": "LONG",
+            "pnl": 0.012697788559233305,
+            "result": "WIN \ud83d\udfe2",
+            "exit_time": 1781729182149
+        },
+        {
+            "id": "TRXUSDT_1781723700000",
+            "symbol": "TRXUSDT",
+            "signal": "SHORT",
+            "pnl": -1.532351377552586,
+            "result": "LOSS \ud83d\udd34",
+            "exit_time": 1781729515003
+        },
+        {
+            "id": "SOLUSDT_1781724900000",
+            "symbol": "SOLUSDT",
+            "signal": "SHORT",
+            "pnl": -0.00411705365027786,
+            "result": "LOSS \ud83d\udd34",
+            "exit_time": 1781729661787
+        },
+        {
+            "id": "CHZUSDT_1781725200000",
+            "symbol": "CHZUSDT",
+            "signal": "SHORT",
+            "pnl": -0.004149398628450312,
+            "result": "LOSS \ud83d\udd34",
+            "exit_time": 1781729663421
+        },
+        {
+            "id": "LINKUSDT_1781724900000",
+            "symbol": "LINKUSDT",
+            "signal": "SHORT",
+            "pnl": -0.0012241086591995131,
+            "result": "LOSS \ud83d\udd34",
+            "exit_time": 1781729675264
+        },
+        {
+            "id": "ALGOUSDT_1781725200000",
+            "symbol": "ALGOUSDT",
+            "signal": "SHORT",
+            "pnl": -0.004087073832961919,
+            "result": "LOSS \ud83d\udd34",
+            "exit_time": 1781729729717
+        },
+        {
+            "id": "XRPUSDT_1781728200000",
+            "symbol": "XRPUSDT",
+            "signal": "LONG",
+            "pnl": -0.0008308144439732031,
+            "result": "LOSS \ud83d\udd34",
+            "exit_time": 1781729789667
+        },
+        {
+            "id": "DOGEUSDT_1781728800000",
+            "symbol": "DOGEUSDT",
+            "signal": "SHORT",
+            "pnl": -0.012652978946818431,
+            "result": "LOSS \ud83d\udd34",
+            "exit_time": 1781729798103
+        },
+        {
+            "id": "GRTUSDT_1781728800000",
+            "symbol": "GRTUSDT",
+            "signal": "SHORT",
+            "pnl": -0.010169129593809117,
+            "result": "LOSS \ud83d\udd34",
+            "exit_time": 1781729801716
+        },
+        {
+            "id": "VETUSDT_1781726400000",
+            "symbol": "VETUSDT",
+            "signal": "LONG",
+            "pnl": -0.02563085742127181,
+            "result": "LOSS \ud83d\udd34",
+            "exit_time": 1781729803929
+        },
+        {
+            "id": "ICPUSDT_1781728800000",
+            "symbol": "ICPUSDT",
+            "signal": "SHORT",
+            "pnl": -0.03354817912785488,
+            "result": "LOSS \ud83d\udd34",
+            "exit_time": 1781729866263
+        },
+        {
+            "id": "XLMUSDT_1781727300000",
+            "symbol": "XLMUSDT",
+            "signal": "LONG",
+            "pnl": 0.07062270441482475,
+            "result": "WIN \ud83d\udfe2",
+            "exit_time": 1781729894496
+        },
+        {
+            "id": "XLMUSDT_1781728800000",
+            "symbol": "XLMUSDT",
+            "signal": "SHORT",
+            "pnl": -0.058222270518888536,
+            "result": "LOSS \ud83d\udd34",
+            "exit_time": 1781729894608
+        },
+        {
+            "id": "XTZUSDT_1781728800000",
+            "symbol": "XTZUSDT",
+            "signal": "SHORT",
+            "pnl": -0.024453834992637043,
+            "result": "LOSS \ud83d\udd34",
+            "exit_time": 1781729901276
+        },
+        {
+            "id": "BTCUSDT_1781728800000",
+            "symbol": "BTCUSDT",
+            "signal": "SHORT",
+            "pnl": -0.011139837653550456,
+            "result": "LOSS \ud83d\udd34",
+            "exit_time": 1781729921206
+        },
+        {
+            "id": "NEARUSDT_1781724600000",
+            "symbol": "NEARUSDT",
+            "signal": "SHORT",
+            "pnl": -0.014855701631626068,
+            "result": "LOSS \ud83d\udd34",
+            "exit_time": 1781729925293
+        },
+        {
+            "id": "GRTUSDT_1781723700000",
+            "symbol": "GRTUSDT",
+            "signal": "SHORT",
+            "pnl": 0.11342775336030847,
+            "result": "WIN \ud83d\udfe2",
+            "exit_time": 1781729931055
+        },
+        {
+            "id": "ENJUSDT_1781722800000",
+            "symbol": "ENJUSDT",
+            "signal": "SHORT",
+            "pnl": -0.006064520957587661,
+            "result": "LOSS \ud83d\udd34",
+            "exit_time": 1781730589137
+        },
+        {
+            "id": "UNIUSDT_1781729100000",
+            "symbol": "UNIUSDT",
+            "signal": "LONG",
+            "pnl": 0.09520767885481526,
+            "result": "WIN \ud83d\udfe2",
+            "exit_time": 1781732344104
+        },
+        {
+            "id": "ENJUSDT_1781730900000",
+            "symbol": "ENJUSDT",
+            "signal": "LONG",
+            "pnl": -0.025024725705136034,
+            "result": "LOSS \ud83d\udd34",
+            "exit_time": 1781732873501
+        },
+        {
+            "id": "XRPUSDT_1781723700000",
+            "symbol": "XRPUSDT",
+            "signal": "SHORT",
+            "pnl": 0.1312119213380954,
+            "result": "WIN \ud83d\udfe2",
+            "exit_time": 1781733788557
+        },
+        {
+            "id": "XRPUSDT_1781731800000",
+            "symbol": "XRPUSDT",
+            "signal": "SHORT",
+            "pnl": 0.061405308581392294,
+            "result": "WIN \ud83d\udfe2",
+            "exit_time": 1781733788864
+        },
+        {
+            "id": "ADAUSDT_1781723700000",
+            "symbol": "ADAUSDT",
+            "signal": "SHORT",
+            "pnl": 0.10787076034735492,
+            "result": "WIN \ud83d\udfe2",
+            "exit_time": 1781733790054
+        },
+        {
+            "id": "HBARUSDT_1781723700000",
+            "symbol": "HBARUSDT",
+            "signal": "SHORT",
+            "pnl": 0.09563822725701153,
+            "result": "WIN \ud83d\udfe2",
+            "exit_time": 1781733794117
+        },
+        {
+            "id": "DOGEUSDT_1781723700000",
+            "symbol": "DOGEUSDT",
+            "signal": "SHORT",
+            "pnl": 0.11363273520344905,
+            "result": "WIN \ud83d\udfe2",
+            "exit_time": 1781733798013
+        },
+        {
+            "id": "DOTUSDT_1781723700000",
+            "symbol": "DOTUSDT",
+            "signal": "SHORT",
+            "pnl": 0.1850549383052992,
+            "result": "WIN \ud83d\udfe2",
+            "exit_time": 1781733798856
+        },
+        {
+            "id": "LTCUSDT_1781723700000",
+            "symbol": "LTCUSDT",
+            "signal": "SHORT",
+            "pnl": 0.11694244539967101,
+            "result": "WIN \ud83d\udfe2",
+            "exit_time": 1781733800657
+        },
+        {
+            "id": "THETAUSDT_1781723700000",
+            "symbol": "THETAUSDT",
+            "signal": "SHORT",
+            "pnl": 0.14589834942223123,
+            "result": "WIN \ud83d\udfe2",
+            "exit_time": 1781733803622
+        },
+        {
+            "id": "XTZUSDT_1781723700000",
+            "symbol": "XTZUSDT",
+            "signal": "SHORT",
+            "pnl": 14.250309789343168,
+            "result": "WIN \ud83d\udfe2",
+            "exit_time": 1781733804327
+        },
+        {
+            "id": "FILUSDT_1781723700000",
+            "symbol": "FILUSDT",
+            "signal": "SHORT",
+            "pnl": 0.21981916931739917,
+            "result": "WIN \ud83d\udfe2",
+            "exit_time": 1781733864772
+        },
+        {
+            "id": "UNIUSDT_1781731800000",
+            "symbol": "UNIUSDT",
+            "signal": "SHORT",
+            "pnl": 0.07908669062914159,
+            "result": "WIN \ud83d\udfe2",
+            "exit_time": 1781734092228
+        },
+        {
+            "id": "ETHUSDT_1781731800000",
+            "symbol": "ETHUSDT",
+            "signal": "SHORT",
+            "pnl": 0.015550989443764752,
+            "result": "WIN \ud83d\udfe2",
+            "exit_time": 1781734429444
+        },
+        {
+            "id": "THETAUSDT_1781732700000",
+            "symbol": "THETAUSDT",
+            "signal": "SHORT",
+            "pnl": 0.019213258636458803,
+            "result": "WIN \ud83d\udfe2",
+            "exit_time": 1781734694022
+        },
+        {
+            "id": "ADAUSDT_1781731800000",
+            "symbol": "ADAUSDT",
+            "signal": "SHORT",
+            "pnl": 0.03093226679152963,
+            "result": "WIN \ud83d\udfe2",
+            "exit_time": 1781734777329
+        },
+        {
+            "id": "BNBUSDT_1781732700000",
+            "symbol": "BNBUSDT",
+            "signal": "SHORT",
+            "pnl": 0.02000928319848429,
+            "result": "WIN \ud83d\udfe2",
+            "exit_time": 1781734861717
+        },
+        {
+            "id": "DOGEUSDT_1781732700000",
+            "symbol": "DOGEUSDT",
+            "signal": "SHORT",
+            "pnl": 0.024046047332222823,
+            "result": "WIN \ud83d\udfe2",
+            "exit_time": 1781734868733
+        },
+        {
+            "id": "AAVEUSDT_1781732700000",
+            "symbol": "AAVEUSDT",
+            "signal": "SHORT",
+            "pnl": -0.01400202093114428,
+            "result": "LOSS \ud83d\udd34",
+            "exit_time": 1781734898807
+        },
+        {
+            "id": "GRTUSDT_1781732700000",
+            "symbol": "GRTUSDT",
+            "signal": "SHORT",
+            "pnl": 0.00882353907485634,
+            "result": "WIN \ud83d\udfe2",
+            "exit_time": 1781734935678
+        },
+        {
+            "id": "SOLUSDT_1781731800000",
+            "symbol": "SOLUSDT",
+            "signal": "SHORT",
+            "pnl": 0.05503248220152115,
+            "result": "WIN \ud83d\udfe2",
+            "exit_time": 1781735086187
+        },
+        {
+            "id": "ICPUSDT_1781732700000",
+            "symbol": "ICPUSDT",
+            "signal": "SHORT",
+            "pnl": 0.03669515292126465,
+            "result": "WIN \ud83d\udfe2",
+            "exit_time": 1781735095533
+        },
+        {
+            "id": "DOTUSDT_1781732700000",
+            "symbol": "DOTUSDT",
+            "signal": "SHORT",
+            "pnl": 0.01543194535243861,
+            "result": "WIN \ud83d\udfe2",
+            "exit_time": 1781735123672
+        },
+        {
+            "id": "LTCUSDT_1781731800000",
+            "symbol": "LTCUSDT",
+            "signal": "SHORT",
+            "pnl": 0.011483517271642221,
+            "result": "WIN \ud83d\udfe2",
+            "exit_time": 1781735125511
+        },
+        {
+            "id": "LINKUSDT_1781731800000",
+            "symbol": "LINKUSDT",
+            "signal": "SHORT",
+            "pnl": 0.04479521144699905,
+            "result": "WIN \ud83d\udfe2",
+            "exit_time": 1781735258138
+        },
+        {
+            "id": "AVAXUSDT_1781731800000",
+            "symbol": "AVAXUSDT",
+            "signal": "SHORT",
+            "pnl": 0.022913311948654286,
+            "result": "WIN \ud83d\udfe2",
+            "exit_time": 1781735284898
+        },
+        {
+            "id": "NEARUSDT_1781731800000",
+            "symbol": "NEARUSDT",
+            "signal": "SHORT",
+            "pnl": 0.09594730545904978,
+            "result": "WIN \ud83d\udfe2",
+            "exit_time": 1781735346246
+        },
+        {
+            "id": "ENJUSDT_1781732700000",
+            "symbol": "ENJUSDT",
+            "signal": "SHORT",
+            "pnl": 0.02457651109187487,
+            "result": "WIN \ud83d\udfe2",
+            "exit_time": 1781736118968
+        },
+        {
+            "id": "AVAXUSDT_1781734500000",
+            "symbol": "AVAXUSDT",
+            "signal": "LONG",
+            "pnl": 0.015291605811230163,
+            "result": "WIN \ud83d\udfe2",
+            "exit_time": 1781736412119
+        },
+        {
+            "id": "XRPUSDT_1781734500000",
+            "symbol": "XRPUSDT",
+            "signal": "LONG",
+            "pnl": 0.02031048195021641,
+            "result": "WIN \ud83d\udfe2",
+            "exit_time": 1781736465646
+        },
+        {
+            "id": "LTCUSDT_1781734500000",
+            "symbol": "LTCUSDT",
+            "signal": "LONG",
+            "pnl": 0.01918136607488725,
+            "result": "WIN \ud83d\udfe2",
+            "exit_time": 1781736476437
+        },
+        {
+            "id": "AAVEUSDT_1781734500000",
+            "symbol": "AAVEUSDT",
+            "signal": "LONG",
+            "pnl": 0.03735362549974915,
+            "result": "WIN \ud83d\udfe2",
+            "exit_time": 1781736725542
+        },
+        {
+            "id": "DOTUSDT_1781734500000",
+            "symbol": "DOTUSDT",
+            "signal": "LONG",
+            "pnl": 0.03087014863139245,
+            "result": "WIN \ud83d\udfe2",
+            "exit_time": 1781736791119
+        },
+        {
+            "id": "ETHUSDT_1781734500000",
+            "symbol": "ETHUSDT",
+            "signal": "LONG",
+            "pnl": 0.00830112593578339,
+            "result": "WIN \ud83d\udfe2",
+            "exit_time": 1781737102481
+        },
+        {
+            "id": "ICPUSDT_1781734500000",
+            "symbol": "ICPUSDT",
+            "signal": "LONG",
+            "pnl": 0.022090477929039877,
+            "result": "WIN \ud83d\udfe2",
+            "exit_time": 1781737112162
+        },
+        {
+            "id": "GRTUSDT_1781734500000",
+            "symbol": "GRTUSDT",
+            "signal": "LONG",
+            "pnl": 0.026538320135722035,
+            "result": "WIN \ud83d\udfe2",
+            "exit_time": 1781737175286
+        },
+        {
+            "id": "SOLUSDT_1781734500000",
+            "symbol": "SOLUSDT",
+            "signal": "LONG",
+            "pnl": 0.019208124537717527,
+            "result": "WIN \ud83d\udfe2",
+            "exit_time": 1781737198635
+        },
+        {
+            "id": "ADAUSDT_1781734500000",
+            "symbol": "ADAUSDT",
+            "signal": "LONG",
+            "pnl": 0.031032222694761535,
+            "result": "WIN \ud83d\udfe2",
+            "exit_time": 1781737385463
+        },
+        {
+            "id": "THETAUSDT_1781734500000",
+            "symbol": "THETAUSDT",
+            "signal": "LONG",
+            "pnl": 0.0491299549710781,
+            "result": "WIN \ud83d\udfe2",
+            "exit_time": 1781737462245
+        },
+        {
+            "id": "CHZUSDT_1781734500000",
+            "symbol": "CHZUSDT",
+            "signal": "LONG",
+            "pnl": 0.014377766150258776,
+            "result": "WIN \ud83d\udfe2",
+            "exit_time": 1781737612589
+        },
+        {
+            "id": "HBARUSDT_1781735400000",
+            "symbol": "HBARUSDT",
+            "signal": "LONG",
+            "pnl": 0.034133393803343084,
+            "result": "WIN \ud83d\udfe2",
+            "exit_time": 1781737613277
+        },
+        {
+            "id": "FILUSDT_1781734500000",
+            "symbol": "FILUSDT",
+            "signal": "LONG",
+            "pnl": 0.11888875646542761,
+            "result": "WIN \ud83d\udfe2",
+            "exit_time": 1781738408580
+        },
+        {
+            "id": "FILUSDT_1781737200000",
+            "symbol": "FILUSDT",
+            "signal": "LONG",
+            "pnl": -0.0344821066176377,
+            "result": "LOSS \ud83d\udd34",
+            "exit_time": 1781739805234
+        },
+        {
+            "id": "ETHUSDT_1781738100000",
+            "symbol": "ETHUSDT",
+            "signal": "LONG",
+            "pnl": 0.017272828958973637,
+            "result": "WIN \ud83d\udfe2",
+            "exit_time": 1781740497331
+        },
+        {
+            "id": "ALGOUSDT_1781738100000",
+            "symbol": "ALGOUSDT",
+            "signal": "LONG",
+            "pnl": 0.05618245251714508,
+            "result": "WIN \ud83d\udfe2",
+            "exit_time": 1781740500475
+        },
+        {
+            "id": "NEARUSDT_1781739000000",
+            "symbol": "NEARUSDT",
+            "signal": "SHORT",
+            "pnl": 0.03318825077123667,
+            "result": "WIN \ud83d\udfe2",
+            "exit_time": 1781740947432
+        },
+        {
+            "id": "VETUSDT_1781723700000",
+            "symbol": "VETUSDT",
+            "signal": "SHORT",
+            "pnl": -0.08398591558279465,
+            "result": "LOSS \ud83d\udd34",
+            "exit_time": 1781740954330
+        },
+        {
+            "id": "XLMUSDT_1781738100000",
+            "symbol": "XLMUSDT",
+            "signal": "SHORT",
+            "pnl": 0.030321979803947265,
+            "result": "WIN \ud83d\udfe2",
+            "exit_time": 1781741329263
+        },
+        {
+            "id": "TRXUSDT_1781738100000",
+            "symbol": "TRXUSDT",
+            "signal": "LONG",
+            "pnl": 0.0289715351269972,
+            "result": "WIN \ud83d\udfe2",
+            "exit_time": 1781741369789
+        },
+        {
+            "id": "ALGOUSDT_1781739900000",
+            "symbol": "ALGOUSDT",
+            "signal": "LONG",
+            "pnl": 0.03660901888813057,
+            "result": "WIN \ud83d\udfe2",
+            "exit_time": 1781742407102
+        },
+        {
+            "id": "GRTUSDT_1781740800000",
+            "symbol": "GRTUSDT",
+            "signal": "LONG",
+            "pnl": 0.017695833461868545,
+            "result": "WIN \ud83d\udfe2",
+            "exit_time": 1781743049849
+        },
+        {
+            "id": "ETHUSDT_1781740800000",
+            "symbol": "ETHUSDT",
+            "signal": "LONG",
+            "pnl": 0.03161066901689699,
+            "result": "WIN \ud83d\udfe2",
+            "exit_time": 1781743325305
+        },
+        {
+            "id": "XTZUSDT_1781739900000",
+            "symbol": "XTZUSDT",
+            "signal": "LONG",
+            "pnl": 0.02134694872363961,
+            "result": "WIN \ud83d\udfe2",
+            "exit_time": 1781744102635
+        },
+        {
+            "id": "SOLUSDT_1781740800000",
+            "symbol": "SOLUSDT",
+            "signal": "LONG",
+            "pnl": 0.035895435494045065,
+            "result": "WIN \ud83d\udfe2",
+            "exit_time": 1781744630807
+        },
+        {
+            "id": "XLMUSDT_1781734500000",
+            "symbol": "XLMUSDT",
+            "signal": "LONG",
+            "pnl": 0.22975300769917284,
+            "result": "WIN \ud83d\udfe2",
+            "exit_time": 1781744729872
+        },
+        {
+            "id": "UNIUSDT_1781744400000",
+            "symbol": "UNIUSDT",
+            "signal": "LONG",
+            "pnl": 0.04835958331344385,
+            "result": "WIN \ud83d\udfe2",
+            "exit_time": 1781747052530
+        },
+        {
+            "id": "XLMUSDT_1781745300000",
+            "symbol": "XLMUSDT",
+            "signal": "LONG",
+            "pnl": 0.11694400582340725,
+            "result": "WIN \ud83d\udfe2",
+            "exit_time": 1781747330801
+        },
+        {
+            "id": "ALGOUSDT_1781744400000",
+            "symbol": "ALGOUSDT",
+            "signal": "LONG",
+            "pnl": -0.03920766217025348,
+            "result": "LOSS \ud83d\udd34",
+            "exit_time": 1781747455578
+        },
+        {
+            "id": "DOGEUSDT_1781740800000",
+            "symbol": "DOGEUSDT",
+            "signal": "LONG",
+            "pnl": 0.030191722423664715,
+            "result": "WIN \ud83d\udfe2",
+            "exit_time": 1781748061043
+        },
+        {
+            "id": "LINKUSDT_1781746200000",
+            "symbol": "LINKUSDT",
+            "signal": "SHORT",
+            "pnl": 0.014998543791295836,
+            "result": "WIN \ud83d\udfe2",
+            "exit_time": 1781748099600
+        },
+        {
+            "id": "HBARUSDT_1781745300000",
+            "symbol": "HBARUSDT",
+            "signal": "LONG",
+            "pnl": 0.03615085835863153,
+            "result": "WIN \ud83d\udfe2",
+            "exit_time": 1781748215298
+        },
+        {
+            "id": "ENJUSDT_1781746200000",
+            "symbol": "ENJUSDT",
+            "signal": "LONG",
+            "pnl": -0.02400236565675109,
+            "result": "LOSS \ud83d\udd34",
+            "exit_time": 1781748468751
+        },
+        {
+            "id": "DOTUSDT_1781746200000",
+            "symbol": "DOTUSDT",
+            "signal": "SHORT",
+            "pnl": 0.03111003835685163,
+            "result": "WIN \ud83d\udfe2",
+            "exit_time": 1781748822626
+        },
+        {
+            "id": "BNBUSDT_1781746200000",
+            "symbol": "BNBUSDT",
+            "signal": "SHORT",
+            "pnl": 0.017276934921339786,
+            "result": "WIN \ud83d\udfe2",
+            "exit_time": 1781748847344
+        },
+        {
+            "id": "FILUSDT_1781746200000",
+            "symbol": "FILUSDT",
+            "signal": "SHORT",
+            "pnl": -0.03609897962189943,
+            "result": "LOSS \ud83d\udd34",
+            "exit_time": 1781749456804
+        },
+        {
+            "id": "CHZUSDT_1781747100000",
+            "symbol": "CHZUSDT",
+            "signal": "SHORT",
+            "pnl": 0.0356686327193424,
+            "result": "WIN \ud83d\udfe2",
+            "exit_time": 1781749514141
+        },
+        {
+            "id": "UNIUSDT_1781748900000",
+            "symbol": "UNIUSDT",
+            "signal": "LONG",
+            "pnl": -0.11614232182201334,
+            "result": "LOSS \ud83d\udd34",
+            "exit_time": 1781751678936
+        },
+        {
+            "id": "ALGOUSDT_1781749800000",
+            "symbol": "ALGOUSDT",
+            "signal": "LONG",
+            "pnl": -0.03089741750653744,
+            "result": "LOSS \ud83d\udd34",
+            "exit_time": 1781752078984
+        },
+        {
+            "id": "AAVEUSDT_1781749800000",
+            "symbol": "AAVEUSDT",
+            "signal": "LONG",
+            "pnl": -0.07796602032832291,
+            "result": "LOSS \ud83d\udd34",
+            "exit_time": 1781752430312
+        },
+        {
+            "id": "TRXUSDT_1781751600000",
+            "symbol": "TRXUSDT",
+            "signal": "SHORT",
+            "pnl": 0.010788689343906551,
+            "result": "WIN \ud83d\udfe2",
+            "exit_time": 1781753896884
+        },
+        {
+            "id": "NEARUSDT_1781744400000",
+            "symbol": "NEARUSDT",
+            "signal": "LONG",
+            "pnl": -0.08433512426407805,
+            "result": "LOSS \ud83d\udd34",
+            "exit_time": 1781754235589
+        },
+        {
+            "id": "ENJUSDT_1781751600000",
+            "symbol": "ENJUSDT",
+            "signal": "LONG",
+            "pnl": -0.003273763151009019,
+            "result": "LOSS \ud83d\udd34",
+            "exit_time": 1781754361088
+        },
+        {
+            "id": "NEARUSDT_1781752500000",
+            "symbol": "NEARUSDT",
+            "signal": "SHORT",
+            "pnl": 0.02110496824005579,
+            "result": "WIN \ud83d\udfe2",
+            "exit_time": 1781754617269
+        },
+        {
+            "id": "CHZUSDT_1781752500000",
+            "symbol": "CHZUSDT",
+            "signal": "SHORT",
+            "pnl": -0.04329271900049646,
+            "result": "LOSS \ud83d\udd34",
+            "exit_time": 1781754742653
+        },
+        {
+            "id": "GRTUSDT_1781752500000",
+            "symbol": "GRTUSDT",
+            "signal": "SHORT",
+            "pnl": 0.07149655218757134,
+            "result": "WIN \ud83d\udfe2",
+            "exit_time": 1781755448133
+        },
+        {
+            "id": "BTCUSDT_1781752500000",
+            "symbol": "BTCUSDT",
+            "signal": "SHORT",
+            "pnl": 0.03212661662155919,
+            "result": "WIN \ud83d\udfe2",
+            "exit_time": 1781755502036
+        },
+        {
+            "id": "VETUSDT_1781752500000",
+            "symbol": "VETUSDT",
+            "signal": "SHORT",
+            "pnl": 0.06552544288587911,
+            "result": "WIN \ud83d\udfe2",
+            "exit_time": 1781755608387
+        },
+        {
+            "id": "ICPUSDT_1781752500000",
+            "symbol": "ICPUSDT",
+            "signal": "SHORT",
+            "pnl": 0.1125954379353065,
+            "result": "WIN \ud83d\udfe2",
+            "exit_time": 1781755734857
+        },
+        {
+            "id": "BTCUSDT_1781723700000",
+            "symbol": "BTCUSDT",
+            "signal": "SHORT",
+            "pnl": 0.11137583631245784,
+            "result": "WIN \ud83d\udfe2",
+            "exit_time": 1781755851281
+        },
+        {
+            "id": "ADAUSDT_1781752500000",
+            "symbol": "ADAUSDT",
+            "signal": "SHORT",
+            "pnl": 0.1036247387702305,
+            "result": "WIN \ud83d\udfe2",
+            "exit_time": 1781755915493
+        },
+        {
+            "id": "FILUSDT_1781752500000",
+            "symbol": "FILUSDT",
+            "signal": "SHORT",
+            "pnl": 0.12212267144517101,
+            "result": "WIN \ud83d\udfe2",
+            "exit_time": 1781755926383
+        },
+        {
+            "id": "TRXUSDT_1781742600000",
+            "symbol": "TRXUSDT",
+            "signal": "SHORT",
+            "pnl": 0.04142565358809957,
+            "result": "WIN \ud83d\udfe2",
+            "exit_time": 1781756375197
+        },
+        {
+            "id": "CHZUSDT_1781755200000",
+            "symbol": "CHZUSDT",
+            "signal": "SHORT",
+            "pnl": 0.10978890245629307,
+            "result": "WIN \ud83d\udfe2",
+            "exit_time": 1781757985209
+        },
+        {
+            "id": "VETUSDT_1781755200000",
+            "symbol": "VETUSDT",
+            "signal": "SHORT",
+            "pnl": 0.055807157688017674,
+            "result": "WIN \ud83d\udfe2",
+            "exit_time": 1781758057057
+        },
+        {
+            "id": "ICPUSDT_1781755200000",
+            "symbol": "ICPUSDT",
+            "signal": "SHORT",
+            "pnl": 0.053257225208663134,
+            "result": "WIN \ud83d\udfe2",
+            "exit_time": 1781758594528
+        },
+        {
+            "id": "DOTUSDT_1781755200000",
+            "symbol": "DOTUSDT",
+            "signal": "SHORT",
+            "pnl": 0.10529028650581426,
+            "result": "WIN \ud83d\udfe2",
+            "exit_time": 1781759287256
+        },
+        {
+            "id": "DOGEUSDT_1781758800000",
+            "symbol": "DOGEUSDT",
+            "signal": "SHORT",
+            "pnl": 0.010347866515431344,
+            "result": "WIN \ud83d\udfe2",
+            "exit_time": 1781760711440
+        },
+        {
+            "id": "VETUSDT_1781758800000",
+            "symbol": "VETUSDT",
+            "signal": "SHORT",
+            "pnl": 0.014069760439531417,
+            "result": "WIN \ud83d\udfe2",
+            "exit_time": 1781760716468
+        },
+        {
+            "id": "ADAUSDT_1781758800000",
+            "symbol": "ADAUSDT",
+            "signal": "SHORT",
+            "pnl": 0.042345880934513754,
+            "result": "WIN \ud83d\udfe2",
+            "exit_time": 1781760799821
+        },
+        {
+            "id": "AAVEUSDT_1781758800000",
+            "symbol": "AAVEUSDT",
+            "signal": "SHORT",
+            "pnl": -0.02228161295660183,
+            "result": "LOSS \ud83d\udd34",
+            "exit_time": 1781760931861
+        },
+        {
+            "id": "XLMUSDT_1781758800000",
+            "symbol": "XLMUSDT",
+            "signal": "SHORT",
+            "pnl": 0.045458869324341344,
+            "result": "WIN \ud83d\udfe2",
+            "exit_time": 1781760996233
+        },
+        {
+            "id": "AVAXUSDT_1781758800000",
+            "symbol": "AVAXUSDT",
+            "signal": "SHORT",
+            "pnl": 0.015846311353494243,
+            "result": "WIN \ud83d\udfe2",
+            "exit_time": 1781762202783
+        },
+        {
+            "id": "UNIUSDT_1781758800000",
+            "symbol": "UNIUSDT",
+            "signal": "SHORT",
+            "pnl": 0.07322929776860913,
+            "result": "WIN \ud83d\udfe2",
+            "exit_time": 1781762684882
+        },
+        {
+            "id": "BNBUSDT_1781758800000",
+            "symbol": "BNBUSDT",
+            "signal": "SHORT",
+            "pnl": 0.014806148046770197,
+            "result": "WIN \ud83d\udfe2",
+            "exit_time": 1781762702285
+        },
+        {
+            "id": "ENJUSDT_1781759700000",
+            "symbol": "ENJUSDT",
+            "signal": "LONG",
+            "pnl": 0.21941004405648984,
+            "result": "WIN \ud83d\udfe2",
+            "exit_time": 1781763998449
+        },
+        {
+            "id": "NEARUSDT_1781755200000",
+            "symbol": "NEARUSDT",
+            "signal": "SHORT",
+            "pnl": 0.07831987435295401,
+            "result": "WIN \ud83d\udfe2",
+            "exit_time": 1781764633786
+        },
+        {
+            "id": "FILUSDT_1781755200000",
+            "symbol": "FILUSDT",
+            "signal": "SHORT",
+            "pnl": -0.050338769275192596,
+            "result": "LOSS \ud83d\udd34",
+            "exit_time": 1781764891226
+        },
+        {
+            "id": "LTCUSDT_1781755200000",
+            "symbol": "LTCUSDT",
+            "signal": "SHORT",
+            "pnl": 0.01973037967057483,
+            "result": "WIN \ud83d\udfe2",
+            "exit_time": 1781765461131
+        },
+        {
+            "id": "CHZUSDT_1781764200000",
+            "symbol": "CHZUSDT",
+            "signal": "LONG",
+            "pnl": -0.01992678561155073,
+            "result": "LOSS \ud83d\udd34",
+            "exit_time": 1781766410533
+        },
+        {
+            "id": "XRPUSDT_1781764200000",
+            "symbol": "XRPUSDT",
+            "signal": "LONG",
+            "pnl": 0.00899853842667302,
+            "result": "WIN \ud83d\udfe2",
+            "exit_time": 1781766659094
+        },
+        {
+            "id": "BTCUSDT_1781764200000",
+            "symbol": "BTCUSDT",
+            "signal": "LONG",
+            "pnl": 0.009741353757722868,
+            "result": "WIN \ud83d\udfe2",
+            "exit_time": 1781766661373
+        },
+        {
+            "id": "ETHUSDT_1781764200000",
+            "symbol": "ETHUSDT",
+            "signal": "LONG",
+            "pnl": 0.026078850288914466,
+            "result": "WIN \ud83d\udfe2",
+            "exit_time": 1781766948740
+        },
+        {
+            "id": "XTZUSDT_1781764200000",
+            "symbol": "XTZUSDT",
+            "signal": "LONG",
+            "pnl": 0.029364031102354242,
+            "result": "WIN \ud83d\udfe2",
+            "exit_time": 1781767277907
+        },
+        {
+            "id": "ALGOUSDT_1781757000000",
+            "symbol": "ALGOUSDT",
+            "signal": "SHORT",
+            "pnl": -0.007178200901484785,
+            "result": "LOSS \ud83d\udd34",
+            "exit_time": 1781767333510
+        },
+        {
+            "id": "SOLUSDT_1781755200000",
+            "symbol": "SOLUSDT",
+            "signal": "SHORT",
+            "pnl": -0.04420661833230236,
+            "result": "LOSS \ud83d\udd34",
+            "exit_time": 1781767458043
+        },
+        {
+            "id": "BTCUSDT_1781755200000",
+            "symbol": "BTCUSDT",
+            "signal": "SHORT",
+            "pnl": -0.02783438850908456,
+            "result": "LOSS \ud83d\udd34",
+            "exit_time": 1781767584246
+        },
+        {
+            "id": "LINKUSDT_1781755200000",
+            "symbol": "LINKUSDT",
+            "signal": "SHORT",
+            "pnl": -0.04241271992957868,
+            "result": "LOSS \ud83d\udd34",
+            "exit_time": 1781767597990
+        },
+        {
+            "id": "TRXUSDT_1781755200000",
+            "symbol": "TRXUSDT",
+            "signal": "SHORT",
+            "pnl": -0.021776137675111478,
+            "result": "LOSS \ud83d\udd34",
+            "exit_time": 1781767599263
+        },
+        {
+            "id": "GRTUSDT_1781755200000",
+            "symbol": "GRTUSDT",
+            "signal": "SHORT",
+            "pnl": -0.09731728878501326,
+            "result": "LOSS \ud83d\udd34",
+            "exit_time": 1781767626482
+        },
+        {
+            "id": "ICPUSDT_1781766000000",
+            "symbol": "ICPUSDT",
+            "signal": "LONG",
+            "pnl": 0.03055950047641399,
+            "result": "WIN \ud83d\udfe2",
+            "exit_time": 1781768052202
+        },
+        {
+            "id": "XTZUSDT_1781755200000",
+            "symbol": "XTZUSDT",
+            "signal": "SHORT",
+            "pnl": -0.05371309752534631,
+            "result": "LOSS \ud83d\udd34",
+            "exit_time": 1781768251596
+        }
+    ]
+}

@@ -1,0 +1,25 @@
+{
+  "params": {
+    "RR_MIN": 2.0,
+    "RR_MAX": 3.5,
+    "ATR_SL_MULT": 1.0,
+    "MIN_ADX_STRICT": 18,
+    "MIN_BODY_STRENGTH": 0.4,
+    "TRAIL_AT_R": 1.5,
+    "TIMEFRAME": "5"
+  },
+  "metrics": {
+    "trades": 26,
+    "wins": 10,
+    "losses": 16,
+    "winrate": 38.5,
+    "profit_factor": 1.07,
+    "expectancy": 0.015,
+    "total_pnl": 0.39,
+    "max_drawdown": 3.18
+  },
+  "generated": "auto (5m strict-mode optimization)",
+  "symbols": ["BTCUSDT", "ETHUSDT", "SOLUSDT", "DOGEUSDT", "XRPUSDT"],
+  "bars": 1500,
+  "tf": "5"
+}

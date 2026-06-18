@@ -1,0 +1,84 @@
+{
+  "total": {
+    "trades": 9,
+    "wins": 2,
+    "losses": 7,
+    "winrate": 22.2,
+    "profit_factor": 0.47,
+    "expectancy": -0.154,
+    "total_pnl": -1.38,
+    "max_drawdown": 2.44,
+    "best": 1.06,
+    "worst": -0.55,
+    "exits": {
+      "stop": 4,
+      "trail": 1,
+      "breakeven": 3,
+      "take_profit": 1
+    }
+  },
+  "per_symbol": [
+    {
+      "trades": 5,
+      "wins": 1,
+      "losses": 4,
+      "winrate": 20.0,
+      "profit_factor": 0.12,
+      "expectancy": -0.247,
+      "total_pnl": -1.24,
+      "max_drawdown": 1.24,
+      "best": 0.17,
+      "worst": -0.55,
+      "exits": {
+        "stop": 2,
+        "trail": 1,
+        "breakeven": 2
+      },
+      "symbol": "SOLUSDT"
+    },
+    {
+      "trades": 1,
+      "wins": 0,
+      "losses": 1,
+      "winrate": 0.0,
+      "profit_factor": 0.0,
+      "expectancy": -0.521,
+      "total_pnl": -0.52,
+      "max_drawdown": 0.52,
+      "best": -0.52,
+      "worst": -0.52,
+      "exits": {
+        "stop": 1
+      },
+      "symbol": "XRPUSDT"
+    },
+    {
+      "trades": 3,
+      "wins": 1,
+      "losses": 2,
+      "winrate": 33.3,
+      "profit_factor": 1.55,
+      "expectancy": 0.125,
+      "total_pnl": 0.37,
+      "max_drawdown": 0.69,
+      "best": 1.06,
+      "worst": -0.53,
+      "exits": {
+        "stop": 1,
+        "breakeven": 1,
+        "take_profit": 1
+      },
+      "symbol": "BNBUSDT"
+    }
+  ],
+  "tf": "5",
+  "bars": 700,
+  "symbols": [
+    "BTCUSDT",
+    "ETHUSDT",
+    "SOLUSDT",
+    "XRPUSDT",
+    "BNBUSDT"
+  ],
+  "generated": "2026-06-16 20:06:38"
+}
