@@ -288,8 +288,8 @@ def shadow_stats():
 
 def last_loss_time(symbol):
     with _conn() as con:
-        row = con.execute("SELECT closed_ts FROM signals WHERE symbol=? AND outcome='LOSS' "
-                          "ORDER BY id DESC LIMIT 1", (symbol,)).fetchone()
+        row = con.execute("SELECT closed_ts FROM signals WHERE symbol=? AND outcome='LOSS' AND pnl_pct<0 "
+                          "ORDER BY closed_ts DESC, id DESC LIMIT 1", (symbol,)).fetchone()
     return row["closed_ts"] if row else None
 
 
@@ -401,13 +401,16 @@ def get_closed_today(today_iso):
 
 
 def current_loss_streak():
-    """Сколько последних закрытых сделок подряд были LOSS."""
+    """Сколько последних закрытых сделок подряд были LOSS.
+    Безубыточные выходы (PnL == 0) нейтральны: не считаются и не прерывают серию."""
     with _conn() as con:
         rows = con.execute(
-            "SELECT outcome FROM signals WHERE outcome IN ('WIN','LOSS') "
+            "SELECT outcome, pnl_pct FROM signals WHERE outcome IN ('WIN','LOSS') "
             "ORDER BY closed_ts DESC, id DESC LIMIT 50").fetchall()
     streak = 0
     for r in rows:
+        if r["pnl_pct"] is not None and r["pnl_pct"] == 0:
+            continue
         if r["outcome"] == "LOSS":
             streak += 1
         else:
@@ -417,8 +420,8 @@ def current_loss_streak():
 
 def last_any_loss_time():
     with _conn() as con:
-        row = con.execute("SELECT closed_ts FROM signals WHERE outcome='LOSS' "
-                          "ORDER BY id DESC LIMIT 1").fetchone()
+        row = con.execute("SELECT closed_ts FROM signals WHERE outcome='LOSS' AND pnl_pct<0 "
+                          "ORDER BY closed_ts DESC, id DESC LIMIT 1").fetchone()
     return row["closed_ts"] if row else None
 
 

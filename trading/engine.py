@@ -16,7 +16,8 @@ from trading.paper_trading import open_paper_trade, check_active_trades
 from trading.risk_manager import is_trading_allowed
 from trading.learning import apply_learning_to_signal, is_symbol_in_cooldown
 from trading.logger import log_info
-from trading.intelligence import coin_context, microstructure_context, live_blockers
+from trading.intelligence import coin_context, microstructure_context, live_blockers, required_book_depth
+from trading.position_risk import position_notional
 from trading.news import refresh_news, news_context, NEWS_STATE
 from trading.research import request_research, research_worker, load_report, qualify, research_gate
 from trading.profiles import strategy_settings
@@ -191,14 +192,16 @@ async def process_symbol(bot: Optional[Bot], symbol: str, *, emit_signal: bool =
                             event('HTF_DATA_UNAVAILABLE',symbol=symbol,timeframe='240',error=type(exc).__name__,reason=str(exc) if isinstance(exc,ValueError) else 'request_failed')
                             coin['higher_4h']={'trend':'UNKNOWN','error':type(exc).__name__}
                             SCAN_RESULTS[symbol]['higher_4h']='unavailable'
-                    reasons = live_blockers(candidate["signal"], coin, BENCHMARKS.get("BTCUSDT", {}).get("trend"), MARKET_DATA.get(symbol, {}), micro)
+                    active_trades = get_active_signals()
+                    notional = position_notional(candidate["entry"], candidate["sl"], cfg.paper_balance, active_trades, cfg)
+                    reasons = live_blockers(candidate["signal"], coin, BENCHMARKS.get("BTCUSDT", {}).get("trend"), MARKET_DATA.get(symbol, {}), micro, notional=notional)
                     if coin.get("higher_4h", {}).get("trend", "UNKNOWN") == "UNKNOWN":
                         reasons.append("higher_4h_unavailable_or_stale")
                     if coin.get("higher_4h", {}).get("trend") == ("DOWN" if candidate["signal"] == "LONG" else "UP"):
                         reasons.append("higher_4h_opposition")
-                    if sum(t["side"] == candidate["signal"] for t in get_active_signals()) >= cfg.max_same_direction_positions:
+                    if sum(t["side"] == candidate["signal"] for t in active_trades) >= cfg.max_same_direction_positions:
                         reasons.append("same_direction_exposure_limit")
-                    event('ENTRY_CONTEXT_CHECK',setup_id(symbol,cfg.timeframe,zone),symbol=symbol,score=candidate['score'],rejections=list(dict.fromkeys(reasons+base_blockers)),microstructure=micro,higher_4h=coin.get('higher_4h'),distance_vwap_atr=coin.get('distance_vwap_atr'),min_book_depth_usdt=cfg.min_book_depth_usdt,max_spread_bps=cfg.max_spread_bps)
+                    event('ENTRY_CONTEXT_CHECK',setup_id(symbol,cfg.timeframe,zone),symbol=symbol,score=candidate['score'],rejections=list(dict.fromkeys(reasons+base_blockers)),microstructure=micro,higher_4h=coin.get('higher_4h'),distance_vwap_atr=coin.get('distance_vwap_atr'),min_book_depth_usdt=required_book_depth(notional),max_spread_bps=cfg.max_spread_bps)
                     if reasons or base_blockers:
                         assessments[str(zone['candle_time'])+zone['type']]['execution_rejections']=list(dict.fromkeys(reasons+base_blockers))
                         blockers = list(dict.fromkeys(blockers + reasons))

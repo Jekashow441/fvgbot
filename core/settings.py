@@ -110,6 +110,10 @@ class BotSettings(BaseModel):
     max_funding_rate: float = Field(default=0.001, gt=0)
     min_book_depth_usdt: float = Field(default=25000, ge=0)
     book_depth_bps: float = Field(default=20, gt=0)
+    # Required same-side depth scales with the planned position, capped by
+    # min_book_depth_usdt and never below the floor.
+    book_depth_position_multiple: float = Field(default=10, gt=0)
+    min_book_depth_floor_usdt: float = Field(default=5000, ge=0)
     max_same_direction_positions: int = Field(default=3, ge=1)
     strategy_profile: str = Field(default="balanced", pattern="^(legacy|balanced|contextual)$")
     research_gate_mode: str = Field(default="paper", pattern="^(strict|paper)$")

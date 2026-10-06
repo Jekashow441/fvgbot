@@ -97,7 +97,15 @@ def technical_blockers(side, coin, btc_trend, settings=None):
     return reasons
 
 
-def live_blockers(side, coin, btc_trend, market, micro, settings=None):
+def required_book_depth(notional, settings=None):
+    settings = settings or cfg
+    if notional is None or not math.isfinite(notional) or notional <= 0:
+        return settings.min_book_depth_usdt
+    scaled = max(settings.min_book_depth_floor_usdt, notional*settings.book_depth_position_multiple)
+    return min(settings.min_book_depth_usdt, scaled)
+
+
+def live_blockers(side, coin, btc_trend, market, micro, settings=None, notional=None):
     settings = settings or cfg
     reasons = technical_blockers(side, coin, btc_trend, settings)
     funding = market.get("funding_rate")
@@ -111,7 +119,7 @@ def live_blockers(side, coin, btc_trend, market, micro, settings=None):
         if micro["spread_bps"] > settings.max_spread_bps:
             reasons.append("wide_spread")
         depth = micro["ask_depth_usdt"] if side == "LONG" else micro["bid_depth_usdt"]
-        if depth < settings.min_book_depth_usdt:
+        if depth < required_book_depth(notional, settings):
             complete=micro.get('ask_band_complete' if side=='LONG' else 'bid_band_complete',True)
             reasons.append("thin_orderbook" if complete else 'orderbook_depth_incomplete')
     return reasons
