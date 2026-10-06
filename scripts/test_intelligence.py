@@ -65,6 +65,17 @@ class IntelligenceTests(unittest.TestCase):
         settings.strategy_profile = "balanced"
         self.assertNotEqual(first, fingerprint(settings))
 
+    def test_paper_gate_blocks_only_clearly_negative_coins(self):
+        from trading import research
+        settings = cfg.model_copy(deep=True)
+        settings.research_gate_mode, settings.require_backtest_pass, settings.research_min_trades = "paper", True, 30
+        def q(upper):
+            return {"status": "REJECT", "reasons": ["nonpositive_expectancy"], "sample": {"trades": 40, "expectancy_r": -0.1, "expectancy_r_upper95": upper}}
+        with patch.object(research, "qualify", return_value=q(0.2)):
+            self.assertEqual(research.research_gate({}, settings)[1], [])
+        with patch.object(research, "qualify", return_value=q(-0.05)):
+            self.assertEqual(research.research_gate({}, settings)[1], ["coin_backtest_clearly_negative"])
+
     def test_partial_news_is_visible_in_paper_mode(self):
         from trading.news import NEWS_STATE
         now = 1000000
@@ -76,6 +87,11 @@ class IntelligenceTests(unittest.TestCase):
             self.assertNotIn("news_coverage_incomplete", result["blockers"])
             with patch.object(cfg, "research_gate_mode", "strict"):
                 self.assertIn("news_coverage_incomplete", news_context("BTCUSDT", now, Path(directory)/"missing.db")["blockers"])
+        # A full feed outage in paper mode is reported as coverage, never as a global entry block.
+        with tempfile.TemporaryDirectory() as directory, patch.dict(NEWS_STATE, {"sources": {}}), patch.object(cfg, "research_gate_mode", "paper"), patch.object(cfg, "news_require_coverage", True):
+            outage = news_context("BTCUSDT", now, Path(directory)/"missing.db")
+            self.assertEqual(outage["coverage"], "UNAVAILABLE")
+            self.assertNotIn("news_coverage_incomplete", outage["blockers"])
 
     def test_trendline_confirmation_and_break(self):
         lows = [105,104,100,104,105,106,103,106,107,107,106,105]

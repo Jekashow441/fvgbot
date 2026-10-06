@@ -126,6 +126,12 @@ class BotSettings(BaseModel):
     strategy_profile: str = Field(default="balanced", pattern="^(legacy|balanced|contextual)$")
     research_gate_mode: str = Field(default="paper", pattern="^(strict|paper)$")
     retest_window_bars: int = Field(default=3, ge=1, le=5)
+    # Market regimes in which new entries are allowed (TREND, TRANSITION, RANGE).
+    allowed_regimes: List[str] = Field(default_factory=lambda: ["TREND", "TRANSITION", "RANGE"])
+    # Require the higher timeframe to point the trade's way, not merely not oppose it.
+    require_htf_alignment: bool = False
+    # Skip setups whose round-trip fees and slippage exceed this share of the risk (0 = off).
+    max_cost_r: float = Field(default=0.0, ge=0, le=1)
     trendline_tolerance_atr: float = Field(default=0.25, gt=0, le=1)
     global_loss_pause_minutes: int = Field(default=120, ge=5)
     min_net_rr: float = Field(default=0.8, gt=0)

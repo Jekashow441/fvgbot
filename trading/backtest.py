@@ -31,7 +31,10 @@ def metrics(trades):
         equity += r
         peak = max(peak, equity)
         drawdown = max(drawdown, peak-equity)
+    mean = equity/n if n else None
+    sd = math.sqrt(sum((r-mean)**2 for r in returns)/(n-1)) if n > 1 else None
     return {"trades": n, "win_rate_pct": 100*p if n else None,
+            "expectancy_r_upper95": mean + z*sd/math.sqrt(n) if sd is not None else None,
             "win_rate_95pct_interval": [100*(center-margin), 100*(center+margin)] if n else None,
             "expectancy_r": equity/n if n else None, "net_r": equity,
             "profit_factor": gains/losses if losses else None, "max_drawdown_r": drawdown}
@@ -81,7 +84,7 @@ def run_backtest(df, htf_df=None, htf="60", settings=None, benchmark_df=None, en
             if exit_result:
                 exit_price, exit_reason = exit_result
                 costs = 2*(cfg.fee_bps+cfg.slippage_bps)/10000*a["entry"]
-                trades.append({"entry_timestamp": a["entry_timestamp"], "side": a["signal"], "setup": a.get("setup", "fvg_retest"), "regime": a.get("regime", "UNKNOWN"), "timestamp": int(bar.timestamp), "held_bars": held_bars, "exit_reason": exit_reason, "net_r": (a["direction"]*(exit_price-a["entry"])-costs)/a["risk"]})
+                trades.append({"entry_timestamp": a["entry_timestamp"], "side": a["signal"], "setup": a.get("setup", "fvg_retest"), "regime": a.get("regime", "UNKNOWN"), "timestamp": int(bar.timestamp), "held_bars": held_bars, "exit_reason": exit_reason, "net_r": (a["direction"]*(exit_price-a["entry"])-costs)/a["risk"], "cost_r": costs/a["risk"]})
                 active = None
             continue
         history = df.iloc[max(0, i-max(cfg.ema_period+60, 350)+1):i+1]

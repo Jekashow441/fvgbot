@@ -125,7 +125,7 @@ async def refresh_news():
             rows = []
             for item in result.get("list", []):
                 title = plain(item.get("title"))
-                published = int(item.get("publishTime") or 0)
+                published = int(item.get("publishTime") or item.get("dateTimestamp") or 0)
                 url = item.get("url", "")
                 if not title or published <= 0 or published > now or urlparse(url).scheme != "https":
                     continue
@@ -170,7 +170,8 @@ def news_context(symbol, as_of=None, db_path=None):
     sufficient = coverage == "AVAILABLE"
     if cfg.research_gate_mode == "paper":
         sufficient = "Bybit announcements" in fresh and len(fresh) >= 2
-    if cfg.news_require_coverage and not sufficient:
+    # In paper mode a feed outage is a warning: one flaky RSS source must not halt every signal.
+    if cfg.news_require_coverage and not sufficient and cfg.research_gate_mode == "strict":
         blockers.append("news_coverage_incomplete")
     if any(e["severity"] == "high" and now-e["published_at"] < cfg.news_blackout_minutes*60000 for e in events):
         blockers.append("recent_high_impact_headline")

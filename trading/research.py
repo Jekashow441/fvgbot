@@ -12,7 +12,7 @@ from trading.context import closed_candles
 from trading.backtest import run_backtest, metrics
 
 REPORT_DIR = Path(DATA_DIR)/"research"
-VERSION = "research_v6.4.1"
+VERSION = "research_v6.4.2"
 REPORTS = {}
 QUEUE = []
 QUEUED = set()
@@ -180,7 +180,10 @@ def research_gate(report, settings=None):
     if settings.research_gate_mode == "strict":
         return q, q["reasons"]
     sample = q.get("sample", {})
-    if sample.get("trades", 0) >= settings.research_min_trades and q["status"] == "REJECT":
-        return q, q["reasons"]
+    upper = sample.get("expectancy_r_upper95")
+    # Paper mode blocks a coin only when its loss is statistically clear; ~30 noisy trades
+    # with a slightly negative mean are not evidence and used to block almost every coin.
+    if sample.get("trades", 0) >= settings.research_min_trades and q["status"] == "REJECT" and upper is not None and upper < 0:
+        return q, ["coin_backtest_clearly_negative"]
     # Unproven setups may enter paper observation, labelled explicitly; no fabricated probability.
     return q, []
