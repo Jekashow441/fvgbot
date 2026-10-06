@@ -12,7 +12,20 @@ from core.settings import cfg
 from trading.version import STRATEGY_VERSION
 
 
+_READY = set()
+TIMEFRAME_MINUTES = {"D": 1440, "W": 10080, "M": 43200}
+
+
+def timeframe_minutes(timeframe):
+    tf = str(timeframe)
+    return int(tf) if tf.isdigit() else TIMEFRAME_MINUTES.get(tf, 60)
+
+
 def _schema(con):
+    from core import database
+    if database.DB_PATH in _READY:
+        return
+    _READY.add(database.DB_PATH)
     # Same table the legacy ML path created; columns are reused, R lives in ml_features.
     con.execute("""CREATE TABLE IF NOT EXISTS shadow_signals (
         id INTEGER PRIMARY KEY AUTOINCREMENT, ts TEXT NOT NULL, entry_ts INTEGER, symbol TEXT NOT NULL,
@@ -43,7 +56,7 @@ def track(symbol, key, candidate, blockers, context=None, now=None):
         "score": candidate.get("score"), "min_score": cfg.min_signal_score,
         "blockers": sorted(set(blockers or [])), "traded": not blockers and candidate.get("score", 0) >= cfg.min_signal_score,
         "rr": abs(tp-entry)/abs(entry-sl), "cost_r": cost_r(entry, sl), "opened_at": now,
-        "max_hold_seconds": cfg.shadow_max_hold_bars*int(cfg.timeframe)*60, **(context or {}),
+        "max_hold_seconds": cfg.shadow_max_hold_bars*timeframe_minutes(cfg.timeframe)*60, **(context or {}),
     }
     with _conn() as con:
         _schema(con)

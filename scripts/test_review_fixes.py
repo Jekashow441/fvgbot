@@ -9,6 +9,7 @@ from unittest.mock import patch
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from core import database
 from core.settings import cfg
+import pandas as pd
 
 
 class ShadowLabelTests(unittest.TestCase):
@@ -75,6 +76,47 @@ class RetentionTests(unittest.TestCase):
             with database._conn() as con:
                 kept = {r[0] for r in con.execute("SELECT DISTINCT setup_id FROM setup_events")}
             self.assertEqual(kept, {"ALIVE"})
+
+
+class CriticalFixTests(unittest.TestCase):
+    def test_malformed_trade_features_do_not_stop_management(self):
+        from trading import paper_trading as paper
+        saved = cfg.paper_balance
+        rows = [dict(id=1, symbol="TESTUSDT", side="LONG", entry=100, sl=99, tp=103, ml_features="null"),
+                dict(id=2, symbol="TESTUSDT", side="LONG", entry=100, sl=99, tp=103, ml_features="{broken")]
+        try:
+            with patch.object(paper, "get_active_signals", return_value=rows), patch.object(paper, "settle", return_value=(-10, saved-10)) as settle:
+                asyncio.run(paper.check_active_trades(None, "TESTUSDT", 98.5, 98.5))
+            self.assertEqual(settle.call_count, 2)
+        finally:
+            cfg.paper_balance = saved
+
+    def test_settings_save_keeps_ledger_balance(self):
+        from core import settings as settings_mod
+        with tempfile.TemporaryDirectory() as d, patch.object(database, "DB_PATH", str(Path(d)/"b.db")), \
+             patch.object(settings_mod, "CONFIG_FILE", str(Path(d)/"cfg.json")), patch.object(settings_mod, "DATA_DIR", d), \
+             patch.object(settings_mod, "_mutate_global") as mutate:
+            from trading import paper_account
+            paper_account.reset_balance(9400)
+            stale = cfg.model_copy(deep=True)
+            stale.paper_balance = 10000
+            settings_mod.save_settings(stale)
+            self.assertEqual(mutate.call_args.args[0].paper_balance, 9400)
+
+    def test_sweep_ignores_level_already_closed_through(self):
+        from trading.context import structure_context
+        d = pd.DataFrame([dict(open=102., high=103., low=101.5, close=102.) for _ in range(30)])
+        d.loc[5, "low"] = 100.0      # older swing low
+        d.loc[12, "low"] = 101.0     # newer swing low
+        d.loc[20, ["low", "close"]] = [99.4, 99.5]   # closes through both
+        d.loc[21:28, ["low", "close", "open", "high"]] = [100.6, 101.2, 101.2, 101.8]
+        d.loc[29, ["open", "low", "close", "high"]] = [100.6, 99.8, 100.4, 100.9]  # wicks under 100 only
+        self.assertIsNone(structure_context(d, 3)["sweep"])
+
+    def test_daily_timeframe_shadows_are_tracked(self):
+        from trading import shadow
+        with tempfile.TemporaryDirectory() as d, patch.object(database, "DB_PATH", str(Path(d)/"s.db")), patch.object(cfg, "timeframe", "D"):
+            self.assertIsNotNone(shadow.track("XUSDT", "k", {"signal": "LONG", "entry": 100, "sl": 99, "tp": 102, "score": 80}, []))
 
 
 if __name__ == "__main__":

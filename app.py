@@ -109,20 +109,27 @@ async def api_factor_performance():
     reload_settings()
     return factor_performance(min_trades=1)
 
-def _overview():
+def _snapshot():
+    """Copies taken on the event loop, so the worker thread never iterates dicts the engine is mutating."""
+    return ({k: dict(v or {}) for k, v in list(LATEST_DATA.items())}, dict(SCAN_STATUS),
+            dict(MARKET_DATA), {k: dict(v) for k, v in list(BENCHMARKS.items())})
+
+
+def _overview(snapshot=None):
     from trading.dashboard import overview
     from trading.telemetry import system_health
+    latest, scan, market, benchmarks = snapshot or _snapshot()
     try:
         health = system_health()
     except Exception as exc:
         health = {"status": "UNKNOWN", "reasons": [type(exc).__name__]}
-    return overview(LATEST_DATA, SCAN_STATUS, MARKET_DATA, BENCHMARKS, health)
+    return overview(latest, scan, market, benchmarks, health)
 
 
 @app.get("/api/overview")
 async def api_overview():
     reload_settings()
-    return await asyncio.to_thread(_overview)
+    return await asyncio.to_thread(_overview, _snapshot())
 
 
 @app.get("/api/equity_history")
@@ -144,7 +151,7 @@ async def ws(websocket: WebSocket):
     try:
         while True:
             reload_settings()
-            data = await asyncio.to_thread(_overview)
+            data = await asyncio.to_thread(_overview, _snapshot())
             stamp = data.pop("generated_at")
             body = json.dumps(data, default=str, sort_keys=True)
             if body != last_payload:

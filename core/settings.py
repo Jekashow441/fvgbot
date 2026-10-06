@@ -203,6 +203,14 @@ def reload_settings() -> BotSettings:
 
 def save_settings(settings: BotSettings) -> None:
     clean = BotSettings(**settings.model_dump())
+    # The paper ledger owns the balance; a settings edit must not roll it back to a stale file value.
+    try:
+        from trading.paper_account import balance
+        stored = balance()
+        if stored is not None:
+            clean.paper_balance = stored
+    except Exception:
+        pass
     import tempfile
     with tempfile.NamedTemporaryFile(mode='w',encoding='utf-8',dir=DATA_DIR,suffix='.tmp',delete=False) as f:
         f.write(clean.model_dump_json(indent=4))

@@ -45,9 +45,10 @@ def structure_context(df, pivot=3):
     sweep = None
     # Resting liquidity can sit at any recent unbroken swing, not only the latest one.
     if last is not None:
-        if any(last.low < level < last.close for k, level in lows[-3:] if k not in broken_low):
+        prior = close_values[:-1]
+        if any(last.low < level < last.close and not (prior[k+1:] < level).any() for k, level in lows[-3:]):
             sweep = "SELL_SIDE"
-        if any(last.high > level > last.close for k, level in highs[-3:] if k not in broken_high):
+        if any(last.high > level > last.close and not (prior[k+1:] > level).any() for k, level in highs[-3:]):
             sweep = "BUY_SIDE"
     return {"direction": direction, "event": event, "sweep": sweep,
             "swing_high": highs[-1][1] if highs else None,

@@ -140,6 +140,13 @@ async def process_symbol(bot: Optional[Bot], symbol: str, *, emit_signal: bool =
             SCAN_RESULTS[symbol].update(outcome=outcome, reason='insufficient_history' if outcome == 'skipped' else reason)
             LATEST_DATA[symbol] = {"signal":None,"blockers":[reason],"status":"NEW_LISTING" if outcome == 'skipped' else "INVALID_CANDLES",
                                    "updated_at":datetime.now(timezone.utc).isoformat()}
+            # Unusable history must not stop open trades and shadows from seeing the live price.
+            price = observed_price(await get_klines_async(symbol, cfg.timeframe, limit=limit), cfg.timeframe, time.time()*1000)
+            if price is not None:
+                LATEST_DATA[symbol]["current_price"] = price
+                await check_active_trades(bot, symbol, price, price)
+                if cfg.enable_shadow_learning:
+                    shadow.update(symbol, price)
             return
 
         current_price = observed_price(raw, cfg.timeframe, time.time()*1000)
@@ -222,7 +229,8 @@ async def process_symbol(bot: Optional[Bot], symbol: str, *, emit_signal: bool =
         if htf and (not htf_ctx or htf_ctx.get("trend") == "UNKNOWN"):
             skip_reasons.append("insufficient_history" if _htf_status(htf_ctx) == "insufficient_history" else "htf_unavailable_or_stale")
         if fvg and MARKET_DATA.get(symbol, {}).get("eligible") and allowed and (not htf or (htf_ctx and htf_ctx.get("trend") != "UNKNOWN")):
-            candidates = [(zone,assessments[str(zone['candle_time'])+zone['type']]['candidate']) for zone in zones]
+            # Setups just below the score gate are considered too: headline tone may lift them.
+            candidates = [(zone,assessments[str(zone['candle_time'])+zone['type']]['candidate'] or assessments[str(zone['candle_time'])+zone['type']]['shadow']) for zone in zones]
             for assessment in assessments.values():
                 for reason in assessment['rejections']:
                     setup_diagnostics[reason]=setup_diagnostics.get(reason,0)+1
@@ -337,8 +345,10 @@ async def process_symbol(bot: Optional[Bot], symbol: str, *, emit_signal: bool =
                 set_setting_text("signal:" + signal_id, "opened")
                 SENT_SIGNALS[symbol] = {signal_id}
 
-        if cfg.enable_shadow_learning and symbol_selected(symbol):
-            track_shadows(symbol, zones, assessments, skip_reasons, chosen_key, blockers if chosen_key else [], signal is not None, news)
+        if cfg.enable_shadow_learning and emit_signal and symbol_selected(symbol):
+            post_selection = {"learning_score_below_threshold", "previously_used_zone", "original_signal_expired_or_price_moved"}
+            chosen_blockers = [b for b in blockers if b in post_selection] if chosen_key else []
+            track_shadows(symbol, zones, assessments, skip_reasons, chosen_key, chosen_blockers, signal is not None, news)
         before = dict(LATEST_DATA.get(symbol) or {})
         LATEST_DATA.setdefault(symbol, {})
         LATEST_DATA[symbol].update({
@@ -524,7 +534,6 @@ async def refresh_orphan_shadows(scanned: set) -> None:
             except Exception as exc:
                 event('SHADOW_UPDATE_FAILED', symbol=symbol, error=type(exc).__name__)
     await asyncio.gather(*(one(s) for s in orphans))
-    shadow.abandon_unpriced()
 
 
 async def _news_loop():
@@ -566,6 +575,7 @@ async def _recovery_loop():
         if time.time()-last_prune > 3600:
             try:
                 removed = prune(cfg)
+                shadow.abandon_unpriced()
                 if any(removed.values()):
                     log_info(f'Telemetry retention: {removed}')
             except Exception as exc:

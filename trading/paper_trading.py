@@ -188,7 +188,12 @@ async def check_active_trades(bot: Optional[Any], symbol: str, current_high: flo
         tp = float(t["tp"])
         side = t["side"]
         sl = float(t["sl"])
-        features = json.loads(t.get("ml_features") or "{}")
+        try:
+            features = json.loads(t.get("ml_features") or "{}")
+        except (TypeError, ValueError):
+            features = {}
+        # A malformed legacy row must not stop stop/target management for every trade.
+        features = features if isinstance(features, dict) else {}
         fee_bps = features.get("fee_bps", cfg.fee_bps)
         slippage_bps = features.get("slippage_bps", cfg.slippage_bps)
         # A stop at or beyond entry was set by breakeven/trailing management.

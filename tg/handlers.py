@@ -71,7 +71,8 @@ def is_owner_event(event, owner: str) -> bool:
 
 class OwnerOnlyMiddleware(BaseMiddleware):
     async def __call__(self, handler, event, data):
-        if not is_owner_event(event, load_settings().tg_chat_id):
+        from core.settings import cfg as live_cfg
+        if not is_owner_event(event, live_cfg.tg_chat_id):
             log_info(f"Telegram: ignored update from unauthorized chat {_chat_id(event)}")
             if isinstance(event, CallbackQuery):
                 try:
