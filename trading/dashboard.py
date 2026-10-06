@@ -174,7 +174,8 @@ def _overview(latest, scan_status, market, benchmarks, health):
     return {
         "generated_at": time.time(),
         "is_running": cfg.is_running,
-        "health": {k: v for k, v in (health or {}).items() if k in ("status", "reasons", "reason", "last_completed_at", "pending_deliveries")},
+        "health": dict({k: v for k, v in (health or {}).items() if k in ("status", "reasons", "reason", "details", "notes", "last_completed_at", "pending_deliveries")},
+                       problem_symbols={k: v[:30] for k, v in (((health or {}).get("scan") or {}).get("symbols") or {}).items() if k in ("stale", "failed")}),
         "scan": {k: scan_status.get(k) for k in ("selected", "processed", "cycle_seconds", "last_completed_at", "coverage", "htf")},
         "policy": {"timeframe": cfg.timeframe, "context_timeframe": cfg.context_timeframe, "min_score": cfg.min_signal_score,
                    "profile": cfg.strategy_profile, "version": STRATEGY_VERSION, "scan_all": cfg.scan_all_symbols,

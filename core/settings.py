@@ -133,6 +133,9 @@ class BotSettings(BaseModel):
     target_winrate_pct: float = Field(default=70, ge=50, le=95)
     target_min_trades: int = Field(default=100, ge=30)
     enable_system_summary: bool = True
+    scan_cycle_retention_days: int = Field(default=3, ge=1)
+    telemetry_retention_days: int = Field(default=14, ge=1)
+    journal_retention_days: int = Field(default=30, ge=7)
     system_summary_seconds: int = Field(default=14400,ge=300)
     # Diagnostic-only Telegram notices for high-quality setups one condition
     # short of a confirmed entry. These never enter the signal outbox.

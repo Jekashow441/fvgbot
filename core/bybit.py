@@ -121,6 +121,10 @@ def _cache_get(key: str) -> Optional[pd.DataFrame]:
     return None
 
 
+def invalidate_klines(symbol: str, interval: str, limit: int) -> None:
+    _CACHE.pop(f"{symbol}_{interval}_{max(3, min(int(limit), 1000))}", None)
+
+
 def _cache_set(key: str, df: pd.DataFrame) -> None:
     _CACHE[key] = {"time": time.time(), "df": df.copy()}
 

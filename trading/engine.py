@@ -8,7 +8,7 @@ from aiogram import Bot
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 from core.settings import cfg, reload_settings
-from core.bybit import get_klines_async, get_market_tickers, get_coin_microstructure
+from core.bybit import get_klines_async, get_market_tickers, get_coin_microstructure, invalidate_klines
 from core.database import get_active_signals, get_setting_text, set_setting_text
 from trading.context import closed_candles, ticker_context
 from trading.strategy import detect_fvg, detect_fvgs, validate_signal, market_context
@@ -78,15 +78,48 @@ def _pick_htf() -> Optional[str]:
         return str(timeframes[-1])
 
 
+INSUFFICIENT_HISTORY = "insufficient_closed_candles"
+
+
+def _crossed_boundary(df, interval: str, now_ms: int) -> bool:
+    step = int(interval)*60000
+    observed = df.attrs.get("observed_at_ms", now_ms)
+    return observed // step != now_ms // step
+
+
+async def load_closed(symbol: str, interval: str, limit: int, minimum: int):
+    """Raw frame plus validated closed candles. A request that started just before a candle
+    boundary cannot prove the new close, so it is refetched once instead of reported stale."""
+    df = await get_klines_async(symbol, interval, limit=limit)
+    if df.empty:
+        raise ValueError("empty_candles")
+    now = int(time.time()*1000)
+    try:
+        return df, decision_candles(df, interval, now, minimum)
+    except ValueError as exc:
+        if "stale" not in str(exc) or not _crossed_boundary(df, interval, now):
+            raise
+    invalidate_klines(symbol, interval, limit)
+    df = await get_klines_async(symbol, interval, limit=limit)
+    if df.empty:
+        raise ValueError("empty_candles")
+    return df, decision_candles(df, interval, int(time.time()*1000), minimum)
+
+
+def _htf_status(ctx: Optional[dict]) -> str:
+    if ctx and not ctx.get("error") and ctx.get("trend") != "UNKNOWN":
+        return "fresh"
+    if ctx and ctx.get("error") == INSUFFICIENT_HISTORY:
+        return "insufficient_history"
+    return "unavailable"
+
+
 async def _get_htf_context(symbol: str) -> tuple[Optional[str], Optional[dict]]:
     htf = _pick_htf()
     if not htf:
         return None, None
-    df_htf = await get_klines_async(symbol, htf, limit=max(cfg.ema_period + 61, 351))
-    if df_htf.empty:
-        return htf, None
     try:
-        closed = decision_candles(df_htf, htf, int(time.time()*1000), cfg.ema_period)
+        _, closed = await load_closed(symbol, htf, max(cfg.ema_period + 61, 351), cfg.ema_period)
         return htf, market_context(closed)
     except ValueError as exc:
         return htf, {"trend":"UNKNOWN", "error":str(exc)}
@@ -97,26 +130,26 @@ async def process_symbol(bot: Optional[Bot], symbol: str, *, emit_signal: bool =
     SCAN_RESULTS[symbol]={'outcome':'failed','reason':'incomplete_scan','started_at':time.time()}
     try:
         limit = max(cfg.ema_period + 61, cfg.fvg_lookback + 81, 351)
-        df = await get_klines_async(symbol, cfg.timeframe, limit=limit)
-        if df.empty:
-            SCAN_RESULTS[symbol]['reason']='empty_candles'
-            LATEST_DATA[symbol]={'signal':None,'blockers':['empty_candles'],'updated_at':datetime.now(timezone.utc).isoformat()}
+        try:
+            raw, closed = await load_closed(symbol, cfg.timeframe, limit, cfg.ema_period)
+        except ValueError as exc:
+            reason = str(exc)
+            # A fresh listing simply has no 200-bar history yet; that is not a data fault.
+            outcome = 'skipped' if reason == INSUFFICIENT_HISTORY else 'stale' if 'stale' in reason else 'failed'
+            SCAN_RESULTS[symbol].update(outcome=outcome, reason='insufficient_history' if outcome == 'skipped' else reason)
+            LATEST_DATA[symbol] = {"signal":None,"blockers":[reason],"status":"NEW_LISTING" if outcome == 'skipped' else "INVALID_CANDLES",
+                                   "updated_at":datetime.now(timezone.utc).isoformat()}
             return
 
-        current_price = observed_price(df, cfg.timeframe, time.time()*1000)
+        current_price = observed_price(raw, cfg.timeframe, time.time()*1000)
         if current_price is None:
             SCAN_RESULTS[symbol].update(outcome='stale',reason='stale_price')
             LATEST_DATA[symbol] = {"signal":None,"blockers":["stale_price"]}
             return
-        observed_frame = df.copy()
+        observed_frame = raw.copy()
         # Point observations cannot contain extrema that occurred before entry.
         await check_active_trades(bot, symbol, current_price, current_price)
-        try:
-            df = decision_candles(df, cfg.timeframe, int(time.time()*1000), cfg.ema_period)
-        except ValueError as exc:
-            SCAN_RESULTS[symbol].update(outcome='stale' if 'stale' in str(exc) else 'failed',reason=str(exc))
-            LATEST_DATA[symbol] = {"signal":None,"blockers":[str(exc)],"status":"INVALID_CANDLES"}
-            return
+        df = closed
         if df.empty:
             return
         if str(cfg.timeframe).isdigit() and time.time()*1000 - int(df.iloc[-1]["timestamp"]) > int(cfg.timeframe)*60000*2:
@@ -138,7 +171,7 @@ async def process_symbol(bot: Optional[Bot], symbol: str, *, emit_signal: bool =
         if cached.get("analysis_key") == analysis_key and not retry_execution and not force_reanalysis:
             LATEST_DATA[symbol]["current_price"] = current_price
             LATEST_DATA[symbol]['updated_at']=datetime.now(timezone.utc).isoformat()
-            SCAN_RESULTS[symbol]['htf']='unavailable' if (cached.get('htf_context') or {}).get('error') else ('fresh_cached' if cached.get('htf_context') else 'not_required')
+            SCAN_RESULTS[symbol]['htf']=('fresh_cached' if _htf_status(cached['htf_context'])=='fresh' else _htf_status(cached['htf_context'])) if cached.get('htf_context') else 'not_required'
             previous=LATEST_DATA[symbol].get('signal')
             if previous and previous.get('fvg'):
                 why=invalidation_reason(previous['fvg'],observed_frame,cfg.timeframe,time.time()*1000,previous.get('strict_ce',True))
@@ -163,7 +196,7 @@ async def process_symbol(bot: Optional[Bot], symbol: str, *, emit_signal: bool =
             return
 
         htf, htf_ctx = await _get_htf_context(symbol) if fvg else (None, None)
-        SCAN_RESULTS[symbol]['htf']='unavailable' if htf and (not htf_ctx or htf_ctx.get('error')) else 'fresh' if htf else 'not_required'
+        SCAN_RESULTS[symbol]['htf']=_htf_status(htf_ctx) if htf else 'not_required'
         signal = None
         blockers = []
         micro = None
@@ -176,7 +209,7 @@ async def process_symbol(bot: Optional[Bot], symbol: str, *, emit_signal: bool =
         if not allowed:
             blockers.append("risk_guard")
         if fvg and htf and (not htf_ctx or htf_ctx.get("trend") == "UNKNOWN"):
-            blockers.append("htf_unavailable_or_stale")
+            blockers.append("insufficient_history" if _htf_status(htf_ctx) == "insufficient_history" else "htf_unavailable_or_stale")
         base_blockers = list(blockers)
         assessments=assess_zones(df,zones,htf_ctx,MARKET_DATA.get(symbol),effective) if zones else {}
         if fvg and MARKET_DATA.get(symbol, {}).get("eligible") and allowed and (not htf or (htf_ctx and htf_ctx.get("trend") != "UNKNOWN")):
@@ -193,21 +226,22 @@ async def process_symbol(bot: Optional[Bot], symbol: str, *, emit_signal: bool =
                 if candidate:
                     # Detailed feeds are fetched only for actual strategy candidates.
                     if micro is None:
-                        raw,higher=await asyncio.gather(get_coin_microstructure(symbol),get_klines_async(symbol,'240',limit=260),return_exceptions=True)
+                        raw_book,higher=await asyncio.gather(get_coin_microstructure(symbol),load_closed(symbol,'240',260,cfg.ema_period),return_exceptions=True)
                         try:
-                            if isinstance(raw,Exception):raise raw
-                            micro = microstructure_context(raw)
+                            if isinstance(raw_book,Exception):raise raw_book
+                            micro = microstructure_context(raw_book)
                         except Exception as exc:
                             event('ORDERBOOK_UNAVAILABLE',symbol=symbol,error=type(exc).__name__)
                             micro = {"status": "UNAVAILABLE"}
                         try:
                             if isinstance(higher,Exception):raise higher
-                            coin["higher_4h"] = market_context(decision_candles(higher, "240", int(time.time()*1000), cfg.ema_period))
+                            coin["higher_4h"] = market_context(higher[1])
                             SCAN_RESULTS[symbol]['higher_4h']='fresh'
                         except Exception as exc:
+                            short_history = isinstance(exc,ValueError) and str(exc) == INSUFFICIENT_HISTORY
                             event('HTF_DATA_UNAVAILABLE',symbol=symbol,timeframe='240',error=type(exc).__name__,reason=str(exc) if isinstance(exc,ValueError) else 'request_failed')
-                            coin['higher_4h']={'trend':'UNKNOWN','error':type(exc).__name__}
-                            SCAN_RESULTS[symbol]['higher_4h']='unavailable'
+                            coin['higher_4h']={'trend':'UNKNOWN','error':INSUFFICIENT_HISTORY if short_history else type(exc).__name__}
+                            SCAN_RESULTS[symbol]['higher_4h']='insufficient_history' if short_history else 'unavailable'
                     active_trades = get_active_signals()
                     notional = position_notional(candidate["entry"], candidate["sl"], cfg.paper_balance, active_trades, cfg)
                     reasons = live_blockers(candidate["signal"], coin, BENCHMARKS.get("BTCUSDT", {}).get("trend"), MARKET_DATA.get(symbol, {}), micro, notional=notional)
@@ -215,7 +249,7 @@ async def process_symbol(bot: Optional[Bot], symbol: str, *, emit_signal: bool =
                     if candidate["signal"] == "LONG" and coin_headlines.get("critical"):
                         reasons.append("critical_negative_news")
                     if coin.get("higher_4h", {}).get("trend", "UNKNOWN") == "UNKNOWN":
-                        reasons.append("higher_4h_unavailable_or_stale")
+                        reasons.append("insufficient_history" if coin.get("higher_4h", {}).get("error") == INSUFFICIENT_HISTORY else "higher_4h_unavailable_or_stale")
                     if coin.get("higher_4h", {}).get("trend") == ("DOWN" if candidate["signal"] == "LONG" else "UP"):
                         reasons.append("higher_4h_opposition")
                     if sum(t["side"] == candidate["signal"] for t in active_trades) >= cfg.max_same_direction_positions:
@@ -485,11 +519,21 @@ async def _position_loop(bot):
 
 async def _recovery_loop():
     from trading.pipeline_recovery import reconcile
+    from trading.telemetry import prune
+    last_prune = 0.0
     while True:
         try:
             reconcile()
         except Exception as exc:
             log_info(f'Pipeline recovery: {type(exc).__name__}: {exc}')
+        if time.time()-last_prune > 3600:
+            try:
+                removed = prune(cfg)
+                if any(removed.values()):
+                    log_info(f'Telemetry retention: {removed}')
+            except Exception as exc:
+                log_info(f'Telemetry retention: {type(exc).__name__}: {exc}')
+            last_prune = time.time()
         await asyncio.sleep(30)
 
 

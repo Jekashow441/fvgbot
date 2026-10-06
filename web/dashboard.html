@@ -117,6 +117,10 @@ dialog::backdrop { background: rgba(0,0,0,.55); }
 .chk span { font-size: 12px; padding: 3px 8px; border-radius: 6px; }
 .chk .y { background: var(--green-bg); color: var(--green); } .chk .n { background: var(--red-bg); color: var(--red); }
 a { color: var(--accent); }
+.health-box { border-radius: 10px; padding: 10px 14px; margin-bottom: 14px; font-size: 13px; background: var(--amber-bg); color: var(--text); }
+.health-box.bad { background: var(--red-bg); }
+.health-box b { color: var(--amber); } .health-box.bad b { color: var(--red); }
+.health-box .sub { margin-top: 4px; }
 .brief-sum { font-size: 14px; margin-bottom: 10px; }
 .chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 4px 0 10px; }
 .chip { font-size: 12px; padding: 3px 8px; border-radius: 6px; background: var(--surface2); cursor: pointer; white-space: nowrap; }
@@ -145,7 +149,8 @@ a { color: var(--accent); }
     <span class="pill" id="conn-pill"><span class="dot"></span>Подключение…</span>
     <button class="icon" id="theme-btn" title="Переключить тему">Тема</button>
   </header>
-  <div class="sub" id="scan-line" style="margin:-8px 0 14px">—</div>
+  <div class="sub" id="scan-line" style="margin:-8px 0 10px">—</div>
+  <div class="health-box" id="health-box" hidden></div>
 
   <section class="kpis">
     <div class="kpi"><div class="lbl">Баланс (paper)</div><div class="val num" id="k-bal">—</div><div class="hint" id="k-bal-h"></div></div>
@@ -241,7 +246,7 @@ const REASONS = {
   stop_too_wide: 'Слишком широкий стоп', rsi_extreme: 'RSI экстремум', zone_exhausted: 'Зона отработана',
   prolonged_zone_residence: 'Цена застряла в зоне', volatility_shock: 'Шок волатильности', correlated_btc_opposition: 'BTC против',
   risk_guard: 'Risk guard (лимит)', benchmark_context_unavailable: 'Нет данных BTC/ETH', htf_unavailable_or_stale: 'Нет данных старшего ТФ',
-  same_direction_exposure_limit: 'Лимит позиций в сторону', expensive_crowded_funding: 'Дорогой funding', wide_spread: 'Широкий спред',
+  insufficient_history: 'Новая монета: мало истории',   same_direction_exposure_limit: 'Лимит позиций в сторону', expensive_crowded_funding: 'Дорогой funding', wide_spread: 'Широкий спред',
   market_breadth_opposition: 'Рынок против', insufficient_rr_after_costs: 'Мало R после комиссий', execution_price_moved: 'Цена ушла',
   continuation_not_confirmed: 'Продолжение не подтверждено', illiquid_market: 'Низкая ликвидность', ce_invalid: 'Цена за CE',
   previously_used_zone: 'Зона уже использована', backtest_pending: 'Бэктест в очереди', orderbook_unavailable: 'Стакан недоступен',
@@ -320,7 +325,19 @@ function render(o) {
   setPill('run-pill', o.is_running ? 'ok' : 'warn', o.is_running ? 'Сканирует' : 'Остановлен');
   const hs = o.health?.status || 'UNKNOWN';
   setPill('health-pill', {HEALTHY: 'ok', WARNING: 'warn', CRITICAL: 'bad'}[hs] || '', {HEALTHY: 'Система в норме', WARNING: 'Предупреждение', CRITICAL: 'Критично'}[hs] || hs);
-  $('health-pill').title = (o.health?.reasons || []).join(', ');
+  const details = o.health?.details || [];
+  $('health-pill').title = details.join('\n');
+  const hb = $('health-box');
+  if (hs !== 'HEALTHY' && details.length) {
+    const probs = Object.entries(o.health?.problem_symbols || {}).filter(([, v]) => v.length)
+      .map(([k, v]) => `${k === 'stale' ? 'устаревшие данные' : 'ошибка загрузки'}: ${v.slice(0, 12).map(esc).join(', ')}${v.length > 12 ? '…' : ''}`);
+    hb.hidden = false;
+    hb.className = 'health-box' + (hs === 'CRITICAL' ? ' bad' : '');
+    hb.innerHTML = `<b>${hs === 'CRITICAL' ? 'Проблема' : 'Почему предупреждение'}:</b> ${details.map(esc).join('; ')}${probs.length ? `<div class="sub">${probs.join(' · ')}</div>` : ''}`;
+  } else {
+    hb.hidden = true;
+  }
+  if (hs === 'HEALTHY' && (o.health?.notes || []).length) $('health-pill').title = o.health.notes.join('; ');
   const sc = o.scan || {}, p = o.policy || {};
   const cov = sc.coverage ? ` · свежих ${sc.coverage.fresh ?? '—'}, ошибок ${(sc.coverage.failed || 0) + (sc.coverage.stale || 0)}` : '';
   const done = sc.last_completed_at ? ago(Date.parse(sc.last_completed_at) / 1000) : '—';
