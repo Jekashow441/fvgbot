@@ -2,7 +2,7 @@ import time
 import json
 from typing import Dict, Any, Optional, Tuple
 
-from core.settings import cfg, save_settings
+from core.settings import cfg
 from core.database import log_signal, get_active_signals, get_stats, update_signal_levels
 from trading.logger import log_info
 from trading.position_risk import position_notional
@@ -230,8 +230,9 @@ async def check_active_trades(bot: Optional[Any], symbol: str, current_high: flo
         settled = settle(t['id'],outcome,close_price,pnl_pct,exit_reason,cfg.paper_balance)
         if settled is None:
             continue
+        # The ledger is authoritative and reload_settings() reads it; rewriting the whole
+        # config file here could revert a setting changed from Telegram meanwhile.
         pnl_usdt,cfg.paper_balance=settled
-        save_settings(cfg)
         from trading.setup_journal import record_trade_result
         record_trade_result(features.get('journal_id'),exit_reason,pnl_pct)
 

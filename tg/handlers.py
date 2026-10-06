@@ -322,11 +322,13 @@ async def cb_change_loss_cooldown(call: CallbackQuery):
 
 @router.callback_query(F.data == "show_balance")
 async def cb_show_balance(call: CallbackQuery):
+    from trading.paper_account import balance as ledger_balance
     cfg = load_settings()
+    stored = ledger_balance()
     await call.answer()
     await _safe_edit_text(
         call.message,
-        f"💰 <b>Virtual Balance:</b> {cfg.paper_balance:.2f} USDT\n<i>Use /balance &lt;amount&gt; to change it.</i>",
+        f"💰 <b>Virtual Balance:</b> {(cfg.paper_balance if stored is None else stored):.2f} USDT\n<i>Use /balance &lt;amount&gt; to change it.</i>",
         reply_markup=InlineKeyboardMarkup(inline_keyboard=[[InlineKeyboardButton(text="🔙 Back", callback_data="main_menu")]])
     )
 
