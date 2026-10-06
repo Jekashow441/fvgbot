@@ -6,7 +6,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 import pandas as pd
 from core.settings import cfg
 from trading.context import closed_candles, ticker_context, structure_context
-from trading.strategy import detect_fvgs, _calc_rsi, _calc_adx, _score_signal, validate_signal
+from trading.strategy import detect_fvgs, _calc_rsi, _calc_adx, _score_signal, validate_signal, _safe_dynamic_rr
 from trading.backtest import metrics, run_backtest
 
 
@@ -222,6 +222,16 @@ class StrategyTests(unittest.TestCase):
         self.assertEqual(near["tp"], base["tp"])
         self.assertEqual(near["score"], max(0, base["score"] - 10))
         self.assertIn("opposing_liquidity_near", near["factors"])
+
+    def test_dynamic_rr_uses_relative_volatility_not_raw_atr_pct(self):
+        s = cfg.model_copy(deep=True)
+        s.dynamic_rr, s.rr_min, s.rr_max, s.adx_strong = True, 1.0, 5.0, 99
+        # 0.2% ATR on a 5m chart used to pin the factor to 0.75 regardless of conditions.
+        self.assertAlmostEqual(_safe_dynamic_rr(3, 0.2, 100, None, s), 3.0)
+        self.assertAlmostEqual(_safe_dynamic_rr(3, 0.2, 100, None, s, atr_ratio=1.2), 3.6)
+        self.assertAlmostEqual(_safe_dynamic_rr(3, 0.2, 100, None, s, atr_ratio=0.5), 2.25)
+        s.dynamic_rr = False
+        self.assertEqual(_safe_dynamic_rr(3, 0.2, 100, None, s, atr_ratio=1.4), 3)
 
 
 if __name__ == "__main__":

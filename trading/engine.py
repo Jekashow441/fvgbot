@@ -250,7 +250,7 @@ async def process_symbol(bot: Optional[Bot], symbol: str, *, emit_signal: bool =
                         raw_book,higher=await asyncio.gather(get_coin_microstructure(symbol),load_closed(symbol,'240',260,cfg.ema_period),return_exceptions=True)
                         try:
                             if isinstance(raw_book,Exception):raise raw_book
-                            micro = microstructure_context(raw_book)
+                            micro = microstructure_context(raw_book, now_ms=int(time.time()*1000))
                         except Exception as exc:
                             event('ORDERBOOK_UNAVAILABLE',symbol=symbol,error=type(exc).__name__)
                             micro = {"status": "UNAVAILABLE"}

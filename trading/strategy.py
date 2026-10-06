@@ -149,15 +149,18 @@ def detect_fvg(df: pd.DataFrame) -> Optional[Dict]:
     return zones[0] if zones else None
 
 
-def _safe_dynamic_rr(base_rr: float, atr: float, price: float, adx: Optional[float], settings=None) -> float:
+def _safe_dynamic_rr(base_rr: float, atr: float, price: float, adx: Optional[float], settings=None,
+                     atr_ratio: Optional[float] = None) -> float:
     cfg = settings or default_cfg
     if price <= 0 or pd.isna(atr) or atr <= 0:
         return float(base_rr)
     if not cfg.dynamic_rr:
         return float(base_rr)
 
-    volatility_pct = atr / price * 100
-    vol_factor = max(0.75, min(volatility_pct, 1.4))
+    # Volatility relative to the coin's own normal range. Raw ATR% is timeframe-dependent
+    # (almost always < 0.75% on 5m), which pinned the old factor to its floor.
+    ratio = atr_ratio if atr_ratio is not None and np.isfinite(atr_ratio) and atr_ratio > 0 else 1.0
+    vol_factor = max(0.75, min(ratio, 1.4))
     trend_factor = 1.1 if adx is not None and adx >= cfg.adx_strong else 1.0
     rr = base_rr * vol_factor * trend_factor
     return float(min(cfg.rr_max, max(cfg.rr_min, rr)))
@@ -357,7 +360,9 @@ def validate_signal(df: pd.DataFrame, fvg: Optional[Dict], htf_ctx: Optional[Dic
         return reject("invalid_risk")
     if cfg.sl_max_atr > 0 and risk > float(atr * cfg.sl_max_atr):
         return reject("stop_too_wide")
-    rr = _safe_dynamic_rr(cfg.risk_reward, atr, last_close, adx, cfg)
+    typical_atr = df["atr"].tail(100).median()
+    rr = _safe_dynamic_rr(cfg.risk_reward, atr, last_close, adx, cfg,
+                          atr_ratio=float(atr/typical_atr) if typical_atr and typical_atr > 0 else None)
     levels = liquidity_levels(df, cfg.structure_pivot)
     score, factors = _score_signal(side, fvg, ctx, htf_ctx, rsi, adx, cfg, structure=structure,
                                    trendline_retest=lines["bullish_retest" if side == "LONG" else "bearish_retest"],
