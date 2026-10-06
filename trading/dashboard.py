@@ -70,6 +70,7 @@ def live_signals(latest, limit=20):
             "factors": [f for f in sig.get("factors") or [] if isinstance(f, str)],
             "generated_at": sig.get("generated_at"), "paper_opened": sig.get("paper_opened"),
             "paper_skip_reason": sig.get("paper_skip_reason"),
+            "history": sig.get("history_estimate"), "learning_adjustment": sig.get("learning_adjustment"),
         })
     signals.sort(key=lambda s: -(s.get("generated_at") or 0))
     return signals[:limit]

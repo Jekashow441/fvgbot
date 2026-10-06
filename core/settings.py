@@ -102,6 +102,8 @@ class BotSettings(BaseModel):
     news_max_age_hours: int = Field(default=24, ge=1, le=168)
     news_blackout_minutes: int = Field(default=60, ge=5)
     news_require_coverage: bool = True
+    enable_shadow_learning: bool = True
+    shadow_max_hold_bars: int = Field(default=48, ge=6, le=500)
     enable_coin_news: bool = True
     coin_news_interval_seconds: float = Field(default=4, ge=1)
     coin_news_priority_ttl_minutes: int = Field(default=15, ge=5)

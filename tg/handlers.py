@@ -564,3 +564,17 @@ async def cmd_coin(message: Message, command: CommandObject):
     c = commentary(symbol, LATEST_DATA[symbol], news_context(symbol))
     text = f"<b>{escape(symbol)}</b>\n" + "\n".join(escape(x) for x in c["lines"]) + f"\n\n<b>Вывод:</b> {escape(c['verdict'])}"
     await message.answer(text[:4000], parse_mode="HTML")
+
+
+@router.message(Command("learning"))
+async def cmd_learning(message: Message):
+    from trading.learning import learning_summary
+    data = learning_summary()
+    shadow = data["shadow"]
+    lines = ["<b>Самообучение</b>", f"Теневые сделки: открыто {shadow['open']}, закрыто {shadow['closed']}."]
+    lines += [escape(x) for x in data["insights"]]
+    useful = [b for b in data["blockers"] if b["blocker"] != "__passed__" and b["trades"] >= 10][:6]
+    if useful:
+        lines.append("\n<b>Фильтры</b>")
+        lines += [f"• {escape(b['blocker'])}: {b['trades']} шт., {b['avg_r']:+.2f}R — {escape(b['verdict'])}" for b in useful]
+    await message.answer("\n".join(lines)[:4000], parse_mode="HTML")

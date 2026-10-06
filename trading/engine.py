@@ -31,6 +31,7 @@ from trading.setup_assessment import assess_zones
 from trading.decision_memory import assess_context, settings_key
 from trading.telemetry import event,record_cycle,heartbeat
 from trading.market_watch import observe as market_observe
+from trading import shadow
 
 LATEST_DATA = {}
 SENT_SIGNALS = {}
@@ -149,6 +150,8 @@ async def process_symbol(bot: Optional[Bot], symbol: str, *, emit_signal: bool =
         observed_frame = raw.copy()
         # Point observations cannot contain extrema that occurred before entry.
         await check_active_trades(bot, symbol, current_price, current_price)
+        if cfg.enable_shadow_learning:
+            shadow.update(symbol, current_price)
         df = closed
         if df.empty:
             return
@@ -319,12 +322,14 @@ async def process_symbol(bot: Optional[Bot], symbol: str, *, emit_signal: bool =
                 set_setting_text("signal:" + signal_id, "opened")
                 SENT_SIGNALS[symbol] = {signal_id}
 
+        if cfg.enable_shadow_learning:
+            track_shadows(symbol, zones, assessments, base_blockers, signal, news)
         before = dict(LATEST_DATA.get(symbol) or {})
         LATEST_DATA.setdefault(symbol, {})
         LATEST_DATA[symbol].update({
             "fvg": fvg,
             "zones": zones,
-            "assessments": {key:{k:v for k,v in a.items() if k!='candidate'} for key,a in assessments.items()},
+            "assessments": {key:{k:v for k,v in a.items() if k not in ('candidate','shadow')} for key,a in assessments.items()},
             "signal": signal,
             "signal_created": signal_created,
             "current_price": current_price,
@@ -465,7 +470,8 @@ async def _scan_loop(bot: Optional[Bot]) -> None:
         if cfg.enable_coin_research:
             for symbol in selected:
                 request_research(symbol)
-        symbols = list(dict.fromkeys(list(selected) + [t["symbol"] for t in get_active_signals()]))
+        symbols = list(dict.fromkeys(list(selected) + [t["symbol"] for t in get_active_signals()]
+                                     + (shadow.open_symbols() if cfg.enable_shadow_learning else [])))
         for stale_symbol in set(LATEST_DATA)-set(symbols):
             LATEST_DATA.pop(stale_symbol,None)
             SCAN_RESULTS.pop(stale_symbol,None)
@@ -535,6 +541,30 @@ async def _recovery_loop():
                 log_info(f'Telemetry retention: {type(exc).__name__}: {exc}')
             last_prune = time.time()
         await asyncio.sleep(30)
+
+
+def track_shadows(symbol: str, zones: list, assessments: dict, base_blockers: list, signal: Optional[dict], news: dict) -> None:
+    """Follow every valid setup virtually so learning sees what each filter cost or saved."""
+    chosen = (signal or {}).get("journal_id")
+    tone = ((news or {}).get("coin") or {}).get("sentiment")
+    for zone in zones:
+        key = setup_id(symbol, cfg.timeframe, zone)
+        a = assessments.get(str(zone['candle_time'])+zone['type']) or {}
+        raw = a.get('shadow')
+        if not raw:
+            continue
+        if key == chosen:
+            blockers = []
+        elif a.get('execution_rejections'):
+            blockers = list(a['execution_rejections'])
+        else:
+            blockers = list(base_blockers) or (["lower_ranked_zone"] if chosen else [])
+        if raw['score'] < cfg.min_signal_score:
+            blockers.append("score_below_threshold")
+        try:
+            shadow.track(symbol, key, raw, blockers, {"news_sentiment": tone})
+        except Exception as exc:
+            event('SHADOW_TRACK_FAILED', symbol=symbol, error=type(exc).__name__)
 
 
 def news_priority_symbols() -> list:

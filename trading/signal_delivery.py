@@ -102,6 +102,15 @@ def mark(signal_id, state, error=None, delay=0):
     if error:event('SIGNAL_DELIVERY_FAILED',signal_id,state=state,error=error,retry_delay=delay)
 
 
+def history_line(estimate, adjustment=None):
+    if not estimate or estimate.get('win_rate_est') is None:
+        return "История похожих сетапов: данных пока мало\n"
+    level = {'context': 'тот же сетап и режим', 'setup': 'тот же тип сетапа', 'side': 'та же сторона'}.get(estimate.get('level'), '')
+    tail = f", самообучение {adjustment:+d} к score" if adjustment else ""
+    return (f"История похожих ({level}, {estimate['trades']} шт.): успех ~{estimate['win_rate_est']:.0f}%, "
+            f"в среднем {estimate['avg_r']:+.2f}R{tail}\n")
+
+
 def news_line(coin):
     if not coin or not coin.get('count'):
         return "Новости по монете: заметных заголовков не найдено\n"
@@ -124,6 +133,7 @@ def format_signal(symbol, signal, manual=False):
             f"Проверка: {escape(signal.get('evidence', 'unverified_paper'))}\n"
             f"Новости: {escape(signal.get('news', {}).get('coverage', 'UNKNOWN'))}\n"
             + news_line(signal.get('news', {}).get('coin'))
+            + history_line(signal.get('history_estimate'), signal.get('learning_adjustment'))
             + ("Повторный просмотр анализа; новая paper-сделка не создаётся." if manual else "Исследовательский сигнал; прибыльность не гарантирована."))
 
 

@@ -195,6 +195,11 @@ a { color: var(--accent); }
   </div>
 
   <div class="card" style="margin-bottom:16px">
+    <div class="card-h"><h2>Самообучение</h2><span class="sub" id="learn-sub"></span></div>
+    <div id="learning"><div class="empty">Загрузка…</div></div>
+  </div>
+
+  <div class="card" style="margin-bottom:16px">
     <div class="card-h">
       <h2>Наблюдение за сетапами</h2>
       <div class="toolbar">
@@ -246,7 +251,7 @@ const REASONS = {
   stop_too_wide: 'Слишком широкий стоп', rsi_extreme: 'RSI экстремум', zone_exhausted: 'Зона отработана',
   prolonged_zone_residence: 'Цена застряла в зоне', volatility_shock: 'Шок волатильности', correlated_btc_opposition: 'BTC против',
   risk_guard: 'Risk guard (лимит)', benchmark_context_unavailable: 'Нет данных BTC/ETH', htf_unavailable_or_stale: 'Нет данных старшего ТФ',
-  insufficient_history: 'Новая монета: мало истории',   same_direction_exposure_limit: 'Лимит позиций в сторону', expensive_crowded_funding: 'Дорогой funding', wide_spread: 'Широкий спред',
+  insufficient_history: 'Новая монета: мало истории', lower_ranked_zone: 'Выбрана зона получше',   same_direction_exposure_limit: 'Лимит позиций в сторону', expensive_crowded_funding: 'Дорогой funding', wide_spread: 'Широкий спред',
   market_breadth_opposition: 'Рынок против', insufficient_rr_after_costs: 'Мало R после комиссий', execution_price_moved: 'Цена ушла',
   continuation_not_confirmed: 'Продолжение не подтверждено', illiquid_market: 'Низкая ликвидность', ce_invalid: 'Цена за CE',
   previously_used_zone: 'Зона уже использована', backtest_pending: 'Бэктест в очереди', orderbook_unavailable: 'Стакан недоступен',
@@ -374,6 +379,7 @@ function render(o) {
         <span class="grow"></span><span class="pill info">Score ${esc(g.score)}</span></div>
       <div class="lv num"><div><span>Вход</span><b>${price(g.entry)}</b></div><div><span>Стоп</span><b>${price(g.sl)}</b></div><div><span>Цель</span><b>${price(g.tp)}</b></div><div><span>R:R</span><b>${fmt(g.rr)}</b></div></div>
       <div class="tags">${(g.factors || []).slice(0, 10).map(f => `<span class="tag">${esc(f)}</span>`).join('')}</div>
+      ${g.history?.win_rate_est != null ? `<div class="sub" style="margin-top:6px">История похожих: успех ~${fmt(g.history.win_rate_est, 0)}% (${g.history.trades} шт., ${signed(g.history.avg_r, 2, 'R')})${g.learning_adjustment ? ' · самообучение ' + (g.learning_adjustment > 0 ? '+' : '') + g.learning_adjustment : ''}</div>` : ''}
       <div class="sub" style="margin-top:6px">${ago(g.generated_at)} · ${g.paper_opened ? 'paper-сделка открыта' : g.paper_skip_reason ? 'не открыта: ' + esc(reason(g.paper_skip_reason)) : 'paper: лимит позиций'}</div>
     </div>`).join('') : '<div class="empty">Сейчас ни один сетап не прошёл все фильтры</div>';
 
@@ -484,6 +490,30 @@ async function loadBrief() {
 }
 loadBrief();
 setInterval(loadBrief, 10000);
+
+// What the bot learned from shadow outcomes
+async function loadLearning() {
+  try {
+    const d = await (await fetch('/api/factors')).json();
+    $('learn-sub').textContent = `теневые сделки: открыто ${d.shadow.open}, закрыто ${d.shadow.closed}`;
+    const factorRow = f => `<tr class="static"><td>${esc(f.factor)}</td><td class="num">${f.trades}</td><td class="num">${f.win_rate == null ? '—' : fmt(f.win_rate, 0) + '%'}</td><td class="num">${signed(f.avg_r, 2, 'R')}</td><td class="num">${signed(f.effect_r, 2, 'R')}</td></tr>`;
+    const factors = (d.factors || []).filter(f => f.sample_ok).sort((a, b) => b.effect_r - a.effect_r);
+    const blockers = (d.blockers || []).filter(b => b.blocker !== '__passed__').slice(0, 10);
+    const passed = (d.blockers || []).find(b => b.blocker === '__passed__');
+    $('learning').innerHTML = `<div class="opinion" style="margin-bottom:12px">${(d.insights || []).map(l => `<p>${esc(l)}</p>`).join('')}
+        ${passed ? `<p>Сетапы, прошедшие все фильтры: ${passed.trades} шт., win rate ${fmt(passed.win_rate, 0)}%, в среднем ${signed(passed.avg_r, 2, 'R')}.</p>` : ''}</div>
+      <div class="grid g-1-1" style="margin:0">
+        <div><div class="mini-h">Факторы (влияние против среднего, с поправкой на малую выборку)</div><div class="table-wrap"><table>
+          <thead><tr><th>Фактор</th><th class="num">Сделок</th><th class="num">Win</th><th class="num">Средн.</th><th class="num">Эффект</th></tr></thead>
+          <tbody>${factors.length ? factors.map(factorRow).join('') : '<tr class="static"><td colspan="5" class="empty">Нужно больше закрытых теневых сделок</td></tr>'}</tbody></table></div></div>
+        <div><div class="mini-h">Фильтры: что было бы с отсечёнными сетапами</div><div class="table-wrap"><table>
+          <thead><tr><th>Фильтр</th><th class="num">Сделок</th><th class="num">Средн.</th><th>Вывод</th></tr></thead>
+          <tbody>${blockers.length ? blockers.map(b => `<tr class="static"><td>${esc(reason(b.blocker))}</td><td class="num">${b.trades}</td><td class="num">${signed(b.avg_r, 2, 'R')}</td><td class="sub" style="white-space:normal">${esc(b.verdict)}</td></tr>`).join('') : '<tr class="static"><td colspan="4" class="empty">Пока нет данных</td></tr>'}</tbody></table></div></div>
+      </div>`;
+  } catch (e) { console.error(e); }
+}
+loadLearning();
+setInterval(loadLearning, 60000);
 
 // WebSocket with reconnect; HTTP polling as fallback while disconnected.
 let ws, retry = 1000, poll;

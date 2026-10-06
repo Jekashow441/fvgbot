@@ -12,13 +12,18 @@ def assess_zones(df,zones,htf,market,settings):
     location=liquidity_levels(df,settings.structure_pivot)['range_position']
     rvol=float(df.iloc[-1].volume)/baseline if baseline>0 else None
     result={}
+    # Validate without the score gate so sub-threshold setups can still be shadow-tracked.
+    relaxed=settings.model_copy(update={'min_signal_score':0})
     for zone in zones:
         side='LONG' if zone['type']=='BULLISH' else 'SHORT'
         expected='UP' if side=='LONG' else 'DOWN'
         score,factors=_score_signal(side,zone,ctx,htf,ctx.get('rsi'),ctx.get('adx'),settings,structure=structure,
                                     trendline_retest=lines['bullish_retest' if side=='LONG' else 'bearish_retest'],relative_volume=rvol,range_position=location)
         diagnostics={}
-        candidate=validate_signal(df,zone,htf,market,settings=settings,diagnostics=diagnostics)
+        shadow=validate_signal(df,zone,htf,market,settings=relaxed,diagnostics=diagnostics)
+        candidate=shadow if shadow and shadow['score']>=settings.min_signal_score else None
+        if shadow and candidate is None:
+            diagnostics['score_below_threshold']=1
         # These limits cannot recover on a later candle for the same zone.
         # Record them even when validation exits earlier on a missing retest.
         exhausted=zone.get('touches',0)>2 or zone.get('touch_bars',0)>settings.fvg_max_touch_bars
@@ -40,7 +45,7 @@ def assess_zones(df,zones,htf,market,settings):
                 stage='POTENTIAL'
                 if atr>0 and distance<=.25*atr:
                     stage='ENTRY APPROACHING'
-        result[str(zone['candle_time'])+zone['type']]={'score':score,'score_kind':'pre-learning rule score','candidate':candidate,
+        result[str(zone['candle_time'])+zone['type']]={'score':score,'score_kind':'pre-learning rule score','candidate':candidate,'shadow':shadow,
             'status':stage,'signal_may_form':may_form,'checks':checks,'structure':structure,'current_price':price,
             'rejections':list(diagnostics),'analysis_bar':int(df.iloc[-1].timestamp),
             'required_next_conditions':['Retest after FVG formation within the configured closed-bar window.',
