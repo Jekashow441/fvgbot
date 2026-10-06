@@ -187,7 +187,14 @@ async def check_active_trades(bot: Optional[Any], symbol: str, current_high: flo
         entry_price = float(t["entry"])
         tp = float(t["tp"])
         side = t["side"]
-        sl, managed_reason = float(t["sl"]), ""
+        sl = float(t["sl"])
+        features = json.loads(t.get("ml_features") or "{}")
+        fee_bps = features.get("fee_bps", cfg.fee_bps)
+        slippage_bps = features.get("slippage_bps", cfg.slippage_bps)
+        # A stop at or beyond entry was set by breakeven/trailing management.
+        be_offset = entry_price*2*(fee_bps+slippage_bps)/10000 if features.get("execution_version") == "cost_aware_v1" else 0.0
+        locked_offset = (sl - entry_price) if side == "LONG" else (entry_price - sl)
+        managed_reason = "" if locked_offset < 0 else "BE" if locked_offset <= be_offset*(1+1e-9) else "TRAIL"
 
         is_closed = False
         pnl_pct = 0.0
@@ -214,9 +221,7 @@ async def check_active_trades(bot: Optional[Any], symbol: str, current_high: flo
             _manage_exit_levels(t, current_high, current_low)
             continue
 
-        import json
-        features = json.loads(t.get("ml_features") or "{}")
-        costs = 2 * (features.get("fee_bps", cfg.fee_bps) + features.get("slippage_bps", cfg.slippage_bps)) / 100
+        costs = 2 * (fee_bps + slippage_bps) / 100
         pnl_pct -= costs
         if abs(pnl_pct) < 1e-10:
             pnl_pct = 0.0  # Floating-point dust is not a winning trade.

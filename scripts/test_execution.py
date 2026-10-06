@@ -48,6 +48,21 @@ class ExecutionTests(unittest.TestCase):
         finally:
             cfg.paper_balance = saved
 
+    def test_managed_stop_exit_is_labeled_trail_or_be(self):
+        from trading import paper_trading as paper
+        from core.settings import cfg
+        saved = cfg.paper_balance
+        features = json.dumps({"position_size_usdt": 1000, "execution_version": "cost_aware_v1", "fee_bps": 5, "slippage_bps": 0})
+        cases = [(99, "SL"), (100.1, "BE"), (101.5, "TRAIL")]
+        try:
+            for stop, expected in cases:
+                trade = dict(id=1, symbol="TESTUSDT", side="LONG", entry=100, sl=stop, tp=103, ml_features=features)
+                with patch.object(paper, "get_active_signals", return_value=[trade]), patch.object(paper, "settle", return_value=(0, saved)) as close, patch.object(paper, "save_settings"):
+                    asyncio.run(paper.check_active_trades(None, "TESTUSDT", stop-0.5, stop-0.5))
+                    self.assertEqual(close.call_args.args[4], expected)
+        finally:
+            cfg.paper_balance = saved
+
 
 if __name__ == "__main__":
     # Import the module with its legacy init_db side effect isolated too.

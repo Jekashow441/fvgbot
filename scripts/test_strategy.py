@@ -6,7 +6,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 import pandas as pd
 from core.settings import cfg
 from trading.context import closed_candles, ticker_context, structure_context
-from trading.strategy import detect_fvgs, _calc_rsi, validate_signal
+from trading.strategy import detect_fvgs, _calc_rsi, _calc_adx, _score_signal, validate_signal
 from trading.backtest import metrics, run_backtest
 
 
@@ -164,6 +164,37 @@ class StrategyTests(unittest.TestCase):
             result = run_backtest(d)
         self.assertEqual(result["all"]["trades"], 1)
         self.assertGreater(result["all"]["net_r"], 0)
+
+    def test_wilder_adx_separates_trend_from_chop(self):
+        trend = candles(120)
+        trend.close = [100 + i for i in range(120)]
+        trend.open, trend.high, trend.low = trend.close - .5, trend.close + 1, trend.close - 1
+        chop = candles(120)
+        chop.close = [100 + (1 if i % 2 else -1) for i in range(120)]
+        chop.open, chop.high, chop.low = 100., chop.close.clip(lower=100) + .5, chop.close.clip(upper=100) - .5
+        self.assertGreater(_calc_adx(trend).iloc[-1], 50)
+        self.assertLess(_calc_adx(chop).iloc[-1], 20)
+
+    def test_score_rewards_smc_confluence(self):
+        zone = {"gap_size": 0, "touches": 1, "fill_fraction": .2, "displacement_atr": 2}
+        base, _ = _score_signal("LONG", {"gap_size": 0, "touches": 2, "fill_fraction": .8}, {}, None, None, None)
+        score, factors = _score_signal("LONG", zone, {}, None, None, None,
+                                       structure={"direction": "UP", "sweep": "SELL_SIDE"},
+                                       trendline_retest=True, relative_volume=2)
+        self.assertEqual(score - base, 8 + 8 + 8 + 5 + 5 + 5)
+        for tag in ("structure_up", "liquidity_sweep", "trendline_retest", "fresh_zone", "strong_displacement", "high_rvol"):
+            self.assertIn(tag, factors)
+        _, opposite = _score_signal("SHORT", zone, {}, None, None, None, structure={"direction": "UP", "sweep": "SELL_SIDE"})
+        self.assertNotIn("liquidity_sweep", opposite)
+        self.assertNotIn("structure_up", opposite)
+
+    def test_sweep_of_older_unbroken_swing_low(self):
+        d = candles(20)
+        # The latest swing (95) is below the wick; only the older 97 pool is swept.
+        d.loc[4, "low"] = 97
+        d.loc[11, "low"] = 95
+        d.loc[19, ["open", "low", "close"]] = [100, 96, 100.5]
+        self.assertEqual(structure_context(d, 3)["sweep"], "SELL_SIDE")
 
 
 if __name__ == "__main__":

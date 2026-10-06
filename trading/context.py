@@ -43,10 +43,12 @@ def structure_context(df, pivot=3):
             broken_low.add(lows[-1][0])
     last = df.iloc[-1] if len(df) else None
     sweep = None
-    if last is not None and lows and last.low < lows[-1][1] < last.close:
-        sweep = "SELL_SIDE"
-    if last is not None and highs and last.high > highs[-1][1] > last.close:
-        sweep = "BUY_SIDE"
+    # Resting liquidity can sit at any recent unbroken swing, not only the latest one.
+    if last is not None:
+        if any(last.low < level < last.close for k, level in lows[-3:] if k not in broken_low):
+            sweep = "SELL_SIDE"
+        if any(last.high > level > last.close for k, level in highs[-3:] if k not in broken_high):
+            sweep = "BUY_SIDE"
     return {"direction": direction, "event": event, "sweep": sweep,
             "swing_high": highs[-1][1] if highs else None,
             "swing_low": lows[-1][1] if lows else None}

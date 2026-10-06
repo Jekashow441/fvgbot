@@ -203,17 +203,18 @@ async def process_symbol(bot: Optional[Bot], symbol: str, *, emit_signal: bool =
                         assessments[str(zone['candle_time'])+zone['type']]['execution_rejections']=list(dict.fromkeys(reasons+base_blockers))
                         blockers = list(dict.fromkeys(blockers + reasons))
                         continue
-                    current_price = micro["ask"] if candidate["signal"] == "LONG" else micro["bid"]
+                    exec_price = micro["ask"] if candidate["signal"] == "LONG" else micro["bid"]
                     # Reprice at the observed executable-side estimate; keep structural levels.
                     side = candidate["signal"]
-                    risk = current_price-candidate["sl"] if side == "LONG" else candidate["sl"]-current_price
-                    reward = candidate["tp"]-current_price if side == "LONG" else current_price-candidate["tp"]
-                    execution_reason = entry_rejection(candidate, current_price, cfg)
+                    risk = exec_price-candidate["sl"] if side == "LONG" else candidate["sl"]-exec_price
+                    reward = candidate["tp"]-exec_price if side == "LONG" else exec_price-candidate["tp"]
+                    execution_reason = entry_rejection(candidate, exec_price, cfg)
                     if execution_reason:
-                        event('ENTRY_PRICE_REJECTED',setup_id(symbol,cfg.timeframe,zone),symbol=symbol,reason=execution_reason,observed_price=current_price,signal_entry=candidate['entry'],sl=candidate['sl'],tp=candidate['tp'])
+                        event('ENTRY_PRICE_REJECTED',setup_id(symbol,cfg.timeframe,zone),symbol=symbol,reason=execution_reason,observed_price=exec_price,signal_entry=candidate['entry'],sl=candidate['sl'],tp=candidate['tp'])
                         assessments[str(zone['candle_time'])+zone['type']]['execution_rejections']=[execution_reason]
                         blockers.append(execution_reason)
                         continue
+                    current_price = exec_price
                     candidate.update(entry=current_price, rr=reward/risk, timeframe=cfg.timeframe, strategy_version=STRATEGY_VERSION, strategy_profile=cfg.strategy_profile,
                                      execution_version="cost_aware_v1", settings_fingerprint=settings_key(cfg),
                                      evidence="historical_qualified" if qualification["status"] == "PASS" else "unverified_paper",

@@ -8,13 +8,14 @@ def assess_zones(df,zones,htf,market,settings):
     structure=structure_context(df,settings.structure_pivot)
     atr=(ctx.get('atr_pct') or 0)*float(df.iloc[-1].close)/100
     lines=trendline_context(df,settings.structure_pivot,atr,settings.trendline_tolerance_atr)
+    baseline=float(df.volume.iloc[-21:-1].mean())
+    rvol=float(df.iloc[-1].volume)/baseline if baseline>0 else None
     result={}
     for zone in zones:
         side='LONG' if zone['type']=='BULLISH' else 'SHORT'
         expected='UP' if side=='LONG' else 'DOWN'
-        score,factors=_score_signal(side,zone,ctx,htf,ctx.get('rsi'),ctx.get('adx'),settings)
-        if lines['bullish_retest' if side=='LONG' else 'bearish_retest']:
-            score=min(100,score+8)
+        score,factors=_score_signal(side,zone,ctx,htf,ctx.get('rsi'),ctx.get('adx'),settings,structure=structure,
+                                    trendline_retest=lines['bullish_retest' if side=='LONG' else 'bearish_retest'],relative_volume=rvol)
         diagnostics={}
         candidate=validate_signal(df,zone,htf,market,settings=settings,diagnostics=diagnostics)
         # These limits cannot recover on a later candle for the same zone.
