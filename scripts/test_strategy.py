@@ -233,6 +233,23 @@ class StrategyTests(unittest.TestCase):
         s.dynamic_rr = False
         self.assertEqual(_safe_dynamic_rr(3, 0.2, 100, None, s, atr_ratio=1.4), 3)
 
+    def test_target_is_built_from_expected_fill(self):
+        cfg.require_structure = False
+        cfg.ema_period = 200
+        cfg.sl_max_atr = 0
+        cfg.min_signal_score = 0
+        cfg.rsi_overbought = 100
+        cfg.max_entry_distance_atr = 5
+        cfg.dynamic_rr, cfg.risk_reward, cfg.rr_min, cfg.rr_max = False, 2.0, 1.0, 5.0
+        cfg.slippage_bps = 2
+        d = self.zone_data()
+        zone = detect_fvgs(d)[0]
+        d.loc[44, ["open", "low", "close"]] = [102.5, 102, 103.5]
+        with patch("trading.strategy.liquidity_levels", return_value={"above": [], "below": [], "range_position": .4}):
+            sig = validate_signal(d, zone, market={"eligible": True, "spread_bps": 10})
+        fill = sig["entry"] * (1 + 5 / 10000)  # half of a 10 bps spread beats the 2 bps slippage floor
+        self.assertAlmostEqual((sig["tp"] - fill) / (fill - sig["sl"]), 2.0)
+
 
 if __name__ == "__main__":
     unittest.main()

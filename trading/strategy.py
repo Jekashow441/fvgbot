@@ -368,13 +368,18 @@ def validate_signal(df: pd.DataFrame, fvg: Optional[Dict], htf_ctx: Optional[Dic
                                    trendline_retest=lines["bullish_retest" if side == "LONG" else "bearish_retest"],
                                    relative_volume=relative_volume, range_position=levels["range_position"])
     factors += extra_factors
-    tp = last_close + direction * risk * rr
+    # Build the target from the expected fill (half the spread, at least the slippage
+    # assumption), so the executable price keeps the designed R:R instead of eroding it.
+    fill_bps = max(float(cfg.slippage_bps), float((market or {}).get("spread_bps") or 0) / 2)
+    fill = last_close * (1 + direction * fill_bps / 10000)
+    fill_risk = direction * (fill - sl)
+    tp = fill + direction * fill_risk * rr
     opposing = levels["above"] if side == "LONG" else levels["below"]
     blocking = [lvl for lvl in opposing if direction * (tp - lvl) > 0]
     if blocking:
         # Exit just before the nearest resting liquidity instead of hoping price runs through it.
         front = blocking[0] - direction * float(atr) * 0.1
-        level_rr = direction * (front - last_close) / risk
+        level_rr = direction * (front - fill) / fill_risk
         if level_rr >= cfg.rr_min:
             tp, rr = front, float(level_rr)
             factors.append("liquidity_target")

@@ -2,11 +2,10 @@
 import math
 
 
-# Targets are designed at exactly rr_min, and the executable side (ask for longs, bid for
-# shorts) is always at least half a spread worse than the signal close. Requiring the full
-# rr_min at execution therefore rejected nearly every signal; drift itself stays capped at
-# 0.25R and the after-cost check below still guards the economics.
-EXECUTION_RR_TOLERANCE = 0.8
+# Targets are built from the expected fill (see validate_signal), so only residual noise
+# beyond the spread estimate needs room here; drift stays capped at 0.25R and the
+# after-cost check below still guards the economics.
+EXECUTION_RR_TOLERANCE = 0.95
 
 
 def execution_rr_floor(settings):
