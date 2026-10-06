@@ -1,3 +1,4 @@
+import re
 import time
 from html import escape
 from aiogram import Router, F, BaseMiddleware
@@ -37,7 +38,40 @@ class AntiSpamMiddleware(BaseMiddleware):
 
         return await handler(event, data)
 
+def _chat_id(event):
+    if isinstance(event, Message):
+        return event.chat.id
+    if isinstance(event, CallbackQuery) and event.message:
+        return event.message.chat.id
+    return None
+
+
+def is_owner_event(event, owner: str) -> bool:
+    """Only the configured chat may control the bot. With no owner yet, /start claims it."""
+    chat = _chat_id(event)
+    if chat is None:
+        return False
+    if owner:
+        return str(chat) == str(owner)
+    return isinstance(event, Message) and bool(re.match(r"^/start(@\w+)?(\s|$)", event.text or ""))
+
+
+class OwnerOnlyMiddleware(BaseMiddleware):
+    async def __call__(self, handler, event, data):
+        if not is_owner_event(event, load_settings().tg_chat_id):
+            log_info(f"Telegram: ignored update from unauthorized chat {_chat_id(event)}")
+            if isinstance(event, CallbackQuery):
+                try:
+                    await event.answer("Нет доступа", show_alert=True)
+                except Exception:
+                    pass
+            return None
+        return await handler(event, data)
+
+
 router = Router()
+router.message.middleware(OwnerOnlyMiddleware())
+router.callback_query.middleware(OwnerOnlyMiddleware())
 router.message.middleware(AntiSpamMiddleware())
 router.callback_query.middleware(AntiSpamMiddleware())
 
@@ -97,7 +131,7 @@ async def cmd_balance(message: Message, command: CommandObject):
 @router.message(Command("start"))
 async def cmd_start(message: Message):
     cfg = load_settings()
-    if cfg.tg_chat_id != str(message.chat.id):
+    if not cfg.tg_chat_id:
         cfg.tg_chat_id = str(message.chat.id)
         save_settings(cfg)
         
