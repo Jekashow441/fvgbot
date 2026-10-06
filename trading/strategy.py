@@ -3,7 +3,7 @@ import numpy as np
 from typing import Dict, Optional, List
 
 from core.settings import cfg as default_cfg
-from trading.context import structure_context, trendline_context
+from trading.context import structure_context, trendline_context, liquidity_levels
 from trading.market_reasoning import market_state, setup_reasoning
 
 
@@ -165,7 +165,7 @@ def _safe_dynamic_rr(base_rr: float, atr: float, price: float, adx: Optional[flo
 
 def _score_signal(side: str, fvg: Dict, ctx: Dict, htf_ctx: Optional[Dict], rsi: Optional[float], adx: Optional[float], settings=None,
                   structure: Optional[Dict] = None, trendline_retest: bool = False,
-                  relative_volume: Optional[float] = None) -> tuple[int, List[str]]:
+                  relative_volume: Optional[float] = None, range_position: Optional[float] = None) -> tuple[int, List[str]]:
     cfg = settings or default_cfg
     score = 50
     factors: List[str] = []
@@ -194,6 +194,16 @@ def _score_signal(side: str, fvg: Dict, ctx: Dict, htf_ctx: Optional[Dict], rsi:
     if relative_volume is not None and relative_volume >= 1.5:
         score += 5
         factors.append("high_rvol")
+
+    if range_position is not None:
+        # Buy in the lower half of the dealing range, sell in the upper half.
+        location = range_position if side == "LONG" else 1 - range_position
+        if location <= 0.5:
+            score += 5
+            factors.append("discount_entry" if side == "LONG" else "premium_entry")
+        elif location >= 0.85:
+            score -= 5
+            factors.append("chasing_extreme")
 
     if fvg.get("gap_size", 0) >= cfg.fvg_min_size_pct * 2:
         score += 10
@@ -348,13 +358,27 @@ def validate_signal(df: pd.DataFrame, fvg: Optional[Dict], htf_ctx: Optional[Dic
     if cfg.sl_max_atr > 0 and risk > float(atr * cfg.sl_max_atr):
         return reject("stop_too_wide")
     rr = _safe_dynamic_rr(cfg.risk_reward, atr, last_close, adx, cfg)
+    levels = liquidity_levels(df, cfg.structure_pivot)
     score, factors = _score_signal(side, fvg, ctx, htf_ctx, rsi, adx, cfg, structure=structure,
                                    trendline_retest=lines["bullish_retest" if side == "LONG" else "bearish_retest"],
-                                   relative_volume=relative_volume)
+                                   relative_volume=relative_volume, range_position=levels["range_position"])
     factors += extra_factors
+    tp = last_close + direction * risk * rr
+    opposing = levels["above"] if side == "LONG" else levels["below"]
+    blocking = [lvl for lvl in opposing if direction * (tp - lvl) > 0]
+    if blocking:
+        # Exit just before the nearest resting liquidity instead of hoping price runs through it.
+        front = blocking[0] - direction * float(atr) * 0.1
+        level_rr = direction * (front - last_close) / risk
+        if level_rr >= cfg.rr_min:
+            tp, rr = front, float(level_rr)
+            factors.append("liquidity_target")
+        else:
+            score = max(0, score - 10)
+            factors.append("opposing_liquidity_near")
     if score < cfg.min_signal_score:
         return reject("score_below_threshold")
-    return {"signal": side, "entry": last_close, "sl": float(sl), "tp": float(last_close + direction * risk * rr), "rr": rr, "score": score,
+    return {"signal": side, "entry": last_close, "sl": float(sl), "tp": float(tp), "rr": rr, "score": score, "liquidity": levels,
             "rsi": rsi, "adx": adx, "trend": ctx.get("trend"), "htf": None if not htf_ctx else htf_ctx.get("trend"), "factors": factors,
             "structure": structure, "reasoning": setup_reasoning(side, setup, state), "setup": setup, "regime": state["regime"],
             "trendlines": lines, "relative_volume": relative_volume, "market": market, "strategy_version": "structure_v3"}

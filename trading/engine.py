@@ -30,6 +30,7 @@ from trading.setup_journal import observe, setup_id
 from trading.setup_assessment import assess_zones
 from trading.decision_memory import assess_context, settings_key
 from trading.telemetry import event,record_cycle,heartbeat
+from trading.market_watch import observe as market_observe
 
 LATEST_DATA = {}
 SENT_SIGNALS = {}
@@ -42,6 +43,21 @@ SCAN_RESULTS = {}
 # Serialize manual scans so repeated button presses cannot interleave writes
 # to LATEST_DATA or flood the exchange API while the background loop runs.
 _QUICK_SCAN_LOCK = None
+
+
+def apply_news_tone(signal: dict, coin_news: Optional[dict]) -> None:
+    """Headline tone nudges the score; it never creates a setup on its own."""
+    tone = (coin_news or {}).get("sentiment")
+    weight = int(cfg.coin_news_score_weight)
+    if tone is None or not weight:
+        return
+    aligned = tone if signal["signal"] == "LONG" else -tone
+    if aligned >= 0.25:
+        signal["score"] = min(100, signal["score"] + weight)
+        signal["factors"] = list(signal.get("factors") or []) + ["news_tailwind"]
+    elif aligned <= -0.25:
+        signal["score"] = max(0, signal["score"] - weight)
+        signal["factors"] = list(signal.get("factors") or []) + ["news_headwind"]
 
 
 def _signal_key(symbol: str, fvg: dict, signal: dict) -> str:
@@ -195,6 +211,9 @@ async def process_symbol(bot: Optional[Bot], symbol: str, *, emit_signal: bool =
                     active_trades = get_active_signals()
                     notional = position_notional(candidate["entry"], candidate["sl"], cfg.paper_balance, active_trades, cfg)
                     reasons = live_blockers(candidate["signal"], coin, BENCHMARKS.get("BTCUSDT", {}).get("trend"), MARKET_DATA.get(symbol, {}), micro, notional=notional)
+                    coin_headlines = (news.get("coin") or {})
+                    if candidate["signal"] == "LONG" and coin_headlines.get("critical"):
+                        reasons.append("critical_negative_news")
                     if coin.get("higher_4h", {}).get("trend", "UNKNOWN") == "UNKNOWN":
                         reasons.append("higher_4h_unavailable_or_stale")
                     if coin.get("higher_4h", {}).get("trend") == ("DOWN" if candidate["signal"] == "LONG" else "UP"):
@@ -224,8 +243,12 @@ async def process_symbol(bot: Optional[Bot], symbol: str, *, emit_signal: bool =
                                      intelligence=coin, news=news, qualification=qualification, microstructure=micro)
                     candidate.update(fvg=dict(zone), strict_ce=cfg.fvg_strict_mitigation, journal_id=setup_id(symbol,cfg.timeframe,zone), analyzed_at=time.time())
                     candidate["memory"] = assess_context(candidate)
+                    apply_news_tone(candidate, news.get("coin"))
                     fvg, signal = zone, candidate
                     break
+        if signal is not None and signal["score"] < cfg.min_signal_score:
+            blockers.append("news_score_below_threshold")
+            signal = None
         had_candidate = signal is not None
         signal = apply_learning_to_signal(signal) if signal else None
         if had_candidate and signal is None:
@@ -262,6 +285,7 @@ async def process_symbol(bot: Optional[Bot], symbol: str, *, emit_signal: bool =
                 set_setting_text("signal:" + signal_id, "opened")
                 SENT_SIGNALS[symbol] = {signal_id}
 
+        before = dict(LATEST_DATA.get(symbol) or {})
         LATEST_DATA.setdefault(symbol, {})
         LATEST_DATA[symbol].update({
             "fvg": fvg,
@@ -288,6 +312,8 @@ async def process_symbol(bot: Optional[Bot], symbol: str, *, emit_signal: bool =
             "updated_at": datetime.now(timezone.utc).isoformat(),
         })
         observe(symbol,cfg.timeframe,LATEST_DATA[symbol],observed_frame,cfg)
+        if before.get("analysis_key"):
+            market_observe(symbol, before, LATEST_DATA[symbol])
     except Exception as e:
         SCAN_RESULTS[symbol].update(outcome='failed',reason=type(e).__name__)
         LATEST_DATA[symbol]={'signal':None,'blockers':['scan_error:'+type(e).__name__],'updated_at':datetime.now(timezone.utc).isoformat()}
@@ -467,9 +493,25 @@ async def _recovery_loop():
         await asyncio.sleep(30)
 
 
+def news_priority_symbols() -> list:
+    """Coins a trader would watch most closely: open positions, live signals, ripe setups."""
+    symbols = [t["symbol"] for t in get_active_signals()]
+    symbols += [s for s, info in LATEST_DATA.items() if (info or {}).get("signal")]
+    symbols += [s for s, info in LATEST_DATA.items()
+                if any(a.get("status") in ("ENTRY APPROACHING", "POTENTIAL") for a in ((info or {}).get("assessments") or {}).values())]
+    return list(dict.fromkeys(symbols))
+
+
+def news_background_symbols() -> list:
+    ranked = sorted(MARKET_DATA.items(), key=lambda x: x[1].get("volume_rank", 10**9))
+    return [s for s, row in ranked if row.get("eligible")]
+
+
 async def trading_loop(bot: Optional[Bot]) -> None:
     from trading.system_status import status_worker
-    tasks = [asyncio.create_task(status_worker(bot)),asyncio.create_task(_recovery_loop()),asyncio.create_task(delivery_worker(bot)), asyncio.create_task(_news_loop()), asyncio.create_task(research_worker()), asyncio.create_task(_position_loop(bot))]
+    from trading.coin_news import coin_news_worker
+    tasks = [asyncio.create_task(coin_news_worker(news_priority_symbols, news_background_symbols)),
+             asyncio.create_task(status_worker(bot)),asyncio.create_task(_recovery_loop()),asyncio.create_task(delivery_worker(bot)), asyncio.create_task(_news_loop()), asyncio.create_task(research_worker()), asyncio.create_task(_position_loop(bot))]
     try:
         await _scan_loop(bot)
     finally:

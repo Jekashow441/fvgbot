@@ -196,6 +196,33 @@ class StrategyTests(unittest.TestCase):
         d.loc[19, ["open", "low", "close"]] = [100, 96, 100.5]
         self.assertEqual(structure_context(d, 3)["sweep"], "SELL_SIDE")
 
+    def test_target_front_runs_resting_liquidity(self):
+        cfg.require_structure = False
+        cfg.ema_period = 200
+        cfg.sl_max_atr = 0
+        cfg.min_signal_score = 0
+        cfg.rsi_overbought = 100
+        cfg.max_entry_distance_atr = 5
+        cfg.rr_min = 1.5
+        d = self.zone_data()
+        zone = detect_fvgs(d)[0]
+        d.loc[44, ["open", "low", "close"]] = [102.5, 102, 103.5]
+        empty = {"above": [], "below": [], "range_position": .4}
+        with patch("trading.strategy.liquidity_levels", return_value=empty):
+            base = validate_signal(d, zone)
+        risk = base["entry"] - base["sl"]
+        level = base["entry"] + 2 * risk
+        with patch("trading.strategy.liquidity_levels", return_value=dict(empty, above=[level])):
+            sig = validate_signal(d, zone)
+        self.assertLess(sig["tp"], level)
+        self.assertGreater(sig["tp"], base["entry"] + 1.5 * risk)
+        self.assertIn("liquidity_target", sig["factors"])
+        with patch("trading.strategy.liquidity_levels", return_value=dict(empty, above=[base["entry"] + .5 * risk])):
+            near = validate_signal(d, zone)
+        self.assertEqual(near["tp"], base["tp"])
+        self.assertEqual(near["score"], max(0, base["score"] - 10))
+        self.assertIn("opposing_liquidity_near", near["factors"])
+
 
 if __name__ == "__main__":
     unittest.main()

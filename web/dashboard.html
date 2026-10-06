@@ -117,6 +117,23 @@ dialog::backdrop { background: rgba(0,0,0,.55); }
 .chk span { font-size: 12px; padding: 3px 8px; border-radius: 6px; }
 .chk .y { background: var(--green-bg); color: var(--green); } .chk .n { background: var(--red-bg); color: var(--red); }
 a { color: var(--accent); }
+.brief-sum { font-size: 14px; margin-bottom: 10px; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 4px 0 10px; }
+.chip { font-size: 12px; padding: 3px 8px; border-radius: 6px; background: var(--surface2); cursor: pointer; white-space: nowrap; }
+.chip .num { margin-left: 4px; }
+.mini-h { font-size: 12px; color: var(--muted); margin-top: 6px; }
+.feed { max-height: 330px; overflow-y: auto; }
+.feed-item { display: grid; grid-template-columns: 52px 1fr; gap: 8px; padding: 7px 0; border-bottom: 1px solid var(--line); font-size: 13px; cursor: pointer; }
+.feed-item:last-child { border-bottom: 0; }
+.feed-item .t { color: var(--muted); font-size: 12px; }
+.feed-item.good b { color: var(--green); } .feed-item.bad b { color: var(--red); } .feed-item.warn b { color: var(--amber); } .feed-item.muted { opacity: .7; }
+.opinion { background: var(--surface2); border-radius: 10px; padding: 12px 14px; margin-bottom: 4px; }
+.opinion p { margin: 0 0 6px; font-size: 13px; color: var(--text2); }
+.opinion .verdict { color: var(--text); font-weight: 600; margin: 8px 0 0; }
+.news-row { display: flex; gap: 8px; align-items: baseline; padding: 6px 0; border-bottom: 1px solid var(--line); font-size: 13px; }
+.news-row:last-child { border-bottom: 0; }
+.tone { font-size: 11px; font-weight: 600; padding: 1px 6px; border-radius: 5px; flex: none; }
+.tone.p { color: var(--green); background: var(--green-bg); } .tone.n { color: var(--red); background: var(--red-bg); } .tone.z { color: var(--muted); background: var(--surface2); }
 </style>
 </head>
 <body>
@@ -138,6 +155,17 @@ a { color: var(--accent); }
     <div class="kpi"><div class="lbl">Открытые позиции</div><div class="val num" id="k-act">—</div><div class="hint" id="k-act-h"></div></div>
     <div class="kpi"><div class="lbl">Рынок</div><div class="val num" id="k-mkt">—</div><div class="hint" id="k-mkt-h"></div></div>
   </section>
+
+  <div class="grid g-1-1">
+    <div class="card">
+      <div class="card-h"><h2>Обзор рынка</h2><span class="pill" id="regime-pill">—</span></div>
+      <div id="brief"><div class="empty">Загрузка…</div></div>
+    </div>
+    <div class="card">
+      <div class="card-h"><h2>Лента наблюдений</h2><span class="sub">что бот замечает на рынке</span></div>
+      <div class="feed" id="feed"><div class="empty">Загрузка…</div></div>
+    </div>
+  </div>
 
   <div class="grid g-2-1">
     <div class="card">
@@ -217,7 +245,7 @@ const REASONS = {
   market_breadth_opposition: 'Рынок против', insufficient_rr_after_costs: 'Мало R после комиссий', execution_price_moved: 'Цена ушла',
   continuation_not_confirmed: 'Продолжение не подтверждено', illiquid_market: 'Низкая ликвидность', ce_invalid: 'Цена за CE',
   previously_used_zone: 'Зона уже использована', backtest_pending: 'Бэктест в очереди', orderbook_unavailable: 'Стакан недоступен',
-  higher_4h_unavailable_or_stale: 'Нет данных 4h', funding_unavailable: 'Нет funding', learning_score_below_threshold: 'Самообучение снизило score',
+  higher_4h_unavailable_or_stale: 'Нет данных 4h', critical_negative_news: 'Критичная новость', news_score_below_threshold: 'Новости снизили score', news_coverage_incomplete: 'Новостные ленты недоступны', recent_high_impact_headline: 'Свежая важная новость', funding_unavailable: 'Нет funding', learning_score_below_threshold: 'Самообучение снизило score',
 };
 const reason = r => REASONS[r] || r;
 const CHECKS = ['FVG', 'Zone eligibility', 'HTF bias', 'Structure', 'Liquidity', 'Entry'];
@@ -382,7 +410,9 @@ async function openCoin(sym) {
     const d = await (await fetch('/api/coin/' + encodeURIComponent(sym))).json();
     const live = d.live || {}, intel = live.intelligence || {}, mkt = live.market || {}, htf = live.htf_context || {};
     const zones = live.zones || [], asm = live.assessments || {};
-    let h = `<div class="kv">
+    const op = d.commentary || {};
+    let h = `<div class="opinion"><div class="mini-h" style="margin:0 0 6px">Мнение бота</div>${(op.lines || []).map(l => `<p>${esc(l)}</p>`).join('')}<p class="verdict">${esc(op.verdict || '')}</p></div>`;
+    h += `<h4>Показатели</h4><div class="kv">
       <div><span>Цена</span><b class="num">${price(live.current_price)}</b></div>
       <div><span>Режим</span><b>${esc(intel.regime || '—')}</b></div>
       <div><span>Тренд / старший ТФ</span><b>${esc(intel.trend || '—')} / ${esc(htf.trend || '—')}</b></div>
@@ -403,11 +433,40 @@ async function openCoin(sym) {
         ${(a.rejections || []).length || (a.execution_rejections || []).length ? `<p class="sub" style="margin-top:8px">Не хватает (${sideTxt}): ${[...(a.rejections || []), ...(a.execution_rejections || [])].map(reason).map(esc).join(', ')}</p>` : ''}`;
     }
     if (!zones.length) h += '<h4>FVG-зоны</h4><div class="sub">Активных зон нет</div>';
-    const news = d.news?.events || [];
-    if (news.length) h += `<h4>Новости</h4>${news.slice(0, 5).map(n => `<p style="margin-bottom:6px">${esc(n.title)}<br><span class="sub">${esc(n.possible_impact || '')}</span></p>`).join('')}`;
+    const safeUrl = u => /^https:\/\//.test(u || '') ? esc(u) : '#';
+    const toneTag = t => t == null ? '' : `<span class="tone ${t >= 0.25 ? 'p' : t <= -0.25 ? 'n' : 'z'}">${t > 0 ? '+' : ''}${fmt(t, 1)}</span>`;
+    const coinNews = d.news?.coin || {};
+    const heads = coinNews.headlines || [];
+    h += `<h4>Новости по монете · ${coinNews.count_24h ?? 0} за 24ч · тон ${coinNews.sentiment == null ? '—' : fmt(coinNews.sentiment, 2)}${coinNews.checked_at ? ' · проверено ' + ago(coinNews.checked_at / 1000) : ' · ещё не проверялась'}</h4>`;
+    h += heads.length ? heads.map(n => `<div class="news-row">${toneTag(n.tone)}<a href="${safeUrl(n.url)}" target="_blank" rel="noopener noreferrer">${esc(n.title)}</a><span class="sub" style="margin-left:auto;flex:none">${ago(n.published_at / 1000)}</span></div>`).join('') : '<div class="sub">Заголовков не найдено</div>';
+    const macro = (d.news?.events || []).filter(n => n.kind === 'macro');
+    if (macro.length) h += `<h4>Макро-события</h4>${macro.slice(0, 3).map(n => `<div class="news-row"><span class="tone z">macro</span>${esc(n.title)}</div>`).join('')}`;
     $('dlg-b').innerHTML = h;
   } catch (e) { $('dlg-b').innerHTML = '<div class="empty">Не удалось загрузить данные</div>'; }
 }
+
+// Market brief and observation feed
+const pctTxt = v => v == null ? '—' : (v > 0 ? '+' : '') + fmt(v * 100, 1) + '%';
+const chips = (rows, val, cls) => rows.length ? `<div class="chips">${rows.map(r => `<span class="chip" data-sym="${esc(r.symbol)}">${esc(r.symbol.replace('USDT', ''))}<span class="num ${cls ? cls(r) : ''}">${val(r)}</span></span>`).join('')}</div>` : '<div class="sub" style="margin:4px 0 10px">—</div>';
+async function loadBrief() {
+  try {
+    const {brief: b, feed} = await (await fetch('/api/brief')).json();
+    const rp = $('regime-pill');
+    rp.className = 'pill ' + (b.regime === 'risk-on' ? 'ok' : b.regime === 'risk-off' ? 'bad' : 'warn');
+    rp.textContent = b.regime;
+    $('brief').innerHTML = `<p class="brief-sum">${esc(b.summary)}</p>
+      <div class="mini-h">Лидеры роста за 24ч</div>${chips(b.gainers, r => pctTxt(r.change), () => 'pos')}
+      <div class="mini-h">Лидеры падения</div>${chips(b.losers, r => pctTxt(r.change), () => 'neg')}
+      <div class="mini-h">Всплески объёма</div>${chips(b.volume_spikes, r => fmt(r.rvol, 1) + '×')}
+      <div class="mini-h">Перегрев по funding (толпа в лонгах / шортах)</div>${chips([...b.funding_high, ...b.funding_low], r => fmt(r.funding * 100, 3) + '%', r => r.funding > 0 ? 'neg' : 'pos')}
+      <div class="mini-h">Новостной фон</div>${chips([...b.news_bullish.map(n => ({...n, k: 'p'})), ...b.news_bearish.map(n => ({...n, k: 'n'}))], r => (r.sentiment > 0 ? '+' : '') + fmt(r.sentiment, 2), r => r.k === 'p' ? 'pos' : 'neg')}`;
+    $('feed').innerHTML = feed.length ? feed.map(e => `<div class="feed-item ${esc(e.level)}" data-sym="${esc(e.symbol)}">
+      <span class="t mono">${new Date(e.t * 1000).toLocaleTimeString('ru-RU', {hour: '2-digit', minute: '2-digit'})}</span>
+      <span><b>${esc(e.symbol)}</b> ${esc(e.text)}</span></div>`).join('') : '<div class="empty">Пока тихо — бот наблюдает</div>';
+  } catch (e) { console.error(e); }
+}
+loadBrief();
+setInterval(loadBrief, 10000);
 
 // WebSocket with reconnect; HTTP polling as fallback while disconnected.
 let ws, retry = 1000, poll;

@@ -1,4 +1,5 @@
 import time
+from html import escape
 from aiogram import Router, F, BaseMiddleware
 from aiogram.filters import Command, CommandObject
 from aiogram.types import Message, CallbackQuery, InlineKeyboardMarkup, InlineKeyboardButton, ErrorEvent
@@ -492,3 +493,40 @@ async def cb_setup_journal(call: CallbackQuery):
 @router.message(Command('setups'))
 async def cmd_setups(message: Message):
     await _answer_setup_journal(message)
+
+
+async def _answer_market(message):
+    from trading.engine import LATEST_DATA, MARKET_DATA, BENCHMARKS
+    from trading.market_watch import market_brief, format_brief, feed
+    text = format_brief(market_brief(LATEST_DATA, MARKET_DATA, BENCHMARKS))
+    recent = feed(8)
+    if recent:
+        text += "\n\n<b>Последние наблюдения</b>\n" + "\n".join(f"• {escape(e['symbol'])}: {escape(e['text'])}" for e in recent)
+    await message.answer(text[:4000], parse_mode="HTML")
+
+
+@router.message(Command("market"))
+async def cmd_market(message: Message):
+    await _answer_market(message)
+
+
+@router.callback_query(F.data == "market_brief")
+async def cb_market_brief(call: CallbackQuery):
+    await call.answer()
+    await _answer_market(call.message)
+
+
+@router.message(Command("coin"))
+async def cmd_coin(message: Message, command: CommandObject):
+    from trading.engine import LATEST_DATA
+    from trading.market_watch import commentary
+    from trading.news import news_context
+    symbol = (command.args or "").strip().upper()
+    if symbol and not symbol.endswith("USDT"):
+        symbol += "USDT"
+    if not symbol or symbol not in LATEST_DATA:
+        await message.answer("Использование: /coin SOL (монета должна быть в сканируемом списке)")
+        return
+    c = commentary(symbol, LATEST_DATA[symbol], news_context(symbol))
+    text = f"<b>{escape(symbol)}</b>\n" + "\n".join(escape(x) for x in c["lines"]) + f"\n\n<b>Вывод:</b> {escape(c['verdict'])}"
+    await message.answer(text[:4000], parse_mode="HTML")

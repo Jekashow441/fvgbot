@@ -119,3 +119,24 @@ def trendline_context(df, pivot=3, atr=0, tolerance=0.25):
         else:
             result["bearish_retest"] = bool(abs(last.high-projected) <= atr*tolerance and last.close < projected and last.close < last.open)
     return result
+
+
+def liquidity_levels(df, pivot=3, lookback=150):
+    """Confirmed swing highs/lows not yet closed through: resting stops a target can run into."""
+    d = df.tail(lookback).reset_index(drop=True)
+    result = {"above": [], "below": [], "range_high": None, "range_low": None, "range_position": None}
+    if len(d) < 2*pivot+2:
+        return result
+    high, low, close = (d[c].to_numpy() for c in ("high", "low", "close"))
+    last = float(close[-1])
+    for k in range(pivot, len(d)-pivot):
+        hw, lw = high[k-pivot:k+pivot+1], low[k-pivot:k+pivot+1]
+        if high[k] == hw.max() and (hw == high[k]).sum() == 1 and not (close[k+1:] > high[k]).any() and high[k] > last:
+            result["above"].append(float(high[k]))
+        if low[k] == lw.min() and (lw == low[k]).sum() == 1 and not (close[k+1:] < low[k]).any() and low[k] < last:
+            result["below"].append(float(low[k]))
+    result["above"].sort()
+    result["below"].sort(reverse=True)
+    top, bottom = float(high.max()), float(low.min())
+    result.update(range_high=top, range_low=bottom, range_position=(last-bottom)/(top-bottom) if top > bottom else None)
+    return result

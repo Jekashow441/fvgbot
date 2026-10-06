@@ -1,6 +1,6 @@
 """Causal diagnostic score before all entry gates; never creates a signal."""
 from trading.strategy import market_context, _score_signal, validate_signal
-from trading.context import structure_context, trendline_context
+from trading.context import structure_context, trendline_context, liquidity_levels
 
 
 def assess_zones(df,zones,htf,market,settings):
@@ -9,13 +9,14 @@ def assess_zones(df,zones,htf,market,settings):
     atr=(ctx.get('atr_pct') or 0)*float(df.iloc[-1].close)/100
     lines=trendline_context(df,settings.structure_pivot,atr,settings.trendline_tolerance_atr)
     baseline=float(df.volume.iloc[-21:-1].mean())
+    location=liquidity_levels(df,settings.structure_pivot)['range_position']
     rvol=float(df.iloc[-1].volume)/baseline if baseline>0 else None
     result={}
     for zone in zones:
         side='LONG' if zone['type']=='BULLISH' else 'SHORT'
         expected='UP' if side=='LONG' else 'DOWN'
         score,factors=_score_signal(side,zone,ctx,htf,ctx.get('rsi'),ctx.get('adx'),settings,structure=structure,
-                                    trendline_retest=lines['bullish_retest' if side=='LONG' else 'bearish_retest'],relative_volume=rvol)
+                                    trendline_retest=lines['bullish_retest' if side=='LONG' else 'bearish_retest'],relative_volume=rvol,range_position=location)
         diagnostics={}
         candidate=validate_signal(df,zone,htf,market,settings=settings,diagnostics=diagnostics)
         # These limits cannot recover on a later candle for the same zone.

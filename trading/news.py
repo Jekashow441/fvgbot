@@ -158,5 +158,7 @@ def news_context(symbol, as_of=None, db_path=None):
         blockers.append("news_coverage_incomplete")
     if any(e["severity"] == "high" and now-e["published_at"] < cfg.news_blackout_minutes*60000 for e in events):
         blockers.append("recent_high_impact_headline")
-    return {"coverage": coverage, "blockers": blockers, "events": events[:10], "sources_ok": fresh,
+    from trading.coin_news import coin_news
+    coin = coin_news(symbol, now, db_path)
+    return {"coverage": coverage, "blockers": blockers, "events": events[:10], "sources_ok": fresh, "coin": coin,
             "interpretation": "Keyword screening; absence of matching headlines does not mean absence of news."}

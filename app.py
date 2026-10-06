@@ -71,9 +71,21 @@ async def api_coin(symbol: str):
     from fastapi import HTTPException
     if not re.fullmatch(r"[A-Z0-9]+USDT", symbol):
         raise HTTPException(400, "Expected an uppercase USDT symbol")
+    from trading.market_watch import commentary
+    from trading.dashboard import active_positions, clean
     report = load_report(symbol)
-    return {"symbol": symbol, "live": LATEST_DATA.get(symbol), "research": report,
-            "qualification": qualify(report), "news": news_context(symbol)}
+    news = news_context(symbol)
+    active = next((t for t in active_positions(LATEST_DATA) if t["symbol"] == symbol), None)
+    return clean({"symbol": symbol, "live": LATEST_DATA.get(symbol), "research": report,
+                  "qualification": qualify(report), "news": news,
+                  "commentary": commentary(symbol, LATEST_DATA.get(symbol), news, active)})
+
+
+@app.get("/api/brief")
+async def api_brief():
+    from trading.market_watch import market_brief, feed
+    from trading.dashboard import clean
+    return clean({"brief": market_brief(LATEST_DATA, MARKET_DATA, BENCHMARKS), "feed": feed()})
 
 @app.get("/api/equity")
 async def api_equity():
