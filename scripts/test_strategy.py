@@ -18,6 +18,9 @@ class StrategyTests(unittest.TestCase):
     def setUp(self):
         self.saved = cfg.model_copy(deep=True)
         cfg.timeframe = '15'
+        # Fixtures exercise zone/stop/target rules; regime and HTF filters are tested separately.
+        cfg.allowed_regimes = ["TREND", "TRANSITION", "RANGE"]
+        cfg.require_htf_alignment = False
 
     def tearDown(self):
         for name in type(cfg).model_fields:
@@ -249,6 +252,28 @@ class StrategyTests(unittest.TestCase):
             sig = validate_signal(d, zone, market={"eligible": True, "spread_bps": 10})
         fill = sig["entry"] * (1 + 5 / 10000)  # half of a 10 bps spread beats the 2 bps slippage floor
         self.assertAlmostEqual((sig["tp"] - fill) / (fill - sig["sl"]), 2.0)
+
+    def test_regime_and_htf_alignment_filters(self):
+        cfg.require_structure = False
+        cfg.ema_period = 200
+        cfg.sl_max_atr = 0
+        cfg.min_signal_score = 0
+        cfg.rsi_overbought = 100
+        cfg.max_entry_distance_atr = 5
+        d = self.zone_data()
+        zone = detect_fvgs(d)[0]
+        d.loc[44, ["open", "low", "close"]] = [102.5, 102, 103.5]
+        self.assertIsNotNone(validate_signal(d, zone))
+        cfg.allowed_regimes = ["TREND"]
+        diagnostics = {}
+        self.assertIsNone(validate_signal(d, zone, diagnostics=diagnostics))
+        self.assertIn("regime_not_allowed", diagnostics)
+        cfg.allowed_regimes = ["TREND", "TRANSITION", "RANGE"]
+        cfg.require_htf_alignment = True
+        diagnostics = {}
+        self.assertIsNone(validate_signal(d, zone, {"trend": "RANGE"}, diagnostics=diagnostics))
+        self.assertIn("htf_not_aligned", diagnostics)
+        self.assertIsNotNone(validate_signal(d, zone, {"trend": "UP"}))
 
 
 if __name__ == "__main__":
