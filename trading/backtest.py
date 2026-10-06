@@ -11,6 +11,7 @@ from trading.strategy import detect_fvgs, validate_signal, market_context, _calc
 from trading.context import closed_candles
 from trading.profiles import strategy_settings
 from trading.exit_rules import candle_exit
+from trading.entry_rules import execution_rr_floor
 from trading.data_quality import validate_ohlcv
 
 
@@ -68,7 +69,7 @@ def run_backtest(df, htf_df=None, htf="60", settings=None, benchmark_df=None, en
             risk = side*(entry-pending["sl"])
             reward = side*(pending["tp"]-entry)
             costs = entry*2*(cfg.fee_bps+cfg.slippage_bps)/10000
-            if risk > 0 and reward/risk >= cfg.rr_min and (reward-costs)/(risk+costs) >= cfg.min_net_rr:
+            if risk > 0 and reward/risk >= execution_rr_floor(cfg) and (reward-costs)/(risk+costs) >= cfg.min_net_rr:
                 active = dict(pending, entry=entry, risk=risk, direction=side, entry_timestamp=int(bar.timestamp), entry_index=i)
             else:
                 rejected["entry_cost_or_gap"] = rejected.get("entry_cost_or_gap", 0)+1

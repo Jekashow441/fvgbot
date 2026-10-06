@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FVG Bot</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<style>
+:root {
+  --bg: #0b0e14; --surface: #121620; --surface2: #181d29; --line: #242b3a;
+  --text: #e6e9ef; --text2: #a7b0bf; --muted: #6b7585;
+  --accent: #4f8cff; --green: #19c37d; --red: #ef4b55; --amber: #f0a43a;
+  --green-bg: rgba(25,195,125,.12); --red-bg: rgba(239,75,85,.12); --amber-bg: rgba(240,164,58,.14); --accent-bg: rgba(79,140,255,.14);
+  --radius: 12px; --shadow: none;
+  color-scheme: dark;
+}
+:root[data-theme="light"] {
+  --bg: #f4f6fa; --surface: #ffffff; --surface2: #f0f3f8; --line: #e1e6ee;
+  --text: #141a26; --text2: #4c5668; --muted: #8590a2;
+  --accent: #2563eb; --green: #0f9d63; --red: #d6303b; --amber: #c27a10;
+  --green-bg: rgba(15,157,99,.1); --red-bg: rgba(214,48,59,.09); --amber-bg: rgba(194,122,16,.12); --accent-bg: rgba(37,99,235,.1);
+  --shadow: 0 1px 2px rgba(20,26,38,.05);
+  color-scheme: light;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: var(--bg); color: var(--text); font: 14px/1.45 Inter, system-ui, sans-serif; }
+.mono, td.num, .num { font-family: 'JetBrains Mono', ui-monospace, monospace; font-variant-numeric: tabular-nums; }
+.wrap { max-width: 1440px; margin: 0 auto; padding: 16px; }
+header { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-bottom: 16px; }
+header h1 { font-size: 20px; font-weight: 700; letter-spacing: -.01em; margin-right: auto; display: flex; align-items: center; gap: 10px; }
+.logo { width: 28px; height: 28px; border-radius: 8px; background: linear-gradient(135deg, var(--accent), var(--green)); display: grid; place-items: center; color: #fff; font-size: 13px; font-weight: 700; }
+.pill { display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; border-radius: 999px; font-size: 12px; font-weight: 600; background: var(--surface2); color: var(--text2); border: 1px solid var(--line); white-space: nowrap; }
+.pill .dot { width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+.pill.ok { color: var(--green); background: var(--green-bg); border-color: transparent; }
+.pill.warn { color: var(--amber); background: var(--amber-bg); border-color: transparent; }
+.pill.bad { color: var(--red); background: var(--red-bg); border-color: transparent; }
+.pill.info { color: var(--accent); background: var(--accent-bg); border-color: transparent; }
+button.icon { background: var(--surface); border: 1px solid var(--line); color: var(--text2); border-radius: 8px; padding: 6px 10px; cursor: pointer; font: inherit; }
+button.icon:hover { color: var(--text); }
+.sub { color: var(--muted); font-size: 12px; }
+
+.kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin-bottom: 16px; }
+.kpi { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 14px 16px; box-shadow: var(--shadow); }
+.kpi .lbl { color: var(--muted); font-size: 12px; font-weight: 500; margin-bottom: 6px; }
+.kpi .val { font-size: 22px; font-weight: 700; letter-spacing: -.02em; }
+.kpi .hint { color: var(--muted); font-size: 12px; margin-top: 2px; }
+.pos { color: var(--green); } .neg { color: var(--red); }
+
+.grid { display: grid; gap: 16px; margin-bottom: 16px; }
+.g-2-1 { grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); }
+.g-1-1 { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+@media (max-width: 960px) { .g-2-1, .g-1-1 { grid-template-columns: minmax(0, 1fr); } }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px; box-shadow: var(--shadow); min-width: 0; }
+.card-h { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; flex-wrap: wrap; }
+.card-h h2 { font-size: 15px; font-weight: 600; margin-right: auto; }
+.empty { color: var(--muted); padding: 24px 8px; text-align: center; }
+.chart-box { position: relative; height: 260px; }
+
+.pos-item { padding: 12px 0; border-bottom: 1px solid var(--line); }
+.pos-item:last-child { border-bottom: 0; }
+.row { display: flex; align-items: center; gap: 8px; }
+.row .grow { flex: 1; }
+.side { font-size: 11px; font-weight: 700; padding: 2px 7px; border-radius: 6px; letter-spacing: .02em; }
+.side.LONG { color: var(--green); background: var(--green-bg); }
+.side.SHORT { color: var(--red); background: var(--red-bg); }
+.bar { position: relative; height: 6px; border-radius: 3px; background: linear-gradient(90deg, var(--red-bg), var(--surface2) 50%, var(--green-bg)); margin: 10px 0 4px; }
+.bar .mark { position: absolute; top: -3px; width: 3px; height: 12px; border-radius: 2px; background: var(--text); }
+.bar .entry { position: absolute; top: -2px; width: 1px; height: 10px; background: var(--muted); }
+.levels { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2px 12px; font-size: 11px; color: var(--muted); }
+@media (max-width: 600px) { .levels .mid { order: 3; flex-basis: 100%; text-align: center; } .chart-box { height: 200px; } }
+
+.blk { margin: 8px 0; }
+.blk .row { font-size: 13px; }
+.blk .track { height: 6px; background: var(--surface2); border-radius: 3px; margin-top: 4px; overflow: hidden; }
+.blk .fill { height: 100%; background: var(--accent); border-radius: 3px; }
+.blk.system .fill { background: var(--amber); }
+
+.toolbar { display: flex; gap: 8px; flex-wrap: wrap; }
+input[type=search], select { background: var(--surface2); border: 1px solid var(--line); color: var(--text); border-radius: 8px; padding: 6px 10px; font: inherit; font-size: 13px; }
+input[type=search] { width: 160px; }
+.table-wrap { overflow-x: auto; margin: 0 -16px; padding: 0 16px; }
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th { text-align: left; color: var(--muted); font-weight: 500; font-size: 12px; padding: 8px 10px; border-bottom: 1px solid var(--line); white-space: nowrap; cursor: default; }
+th.sortable { cursor: pointer; } th.sortable:hover { color: var(--text); }
+td { padding: 9px 10px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+td.num, th.num { text-align: right; }
+tbody tr { cursor: pointer; } tbody tr:hover { background: var(--surface2); }
+tr.static { cursor: default; }
+.stage { font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 999px; background: var(--surface2); color: var(--text2); }
+.stage.CONFIRMED { background: var(--green-bg); color: var(--green); }
+.stage.ENTRY.APPROACHING, .stage.APPROACHING { background: var(--accent-bg); color: var(--accent); }
+.stage.POTENTIAL { background: var(--amber-bg); color: var(--amber); }
+.checks { display: inline-flex; gap: 3px; }
+.checks i { width: 8px; height: 8px; border-radius: 2px; background: var(--line); display: inline-block; }
+.checks i.on { background: var(--green); }
+.tags { display: flex; flex-wrap: wrap; gap: 4px; }
+.tag { font-size: 11px; padding: 2px 7px; border-radius: 6px; background: var(--surface2); color: var(--text2); }
+.sig { padding: 12px; border-radius: 10px; background: var(--surface2); margin-bottom: 10px; border-left: 3px solid var(--accent); }
+.sig.LONG { border-left-color: var(--green); } .sig.SHORT { border-left-color: var(--red); }
+.sig .lv { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 8px 0; font-size: 12px; }
+.sig .lv b { display: block; font-size: 13px; color: var(--text); font-weight: 500; }
+.sig .lv span { color: var(--muted); }
+
+dialog { border: 1px solid var(--line); border-radius: 14px; background: var(--surface); color: var(--text); width: min(720px, calc(100vw - 32px)); max-height: calc(100vh - 48px); padding: 0; margin: auto; }
+dialog::backdrop { background: rgba(0,0,0,.55); }
+.dlg-h { display: flex; align-items: center; gap: 10px; padding: 16px 20px; border-bottom: 1px solid var(--line); position: sticky; top: 0; background: var(--surface); }
+.dlg-h h3 { font-size: 17px; margin-right: auto; }
+.dlg-b { padding: 16px 20px 20px; }
+.dlg-b h4 { font-size: 13px; color: var(--muted); font-weight: 500; margin: 16px 0 8px; }
+.kv { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; }
+.kv div { background: var(--surface2); border-radius: 8px; padding: 8px 10px; }
+.kv span { display: block; font-size: 11px; color: var(--muted); }
+.kv b { font-weight: 500; }
+.chk { display: flex; flex-wrap: wrap; gap: 6px; }
+.chk span { font-size: 12px; padding: 3px 8px; border-radius: 6px; }
+.chk .y { background: var(--green-bg); color: var(--green); } .chk .n { background: var(--red-bg); color: var(--red); }
+a { color: var(--accent); }
+.health-box { border-radius: 10px; padding: 10px 14px; margin-bottom: 14px; font-size: 13px; background: var(--amber-bg); color: var(--text); }
+.health-box.bad { background: var(--red-bg); }
+.health-box b { color: var(--amber); } .health-box.bad b { color: var(--red); }
+.health-box .sub { margin-top: 4px; }
+.brief-sum { font-size: 14px; margin-bottom: 10px; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 4px 0 10px; }
+.chip { font-size: 12px; padding: 3px 8px; border-radius: 6px; background: var(--surface2); cursor: pointer; white-space: nowrap; }
+.chip .num { margin-left: 4px; }
+.mini-h { font-size: 12px; color: var(--muted); margin-top: 6px; }
+.feed { max-height: 330px; overflow-y: auto; }
+.feed-item { display: grid; grid-template-columns: 52px 1fr; gap: 8px; padding: 7px 0; border-bottom: 1px solid var(--line); font-size: 13px; cursor: pointer; }
+.feed-item:last-child { border-bottom: 0; }
+.feed-item .t { color: var(--muted); font-size: 12px; }
+.feed-item.good b { color: var(--green); } .feed-item.bad b { color: var(--red); } .feed-item.warn b { color: var(--amber); } .feed-item.muted { opacity: .7; }
+.opinion { background: var(--surface2); border-radius: 10px; padding: 12px 14px; margin-bottom: 4px; }
+.opinion p { margin: 0 0 6px; font-size: 13px; color: var(--text2); }
+.opinion .verdict { color: var(--text); font-weight: 600; margin: 8px 0 0; }
+.news-row { display: flex; gap: 8px; align-items: baseline; padding: 6px 0; border-bottom: 1px solid var(--line); font-size: 13px; }
+.news-row:last-child { border-bottom: 0; }
+.tone { font-size: 11px; font-weight: 600; padding: 1px 6px; border-radius: 5px; flex: none; }
+.tone.p { color: var(--green); background: var(--green-bg); } .tone.n { color: var(--red); background: var(--red-bg); } .tone.z { color: var(--muted); background: var(--surface2); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1><span class="logo">F</span>FVG Bot</h1>
+    <span class="pill" id="run-pill"><span class="dot"></span>—</span>
+    <span class="pill" id="health-pill"><span class="dot"></span>—</span>
+    <span class="pill" id="conn-pill"><span class="dot"></span>Подключение…</span>
+    <button class="icon" id="theme-btn" title="Переключить тему">Тема</button>
+  </header>
+  <div class="sub" id="scan-line" style="margin:-8px 0 10px">—</div>
+  <div class="health-box" id="health-box" hidden></div>
+
+  <section class="kpis">
+    <div class="kpi"><div class="lbl">Баланс (paper)</div><div class="val num" id="k-bal">—</div><div class="hint" id="k-bal-h"></div></div>
+    <div class="kpi"><div class="lbl">Чистый PnL</div><div class="val num" id="k-pnl">—</div><div class="hint">после комиссий</div></div>
+    <div class="kpi"><div class="lbl">Win rate</div><div class="val num" id="k-wr">—</div><div class="hint" id="k-wr-h"></div></div>
+    <div class="kpi"><div class="lbl">Profit factor</div><div class="val num" id="k-pf">—</div><div class="hint" id="k-tr"></div></div>
+    <div class="kpi"><div class="lbl">Открытые позиции</div><div class="val num" id="k-act">—</div><div class="hint" id="k-act-h"></div></div>
+    <div class="kpi"><div class="lbl">Рынок</div><div class="val num" id="k-mkt">—</div><div class="hint" id="k-mkt-h"></div></div>
+  </section>
+
+  <div class="grid g-1-1">
+    <div class="card">
+      <div class="card-h"><h2>Обзор рынка</h2><span class="pill" id="regime-pill">—</span></div>
+      <div id="brief"><div class="empty">Загрузка…</div></div>
+    </div>
+    <div class="card">
+      <div class="card-h"><h2>Лента наблюдений</h2><span class="sub">что бот замечает на рынке</span></div>
+      <div class="feed" id="feed"><div class="empty">Загрузка…</div></div>
+    </div>
+  </div>
+
+  <div class="grid g-2-1">
+    <div class="card">
+      <div class="card-h"><h2>Баланс счёта</h2><span class="sub" id="eq-sub"></span></div>
+      <div class="chart-box"><canvas id="equity"></canvas></div>
+    </div>
+    <div class="card">
+      <div class="card-h"><h2>Открытые позиции</h2></div>
+      <div id="active"><div class="empty">Загрузка…</div></div>
+    </div>
+  </div>
+
+  <div class="grid g-1-1">
+    <div class="card">
+      <div class="card-h"><h2>Сигналы</h2><span class="sub">прошли все фильтры</span></div>
+      <div id="signals"><div class="empty">Загрузка…</div></div>
+    </div>
+    <div class="card">
+      <div class="card-h"><h2>Почему нет сигналов</h2><span class="sub">монет с причиной</span></div>
+      <div id="blockers"><div class="empty">Загрузка…</div></div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-bottom:16px">
+    <div class="card-h"><h2>Самообучение</h2><span class="sub" id="learn-sub"></span></div>
+    <div id="learning"><div class="empty">Загрузка…</div></div>
+  </div>
+
+  <div class="card" style="margin-bottom:16px">
+    <div class="card-h">
+      <h2>Наблюдение за сетапами</h2>
+      <div class="toolbar">
+        <input type="search" id="wl-q" placeholder="Поиск монеты">
+        <select id="wl-side"><option value="">Все стороны</option><option>LONG</option><option>SHORT</option></select>
+        <select id="wl-stage"><option value="">Все стадии</option><option>CONFIRMED</option><option>ENTRY APPROACHING</option><option>POTENTIAL</option><option>DEVELOPING</option><option>WATCHLIST</option></select>
+      </div>
+    </div>
+    <div class="table-wrap"><table>
+      <thead><tr>
+        <th>Монета</th><th>Сторона</th><th>Стадия</th><th class="num sortable" data-sort="score">Score ▾</th>
+        <th class="num sortable" data-sort="distance_atr">До зоны, ATR</th><th class="num">Зона</th><th>Проверки</th><th>Чего не хватает</th>
+      </tr></thead>
+      <tbody id="wl"><tr class="static"><td colspan="8" class="empty">Загрузка…</td></tr></tbody>
+    </table></div>
+  </div>
+
+  <div class="card">
+    <div class="card-h">
+      <h2>История сделок</h2>
+      <div class="toolbar"><select id="h-filter"><option value="">Все</option><option value="WIN">Прибыльные</option><option value="LOSS">Убыточные</option></select></div>
+    </div>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Закрыта</th><th>Монета</th><th>Сторона</th><th class="num">Вход</th><th class="num">Выход</th><th class="num">PnL</th><th>Выход по</th><th class="num">Score</th></tr></thead>
+      <tbody id="hist"><tr class="static"><td colspan="8" class="empty">Загрузка…</td></tr></tbody>
+    </table></div>
+  </div>
+  <p class="sub" style="margin:16px 0 4px">Paper trading. Score — оценка качества сетапа, а не вероятность прибыли.</p>
+</div>
+
+<dialog id="dlg">
+  <div class="dlg-h"><h3 id="dlg-t">—</h3><a id="dlg-raw" target="_blank" rel="noopener">JSON</a><button class="icon" onclick="dlg.close()">✕</button></div>
+  <div class="dlg-b" id="dlg-b"></div>
+</dialog>
+
+<script>
+const $ = id => document.getElementById(id);
+const esc = v => String(v ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const fmt = (v, d = 2) => v == null || !isFinite(v) ? '—' : Number(v).toLocaleString('ru-RU', {minimumFractionDigits: d, maximumFractionDigits: d});
+const price = v => { if (v == null || !isFinite(v)) return '—'; const a = Math.abs(v); return fmt(v, a >= 1000 ? 2 : a >= 1 ? 4 : a >= 0.01 ? 5 : 8); };
+const signed = (v, d = 2, suf = '') => v == null ? '—' : `<span class="${v > 0 ? 'pos' : v < 0 ? 'neg' : ''}">${v > 0 ? '+' : ''}${fmt(v, d)}${suf}</span>`;
+const ago = s => { if (!s) return '—'; const d = Math.max(0, Date.now() / 1000 - s); return d < 60 ? `${Math.round(d)} с назад` : d < 3600 ? `${Math.round(d / 60)} мин назад` : `${Math.round(d / 3600)} ч назад`; };
+const REASONS = {
+  no_recent_retest: 'Нет ретеста зоны', no_bullish_rejection: 'Нет бычьего отбоя', no_bearish_rejection: 'Нет медвежьего отбоя',
+  entry_too_far: 'Цена далеко от зоны', htf_opposition: 'Старший ТФ против', higher_4h_opposition: '4h тренд против',
+  thin_orderbook: 'Тонкий стакан', orderbook_depth_incomplete: 'Неполный стакан', extended_from_vwap: 'Далеко от VWAP',
+  fvg_fully_filled: 'Зона заполнена', fvg_ce_invalidated: 'Закрытие за CE', ema_opposition: 'EMA против',
+  structure_opposition: 'Структура против', low_relative_volume: 'Низкий объём', score_below_threshold: 'Score ниже порога',
+  stop_too_wide: 'Слишком широкий стоп', rsi_extreme: 'RSI экстремум', zone_exhausted: 'Зона отработана',
+  prolonged_zone_residence: 'Цена застряла в зоне', volatility_shock: 'Шок волатильности', correlated_btc_opposition: 'BTC против',
+  risk_guard: 'Risk guard (лимит)', benchmark_context_unavailable: 'Нет данных BTC/ETH', htf_unavailable_or_stale: 'Нет данных старшего ТФ',
+  insufficient_history: 'Новая монета: мало истории', lower_ranked_zone: 'Выбрана зона получше',   same_direction_exposure_limit: 'Лимит позиций в сторону', expensive_crowded_funding: 'Дорогой funding', wide_spread: 'Широкий спред',
+  market_breadth_opposition: 'Рынок против', insufficient_rr_after_costs: 'Мало R после комиссий', execution_price_moved: 'Цена ушла',
+  continuation_not_confirmed: 'Продолжение не подтверждено', illiquid_market: 'Низкая ликвидность', ce_invalid: 'Цена за CE',
+  previously_used_zone: 'Зона уже использована', backtest_pending: 'Бэктест в очереди', orderbook_unavailable: 'Стакан недоступен',
+  higher_4h_unavailable_or_stale: 'Нет данных 4h', critical_negative_news: 'Критичная новость', news_score_below_threshold: 'Новости снизили score', news_coverage_incomplete: 'Новостные ленты недоступны', recent_high_impact_headline: 'Свежая важная новость', funding_unavailable: 'Нет funding', learning_score_below_threshold: 'Самообучение снизило score',
+};
+const reason = r => REASONS[r] || r;
+const CHECKS = ['FVG', 'Zone eligibility', 'HTF bias', 'Structure', 'Liquidity', 'Entry'];
+const CHECK_RU = {'FVG': 'FVG', 'Zone eligibility': 'Зона годна', 'HTF bias': 'Старший ТФ', 'Structure': 'Структура', 'Liquidity': 'Ликвидность', 'Entry': 'Вход'};
+
+// Theme
+const savedTheme = (() => { try { return localStorage.getItem('theme'); } catch { return null; } })();
+if (savedTheme) document.documentElement.dataset.theme = savedTheme;
+$('theme-btn').onclick = () => {
+  const next = document.documentElement.dataset.theme === 'light' ? 'dark' : 'light';
+  document.documentElement.dataset.theme = next;
+  try { localStorage.setItem('theme', next); } catch {}
+  drawEquity();
+};
+
+// Equity chart
+let chart, equity = [];
+function cssVar(n) { return getComputedStyle(document.documentElement).getPropertyValue(n).trim(); }
+function drawEquity() {
+  if (!window.Chart) { $('eq-sub').textContent = 'график не загрузился (нет доступа к CDN)'; return; }
+  const pts = equity.map(e => ({x: e.t, y: e.balance}));
+  if (equity.length && equity[0].amount != null) pts.unshift({x: equity[0].t - 1, y: equity[0].balance - equity[0].amount});
+  const up = pts.length < 2 || pts[pts.length - 1].y >= pts[0].y;
+  const color = up ? cssVar('--green') : cssVar('--red');
+  $('eq-sub').textContent = pts.length ? `${pts.length} записей` : '';
+  if (chart) chart.destroy();
+  chart = new Chart($('equity'), {
+    type: 'line',
+    data: {datasets: [{data: pts, borderColor: color, backgroundColor: color + '22', fill: true, borderWidth: 2, pointRadius: 0, tension: .15, stepped: false}]},
+    options: {
+      responsive: true, maintainAspectRatio: false, animation: false, parsing: false,
+      interaction: {mode: 'index', intersect: false},
+      plugins: {legend: {display: false}, tooltip: {callbacks: {
+        title: items => new Date(items[0].parsed.x).toLocaleString('ru-RU'),
+        label: item => `${fmt(item.parsed.y)} USDT`}}},
+      scales: {
+        x: {type: 'linear', grid: {display: false}, ticks: {color: cssVar('--muted'), maxTicksLimit: 6, callback: v => new Date(v).toLocaleDateString('ru-RU', {day: '2-digit', month: '2-digit'})}},
+        y: {grid: {color: cssVar('--line')}, ticks: {color: cssVar('--muted')}},
+      },
+    },
+  });
+  if (!pts.length) $('eq-sub').textContent = 'закрытых сделок пока нет';
+}
+async function loadEquity() {
+  try { equity = await (await fetch('/api/equity_history')).json(); drawEquity(); } catch (e) { console.error(e); }
+}
+
+// History
+let history = [];
+function drawHistory() {
+  const f = $('h-filter').value;
+  const rows = history.filter(t => !f || (f === 'LOSS' ? t.outcome === 'LOSS' && t.pnl_pct !== 0 : t.outcome === f));
+  $('hist').innerHTML = rows.length ? rows.map(t => {
+    const when = (t.closed_ts || t.ts || '').replace('T', ' ').slice(0, 16);
+    const kind = t.pnl_pct === 0 ? 'info' : t.outcome === 'WIN' ? 'ok' : 'bad';
+    return `<tr data-sym="${esc(t.symbol)}"><td class="mono">${esc(when)}</td><td><b>${esc(t.symbol)}</b></td>
+      <td><span class="side ${esc(t.side)}">${esc(t.side)}</span></td><td class="num">${price(t.entry)}</td><td class="num">${price(t.exit_price)}</td>
+      <td class="num">${signed(t.pnl_pct, 2, '%')}</td><td><span class="pill ${kind}">${esc(t.exit_reason || '—')}</span></td><td class="num">${fmt(t.score, 0)}</td></tr>`;
+  }).join('') : '<tr class="static"><td colspan="8" class="empty">Сделок пока нет</td></tr>';
+}
+async function loadHistory() {
+  try { history = await (await fetch('/api/history?limit=100')).json(); drawHistory(); } catch (e) { console.error(e); }
+}
+$('h-filter').onchange = drawHistory;
+
+// Live overview
+let state = null, sortKey = 'score';
+function setPill(id, cls, text) { const el = $(id); el.className = 'pill ' + cls; el.innerHTML = `<span class="dot"></span>${esc(text)}`; }
+
+function render(o) {
+  state = o;
+  setPill('run-pill', o.is_running ? 'ok' : 'warn', o.is_running ? 'Сканирует' : 'Остановлен');
+  const hs = o.health?.status || 'UNKNOWN';
+  setPill('health-pill', {HEALTHY: 'ok', WARNING: 'warn', CRITICAL: 'bad'}[hs] || '', {HEALTHY: 'Система в норме', WARNING: 'Предупреждение', CRITICAL: 'Критично'}[hs] || hs);
+  const details = o.health?.details || [];
+  $('health-pill').title = details.join('\n');
+  const hb = $('health-box');
+  if (hs !== 'HEALTHY' && details.length) {
+    const probs = Object.entries(o.health?.problem_symbols || {}).filter(([, v]) => v.length)
+      .map(([k, v]) => `${k === 'stale' ? 'устаревшие данные' : 'ошибка загрузки'}: ${v.slice(0, 12).map(esc).join(', ')}${v.length > 12 ? '…' : ''}`);
+    hb.hidden = false;
+    hb.className = 'health-box' + (hs === 'CRITICAL' ? ' bad' : '');
+    hb.innerHTML = `<b>${hs === 'CRITICAL' ? 'Проблема' : 'Почему предупреждение'}:</b> ${details.map(esc).join('; ')}${probs.length ? `<div class="sub">${probs.join(' · ')}</div>` : ''}`;
+  } else {
+    hb.hidden = true;
+  }
+  if (hs === 'HEALTHY' && (o.health?.notes || []).length) $('health-pill').title = o.health.notes.join('; ');
+  const sc = o.scan || {}, p = o.policy || {};
+  const cov = sc.coverage ? ` · свежих ${sc.coverage.fresh ?? '—'}, ошибок ${(sc.coverage.failed || 0) + (sc.coverage.stale || 0)}` : '';
+  const done = sc.last_completed_at ? ago(Date.parse(sc.last_completed_at) / 1000) : '—';
+  $('scan-line').textContent = `ТФ ${p.timeframe}m / контекст ${p.context_timeframe}m · профиль ${p.profile} · порог score ${p.min_score} · ${p.version} · проход: ${sc.processed ?? 0}/${sc.selected ?? 0} монет за ${fmt(sc.cycle_seconds, 1)} с, ${done}${cov}`;
+
+  const s = o.stats || {};
+  $('k-bal').textContent = fmt(s.balance) + ' $';
+  $('k-pnl').innerHTML = signed(s.net_pnl_usdt, 2, ' $');
+  $('k-wr').textContent = s.win_rate == null ? '—' : fmt(s.win_rate, 1) + '%';
+  $('k-wr-h').textContent = `${s.wins ?? 0} W / ${s.losses ?? 0} L` + (s.breakeven ? ` / ${s.breakeven} BE` : '');
+  $('k-pf').textContent = s.profit_factor == null ? '—' : fmt(s.profit_factor);
+  $('k-tr').textContent = `${s.trades ?? 0} закрытых сделок`;
+  $('k-act').textContent = `${s.active ?? 0} / ${p.max_active ?? '—'}`;
+  const upnl = (o.active || []).reduce((a, t) => a + (t.pnl_usdt || 0), 0);
+  $('k-act-h').innerHTML = (o.active || []).length ? 'нереализ. ' + signed(upnl, 2, ' $') : 'нет открытых';
+  const m = o.market || {};
+  $('k-mkt').textContent = `${m.eligible ?? 0} / ${m.contracts ?? 0}`;
+  $('k-mkt-h').textContent = `BTC ${m.btc || '—'} · ETH ${m.eth || '—'} · рост ${m.breadth == null ? '—' : Math.round(m.breadth * 100) + '%'}`;
+
+  $('active').innerHTML = (o.active || []).length ? o.active.map(t => {
+    const pct = t.progress == null ? null : t.progress * 100;
+    const entryPos = Math.abs(t.tp - t.sl) ? Math.min(100, Math.max(0, Math.abs(t.entry - t.sl) / Math.abs(t.tp - t.sl) * 100)) : 50;
+    return `<div class="pos-item" data-sym="${esc(t.symbol)}" style="cursor:pointer">
+      <div class="row"><b>${esc(t.symbol)}</b><span class="side ${esc(t.side)}">${esc(t.side)}</span>${t.stop_locked ? '<span class="pill ok" style="padding:1px 7px">стоп в б/у</span>' : ''}
+        <span class="grow"></span><span class="num">${signed(t.pnl_pct, 2, '%')}</span><span class="num sub">${t.r == null ? '' : fmt(t.r, 2) + 'R'}</span></div>
+      <div class="bar"><span class="entry" style="left:${entryPos}%"></span>${pct == null ? '' : `<span class="mark" style="left:calc(${pct}% - 1px)"></span>`}</div>
+      <div class="levels num"><span>SL ${price(t.sl)}</span><span class="mid">вход ${price(t.entry)} · сейчас ${price(t.price)}</span><span>TP ${price(t.tp)}</span></div>
+    </div>`;
+  }).join('') : '<div class="empty">Открытых позиций нет</div>';
+
+  $('signals').innerHTML = (o.signals || []).length ? o.signals.map(g => `
+    <div class="sig ${esc(g.side)}" data-sym="${esc(g.symbol)}" style="cursor:pointer">
+      <div class="row"><b>${esc(g.symbol)}</b><span class="side ${esc(g.side)}">${esc(g.side)}</span><span class="tag">${esc(g.setup || '')}</span>
+        <span class="grow"></span><span class="pill info">Score ${esc(g.score)}</span></div>
+      <div class="lv num"><div><span>Вход</span><b>${price(g.entry)}</b></div><div><span>Стоп</span><b>${price(g.sl)}</b></div><div><span>Цель</span><b>${price(g.tp)}</b></div><div><span>R:R</span><b>${fmt(g.rr)}</b></div></div>
+      <div class="tags">${(g.factors || []).slice(0, 10).map(f => `<span class="tag">${esc(f)}</span>`).join('')}</div>
+      ${g.history?.win_rate_est != null ? `<div class="sub" style="margin-top:6px">История похожих: успех ~${fmt(g.history.win_rate_est, 0)}% (${g.history.trades} шт., ${signed(g.history.avg_r, 2, 'R')})${g.learning_adjustment ? ' · самообучение ' + (g.learning_adjustment > 0 ? '+' : '') + g.learning_adjustment : ''}</div>` : ''}
+      <div class="sub" style="margin-top:6px">${ago(g.generated_at)} · ${g.paper_opened ? 'paper-сделка открыта' : g.paper_skip_reason ? 'не открыта: ' + esc(reason(g.paper_skip_reason)) : 'paper: лимит позиций'}</div>
+    </div>`).join('') : '<div class="empty">Сейчас ни один сетап не прошёл все фильтры</div>';
+
+  const bl = o.blockers || [];
+  const max = Math.max(1, ...bl.map(b => b.symbols));
+  $('blockers').innerHTML = bl.length ? bl.map(b => `
+    <div class="blk ${b.system ? 'system' : ''}" title="${esc(b.reason)}">
+      <div class="row"><span class="grow">${esc(reason(b.reason))}</span><span class="num sub">${b.symbols}</span></div>
+      <div class="track"><div class="fill" style="width:${b.symbols / max * 100}%"></div></div>
+    </div>`).join('') : '<div class="empty">Нет данных</div>';
+
+  drawWatchlist();
+}
+
+function drawWatchlist() {
+  if (!state) return;
+  const q = $('wl-q').value.trim().toUpperCase(), side = $('wl-side').value, stage = $('wl-stage').value;
+  const rows = (state.watchlist || []).filter(r => (!q || r.symbol.includes(q)) && (!side || r.side === side) && (!stage || r.stage === stage));
+  if (sortKey === 'distance_atr') rows.sort((a, b) => (a.distance_atr ?? 1e9) - (b.distance_atr ?? 1e9));
+  $('wl').innerHTML = rows.length ? rows.map(r => `
+    <tr data-sym="${esc(r.symbol)}">
+      <td><b>${esc(r.symbol)}</b></td><td><span class="side ${esc(r.side)}">${esc(r.side)}</span></td>
+      <td><span class="stage ${esc(r.stage)}">${esc(r.stage)}</span></td>
+      <td class="num">${fmt(r.score, 0)}</td><td class="num">${r.distance_atr == null ? '—' : fmt(r.distance_atr, 2)}</td>
+      <td class="num">${price(r.bottom)} – ${price(r.top)}</td>
+      <td><span class="checks" title="${CHECKS.map(c => CHECK_RU[c] + ': ' + (r.checks[c] ? 'да' : 'нет')).join('\n')}">${CHECKS.map(c => `<i class="${r.checks[c] ? 'on' : ''}"></i>`).join('')}</span></td>
+      <td class="sub" style="white-space:normal;min-width:180px">${r.missing.slice(0, 3).map(reason).map(esc).join(', ') || '—'}</td>
+    </tr>`).join('') : '<tr class="static"><td colspan="8" class="empty">Нет активных сетапов</td></tr>';
+}
+['wl-q', 'wl-side', 'wl-stage'].forEach(id => $(id).addEventListener('input', drawWatchlist));
+document.querySelectorAll('th.sortable').forEach(th => th.onclick = () => {
+  sortKey = th.dataset.sort;
+  document.querySelectorAll('th.sortable').forEach(x => x.textContent = x.textContent.replace(' ▾', ''));
+  th.textContent += ' ▾';
+  if (sortKey === 'score') state.watchlist.sort((a, b) => (b.score ?? 0) - (a.score ?? 0));
+  drawWatchlist();
+});
+
+// Coin detail
+const dlg = $('dlg');
+document.addEventListener('click', e => {
+  const el = e.target.closest('[data-sym]');
+  if (el && !e.target.closest('dialog')) openCoin(el.dataset.sym);
+});
+async function openCoin(sym) {
+  $('dlg-t').textContent = sym;
+  $('dlg-raw').href = '/api/coin/' + encodeURIComponent(sym);
+  $('dlg-b').innerHTML = '<div class="empty">Загрузка…</div>';
+  dlg.showModal();
+  try {
+    const d = await (await fetch('/api/coin/' + encodeURIComponent(sym))).json();
+    const live = d.live || {}, intel = live.intelligence || {}, mkt = live.market || {}, htf = live.htf_context || {};
+    const zones = live.zones || [], asm = live.assessments || {};
+    const op = d.commentary || {};
+    let h = `<div class="opinion"><div class="mini-h" style="margin:0 0 6px">Мнение бота</div>${(op.lines || []).map(l => `<p>${esc(l)}</p>`).join('')}<p class="verdict">${esc(op.verdict || '')}</p></div>`;
+    h += `<h4>Показатели</h4><div class="kv">
+      <div><span>Цена</span><b class="num">${price(live.current_price)}</b></div>
+      <div><span>Режим</span><b>${esc(intel.regime || '—')}</b></div>
+      <div><span>Тренд / старший ТФ</span><b>${esc(intel.trend || '—')} / ${esc(htf.trend || '—')}</b></div>
+      <div><span>ADX / RSI</span><b class="num">${fmt(intel.adx, 1)} / ${fmt(intel.rsi, 1)}</b></div>
+      <div><span>Оборот 24h</span><b class="num">${mkt.turnover_24h ? fmt(mkt.turnover_24h / 1e6, 1) + 'M' : '—'}</b></div>
+      <div><span>Спред</span><b class="num">${fmt(mkt.spread_bps, 1)} bps</b></div>
+      <div><span>Funding</span><b class="num">${mkt.funding_rate == null ? '—' : fmt(mkt.funding_rate * 100, 4) + '%'}</b></div>
+      <div><span>Бэктест</span><b>${esc(d.qualification?.status || '—')}</b></div>
+    </div>`;
+    if (live.blockers?.length) h += `<h4>Блокировки входа</h4><div class="tags">${live.blockers.map(b => `<span class="tag">${esc(reason(b))}</span>`).join('')}</div>`;
+    for (const z of zones) {
+      const a = asm[String(z.candle_time) + z.type] || {};
+      const sideTxt = z.type === 'BULLISH' ? 'LONG' : 'SHORT';
+      h += `<h4>Зона ${esc(z.type)} · ${esc(a.status || '')} · score ${fmt(a.score, 0)}</h4>
+        <div class="kv"><div><span>Диапазон</span><b class="num">${price(z.bottom)} – ${price(z.top)}</b></div><div><span>CE</span><b class="num">${price(z.ce)}</b></div>
+        <div><span>Возраст / касания</span><b class="num">${z.age} св. / ${z.touches}</b></div><div><span>Импульс</span><b class="num">${fmt(z.displacement_atr, 2)} ATR</b></div></div>
+        <div class="chk" style="margin-top:8px">${CHECKS.map(c => `<span class="${(a.checks || {})[c] ? 'y' : 'n'}">${CHECK_RU[c]}</span>`).join('')}</div>
+        ${(a.rejections || []).length || (a.execution_rejections || []).length ? `<p class="sub" style="margin-top:8px">Не хватает (${sideTxt}): ${[...(a.rejections || []), ...(a.execution_rejections || [])].map(reason).map(esc).join(', ')}</p>` : ''}`;
+    }
+    if (!zones.length) h += '<h4>FVG-зоны</h4><div class="sub">Активных зон нет</div>';
+    const safeUrl = u => /^https:\/\//.test(u || '') ? esc(u) : '#';
+    const toneTag = t => t == null ? '' : `<span class="tone ${t >= 0.25 ? 'p' : t <= -0.25 ? 'n' : 'z'}">${t > 0 ? '+' : ''}${fmt(t, 1)}</span>`;
+    const coinNews = d.news?.coin || {};
+    const heads = coinNews.headlines || [];
+    h += `<h4>Новости по монете · ${coinNews.count_24h ?? 0} за 24ч · тон ${coinNews.sentiment == null ? '—' : fmt(coinNews.sentiment, 2)}${coinNews.checked_at ? ' · проверено ' + ago(coinNews.checked_at / 1000) : ' · ещё не проверялась'}</h4>`;
+    h += heads.length ? heads.map(n => `<div class="news-row">${toneTag(n.tone)}<a href="${safeUrl(n.url)}" target="_blank" rel="noopener noreferrer">${esc(n.title)}</a><span class="sub" style="margin-left:auto;flex:none">${ago(n.published_at / 1000)}</span></div>`).join('') : '<div class="sub">Заголовков не найдено</div>';
+    const macro = (d.news?.events || []).filter(n => n.kind === 'macro');
+    if (macro.length) h += `<h4>Макро-события</h4>${macro.slice(0, 3).map(n => `<div class="news-row"><span class="tone z">macro</span>${esc(n.title)}</div>`).join('')}`;
+    $('dlg-b').innerHTML = h;
+  } catch (e) { $('dlg-b').innerHTML = '<div class="empty">Не удалось загрузить данные</div>'; }
+}
+
+// Market brief and observation feed
+const pctTxt = v => v == null ? '—' : (v > 0 ? '+' : '') + fmt(v * 100, 1) + '%';
+const chips = (rows, val, cls) => rows.length ? `<div class="chips">${rows.map(r => `<span class="chip" data-sym="${esc(r.symbol)}">${esc(r.symbol.replace('USDT', ''))}<span class="num ${cls ? cls(r) : ''}">${val(r)}</span></span>`).join('')}</div>` : '<div class="sub" style="margin:4px 0 10px">—</div>';
+async function loadBrief() {
+  try {
+    const {brief: b, feed} = await (await fetch('/api/brief')).json();
+    const rp = $('regime-pill');
+    rp.className = 'pill ' + (b.regime === 'risk-on' ? 'ok' : b.regime === 'risk-off' ? 'bad' : 'warn');
+    rp.textContent = b.regime;
+    $('brief').innerHTML = `<p class="brief-sum">${esc(b.summary)}</p>
+      <div class="mini-h">Лидеры роста за 24ч</div>${chips(b.gainers, r => pctTxt(r.change), () => 'pos')}
+      <div class="mini-h">Лидеры падения</div>${chips(b.losers, r => pctTxt(r.change), () => 'neg')}
+      <div class="mini-h">Всплески объёма</div>${chips(b.volume_spikes, r => fmt(r.rvol, 1) + '×')}
+      <div class="mini-h">Перегрев по funding (толпа в лонгах / шортах)</div>${chips([...b.funding_high, ...b.funding_low], r => fmt(r.funding * 100, 3) + '%', r => r.funding > 0 ? 'neg' : 'pos')}
+      <div class="mini-h">Новостной фон</div>${chips([...b.news_bullish.map(n => ({...n, k: 'p'})), ...b.news_bearish.map(n => ({...n, k: 'n'}))], r => (r.sentiment > 0 ? '+' : '') + fmt(r.sentiment, 2), r => r.k === 'p' ? 'pos' : 'neg')}`;
+    $('feed').innerHTML = feed.length ? feed.map(e => `<div class="feed-item ${esc(e.level)}" data-sym="${esc(e.symbol)}">
+      <span class="t mono">${new Date(e.t * 1000).toLocaleTimeString('ru-RU', {hour: '2-digit', minute: '2-digit'})}</span>
+      <span><b>${esc(e.symbol)}</b> ${esc(e.text)}</span></div>`).join('') : '<div class="empty">Пока тихо — бот наблюдает</div>';
+  } catch (e) { console.error(e); }
+}
+loadBrief();
+setInterval(loadBrief, 10000);
+
+// What the bot learned from shadow outcomes
+async function loadLearning() {
+  try {
+    const d = await (await fetch('/api/factors')).json();
+    $('learn-sub').textContent = `теневые сделки: открыто ${d.shadow.open}, закрыто ${d.shadow.closed}`;
+    const factorRow = f => `<tr class="static"><td>${esc(f.factor)}</td><td class="num">${f.trades}</td><td class="num">${f.win_rate == null ? '—' : fmt(f.win_rate, 0) + '%'}</td><td class="num">${signed(f.avg_r, 2, 'R')}</td><td class="num">${signed(f.effect_r, 2, 'R')}</td></tr>`;
+    const factors = (d.factors || []).filter(f => f.sample_ok).sort((a, b) => b.effect_r - a.effect_r);
+    const blockers = (d.blockers || []).filter(b => b.blocker !== '__passed__').slice(0, 10);
+    const passed = (d.blockers || []).find(b => b.blocker === '__passed__');
+    $('learning').innerHTML = `<div class="opinion" style="margin-bottom:12px">${(d.insights || []).map(l => `<p>${esc(l)}</p>`).join('')}
+        ${passed ? `<p>Сетапы, прошедшие все фильтры: ${passed.trades} шт., win rate ${fmt(passed.win_rate, 0)}%, в среднем ${signed(passed.avg_r, 2, 'R')}.</p>` : ''}</div>
+      <div class="grid g-1-1" style="margin:0">
+        <div><div class="mini-h">Факторы (влияние против среднего, с поправкой на малую выборку)</div><div class="table-wrap"><table>
+          <thead><tr><th>Фактор</th><th class="num">Сделок</th><th class="num">Win</th><th class="num">Средн.</th><th class="num">Эффект</th></tr></thead>
+          <tbody>${factors.length ? factors.map(factorRow).join('') : '<tr class="static"><td colspan="5" class="empty">Нужно больше закрытых теневых сделок</td></tr>'}</tbody></table></div></div>
+        <div><div class="mini-h">Фильтры: что было бы с отсечёнными сетапами</div><div class="table-wrap"><table>
+          <thead><tr><th>Фильтр</th><th class="num">Сделок</th><th class="num">Средн.</th><th>Вывод</th></tr></thead>
+          <tbody>${blockers.length ? blockers.map(b => `<tr class="static"><td>${esc(reason(b.blocker))}</td><td class="num">${b.trades}</td><td class="num">${signed(b.avg_r, 2, 'R')}</td><td class="sub" style="white-space:normal">${esc(b.verdict)}</td></tr>`).join('') : '<tr class="static"><td colspan="4" class="empty">Пока нет данных</td></tr>'}</tbody></table></div></div>
+      </div>`;
+  } catch (e) { console.error(e); }
+}
+loadLearning();
+setInterval(loadLearning, 60000);
+
+// WebSocket with reconnect; HTTP polling as fallback while disconnected.
+let ws, retry = 1000, poll;
+function connect() {
+  ws = new WebSocket(`${location.protocol === 'https:' ? 'wss' : 'ws'}://${location.host}/ws`);
+  ws.onopen = () => { retry = 1000; setPill('conn-pill', 'ok', 'Онлайн'); clearInterval(poll); poll = null; };
+  ws.onmessage = ev => { try { render(JSON.parse(ev.data)); } catch (e) { console.error(e); } };
+  ws.onclose = () => {
+    setPill('conn-pill', 'bad', 'Нет связи, переподключение…');
+    if (!poll) poll = setInterval(() => fetch('/api/overview').then(r => r.json()).then(render).catch(() => {}), 5000);
+    setTimeout(connect, retry); retry = Math.min(retry * 2, 30000);
+  };
+}
+connect();
+loadEquity(); loadHistory();
+setInterval(() => { loadEquity(); loadHistory(); }, 15000);
+</script>
+</body>
+</html>

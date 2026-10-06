@@ -25,7 +25,7 @@ class ExecutionTests(unittest.TestCase):
                 signal = dict(signal="LONG", entry=100, sl=99, tp=103, rr=3, strategy_version="structure_v2")
                 self.assertTrue(paper.open_paper_trade("TESTUSDT", signal))
                 self.assertFalse(paper.open_paper_trade("TESTUSDT", signal))
-                with patch.object(paper, "save_settings"), patch.object(paper, "log_info"):
+                with patch.object(paper, "log_info"):
                     asyncio.run(paper.check_active_trades(None, "TESTUSDT", 102, 98))
                 trade = database.get_history_signals()[0]
                 self.assertEqual(trade["outcome"], "LOSS")
@@ -42,9 +42,40 @@ class ExecutionTests(unittest.TestCase):
         trade = dict(id=1, symbol="TESTUSDT", side="LONG", entry=100, sl=99, tp=103,
                      ml_features=json.dumps({"position_size_usdt": 1000}))
         try:
-            with patch.object(paper, "get_active_signals", return_value=[trade]), patch.object(paper, "settle", return_value=(-30,saved-30)) as close, patch.object(paper, "save_settings"):
+            with patch.object(paper, "get_active_signals", return_value=[trade]), patch.object(paper, "settle", return_value=(-30,saved-30)) as close:
                 asyncio.run(paper.check_active_trades(None, "TESTUSDT", 97, 97))
                 self.assertEqual(close.call_args.args[2], 97)
+        finally:
+            cfg.paper_balance = saved
+
+    def test_managed_stop_exit_is_labeled_trail_or_be(self):
+        from trading import paper_trading as paper
+        from core.settings import cfg
+        saved = cfg.paper_balance
+        features = json.dumps({"position_size_usdt": 1000, "execution_version": "cost_aware_v1", "fee_bps": 5, "slippage_bps": 0})
+        cases = [(99, "SL"), (100.1, "BE"), (101.5, "TRAIL")]
+        try:
+            for stop, expected in cases:
+                trade = dict(id=1, symbol="TESTUSDT", side="LONG", entry=100, sl=stop, tp=103, ml_features=features)
+                with patch.object(paper, "get_active_signals", return_value=[trade]), patch.object(paper, "settle", return_value=(0, saved)) as close:
+                    asyncio.run(paper.check_active_trades(None, "TESTUSDT", stop-0.5, stop-0.5))
+                    self.assertEqual(close.call_args.args[4], expected)
+        finally:
+            cfg.paper_balance = saved
+
+    def test_trade_close_never_rewrites_config_file(self):
+        from trading import paper_trading as paper
+        from core import settings as settings_mod
+        from core.settings import cfg
+        saved = cfg.paper_balance
+        trade = dict(id=1, symbol="TESTUSDT", side="LONG", entry=100, sl=99, tp=103, ml_features=json.dumps({"position_size_usdt": 1000}))
+        try:
+            with patch.object(paper, "get_active_signals", return_value=[trade]), patch.object(paper, "settle", return_value=(30, saved+30)), \
+                 patch.object(settings_mod, "save_settings") as save, patch.object(settings_mod, "_mutate_global") as mutate:
+                asyncio.run(paper.check_active_trades(None, "TESTUSDT", 103.5, 103.5))
+            save.assert_not_called()
+            mutate.assert_not_called()
+            self.assertEqual(cfg.paper_balance, saved+30)
         finally:
             cfg.paper_balance = saved
 

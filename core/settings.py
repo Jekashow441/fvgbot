@@ -102,6 +102,14 @@ class BotSettings(BaseModel):
     news_max_age_hours: int = Field(default=24, ge=1, le=168)
     news_blackout_minutes: int = Field(default=60, ge=5)
     news_require_coverage: bool = True
+    enable_shadow_learning: bool = True
+    shadow_max_hold_bars: int = Field(default=48, ge=6, le=500)
+    enable_coin_news: bool = True
+    coin_news_interval_seconds: float = Field(default=4, ge=1)
+    coin_news_priority_ttl_minutes: int = Field(default=15, ge=5)
+    coin_news_ttl_minutes: int = Field(default=120, ge=15)
+    coin_news_max_age_hours: int = Field(default=48, ge=6, le=168)
+    coin_news_score_weight: int = Field(default=6, ge=0, le=15)
     news_feeds: List[str] = Field(default_factory=lambda: [
         "https://www.federalreserve.gov/feeds/press_monetary.xml",
         "https://www.coindesk.com/arc/outboundfeeds/rss/",
@@ -110,6 +118,10 @@ class BotSettings(BaseModel):
     max_funding_rate: float = Field(default=0.001, gt=0)
     min_book_depth_usdt: float = Field(default=25000, ge=0)
     book_depth_bps: float = Field(default=20, gt=0)
+    # Required same-side depth scales with the planned position, capped by
+    # min_book_depth_usdt and never below the floor.
+    book_depth_position_multiple: float = Field(default=10, gt=0)
+    min_book_depth_floor_usdt: float = Field(default=5000, ge=0)
     max_same_direction_positions: int = Field(default=3, ge=1)
     strategy_profile: str = Field(default="balanced", pattern="^(legacy|balanced|contextual)$")
     research_gate_mode: str = Field(default="paper", pattern="^(strict|paper)$")
@@ -123,6 +135,9 @@ class BotSettings(BaseModel):
     target_winrate_pct: float = Field(default=70, ge=50, le=95)
     target_min_trades: int = Field(default=100, ge=30)
     enable_system_summary: bool = True
+    scan_cycle_retention_days: int = Field(default=3, ge=1)
+    telemetry_retention_days: int = Field(default=14, ge=1)
+    journal_retention_days: int = Field(default=30, ge=7)
     system_summary_seconds: int = Field(default=14400,ge=300)
     # Diagnostic-only Telegram notices for high-quality setups one condition
     # short of a confirmed entry. These never enter the signal outbox.
@@ -188,6 +203,14 @@ def reload_settings() -> BotSettings:
 
 def save_settings(settings: BotSettings) -> None:
     clean = BotSettings(**settings.model_dump())
+    # The paper ledger owns the balance; a settings edit must not roll it back to a stale file value.
+    try:
+        from trading.paper_account import balance
+        stored = balance()
+        if stored is not None:
+            clean.paper_balance = stored
+    except Exception:
+        pass
     import tempfile
     with tempfile.NamedTemporaryFile(mode='w',encoding='utf-8',dir=DATA_DIR,suffix='.tmp',delete=False) as f:
         f.write(clean.model_dump_json(indent=4))

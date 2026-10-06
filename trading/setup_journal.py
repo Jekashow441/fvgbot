@@ -12,6 +12,33 @@ def setup_id(symbol, timeframe, zone):
 def _schema(con):
     con.execute('CREATE TABLE IF NOT EXISTS setup_events (id INTEGER PRIMARY KEY, setup_id TEXT NOT NULL, observed_at REAL NOT NULL, status TEXT NOT NULL, reason TEXT NOT NULL, payload TEXT NOT NULL)')
     con.execute('CREATE INDEX IF NOT EXISTS setup_events_key ON setup_events(setup_id,id)')
+    # One row per setup: the latest re-observation that did not change the substance.
+    con.execute('CREATE TABLE IF NOT EXISTS setup_heartbeat (setup_id TEXT PRIMARY KEY, observed_at REAL NOT NULL, analysis_bar INTEGER, current_price REAL)')
+
+
+# Fields that change on every scan without changing what the setup is.
+VOLATILE = ('current_price', 'analysis_bar')
+
+
+def _substance(assessment):
+    return {k: v for k, v in (assessment or {}).items() if k not in VOLATILE}
+
+
+def _overlay(con, rows):
+    """Latest event of each setup carries the freshest re-observation time and price."""
+    out = []
+    for r in rows:
+        row = {**dict(r), 'payload': json.loads(r['payload'])}
+        hb = con.execute('SELECT observed_at,analysis_bar,current_price FROM setup_heartbeat WHERE setup_id=?', (row['setup_id'],)).fetchone()
+        if hb and hb['observed_at'] > row['observed_at']:
+            row['observed_at'] = hb['observed_at']
+            assessment = row['payload'].get('assessment')
+            if isinstance(assessment, dict):
+                assessment.update({k: hb[k] for k in VOLATILE if hb[k] is not None})
+            if hb['current_price'] is not None:
+                row['payload']['current_price'] = hb['current_price']
+        out.append(row)
+    return out
 
 
 def record(key,status,reason,payload,now=None):
@@ -23,7 +50,11 @@ def record(key,status,reason,payload,now=None):
             return
         if last and last['status']=='CONFIRMED' and status in ('WATCHLIST','POTENTIAL','DEVELOPING','ENTRY APPROACHING'):
             return
-        if last and last['status']==status and last['reason']==reason and json.loads(last['payload']).get('assessment')==payload.get('assessment'):
+        assessment = payload.get('assessment') or {}
+        con.execute('INSERT INTO setup_heartbeat(setup_id,observed_at,analysis_bar,current_price) VALUES(?,?,?,?) '
+                    'ON CONFLICT(setup_id) DO UPDATE SET observed_at=excluded.observed_at,analysis_bar=excluded.analysis_bar,current_price=excluded.current_price',
+                    (key, now, assessment.get('analysis_bar'), assessment.get('current_price', payload.get('current_price'))))
+        if last and last['status']==status and last['reason']==reason and _substance(json.loads(last['payload']).get('assessment'))==_substance(assessment):
             return
         con.execute('INSERT INTO setup_events(setup_id,observed_at,status,reason,payload) VALUES(?,?,?,?,?)',
                     (key,now,status,reason,json.dumps(payload,allow_nan=False)))
@@ -36,7 +67,7 @@ def latest_events(limit=100, prefix=None):
             rows=con.execute('SELECT * FROM setup_events WHERE id IN (SELECT MAX(id) FROM setup_events GROUP BY setup_id) ORDER BY id DESC LIMIT ?', (limit,)).fetchall()
         else:
             rows=con.execute('SELECT * FROM setup_events WHERE id IN (SELECT MAX(id) FROM setup_events WHERE setup_id>=? AND setup_id<? GROUP BY setup_id) ORDER BY id DESC LIMIT ?', (prefix,prefix+'\uffff',limit)).fetchall()
-    return [{**dict(r),'payload':json.loads(r['payload'])} for r in rows]
+        return _overlay(con, rows)
 
 
 def snapshot(symbol,timeframe,row):
@@ -119,7 +150,10 @@ def history(key):
     with _conn() as con:
         _schema(con)
         rows=con.execute('SELECT * FROM setup_events WHERE setup_id=? ORDER BY id',(key,)).fetchall()
-    return [{**dict(r),'payload':json.loads(r['payload'])} for r in rows]
+        events=[{**dict(r),'payload':json.loads(r['payload'])} for r in rows]
+        if rows:
+            events[-1]=_overlay(con,rows[-1:])[0]
+    return events
 
 
 def report(now=None):

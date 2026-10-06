@@ -8,7 +8,7 @@ from aiogram import Bot
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 from core.settings import cfg, reload_settings
-from core.bybit import get_klines_async, get_market_tickers, get_coin_microstructure
+from core.bybit import get_klines_async, get_market_tickers, get_coin_microstructure, invalidate_klines
 from core.database import get_active_signals, get_setting_text, set_setting_text
 from trading.context import closed_candles, ticker_context
 from trading.strategy import detect_fvg, detect_fvgs, validate_signal, market_context
@@ -16,7 +16,8 @@ from trading.paper_trading import open_paper_trade, check_active_trades
 from trading.risk_manager import is_trading_allowed
 from trading.learning import apply_learning_to_signal, is_symbol_in_cooldown
 from trading.logger import log_info
-from trading.intelligence import coin_context, microstructure_context, live_blockers
+from trading.intelligence import coin_context, microstructure_context, live_blockers, required_book_depth
+from trading.position_risk import position_notional
 from trading.news import refresh_news, news_context, NEWS_STATE
 from trading.research import request_research, research_worker, load_report, qualify, research_gate
 from trading.profiles import strategy_settings
@@ -29,6 +30,8 @@ from trading.setup_journal import observe, setup_id
 from trading.setup_assessment import assess_zones
 from trading.decision_memory import assess_context, settings_key
 from trading.telemetry import event,record_cycle,heartbeat
+from trading.market_watch import observe as market_observe
+from trading import shadow
 
 LATEST_DATA = {}
 SENT_SIGNALS = {}
@@ -41,6 +44,21 @@ SCAN_RESULTS = {}
 # Serialize manual scans so repeated button presses cannot interleave writes
 # to LATEST_DATA or flood the exchange API while the background loop runs.
 _QUICK_SCAN_LOCK = None
+
+
+def apply_news_tone(signal: dict, coin_news: Optional[dict]) -> None:
+    """Headline tone nudges the score; it never creates a setup on its own."""
+    tone = (coin_news or {}).get("sentiment")
+    weight = int(cfg.coin_news_score_weight)
+    if tone is None or not weight:
+        return
+    aligned = tone if signal["signal"] == "LONG" else -tone
+    if aligned >= 0.25:
+        signal["score"] = min(100, signal["score"] + weight)
+        signal["factors"] = list(signal.get("factors") or []) + ["news_tailwind"]
+    elif aligned <= -0.25:
+        signal["score"] = max(0, signal["score"] - weight)
+        signal["factors"] = list(signal.get("factors") or []) + ["news_headwind"]
 
 
 def _signal_key(symbol: str, fvg: dict, signal: dict) -> str:
@@ -61,15 +79,48 @@ def _pick_htf() -> Optional[str]:
         return str(timeframes[-1])
 
 
+INSUFFICIENT_HISTORY = "insufficient_closed_candles"
+
+
+def _crossed_boundary(df, interval: str, now_ms: int) -> bool:
+    step = int(interval)*60000
+    observed = df.attrs.get("observed_at_ms", now_ms)
+    return observed // step != now_ms // step
+
+
+async def load_closed(symbol: str, interval: str, limit: int, minimum: int):
+    """Raw frame plus validated closed candles. A request that started just before a candle
+    boundary cannot prove the new close, so it is refetched once instead of reported stale."""
+    df = await get_klines_async(symbol, interval, limit=limit)
+    if df.empty:
+        raise ValueError("empty_candles")
+    now = int(time.time()*1000)
+    try:
+        return df, decision_candles(df, interval, now, minimum)
+    except ValueError as exc:
+        if "stale" not in str(exc) or not _crossed_boundary(df, interval, now):
+            raise
+    invalidate_klines(symbol, interval, limit)
+    df = await get_klines_async(symbol, interval, limit=limit)
+    if df.empty:
+        raise ValueError("empty_candles")
+    return df, decision_candles(df, interval, int(time.time()*1000), minimum)
+
+
+def _htf_status(ctx: Optional[dict]) -> str:
+    if ctx and not ctx.get("error") and ctx.get("trend") != "UNKNOWN":
+        return "fresh"
+    if ctx and ctx.get("error") == INSUFFICIENT_HISTORY:
+        return "insufficient_history"
+    return "unavailable"
+
+
 async def _get_htf_context(symbol: str) -> tuple[Optional[str], Optional[dict]]:
     htf = _pick_htf()
     if not htf:
         return None, None
-    df_htf = await get_klines_async(symbol, htf, limit=max(cfg.ema_period + 61, 351))
-    if df_htf.empty:
-        return htf, None
     try:
-        closed = decision_candles(df_htf, htf, int(time.time()*1000), cfg.ema_period)
+        _, closed = await load_closed(symbol, htf, max(cfg.ema_period + 61, 351), cfg.ema_period)
         return htf, market_context(closed)
     except ValueError as exc:
         return htf, {"trend":"UNKNOWN", "error":str(exc)}
@@ -80,26 +131,35 @@ async def process_symbol(bot: Optional[Bot], symbol: str, *, emit_signal: bool =
     SCAN_RESULTS[symbol]={'outcome':'failed','reason':'incomplete_scan','started_at':time.time()}
     try:
         limit = max(cfg.ema_period + 61, cfg.fvg_lookback + 81, 351)
-        df = await get_klines_async(symbol, cfg.timeframe, limit=limit)
-        if df.empty:
-            SCAN_RESULTS[symbol]['reason']='empty_candles'
-            LATEST_DATA[symbol]={'signal':None,'blockers':['empty_candles'],'updated_at':datetime.now(timezone.utc).isoformat()}
+        try:
+            raw, closed = await load_closed(symbol, cfg.timeframe, limit, cfg.ema_period)
+        except ValueError as exc:
+            reason = str(exc)
+            # A fresh listing simply has no 200-bar history yet; that is not a data fault.
+            outcome = 'skipped' if reason == INSUFFICIENT_HISTORY else 'stale' if 'stale' in reason else 'failed'
+            SCAN_RESULTS[symbol].update(outcome=outcome, reason='insufficient_history' if outcome == 'skipped' else reason)
+            LATEST_DATA[symbol] = {"signal":None,"blockers":[reason],"status":"NEW_LISTING" if outcome == 'skipped' else "INVALID_CANDLES",
+                                   "updated_at":datetime.now(timezone.utc).isoformat()}
+            # Unusable history must not stop open trades and shadows from seeing the live price.
+            price = observed_price(await get_klines_async(symbol, cfg.timeframe, limit=limit), cfg.timeframe, time.time()*1000)
+            if price is not None:
+                LATEST_DATA[symbol]["current_price"] = price
+                await check_active_trades(bot, symbol, price, price)
+                if cfg.enable_shadow_learning:
+                    shadow.update(symbol, price)
             return
 
-        current_price = observed_price(df, cfg.timeframe, time.time()*1000)
+        current_price = observed_price(raw, cfg.timeframe, time.time()*1000)
         if current_price is None:
             SCAN_RESULTS[symbol].update(outcome='stale',reason='stale_price')
             LATEST_DATA[symbol] = {"signal":None,"blockers":["stale_price"]}
             return
-        observed_frame = df.copy()
+        observed_frame = raw.copy()
         # Point observations cannot contain extrema that occurred before entry.
         await check_active_trades(bot, symbol, current_price, current_price)
-        try:
-            df = decision_candles(df, cfg.timeframe, int(time.time()*1000), cfg.ema_period)
-        except ValueError as exc:
-            SCAN_RESULTS[symbol].update(outcome='stale' if 'stale' in str(exc) else 'failed',reason=str(exc))
-            LATEST_DATA[symbol] = {"signal":None,"blockers":[str(exc)],"status":"INVALID_CANDLES"}
-            return
+        if cfg.enable_shadow_learning:
+            shadow.update(symbol, current_price)
+        df = closed
         if df.empty:
             return
         if str(cfg.timeframe).isdigit() and time.time()*1000 - int(df.iloc[-1]["timestamp"]) > int(cfg.timeframe)*60000*2:
@@ -121,7 +181,7 @@ async def process_symbol(bot: Optional[Bot], symbol: str, *, emit_signal: bool =
         if cached.get("analysis_key") == analysis_key and not retry_execution and not force_reanalysis:
             LATEST_DATA[symbol]["current_price"] = current_price
             LATEST_DATA[symbol]['updated_at']=datetime.now(timezone.utc).isoformat()
-            SCAN_RESULTS[symbol]['htf']='unavailable' if (cached.get('htf_context') or {}).get('error') else ('fresh_cached' if cached.get('htf_context') else 'not_required')
+            SCAN_RESULTS[symbol]['htf']=('fresh_cached' if _htf_status(cached['htf_context'])=='fresh' else _htf_status(cached['htf_context'])) if cached.get('htf_context') else 'not_required'
             previous=LATEST_DATA[symbol].get('signal')
             if previous and previous.get('fvg'):
                 why=invalidation_reason(previous['fvg'],observed_frame,cfg.timeframe,time.time()*1000,previous.get('strict_ce',True))
@@ -146,7 +206,7 @@ async def process_symbol(bot: Optional[Bot], symbol: str, *, emit_signal: bool =
             return
 
         htf, htf_ctx = await _get_htf_context(symbol) if fvg else (None, None)
-        SCAN_RESULTS[symbol]['htf']='unavailable' if htf and (not htf_ctx or htf_ctx.get('error')) else 'fresh' if htf else 'not_required'
+        SCAN_RESULTS[symbol]['htf']=_htf_status(htf_ctx) if htf else 'not_required'
         signal = None
         blockers = []
         micro = None
@@ -159,61 +219,87 @@ async def process_symbol(bot: Optional[Bot], symbol: str, *, emit_signal: bool =
         if not allowed:
             blockers.append("risk_guard")
         if fvg and htf and (not htf_ctx or htf_ctx.get("trend") == "UNKNOWN"):
-            blockers.append("htf_unavailable_or_stale")
+            blockers.append("insufficient_history" if _htf_status(htf_ctx) == "insufficient_history" else "htf_unavailable_or_stale")
         base_blockers = list(blockers)
         assessments=assess_zones(df,zones,htf_ctx,MARKET_DATA.get(symbol),effective) if zones else {}
+        chosen_key = None
+        skip_reasons = list(base_blockers)
+        if not MARKET_DATA.get(symbol, {}).get("eligible"):
+            skip_reasons.append("illiquid_market")
+        if htf and (not htf_ctx or htf_ctx.get("trend") == "UNKNOWN"):
+            skip_reasons.append("insufficient_history" if _htf_status(htf_ctx) == "insufficient_history" else "htf_unavailable_or_stale")
         if fvg and MARKET_DATA.get(symbol, {}).get("eligible") and allowed and (not htf or (htf_ctx and htf_ctx.get("trend") != "UNKNOWN")):
-            candidates = [(zone,assessments[str(zone['candle_time'])+zone['type']]['candidate']) for zone in zones]
+            # Setups just below the score gate are considered too: headline tone may lift them.
+            candidates = [(zone,assessments[str(zone['candle_time'])+zone['type']]['candidate'] or assessments[str(zone['candle_time'])+zone['type']]['shadow']) for zone in zones]
             for assessment in assessments.values():
                 for reason in assessment['rejections']:
                     setup_diagnostics[reason]=setup_diagnostics.get(reason,0)+1
-            candidates = sorted(((z,c) for z,c in candidates if c), key=lambda pair:(-pair[1]["score"], pair[0]["touches"], pair[0]["age"]))
+            ranked = []
+            for z, c in candidates:
+                if not c:
+                    continue
+                # Headline tone is applied before ranking so a weaker zone can still qualify.
+                apply_news_tone(c, news.get("coin"))
+                if c["score"] < cfg.min_signal_score:
+                    assessments[str(z['candle_time'])+z['type']]['execution_rejections'] = ["news_score_below_threshold"]
+                    blockers.append("news_score_below_threshold")
+                    continue
+                ranked.append((z, c))
+            candidates = sorted(ranked, key=lambda pair:(-pair[1]["score"], pair[0]["touches"], pair[0]["age"]))
             for zone, candidate in candidates:
                 zone_invalid = invalidation_reason(zone,observed_frame,cfg.timeframe,time.time()*1000,cfg.fvg_strict_mitigation)
                 if zone_invalid:
+                    assessments[str(zone['candle_time'])+zone['type']]['execution_rejections'] = [zone_invalid]
                     blockers.append(zone_invalid)
                     continue
                 if candidate:
                     # Detailed feeds are fetched only for actual strategy candidates.
                     if micro is None:
-                        raw,higher=await asyncio.gather(get_coin_microstructure(symbol),get_klines_async(symbol,'240',limit=260),return_exceptions=True)
+                        raw_book,higher=await asyncio.gather(get_coin_microstructure(symbol),load_closed(symbol,'240',260,cfg.ema_period),return_exceptions=True)
                         try:
-                            if isinstance(raw,Exception):raise raw
-                            micro = microstructure_context(raw)
+                            if isinstance(raw_book,Exception):raise raw_book
+                            micro = microstructure_context(raw_book, now_ms=int(time.time()*1000))
                         except Exception as exc:
                             event('ORDERBOOK_UNAVAILABLE',symbol=symbol,error=type(exc).__name__)
                             micro = {"status": "UNAVAILABLE"}
                         try:
                             if isinstance(higher,Exception):raise higher
-                            coin["higher_4h"] = market_context(decision_candles(higher, "240", int(time.time()*1000), cfg.ema_period))
+                            coin["higher_4h"] = market_context(higher[1])
                             SCAN_RESULTS[symbol]['higher_4h']='fresh'
                         except Exception as exc:
+                            short_history = isinstance(exc,ValueError) and str(exc) == INSUFFICIENT_HISTORY
                             event('HTF_DATA_UNAVAILABLE',symbol=symbol,timeframe='240',error=type(exc).__name__,reason=str(exc) if isinstance(exc,ValueError) else 'request_failed')
-                            coin['higher_4h']={'trend':'UNKNOWN','error':type(exc).__name__}
-                            SCAN_RESULTS[symbol]['higher_4h']='unavailable'
-                    reasons = live_blockers(candidate["signal"], coin, BENCHMARKS.get("BTCUSDT", {}).get("trend"), MARKET_DATA.get(symbol, {}), micro)
+                            coin['higher_4h']={'trend':'UNKNOWN','error':INSUFFICIENT_HISTORY if short_history else type(exc).__name__}
+                            SCAN_RESULTS[symbol]['higher_4h']='insufficient_history' if short_history else 'unavailable'
+                    active_trades = get_active_signals()
+                    notional = position_notional(candidate["entry"], candidate["sl"], cfg.paper_balance, active_trades, cfg)
+                    reasons = live_blockers(candidate["signal"], coin, BENCHMARKS.get("BTCUSDT", {}).get("trend"), MARKET_DATA.get(symbol, {}), micro, notional=notional)
+                    coin_headlines = (news.get("coin") or {})
+                    if candidate["signal"] == "LONG" and coin_headlines.get("critical"):
+                        reasons.append("critical_negative_news")
                     if coin.get("higher_4h", {}).get("trend", "UNKNOWN") == "UNKNOWN":
-                        reasons.append("higher_4h_unavailable_or_stale")
+                        reasons.append("insufficient_history" if coin.get("higher_4h", {}).get("error") == INSUFFICIENT_HISTORY else "higher_4h_unavailable_or_stale")
                     if coin.get("higher_4h", {}).get("trend") == ("DOWN" if candidate["signal"] == "LONG" else "UP"):
                         reasons.append("higher_4h_opposition")
-                    if sum(t["side"] == candidate["signal"] for t in get_active_signals()) >= cfg.max_same_direction_positions:
+                    if sum(t["side"] == candidate["signal"] for t in active_trades) >= cfg.max_same_direction_positions:
                         reasons.append("same_direction_exposure_limit")
-                    event('ENTRY_CONTEXT_CHECK',setup_id(symbol,cfg.timeframe,zone),symbol=symbol,score=candidate['score'],rejections=list(dict.fromkeys(reasons+base_blockers)),microstructure=micro,higher_4h=coin.get('higher_4h'),distance_vwap_atr=coin.get('distance_vwap_atr'),min_book_depth_usdt=cfg.min_book_depth_usdt,max_spread_bps=cfg.max_spread_bps)
+                    event('ENTRY_CONTEXT_CHECK',setup_id(symbol,cfg.timeframe,zone),symbol=symbol,score=candidate['score'],rejections=list(dict.fromkeys(reasons+base_blockers)),microstructure=micro,higher_4h=coin.get('higher_4h'),distance_vwap_atr=coin.get('distance_vwap_atr'),min_book_depth_usdt=required_book_depth(notional),max_spread_bps=cfg.max_spread_bps)
                     if reasons or base_blockers:
                         assessments[str(zone['candle_time'])+zone['type']]['execution_rejections']=list(dict.fromkeys(reasons+base_blockers))
                         blockers = list(dict.fromkeys(blockers + reasons))
                         continue
-                    current_price = micro["ask"] if candidate["signal"] == "LONG" else micro["bid"]
+                    exec_price = micro["ask"] if candidate["signal"] == "LONG" else micro["bid"]
                     # Reprice at the observed executable-side estimate; keep structural levels.
                     side = candidate["signal"]
-                    risk = current_price-candidate["sl"] if side == "LONG" else candidate["sl"]-current_price
-                    reward = candidate["tp"]-current_price if side == "LONG" else current_price-candidate["tp"]
-                    execution_reason = entry_rejection(candidate, current_price, cfg)
+                    risk = exec_price-candidate["sl"] if side == "LONG" else candidate["sl"]-exec_price
+                    reward = candidate["tp"]-exec_price if side == "LONG" else exec_price-candidate["tp"]
+                    execution_reason = entry_rejection(candidate, exec_price, cfg)
                     if execution_reason:
-                        event('ENTRY_PRICE_REJECTED',setup_id(symbol,cfg.timeframe,zone),symbol=symbol,reason=execution_reason,observed_price=current_price,signal_entry=candidate['entry'],sl=candidate['sl'],tp=candidate['tp'])
+                        event('ENTRY_PRICE_REJECTED',setup_id(symbol,cfg.timeframe,zone),symbol=symbol,reason=execution_reason,observed_price=exec_price,signal_entry=candidate['entry'],sl=candidate['sl'],tp=candidate['tp'])
                         assessments[str(zone['candle_time'])+zone['type']]['execution_rejections']=[execution_reason]
                         blockers.append(execution_reason)
                         continue
+                    current_price = exec_price
                     candidate.update(entry=current_price, rr=reward/risk, timeframe=cfg.timeframe, strategy_version=STRATEGY_VERSION, strategy_profile=cfg.strategy_profile,
                                      execution_version="cost_aware_v1", settings_fingerprint=settings_key(cfg),
                                      evidence="historical_qualified" if qualification["status"] == "PASS" else "unverified_paper",
@@ -221,6 +307,7 @@ async def process_symbol(bot: Optional[Bot], symbol: str, *, emit_signal: bool =
                     candidate.update(fvg=dict(zone), strict_ce=cfg.fvg_strict_mitigation, journal_id=setup_id(symbol,cfg.timeframe,zone), analyzed_at=time.time())
                     candidate["memory"] = assess_context(candidate)
                     fvg, signal = zone, candidate
+                    chosen_key = setup_id(symbol, cfg.timeframe, zone)
                     break
         had_candidate = signal is not None
         signal = apply_learning_to_signal(signal) if signal else None
@@ -258,11 +345,16 @@ async def process_symbol(bot: Optional[Bot], symbol: str, *, emit_signal: bool =
                 set_setting_text("signal:" + signal_id, "opened")
                 SENT_SIGNALS[symbol] = {signal_id}
 
+        if cfg.enable_shadow_learning and emit_signal and symbol_selected(symbol):
+            post_selection = {"learning_score_below_threshold", "previously_used_zone", "original_signal_expired_or_price_moved"}
+            chosen_blockers = [b for b in blockers if b in post_selection] if chosen_key else []
+            track_shadows(symbol, zones, assessments, skip_reasons, chosen_key, chosen_blockers, signal is not None, news)
+        before = dict(LATEST_DATA.get(symbol) or {})
         LATEST_DATA.setdefault(symbol, {})
         LATEST_DATA[symbol].update({
             "fvg": fvg,
             "zones": zones,
-            "assessments": {key:{k:v for k,v in a.items() if k!='candidate'} for key,a in assessments.items()},
+            "assessments": {key:{k:v for k,v in a.items() if k not in ('candidate','shadow')} for key,a in assessments.items()},
             "signal": signal,
             "signal_created": signal_created,
             "current_price": current_price,
@@ -284,6 +376,8 @@ async def process_symbol(bot: Optional[Bot], symbol: str, *, emit_signal: bool =
             "updated_at": datetime.now(timezone.utc).isoformat(),
         })
         observe(symbol,cfg.timeframe,LATEST_DATA[symbol],observed_frame,cfg)
+        if before.get("analysis_key"):
+            market_observe(symbol, before, LATEST_DATA[symbol])
     except Exception as e:
         SCAN_RESULTS[symbol].update(outcome='failed',reason=type(e).__name__)
         LATEST_DATA[symbol]={'signal':None,'blockers':['scan_error:'+type(e).__name__],'updated_at':datetime.now(timezone.utc).isoformat()}
@@ -402,6 +496,8 @@ async def _scan_loop(bot: Optional[Bot]) -> None:
             for symbol in selected:
                 request_research(symbol)
         symbols = list(dict.fromkeys(list(selected) + [t["symbol"] for t in get_active_signals()]))
+        if cfg.enable_shadow_learning:
+            await refresh_orphan_shadows(set(symbols))
         for stale_symbol in set(LATEST_DATA)-set(symbols):
             LATEST_DATA.pop(stale_symbol,None)
             SCAN_RESULTS.pop(stale_symbol,None)
@@ -424,6 +520,20 @@ async def _scan_loop(bot: Optional[Bot]) -> None:
         SCAN_STATUS.update(coverage=coverage['counts'],htf=coverage['htf'])
         SCAN_STATUS.update(cycle_seconds=round(time.monotonic()-cycle_started,2),last_completed_at=datetime.now(timezone.utc).isoformat())
         await asyncio.sleep(15)
+
+
+async def refresh_orphan_shadows(scanned: set) -> None:
+    """Shadows on coins that left the scan set are resolved from a cheap price fetch."""
+    orphans = [s for s in shadow.open_symbols() if s not in scanned][:50]
+    semaphore = asyncio.Semaphore(max(1, int(cfg.bybit_max_concurrency)))
+    async def one(symbol):
+        async with semaphore:
+            try:
+                price = observed_price(await get_klines_async(symbol, cfg.timeframe, limit=3), cfg.timeframe, time.time()*1000)
+                shadow.update(symbol, price)
+            except Exception as exc:
+                event('SHADOW_UPDATE_FAILED', symbol=symbol, error=type(exc).__name__)
+    await asyncio.gather(*(one(s) for s in orphans))
 
 
 async def _news_loop():
@@ -455,17 +565,80 @@ async def _position_loop(bot):
 
 async def _recovery_loop():
     from trading.pipeline_recovery import reconcile
+    from trading.telemetry import prune
+    last_prune = 0.0
     while True:
         try:
             reconcile()
         except Exception as exc:
             log_info(f'Pipeline recovery: {type(exc).__name__}: {exc}')
+        if time.time()-last_prune > 3600:
+            try:
+                removed = prune(cfg)
+                shadow.abandon_unpriced()
+                if any(removed.values()):
+                    log_info(f'Telemetry retention: {removed}')
+            except Exception as exc:
+                log_info(f'Telemetry retention: {type(exc).__name__}: {exc}')
+            last_prune = time.time()
         await asyncio.sleep(30)
+
+
+def track_shadows(symbol: str, zones: list, assessments: dict, skip_reasons: list, chosen_key: Optional[str],
+                  final_blockers: list, emitted: bool, news: dict) -> None:
+    """Follow every valid setup virtually, labelled with what actually stopped it."""
+    tone = ((news or {}).get("coin") or {}).get("sentiment")
+    for zone in zones:
+        key = setup_id(symbol, cfg.timeframe, zone)
+        a = assessments.get(str(zone['candle_time'])+zone['type']) or {}
+        raw = a.get('shadow')
+        if not raw:
+            continue
+        if key == chosen_key:
+            # Chosen, but later gates (learning, expiry, reuse) may still have stopped it.
+            blockers = [] if emitted and not final_blockers else (list(final_blockers) or ["not_emitted"])
+        elif a.get('execution_rejections'):
+            blockers = list(a['execution_rejections'])
+        elif raw['score'] < cfg.min_signal_score:
+            blockers = []
+        elif chosen_key:
+            blockers = ["lower_ranked_zone"]
+        else:
+            blockers = list(skip_reasons) or ["not_evaluated"]
+        if raw['score'] < cfg.min_signal_score:
+            blockers.append("score_below_threshold")
+        try:
+            shadow.track(symbol, key, raw, list(dict.fromkeys(blockers)), {"news_sentiment": tone})
+        except Exception as exc:
+            event('SHADOW_TRACK_FAILED', symbol=symbol, error=type(exc).__name__)
+
+
+def symbol_selected(symbol: str) -> bool:
+    """New shadows only for coins the scanner actually selected, so the scan set cannot snowball."""
+    if cfg.scan_all_symbols:
+        return bool(MARKET_DATA.get(symbol, {}).get("eligible"))
+    return symbol in cfg.symbols
+
+
+def news_priority_symbols() -> list:
+    """Coins a trader would watch most closely: open positions, live signals, ripe setups."""
+    symbols = [t["symbol"] for t in get_active_signals()]
+    symbols += [s for s, info in LATEST_DATA.items() if (info or {}).get("signal")]
+    symbols += [s for s, info in LATEST_DATA.items()
+                if any(a.get("status") in ("ENTRY APPROACHING", "POTENTIAL") for a in ((info or {}).get("assessments") or {}).values())]
+    return list(dict.fromkeys(symbols))
+
+
+def news_background_symbols() -> list:
+    ranked = sorted(MARKET_DATA.items(), key=lambda x: x[1].get("volume_rank", 10**9))
+    return [s for s, row in ranked if row.get("eligible")]
 
 
 async def trading_loop(bot: Optional[Bot]) -> None:
     from trading.system_status import status_worker
-    tasks = [asyncio.create_task(status_worker(bot)),asyncio.create_task(_recovery_loop()),asyncio.create_task(delivery_worker(bot)), asyncio.create_task(_news_loop()), asyncio.create_task(research_worker()), asyncio.create_task(_position_loop(bot))]
+    from trading.coin_news import coin_news_worker
+    tasks = [asyncio.create_task(coin_news_worker(news_priority_symbols, news_background_symbols)),
+             asyncio.create_task(status_worker(bot)),asyncio.create_task(_recovery_loop()),asyncio.create_task(delivery_worker(bot)), asyncio.create_task(_news_loop()), asyncio.create_task(research_worker()), asyncio.create_task(_position_loop(bot))]
     try:
         await _scan_loop(bot)
     finally:

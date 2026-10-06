@@ -364,3 +364,16 @@ last_completed_at. /health показывает фактическое числ�
 Журнал при наблюдении монеты читает события только её таймфрейма и символа
 по индексируемому диапазону ключей. Проверки журнала — 12 тестов, пройдены.
 Прежние значения и новые настройки: data/coverage_change.json.
+
+## Market observer (v6.4)
+
+The bot narrates what it sees, like a trader watching the screen:
+
+- **Per-coin news.** Every eligible coin is searched on Google News RSS (no API key). Open positions, live signals and ripe setups refresh every 15 min, the rest every 2 h. Headlines get a keyword tone from -1 to +1 with a 12 h half-life. A critical headline (hack, exploit, delisting, insolvency) in the last 24 h blocks LONG entries; aligned/opposed tone shifts the score by `coin_news_score_weight` (default 6).
+- **Commentary.** `/api/coin/{SYMBOL}`, the coin dialog on the dashboard and Telegram `/coin SOL` explain trend, HTF/4h, volume, VWAP stretch, strength vs BTC, funding crowding, news and what the bot is waiting for.
+- **Market brief.** `/api/brief`, the dashboard panel and Telegram `/market` (or the "🌍 Обзор рынка" button): risk-on/off, BTC/ETH, breadth, gainers/losers, volume spikes, funding extremes, news tone.
+- **Live feed.** New signals, setups approaching entry, broken zones, volume spikes, volatility shocks and strong headlines.
+
+Settings: `enable_coin_news`, `coin_news_interval_seconds`, `coin_news_priority_ttl_minutes`, `coin_news_ttl_minutes`, `coin_news_max_age_hours`, `coin_news_score_weight`, `book_depth_position_multiple`, `min_book_depth_floor_usdt`.
+
+Headline tone is keyword screening, not a verified event or a forecast.

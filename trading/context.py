@@ -43,10 +43,13 @@ def structure_context(df, pivot=3):
             broken_low.add(lows[-1][0])
     last = df.iloc[-1] if len(df) else None
     sweep = None
-    if last is not None and lows and last.low < lows[-1][1] < last.close:
-        sweep = "SELL_SIDE"
-    if last is not None and highs and last.high > highs[-1][1] > last.close:
-        sweep = "BUY_SIDE"
+    # Resting liquidity can sit at any recent unbroken swing, not only the latest one.
+    if last is not None:
+        prior = close_values[:-1]
+        if any(last.low < level < last.close and not (prior[k+1:] < level).any() for k, level in lows[-3:]):
+            sweep = "SELL_SIDE"
+        if any(last.high > level > last.close and not (prior[k+1:] > level).any() for k, level in highs[-3:]):
+            sweep = "BUY_SIDE"
     return {"direction": direction, "event": event, "sweep": sweep,
             "swing_high": highs[-1][1] if highs else None,
             "swing_low": lows[-1][1] if lows else None}
@@ -116,4 +119,29 @@ def trendline_context(df, pivot=3, atr=0, tolerance=0.25):
             result["bullish_retest"] = bool(abs(last.low-projected) <= atr*tolerance and last.close > projected and last.close > last.open)
         else:
             result["bearish_retest"] = bool(abs(last.high-projected) <= atr*tolerance and last.close < projected and last.close < last.open)
+    return result
+
+
+def liquidity_levels(df, pivot=3, lookback=150):
+    """Confirmed swing highs/lows not yet closed through: resting stops a target can run into."""
+    d = df.tail(lookback).reset_index(drop=True)
+    result = {"above": [], "below": [], "range_high": None, "range_low": None, "range_position": None}
+    if len(d) < 2*pivot+2:
+        return result
+    import numpy as np
+    high, low, close = (d[c].to_numpy() for c in ("high", "low", "close"))
+    last = float(close[-1])
+    # Highest/lowest close strictly after each bar: one pass instead of a scan per pivot.
+    after_max = np.append(np.maximum.accumulate(close[::-1])[::-1][1:], -np.inf)
+    after_min = np.append(np.minimum.accumulate(close[::-1])[::-1][1:], np.inf)
+    for k in range(pivot, len(d)-pivot):
+        hw, lw = high[k-pivot:k+pivot+1], low[k-pivot:k+pivot+1]
+        if high[k] > last and after_max[k] <= high[k] and high[k] == hw.max() and (hw == high[k]).sum() == 1:
+            result["above"].append(float(high[k]))
+        if low[k] < last and after_min[k] >= low[k] and low[k] == lw.min() and (lw == low[k]).sum() == 1:
+            result["below"].append(float(low[k]))
+    result["above"].sort()
+    result["below"].sort(reverse=True)
+    top, bottom = float(high.max()), float(low.min())
+    result.update(range_high=top, range_low=bottom, range_position=(last-bottom)/(top-bottom) if top > bottom else None)
     return result

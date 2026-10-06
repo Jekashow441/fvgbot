@@ -6,7 +6,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 import pandas as pd
 from core.settings import cfg
 from trading.context import closed_candles, ticker_context, structure_context
-from trading.strategy import detect_fvgs, _calc_rsi, validate_signal
+from trading.strategy import detect_fvgs, _calc_rsi, _calc_adx, _score_signal, validate_signal, _safe_dynamic_rr
 from trading.backtest import metrics, run_backtest
 
 
@@ -164,6 +164,91 @@ class StrategyTests(unittest.TestCase):
             result = run_backtest(d)
         self.assertEqual(result["all"]["trades"], 1)
         self.assertGreater(result["all"]["net_r"], 0)
+
+    def test_wilder_adx_separates_trend_from_chop(self):
+        trend = candles(120)
+        trend.close = [100 + i for i in range(120)]
+        trend.open, trend.high, trend.low = trend.close - .5, trend.close + 1, trend.close - 1
+        chop = candles(120)
+        chop.close = [100 + (1 if i % 2 else -1) for i in range(120)]
+        chop.open, chop.high, chop.low = 100., chop.close.clip(lower=100) + .5, chop.close.clip(upper=100) - .5
+        self.assertGreater(_calc_adx(trend).iloc[-1], 50)
+        self.assertLess(_calc_adx(chop).iloc[-1], 20)
+
+    def test_score_rewards_smc_confluence(self):
+        zone = {"gap_size": 0, "touches": 1, "fill_fraction": .2, "displacement_atr": 2}
+        base, _ = _score_signal("LONG", {"gap_size": 0, "touches": 2, "fill_fraction": .8}, {}, None, None, None)
+        score, factors = _score_signal("LONG", zone, {}, None, None, None,
+                                       structure={"direction": "UP", "sweep": "SELL_SIDE"},
+                                       trendline_retest=True, relative_volume=2)
+        self.assertEqual(score - base, 8 + 8 + 8 + 5 + 5 + 5)
+        for tag in ("structure_up", "liquidity_sweep", "trendline_retest", "fresh_zone", "strong_displacement", "high_rvol"):
+            self.assertIn(tag, factors)
+        _, opposite = _score_signal("SHORT", zone, {}, None, None, None, structure={"direction": "UP", "sweep": "SELL_SIDE"})
+        self.assertNotIn("liquidity_sweep", opposite)
+        self.assertNotIn("structure_up", opposite)
+
+    def test_sweep_of_older_unbroken_swing_low(self):
+        d = candles(20)
+        # The latest swing (95) is below the wick; only the older 97 pool is swept.
+        d.loc[4, "low"] = 97
+        d.loc[11, "low"] = 95
+        d.loc[19, ["open", "low", "close"]] = [100, 96, 100.5]
+        self.assertEqual(structure_context(d, 3)["sweep"], "SELL_SIDE")
+
+    def test_target_front_runs_resting_liquidity(self):
+        cfg.require_structure = False
+        cfg.ema_period = 200
+        cfg.sl_max_atr = 0
+        cfg.min_signal_score = 0
+        cfg.rsi_overbought = 100
+        cfg.max_entry_distance_atr = 5
+        cfg.rr_min = 1.5
+        d = self.zone_data()
+        zone = detect_fvgs(d)[0]
+        d.loc[44, ["open", "low", "close"]] = [102.5, 102, 103.5]
+        empty = {"above": [], "below": [], "range_position": .4}
+        with patch("trading.strategy.liquidity_levels", return_value=empty):
+            base = validate_signal(d, zone)
+        risk = base["entry"] - base["sl"]
+        level = base["entry"] + 2 * risk
+        with patch("trading.strategy.liquidity_levels", return_value=dict(empty, above=[level])):
+            sig = validate_signal(d, zone)
+        self.assertLess(sig["tp"], level)
+        self.assertGreater(sig["tp"], base["entry"] + 1.5 * risk)
+        self.assertIn("liquidity_target", sig["factors"])
+        with patch("trading.strategy.liquidity_levels", return_value=dict(empty, above=[base["entry"] + .5 * risk])):
+            near = validate_signal(d, zone)
+        self.assertEqual(near["tp"], base["tp"])
+        self.assertEqual(near["score"], max(0, base["score"] - 10))
+        self.assertIn("opposing_liquidity_near", near["factors"])
+
+    def test_dynamic_rr_uses_relative_volatility_not_raw_atr_pct(self):
+        s = cfg.model_copy(deep=True)
+        s.dynamic_rr, s.rr_min, s.rr_max, s.adx_strong = True, 1.0, 5.0, 99
+        # 0.2% ATR on a 5m chart used to pin the factor to 0.75 regardless of conditions.
+        self.assertAlmostEqual(_safe_dynamic_rr(3, 0.2, 100, None, s), 3.0)
+        self.assertAlmostEqual(_safe_dynamic_rr(3, 0.2, 100, None, s, atr_ratio=1.2), 3.6)
+        self.assertAlmostEqual(_safe_dynamic_rr(3, 0.2, 100, None, s, atr_ratio=0.5), 2.25)
+        s.dynamic_rr = False
+        self.assertEqual(_safe_dynamic_rr(3, 0.2, 100, None, s, atr_ratio=1.4), 3)
+
+    def test_target_is_built_from_expected_fill(self):
+        cfg.require_structure = False
+        cfg.ema_period = 200
+        cfg.sl_max_atr = 0
+        cfg.min_signal_score = 0
+        cfg.rsi_overbought = 100
+        cfg.max_entry_distance_atr = 5
+        cfg.dynamic_rr, cfg.risk_reward, cfg.rr_min, cfg.rr_max = False, 2.0, 1.0, 5.0
+        cfg.slippage_bps = 2
+        d = self.zone_data()
+        zone = detect_fvgs(d)[0]
+        d.loc[44, ["open", "low", "close"]] = [102.5, 102, 103.5]
+        with patch("trading.strategy.liquidity_levels", return_value={"above": [], "below": [], "range_position": .4}):
+            sig = validate_signal(d, zone, market={"eligible": True, "spread_bps": 10})
+        fill = sig["entry"] * (1 + 5 / 10000)  # half of a 10 bps spread beats the 2 bps slippage floor
+        self.assertAlmostEqual((sig["tp"] - fill) / (fill - sig["sl"]), 2.0)
 
 
 if __name__ == "__main__":

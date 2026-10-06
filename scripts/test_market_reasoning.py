@@ -52,9 +52,10 @@ class ReasoningTests(unittest.TestCase):
         self.assertEqual(detect_fvgs(df,settings)[0]["touches"],1)
 
     def test_correlated_factor_bonuses_do_not_stack(self):
-        perf={name:{"sample_ok":True,"expectancy_lower":.1,"expectancy_upper":.2} for name in ["a","b","c"]}
+        perf={name:{"sample_ok":True,"effect_r":.2} for name in ["a","b","c"]}
         with patch("trading.learning.factor_performance",return_value=perf), patch.object(cfg,"enable_factor_learning",True), patch.object(cfg,"factor_score_adjustment_cap",15):
-            self.assertEqual(learning_adjustment(["a","a","b","c"])[0],4)
+            # Three correlated +0.2R labels average to one +0.2R effect, not three.
+            self.assertEqual(learning_adjustment(["a","a","b","c"])[0],5)
 
 
 if __name__ == "__main__":

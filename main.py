@@ -29,16 +29,24 @@ async def start_bot(bot: Optional[Bot]) -> None:
         return
     dp = Dispatcher()
     dp.include_router(router)
-    try:
-        await dp.start_polling(bot)
-    except TelegramNetworkError as e:
-        logging.error("Telegram network error: %s", e)
-    except TelegramRetryAfter as e:
-        logging.error("Telegram rate limit. Retry after %s seconds.", e.retry_after)
-    except asyncio.CancelledError:
-        raise
-    except Exception as e:
-        logging.exception("Telegram bot crashed: %s", e)
+    delay = 5
+    # A transient outage at startup must not leave the bot without Telegram control until restart.
+    while True:
+        try:
+            await dp.start_polling(bot)
+            return
+        except TelegramRetryAfter as e:
+            logging.error("Telegram rate limit. Retry after %s seconds.", e.retry_after)
+            await asyncio.sleep(max(delay, float(e.retry_after)))
+        except TelegramNetworkError as e:
+            logging.error("Telegram network error: %s; retrying in %ss", e, delay)
+            await asyncio.sleep(delay)
+        except asyncio.CancelledError:
+            raise
+        except Exception as e:
+            logging.exception("Telegram bot crashed: %s; retrying in %ss", e, delay)
+            await asyncio.sleep(delay)
+        delay = min(delay * 2, 300)
 
 
 async def main() -> None:

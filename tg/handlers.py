@@ -1,4 +1,6 @@
+import re
 import time
+from html import escape
 from aiogram import Router, F, BaseMiddleware
 from aiogram.filters import Command, CommandObject
 from aiogram.types import Message, CallbackQuery, InlineKeyboardMarkup, InlineKeyboardButton, ErrorEvent
@@ -36,7 +38,54 @@ class AntiSpamMiddleware(BaseMiddleware):
 
         return await handler(event, data)
 
+def fit(text: str, limit: int = 4000) -> str:
+    """Trim on line boundaries so escaped entities and tags are never cut in half."""
+    if len(text) <= limit:
+        return text
+    out, size = [], 0
+    for line in text.split("\n"):
+        if size + len(line) + 1 > limit - 2:
+            break
+        out.append(line)
+        size += len(line) + 1
+    return "\n".join(out) + "\n…"
+
+
+def _chat_id(event):
+    if isinstance(event, Message):
+        return event.chat.id
+    if isinstance(event, CallbackQuery) and event.message:
+        return event.message.chat.id
+    return None
+
+
+def is_owner_event(event, owner: str) -> bool:
+    """Only the configured chat may control the bot. With no owner yet, /start claims it."""
+    chat = _chat_id(event)
+    if chat is None:
+        return False
+    if owner:
+        return str(chat) == str(owner)
+    return isinstance(event, Message) and bool(re.match(r"^/start(@\w+)?(\s|$)", event.text or ""))
+
+
+class OwnerOnlyMiddleware(BaseMiddleware):
+    async def __call__(self, handler, event, data):
+        from core.settings import cfg as live_cfg
+        if not is_owner_event(event, live_cfg.tg_chat_id):
+            log_info(f"Telegram: ignored update from unauthorized chat {_chat_id(event)}")
+            if isinstance(event, CallbackQuery):
+                try:
+                    await event.answer("Нет доступа", show_alert=True)
+                except Exception:
+                    pass
+            return None
+        return await handler(event, data)
+
+
 router = Router()
+router.message.middleware(OwnerOnlyMiddleware())
+router.callback_query.middleware(OwnerOnlyMiddleware())
 router.message.middleware(AntiSpamMiddleware())
 router.callback_query.middleware(AntiSpamMiddleware())
 
@@ -96,7 +145,7 @@ async def cmd_balance(message: Message, command: CommandObject):
 @router.message(Command("start"))
 async def cmd_start(message: Message):
     cfg = load_settings()
-    if cfg.tg_chat_id != str(message.chat.id):
+    if not cfg.tg_chat_id:
         cfg.tg_chat_id = str(message.chat.id)
         save_settings(cfg)
         
@@ -274,11 +323,13 @@ async def cb_change_loss_cooldown(call: CallbackQuery):
 
 @router.callback_query(F.data == "show_balance")
 async def cb_show_balance(call: CallbackQuery):
+    from trading.paper_account import balance as ledger_balance
     cfg = load_settings()
+    stored = ledger_balance()
     await call.answer()
     await _safe_edit_text(
         call.message,
-        f"💰 <b>Virtual Balance:</b> {cfg.paper_balance:.2f} USDT\n<i>Use /balance &lt;amount&gt; to change it.</i>",
+        f"💰 <b>Virtual Balance:</b> {(cfg.paper_balance if stored is None else stored):.2f} USDT\n<i>Use /balance &lt;amount&gt; to change it.</i>",
         reply_markup=InlineKeyboardMarkup(inline_keyboard=[[InlineKeyboardButton(text="🔙 Back", callback_data="main_menu")]])
     )
 
@@ -492,3 +543,54 @@ async def cb_setup_journal(call: CallbackQuery):
 @router.message(Command('setups'))
 async def cmd_setups(message: Message):
     await _answer_setup_journal(message)
+
+
+async def _answer_market(message):
+    from trading.engine import LATEST_DATA, MARKET_DATA, BENCHMARKS
+    from trading.market_watch import market_brief, format_brief, feed
+    text = format_brief(market_brief(LATEST_DATA, MARKET_DATA, BENCHMARKS))
+    recent = feed(8)
+    if recent:
+        text += "\n\n<b>Последние наблюдения</b>\n" + "\n".join(f"• {escape(e['symbol'])}: {escape(e['text'])}" for e in recent)
+    await message.answer(fit(text), parse_mode="HTML")
+
+
+@router.message(Command("market"))
+async def cmd_market(message: Message):
+    await _answer_market(message)
+
+
+@router.callback_query(F.data == "market_brief")
+async def cb_market_brief(call: CallbackQuery):
+    await call.answer()
+    await _answer_market(call.message)
+
+
+@router.message(Command("coin"))
+async def cmd_coin(message: Message, command: CommandObject):
+    from trading.engine import LATEST_DATA
+    from trading.market_watch import commentary
+    from trading.news import news_context
+    symbol = (command.args or "").strip().upper()
+    if symbol and not symbol.endswith("USDT"):
+        symbol += "USDT"
+    if not symbol or symbol not in LATEST_DATA:
+        await message.answer("Использование: /coin SOL (монета должна быть в сканируемом списке)")
+        return
+    c = commentary(symbol, LATEST_DATA[symbol], news_context(symbol))
+    text = f"<b>{escape(symbol)}</b>\n" + "\n".join(escape(x) for x in c["lines"]) + f"\n\n<b>Вывод:</b> {escape(c['verdict'])}"
+    await message.answer(fit(text), parse_mode="HTML")
+
+
+@router.message(Command("learning"))
+async def cmd_learning(message: Message):
+    from trading.learning import learning_summary
+    data = learning_summary()
+    shadow = data["shadow"]
+    lines = ["<b>Самообучение</b>", f"Теневые сделки: открыто {shadow['open']}, закрыто {shadow['closed']}."]
+    lines += [escape(x) for x in data["insights"]]
+    useful = [b for b in data["blockers"] if b["blocker"] != "__passed__" and b["trades"] >= 10][:6]
+    if useful:
+        lines.append("\n<b>Фильтры</b>")
+        lines += [f"• {escape(b['blocker'])}: {b['trades']} шт., {b['avg_r']:+.2f}R — {escape(b['verdict'])}" for b in useful]
+    await message.answer(fit("\n".join(lines)), parse_mode="HTML")
