@@ -1,0 +1,13 @@
+{
+  "before": {
+    "scan_all_symbols": true,
+    "min_turnover_24h": 5000000.0,
+    "min_signal_score": 80
+  },
+  "after": {
+    "scan_all_symbols": true,
+    "min_turnover_24h": 500000.0,
+    "min_signal_score": 65
+  },
+  "reason": "User requested more analyzed coins and more frequent confirmed signals; spread, orderbook, FVG, HTF and risk gates retained."
+}

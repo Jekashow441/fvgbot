@@ -1,0 +1,26 @@
+{
+  "night_process": 7740,
+  "websocket_assertions": 7,
+  "tracebacks": 8,
+  "explicit_telegram_network_errors": 0,
+  "explicit_telegram_rate_limits": 0,
+  "status_transitions_unique": {
+    "WATCHLIST -> EXPIRED": 432,
+    "WATCHLIST -> INVALIDATED": 674,
+    "POTENTIAL -> EXPIRED": 128,
+    "POTENTIAL -> WATCHLIST": 28,
+    "POTENTIAL -> INVALIDATED": 67,
+    "POTENTIAL -> DEVELOPING": 28,
+    "DEVELOPING -> EXPIRED": 28,
+    "POTENTIAL -> ENTRY APPROACHING": 79,
+    "ENTRY APPROACHING -> POTENTIAL": 49,
+    "DEVELOPING -> POTENTIAL": 30,
+    "ENTRY APPROACHING -> INVALIDATED": 57,
+    "WATCHLIST -> POTENTIAL": 20,
+    "DEVELOPING -> INVALIDATED": 66,
+    "ENTRY APPROACHING -> WATCHLIST": 51,
+    "WATCHLIST -> ENTRY APPROACHING": 1,
+    "DEVELOPING -> WATCHLIST": 32,
+    "WATCHLIST -> DEVELOPING": 4
+  }
+}

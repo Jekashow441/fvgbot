@@ -1,0 +1,346 @@
+[
+  {
+    "setup_id": "NOTUSDT_5_1788982200000_BEARISH",
+    "asset": "NOTUSDT",
+    "direction": "SHORT",
+    "archived_score": 87,
+    "threshold": 80,
+    "reconstructed_components": {
+      "base": 50,
+      "large_fvg": 10,
+      "ltf_downtrend": 12,
+      "strong_adx": 10,
+      "healthy_rsi": 5
+    },
+    "reconstructed_base_score": 87,
+    "difference_to_archived": 0,
+    "note": "Indicator window can differ from original; difference may include trendline +8. No fabricated components.",
+    "final_decision": "WATCHLIST",
+    "blockers": "thin_orderbook; higher_4h_opposition"
+  },
+  {
+    "setup_id": "ROBOUSDT_5_1788982500000_BEARISH",
+    "asset": "ROBOUSDT",
+    "direction": "SHORT",
+    "archived_score": 100,
+    "threshold": 80,
+    "reconstructed_components": {
+      "base": 50,
+      "large_fvg": 10,
+      "ltf_downtrend": 12,
+      "htf_downtrend": 18,
+      "strong_adx": 10,
+      "healthy_rsi": 5
+    },
+    "reconstructed_base_score": 100,
+    "difference_to_archived": 0,
+    "note": "Indicator window can differ from original; difference may include trendline +8. No fabricated components.",
+    "final_decision": "WATCHLIST",
+    "blockers": "extended_from_vwap; wide_spread; thin_orderbook"
+  },
+  {
+    "setup_id": "ORDIUSDT_5_1788982500000_BEARISH",
+    "asset": "ORDIUSDT",
+    "direction": "SHORT",
+    "archived_score": 87,
+    "threshold": 80,
+    "reconstructed_components": {
+      "base": 50,
+      "large_fvg": 10,
+      "ltf_downtrend": 12,
+      "strong_adx": 10,
+      "healthy_rsi": 5
+    },
+    "reconstructed_base_score": 87,
+    "difference_to_archived": 0,
+    "note": "Indicator window can differ from original; difference may include trendline +8. No fabricated components.",
+    "final_decision": "WATCHLIST",
+    "blockers": "thin_orderbook; higher_4h_opposition"
+  },
+  {
+    "setup_id": "MARSCOINUSDT_5_1788983400000_BEARISH",
+    "asset": "MARSCOINUSDT",
+    "direction": "SHORT",
+    "archived_score": 100,
+    "threshold": 80,
+    "reconstructed_components": {
+      "base": 50,
+      "large_fvg": 10,
+      "ltf_downtrend": 12,
+      "htf_downtrend": 18,
+      "strong_adx": 10,
+      "healthy_rsi": 5
+    },
+    "reconstructed_base_score": 100,
+    "difference_to_archived": 0,
+    "note": "Indicator window can differ from original; difference may include trendline +8. No fabricated components.",
+    "final_decision": "WATCHLIST",
+    "blockers": "extended_from_vwap; orderbook_unavailable; higher_4h_unavailable_or_stale"
+  },
+  {
+    "setup_id": "MORPHOUSDT_5_1788983400000_BEARISH",
+    "asset": "MORPHOUSDT",
+    "direction": "SHORT",
+    "archived_score": 95,
+    "threshold": 80,
+    "reconstructed_components": {
+      "base": 50,
+      "large_fvg": 10,
+      "ltf_downtrend": 12,
+      "htf_downtrend": 18,
+      "healthy_rsi": 5
+    },
+    "reconstructed_base_score": 95,
+    "difference_to_archived": 0,
+    "note": "Indicator window can differ from original; difference may include trendline +8. No fabricated components.",
+    "final_decision": "WATCHLIST",
+    "blockers": "thin_orderbook"
+  },
+  {
+    "setup_id": "CFGUSDT_5_1788988200000_BULLISH",
+    "asset": "CFGUSDT",
+    "direction": "LONG",
+    "archived_score": 100,
+    "threshold": 80,
+    "reconstructed_components": {
+      "base": 50,
+      "large_fvg": 10,
+      "ltf_uptrend": 12,
+      "htf_uptrend": 18,
+      "strong_adx": 10
+    },
+    "reconstructed_base_score": 100,
+    "difference_to_archived": 0,
+    "note": "Indicator window can differ from original; difference may include trendline +8. No fabricated components.",
+    "final_decision": "WATCHLIST",
+    "blockers": "correlated_btc_opposition; wide_spread; thin_orderbook; higher_4h_opposition"
+  },
+  {
+    "setup_id": "BLESSUSDT_5_1788989700000_BEARISH",
+    "asset": "BLESSUSDT",
+    "direction": "SHORT",
+    "archived_score": 100,
+    "threshold": 80,
+    "reconstructed_components": {
+      "base": 50,
+      "large_fvg": 10,
+      "ltf_downtrend": 12,
+      "htf_downtrend": 18,
+      "strong_adx": 10,
+      "healthy_rsi": 5
+    },
+    "reconstructed_base_score": 100,
+    "difference_to_archived": 0,
+    "note": "Indicator window can differ from original; difference may include trendline +8. No fabricated components.",
+    "final_decision": "WATCHLIST",
+    "blockers": "extended_from_vwap; thin_orderbook"
+  },
+  {
+    "setup_id": "FARTCOINUSDT_5_1788990300000_BEARISH",
+    "asset": "FARTCOINUSDT",
+    "direction": "SHORT",
+    "archived_score": 100,
+    "threshold": 80,
+    "reconstructed_components": {
+      "base": 50,
+      "large_fvg": 10,
+      "ltf_downtrend": 12,
+      "htf_downtrend": 18,
+      "strong_adx": 10,
+      "healthy_rsi": 5
+    },
+    "reconstructed_base_score": 100,
+    "difference_to_archived": 0,
+    "note": "Indicator window can differ from original; difference may include trendline +8. No fabricated components.",
+    "final_decision": "WATCHLIST",
+    "blockers": "extended_from_vwap; thin_orderbook"
+  },
+  {
+    "setup_id": "CRCLUSDT_5_1788990300000_BEARISH",
+    "asset": "CRCLUSDT",
+    "direction": "SHORT",
+    "archived_score": 90,
+    "threshold": 80,
+    "reconstructed_components": {
+      "base": 50,
+      "ltf_downtrend": 12,
+      "htf_downtrend": 18,
+      "strong_adx": 10
+    },
+    "reconstructed_base_score": 90,
+    "difference_to_archived": 0,
+    "note": "Indicator window can differ from original; difference may include trendline +8. No fabricated components.",
+    "final_decision": "WATCHLIST",
+    "blockers": "extended_from_vwap; higher_4h_opposition"
+  },
+  {
+    "setup_id": "ORDIUSDT_5_1788990300000_BEARISH",
+    "asset": "ORDIUSDT",
+    "direction": "SHORT",
+    "archived_score": 87,
+    "threshold": 80,
+    "reconstructed_components": {
+      "base": 50,
+      "large_fvg": 10,
+      "ltf_downtrend": 12,
+      "strong_adx": 10,
+      "healthy_rsi": 5
+    },
+    "reconstructed_base_score": 87,
+    "difference_to_archived": 0,
+    "note": "Indicator window can differ from original; difference may include trendline +8. No fabricated components.",
+    "final_decision": "WATCHLIST",
+    "blockers": "extended_from_vwap; thin_orderbook; higher_4h_opposition"
+  },
+  {
+    "setup_id": "EIGENUSDT_5_1788990300000_BEARISH",
+    "asset": "EIGENUSDT",
+    "direction": "SHORT",
+    "archived_score": 82,
+    "threshold": 80,
+    "reconstructed_components": {
+      "base": 50,
+      "large_fvg": 10,
+      "ltf_downtrend": 12,
+      "strong_adx": 10
+    },
+    "reconstructed_base_score": 82,
+    "difference_to_archived": 0,
+    "note": "Indicator window can differ from original; difference may include trendline +8. No fabricated components.",
+    "final_decision": "WATCHLIST",
+    "blockers": "extended_from_vwap; thin_orderbook; higher_4h_opposition"
+  },
+  {
+    "setup_id": "POPCATUSDT_5_1788990300000_BEARISH",
+    "asset": "POPCATUSDT",
+    "direction": "SHORT",
+    "archived_score": 100,
+    "threshold": 80,
+    "reconstructed_components": {
+      "base": 50,
+      "large_fvg": 10,
+      "ltf_downtrend": 12,
+      "htf_downtrend": 18,
+      "strong_adx": 10
+    },
+    "reconstructed_base_score": 100,
+    "difference_to_archived": 0,
+    "note": "Indicator window can differ from original; difference may include trendline +8. No fabricated components.",
+    "final_decision": "WATCHLIST",
+    "blockers": "extended_from_vwap; thin_orderbook; higher_4h_opposition"
+  },
+  {
+    "setup_id": "AXSUSDT_5_1788990300000_BEARISH",
+    "asset": "AXSUSDT",
+    "direction": "SHORT",
+    "archived_score": 87,
+    "threshold": 80,
+    "reconstructed_components": {
+      "base": 50,
+      "large_fvg": 10,
+      "ltf_downtrend": 12,
+      "strong_adx": 10,
+      "healthy_rsi": 5
+    },
+    "reconstructed_base_score": 87,
+    "difference_to_archived": 0,
+    "note": "Indicator window can differ from original; difference may include trendline +8. No fabricated components.",
+    "final_decision": "WATCHLIST",
+    "blockers": "thin_orderbook; higher_4h_opposition"
+  },
+  {
+    "setup_id": "EPICUSDT_5_1789000200000_BEARISH",
+    "asset": "EPICUSDT",
+    "direction": "SHORT",
+    "archived_score": 82,
+    "threshold": 80,
+    "reconstructed_components": {
+      "base": 50,
+      "large_fvg": 10,
+      "ltf_downtrend": 12,
+      "strong_adx": 10
+    },
+    "reconstructed_base_score": 82,
+    "difference_to_archived": 0,
+    "note": "Indicator window can differ from original; difference may include trendline +8. No fabricated components.",
+    "final_decision": "WATCHLIST",
+    "blockers": "thin_orderbook"
+  },
+  {
+    "setup_id": "BASEDUSDT_5_1789000500000_BEARISH",
+    "asset": "BASEDUSDT",
+    "direction": "SHORT",
+    "archived_score": 100,
+    "threshold": 80,
+    "reconstructed_components": {
+      "base": 50,
+      "large_fvg": 10,
+      "ltf_downtrend": 12,
+      "htf_downtrend": 18,
+      "strong_adx": 10,
+      "healthy_rsi": 5
+    },
+    "reconstructed_base_score": 100,
+    "difference_to_archived": 0,
+    "note": "Indicator window can differ from original; difference may include trendline +8. No fabricated components.",
+    "final_decision": "INVALIDATED",
+    "blockers": "fvg_fully_filled"
+  },
+  {
+    "setup_id": "ZKCUSDT_5_1789000800000_BEARISH",
+    "asset": "ZKCUSDT",
+    "direction": "SHORT",
+    "archived_score": 82,
+    "threshold": 80,
+    "reconstructed_components": {
+      "base": 50,
+      "large_fvg": 10,
+      "ltf_downtrend": 12,
+      "strong_adx": 10
+    },
+    "reconstructed_base_score": 82,
+    "difference_to_archived": 0,
+    "note": "Indicator window can differ from original; difference may include trendline +8. No fabricated components.",
+    "final_decision": "INVALIDATED",
+    "blockers": "fvg_fully_filled"
+  },
+  {
+    "setup_id": "TRUMPUSDT_5_1789003800000_BEARISH",
+    "asset": "TRUMPUSDT",
+    "direction": "SHORT",
+    "archived_score": 95,
+    "threshold": 80,
+    "reconstructed_components": {
+      "base": 50,
+      "large_fvg": 10,
+      "ltf_downtrend": 12,
+      "htf_downtrend": 18,
+      "healthy_rsi": 5
+    },
+    "reconstructed_base_score": 95,
+    "difference_to_archived": 0,
+    "note": "Indicator window can differ from original; difference may include trendline +8. No fabricated components.",
+    "final_decision": "WATCHLIST",
+    "blockers": "extended_from_vwap"
+  },
+  {
+    "setup_id": "ZAMAUSDT_5_1789012200000_BEARISH",
+    "asset": "ZAMAUSDT",
+    "direction": "SHORT",
+    "archived_score": 100,
+    "threshold": 80,
+    "reconstructed_components": {
+      "base": 50,
+      "large_fvg": 10,
+      "ltf_downtrend": 12,
+      "htf_downtrend": 18,
+      "strong_adx": 10,
+      "healthy_rsi": 5
+    },
+    "reconstructed_base_score": 100,
+    "difference_to_archived": 0,
+    "note": "Indicator window can differ from original; difference may include trendline +8. No fabricated components.",
+    "final_decision": "WATCHLIST",
+    "blockers": "extended_from_vwap; thin_orderbook"
+  }
+]

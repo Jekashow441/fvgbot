@@ -1,0 +1,2283 @@
+[
+  {
+    "setup_id": "NOTUSDT_5_1788982200000_BEARISH",
+    "asset": "NOTUSDT",
+    "conditions": {
+      "FVG": true,
+      "Structure": true,
+      "Liquidity": false,
+      "HTF": "RANGE",
+      "VWAP": "NO_RECORDED_FAILURE",
+      "Orderbook": "FAIL",
+      "Spread": "NO_RECORDED_FAILURE",
+      "Mitigation": "NO_RECORDED_FAILURE",
+      "Rejection": true,
+      "Entry": true,
+      "Score": 87,
+      "Final": "WATCHLIST"
+    },
+    "first_technical_candidate_at": 1788986744.9969141,
+    "first_execution_blockers": [
+      "thin_orderbook",
+      "higher_4h_opposition"
+    ],
+    "first_irreversible": {
+      "at": 1788988808.424385,
+      "reason": "observation_expired"
+    },
+    "entry": {
+      "signal": "SHORT",
+      "entry": 0.0004474,
+      "sl": 0.00045049,
+      "tp": 0.0004427649999999999,
+      "rr": 1.5,
+      "score": 87,
+      "rsi": 45.96273291925455,
+      "adx": 58.86870617010112,
+      "trend": "DOWN",
+      "htf": "RANGE",
+      "factors": [
+        "large_fvg",
+        "ltf_downtrend",
+        "strong_adx",
+        "healthy_rsi",
+        "fvg_retest",
+        "regime_transition",
+        "relative_volume",
+        "structure_down"
+      ],
+      "structure": {
+        "direction": "DOWN",
+        "event": "CHOCH_DOWN",
+        "sweep": null,
+        "swing_high": 0.0004483,
+        "swing_low": 0.0004424
+      },
+      "reasoning": {
+        "regime": "TRANSITION",
+        "efficiency": 0.21393034825870685,
+        "relative_volume": 1.2041816255324684,
+        "liquidity_sweep": null,
+        "version": "observable_rules_v1",
+        "setup": "fvg_retest",
+        "side": "SHORT",
+        "explanation": "Цена вернулась к дисбалансу и закрылась в сторону предполагаемого входа.",
+        "invalidates": "Пробой границы зоны/стопа, потеря актуальности цены или новый риск-сигнал.",
+        "win_probability": null
+      },
+      "setup": "fvg_retest",
+      "regime": "TRANSITION",
+      "trendlines": {
+        "support": null,
+        "resistance": null,
+        "bullish_retest": false,
+        "bearish_retest": false
+      },
+      "relative_volume": 1.2041816255324684,
+      "market": null,
+      "strategy_version": "structure_v2"
+    },
+    "replay_diagnostics": {},
+    "fvg": {
+      "type": "BEARISH",
+      "top": 0.0004498,
+      "bottom": 0.0004487,
+      "ce": 0.00044925,
+      "candle_time": 1788982200000,
+      "formed_at": 1788982500000,
+      "gap_size": 0.24455313472653903,
+      "index": 336,
+      "touches": 1,
+      "touch_bars": 1,
+      "fill_fraction": 0.1818181818181908,
+      "displacement_atr": 1.0335570469798336,
+      "age": 13,
+      "state": "PARTIAL"
+    },
+    "current_price": 0.0004474,
+    "atr": 1.971428571428565e-06,
+    "distance_absolute": 1.8500000000000179e-06,
+    "units": "price absolute; ATR price absolute; distance/ATR dimensionless",
+    "tick_size": "UNKNOWN: archived exchange instrument filters absent",
+    "original_entry_levels": {
+      "entry": null,
+      "sl": null,
+      "tp": null
+    },
+    "score_components": {
+      "setup_id": "NOTUSDT_5_1788982200000_BEARISH",
+      "asset": "NOTUSDT",
+      "direction": "SHORT",
+      "archived_score": 87,
+      "threshold": 80,
+      "reconstructed_components": {
+        "base": 50,
+        "large_fvg": 10,
+        "ltf_downtrend": 12,
+        "strong_adx": 10,
+        "healthy_rsi": 5
+      },
+      "reconstructed_base_score": 87,
+      "difference_to_archived": 0,
+      "note": "Indicator window can differ from original; difference may include trendline +8. No fabricated components.",
+      "final_decision": "WATCHLIST",
+      "blockers": "thin_orderbook; higher_4h_opposition"
+    }
+  },
+  {
+    "setup_id": "ROBOUSDT_5_1788982500000_BEARISH",
+    "asset": "ROBOUSDT",
+    "conditions": {
+      "FVG": true,
+      "Structure": true,
+      "Liquidity": false,
+      "HTF": "DOWN",
+      "VWAP": "FAIL",
+      "Orderbook": "FAIL",
+      "Spread": "NO_RECORDED_FAILURE",
+      "Mitigation": "NO_RECORDED_FAILURE",
+      "Rejection": true,
+      "Entry": true,
+      "Score": 100,
+      "Final": "WATCHLIST"
+    },
+    "first_technical_candidate_at": 1788985507.590965,
+    "first_execution_blockers": [
+      "extended_from_vwap",
+      "thin_orderbook"
+    ],
+    "first_irreversible": {
+      "at": 1788987151.3448637,
+      "reason": "fvg_fully_filled"
+    },
+    "entry": {
+      "signal": "SHORT",
+      "entry": 0.01022,
+      "sl": 0.01027525,
+      "tp": 0.010137125,
+      "rr": 1.5,
+      "score": 100,
+      "rsi": 35.89743589743554,
+      "adx": 61.78833213295053,
+      "trend": "DOWN",
+      "htf": "DOWN",
+      "factors": [
+        "large_fvg",
+        "ltf_downtrend",
+        "htf_downtrend",
+        "strong_adx",
+        "healthy_rsi",
+        "fvg_retest",
+        "regime_trend",
+        "relative_volume",
+        "structure_down"
+      ],
+      "structure": {
+        "direction": "DOWN",
+        "event": "BOS_DOWN",
+        "sweep": null,
+        "swing_high": 0.01039,
+        "swing_low": 0.0101
+      },
+      "reasoning": {
+        "regime": "TREND",
+        "efficiency": 0.2500000000000045,
+        "relative_volume": 2.514386930948507,
+        "liquidity_sweep": null,
+        "version": "observable_rules_v1",
+        "setup": "fvg_retest",
+        "side": "SHORT",
+        "explanation": "Цена вернулась к дисбалансу и закрылась в сторону предполагаемого входа.",
+        "invalidates": "Пробой границы зоны/стопа, потеря актуальности цены или новый риск-сигнал.",
+        "win_probability": null
+      },
+      "setup": "fvg_retest",
+      "regime": "TREND",
+      "trendlines": {
+        "support": null,
+        "resistance": {
+          "price": 0.010344000000000002,
+          "slope": -1.9999999999999186e-06,
+          "anchors": [
+            1788976800000,
+            1788978300000
+          ]
+        },
+        "bullish_retest": false,
+        "bearish_retest": false
+      },
+      "relative_volume": 2.514386930948507,
+      "market": null,
+      "strategy_version": "structure_v2"
+    },
+    "replay_diagnostics": {},
+    "fvg": {
+      "type": "BEARISH",
+      "top": 0.01026,
+      "bottom": 0.01024,
+      "ce": 0.01025,
+      "candle_time": 1788982500000,
+      "formed_at": 1788982800000,
+      "gap_size": 0.19493177387913435,
+      "index": 341,
+      "touches": 1,
+      "touch_bars": 2,
+      "fill_fraction": 0.5,
+      "displacement_atr": 2.1538461538461586,
+      "age": 8,
+      "state": "PARTIAL"
+    },
+    "current_price": 0.01021,
+    "atr": 4.357142857142853e-05,
+    "distance_absolute": 4.0000000000000105e-05,
+    "units": "price absolute; ATR price absolute; distance/ATR dimensionless",
+    "tick_size": "UNKNOWN: archived exchange instrument filters absent",
+    "original_entry_levels": {
+      "entry": null,
+      "sl": null,
+      "tp": null
+    },
+    "score_components": {
+      "setup_id": "ROBOUSDT_5_1788982500000_BEARISH",
+      "asset": "ROBOUSDT",
+      "direction": "SHORT",
+      "archived_score": 100,
+      "threshold": 80,
+      "reconstructed_components": {
+        "base": 50,
+        "large_fvg": 10,
+        "ltf_downtrend": 12,
+        "htf_downtrend": 18,
+        "strong_adx": 10,
+        "healthy_rsi": 5
+      },
+      "reconstructed_base_score": 100,
+      "difference_to_archived": 0,
+      "note": "Indicator window can differ from original; difference may include trendline +8. No fabricated components.",
+      "final_decision": "WATCHLIST",
+      "blockers": "extended_from_vwap; wide_spread; thin_orderbook"
+    }
+  },
+  {
+    "setup_id": "ORDIUSDT_5_1788982500000_BEARISH",
+    "asset": "ORDIUSDT",
+    "conditions": {
+      "FVG": true,
+      "Structure": true,
+      "Liquidity": false,
+      "HTF": "RANGE",
+      "VWAP": "NO_RECORDED_FAILURE",
+      "Orderbook": "FAIL",
+      "Spread": "NO_RECORDED_FAILURE",
+      "Mitigation": "NO_RECORDED_FAILURE",
+      "Rejection": true,
+      "Entry": true,
+      "Score": 87,
+      "Final": "WATCHLIST"
+    },
+    "first_technical_candidate_at": 1788986730.4931746,
+    "first_execution_blockers": [
+      "thin_orderbook",
+      "higher_4h_opposition"
+    ],
+    "first_irreversible": {
+      "at": 1788989142.8079247,
+      "reason": "observation_expired"
+    },
+    "entry": {
+      "signal": "SHORT",
+      "entry": 4.147,
+      "sl": 4.1674999999999995,
+      "tp": 4.116250000000001,
+      "rr": 1.5,
+      "score": 87,
+      "rsi": 44.09448818897641,
+      "adx": 56.599580713354385,
+      "trend": "DOWN",
+      "htf": "RANGE",
+      "factors": [
+        "large_fvg",
+        "ltf_downtrend",
+        "strong_adx",
+        "healthy_rsi",
+        "fvg_retest",
+        "regime_transition",
+        "relative_volume",
+        "structure_down"
+      ],
+      "structure": {
+        "direction": "DOWN",
+        "event": "BOS_DOWN",
+        "sweep": null,
+        "swing_high": 4.155,
+        "swing_low": 4.101
+      },
+      "reasoning": {
+        "regime": "TRANSITION",
+        "efficiency": 0.11688311688311763,
+        "relative_volume": 1.4683739814444874,
+        "liquidity_sweep": null,
+        "version": "observable_rules_v1",
+        "setup": "fvg_retest",
+        "side": "SHORT",
+        "explanation": "Цена вернулась к дисбалансу и закрылась в сторону предполагаемого входа.",
+        "invalidates": "Пробой границы зоны/стопа, потеря актуальности цены или новый риск-сигнал.",
+        "win_probability": null
+      },
+      "setup": "fvg_retest",
+      "regime": "TRANSITION",
+      "trendlines": {
+        "support": null,
+        "resistance": {
+          "price": 4.14625,
+          "slope": -0.0017500000000000072,
+          "anchors": [
+            1788978900000,
+            1788984900000
+          ]
+        },
+        "bullish_retest": false,
+        "bearish_retest": false
+      },
+      "relative_volume": 1.4683739814444874,
+      "market": null,
+      "strategy_version": "structure_v2"
+    },
+    "replay_diagnostics": {},
+    "fvg": {
+      "type": "BEARISH",
+      "top": 4.161,
+      "bottom": 4.153,
+      "ce": 4.157,
+      "candle_time": 1788982500000,
+      "formed_at": 1788982800000,
+      "gap_size": 0.19226147560682547,
+      "index": 337,
+      "touches": 2,
+      "touch_bars": 2,
+      "fill_fraction": 0.7500000000000278,
+      "displacement_atr": 2.276422764227573,
+      "age": 12,
+      "state": "PARTIAL"
+    },
+    "current_price": 4.147,
+    "atr": 0.018571428571428492,
+    "distance_absolute": 0.009999999999999787,
+    "units": "price absolute; ATR price absolute; distance/ATR dimensionless",
+    "tick_size": "UNKNOWN: archived exchange instrument filters absent",
+    "original_entry_levels": {
+      "entry": null,
+      "sl": null,
+      "tp": null
+    },
+    "score_components": {
+      "setup_id": "ORDIUSDT_5_1788982500000_BEARISH",
+      "asset": "ORDIUSDT",
+      "direction": "SHORT",
+      "archived_score": 87,
+      "threshold": 80,
+      "reconstructed_components": {
+        "base": 50,
+        "large_fvg": 10,
+        "ltf_downtrend": 12,
+        "strong_adx": 10,
+        "healthy_rsi": 5
+      },
+      "reconstructed_base_score": 87,
+      "difference_to_archived": 0,
+      "note": "Indicator window can differ from original; difference may include trendline +8. No fabricated components.",
+      "final_decision": "WATCHLIST",
+      "blockers": "thin_orderbook; higher_4h_opposition"
+    }
+  },
+  {
+    "setup_id": "MARSCOINUSDT_5_1788983400000_BEARISH",
+    "asset": "MARSCOINUSDT",
+    "conditions": {
+      "FVG": true,
+      "Structure": true,
+      "Liquidity": false,
+      "HTF": "DOWN",
+      "VWAP": "FAIL",
+      "Orderbook": "FAIL",
+      "Spread": "NO_RECORDED_FAILURE",
+      "Mitigation": "NO_RECORDED_FAILURE",
+      "Rejection": true,
+      "Entry": true,
+      "Score": 100,
+      "Final": "WATCHLIST"
+    },
+    "first_technical_candidate_at": 1788984310.7441902,
+    "first_execution_blockers": [
+      "extended_from_vwap",
+      "orderbook_unavailable",
+      "higher_4h_unavailable_or_stale"
+    ],
+    "first_irreversible": {
+      "at": 1788990042.759817,
+      "reason": "observation_expired"
+    },
+    "entry": {
+      "signal": "SHORT",
+      "entry": 0.11851,
+      "sl": 0.12074775,
+      "tp": 0.1133407975,
+      "rr": 2.3099999999999996,
+      "score": 100,
+      "rsi": 33.705772811918095,
+      "adx": 44.460464813059886,
+      "trend": "DOWN",
+      "htf": "DOWN",
+      "factors": [
+        "large_fvg",
+        "ltf_downtrend",
+        "htf_downtrend",
+        "strong_adx",
+        "fvg_retest",
+        "regime_trend",
+        "relative_volume",
+        "structure_down"
+      ],
+      "structure": {
+        "direction": "DOWN",
+        "event": "CHOCH_DOWN",
+        "sweep": "SELL_SIDE",
+        "swing_high": 0.12216,
+        "swing_low": 0.11745
+      },
+      "reasoning": {
+        "regime": "TREND",
+        "efficiency": 0.25953079178885696,
+        "relative_volume": 5.7883477393365,
+        "liquidity_sweep": "SELL_SIDE",
+        "version": "observable_rules_v1",
+        "setup": "fvg_retest",
+        "side": "SHORT",
+        "explanation": "Цена вернулась к дисбалансу и закрылась в сторону предполагаемого входа.",
+        "invalidates": "Пробой границы зоны/стопа, потеря актуальности цены или новый риск-сигнал.",
+        "win_probability": null
+      },
+      "setup": "fvg_retest",
+      "regime": "TREND",
+      "trendlines": {
+        "support": null,
+        "resistance": {
+          "price": 0.12204923076923077,
+          "slope": -3.692307692307649e-05,
+          "anchors": [
+            1788979200000,
+            1788983100000
+          ]
+        },
+        "bullish_retest": false,
+        "bearish_retest": false
+      },
+      "relative_volume": 5.7883477393365,
+      "market": null,
+      "strategy_version": "structure_v2"
+    },
+    "replay_diagnostics": {},
+    "fvg": {
+      "type": "BEARISH",
+      "top": 0.12016,
+      "bottom": 0.11919,
+      "ce": 0.119675,
+      "candle_time": 1788983400000,
+      "formed_at": 1788983700000,
+      "gap_size": 0.8072569906790934,
+      "index": 348,
+      "touches": 1,
+      "touch_bars": 1,
+      "fill_fraction": 0.3711340206185564,
+      "displacement_atr": 1.9366197183098615,
+      "age": 1,
+      "state": "PARTIAL"
+    },
+    "current_price": 0.11846,
+    "atr": 0.0016792857142857145,
+    "distance_absolute": 0.0012150000000000077,
+    "units": "price absolute; ATR price absolute; distance/ATR dimensionless",
+    "tick_size": "UNKNOWN: archived exchange instrument filters absent",
+    "original_entry_levels": {
+      "entry": null,
+      "sl": null,
+      "tp": null
+    },
+    "score_components": {
+      "setup_id": "MARSCOINUSDT_5_1788983400000_BEARISH",
+      "asset": "MARSCOINUSDT",
+      "direction": "SHORT",
+      "archived_score": 100,
+      "threshold": 80,
+      "reconstructed_components": {
+        "base": 50,
+        "large_fvg": 10,
+        "ltf_downtrend": 12,
+        "htf_downtrend": 18,
+        "strong_adx": 10,
+        "healthy_rsi": 5
+      },
+      "reconstructed_base_score": 100,
+      "difference_to_archived": 0,
+      "note": "Indicator window can differ from original; difference may include trendline +8. No fabricated components.",
+      "final_decision": "WATCHLIST",
+      "blockers": "extended_from_vwap; orderbook_unavailable; higher_4h_unavailable_or_stale"
+    }
+  },
+  {
+    "setup_id": "MORPHOUSDT_5_1788983400000_BEARISH",
+    "asset": "MORPHOUSDT",
+    "conditions": {
+      "FVG": true,
+      "Structure": true,
+      "Liquidity": false,
+      "HTF": "DOWN",
+      "VWAP": "NO_RECORDED_FAILURE",
+      "Orderbook": "FAIL",
+      "Spread": "NO_RECORDED_FAILURE",
+      "Mitigation": "NO_RECORDED_FAILURE",
+      "Rejection": true,
+      "Entry": true,
+      "Score": 95,
+      "Final": "WATCHLIST"
+    },
+    "first_technical_candidate_at": 1788984630.0328202,
+    "first_execution_blockers": [
+      "thin_orderbook"
+    ],
+    "first_irreversible": {
+      "at": 1788986088.6178641,
+      "reason": "fvg_fully_filled"
+    },
+    "entry": {
+      "signal": "SHORT",
+      "entry": 2.322,
+      "sl": 2.3423,
+      "tp": 2.2915500000000004,
+      "rr": 1.5,
+      "score": 95,
+      "rsi": 39.47368421052637,
+      "adx": 20.092570589642484,
+      "trend": "DOWN",
+      "htf": "DOWN",
+      "factors": [
+        "large_fvg",
+        "ltf_downtrend",
+        "htf_downtrend",
+        "healthy_rsi",
+        "fvg_retest",
+        "regime_transition",
+        "relative_volume",
+        "structure_down"
+      ],
+      "structure": {
+        "direction": "DOWN",
+        "event": "BOS_DOWN",
+        "sweep": null,
+        "swing_high": 2.348,
+        "swing_low": 2.33
+      },
+      "reasoning": {
+        "regime": "TRANSITION",
+        "efficiency": 0.26666666666666733,
+        "relative_volume": 10.417767206449739,
+        "liquidity_sweep": "SELL_SIDE",
+        "version": "observable_rules_v1",
+        "setup": "fvg_retest",
+        "side": "SHORT",
+        "explanation": "Цена вернулась к дисбалансу и закрылась в сторону предполагаемого входа.",
+        "invalidates": "Пробой границы зоны/стопа, потеря актуальности цены или новый риск-сигнал.",
+        "win_probability": null
+      },
+      "setup": "fvg_retest",
+      "regime": "TRANSITION",
+      "trendlines": {
+        "support": null,
+        "resistance": {
+          "price": 2.342363636363636,
+          "slope": -0.0009393939393939436,
+          "anchors": [
+            1788972600000,
+            1788982500000
+          ]
+        },
+        "bullish_retest": false,
+        "bearish_retest": false
+      },
+      "relative_volume": 10.417767206449739,
+      "market": null,
+      "strategy_version": "structure_v2"
+    },
+    "replay_diagnostics": {},
+    "fvg": {
+      "type": "BEARISH",
+      "top": 2.339,
+      "bottom": 2.322,
+      "ce": 2.3305,
+      "candle_time": 1788983400000,
+      "formed_at": 1788983700000,
+      "gap_size": 0.7268063274903763,
+      "index": 347,
+      "touches": 1,
+      "touch_bars": 2,
+      "fill_fraction": 0.4705882352941207,
+      "displacement_atr": 3.7333333333333427,
+      "age": 2,
+      "state": "PARTIAL"
+    },
+    "current_price": 2.323,
+    "atr": 0.009428571428571437,
+    "distance_absolute": 0.00749999999999984,
+    "units": "price absolute; ATR price absolute; distance/ATR dimensionless",
+    "tick_size": "UNKNOWN: archived exchange instrument filters absent",
+    "original_entry_levels": {
+      "entry": null,
+      "sl": null,
+      "tp": null
+    },
+    "score_components": {
+      "setup_id": "MORPHOUSDT_5_1788983400000_BEARISH",
+      "asset": "MORPHOUSDT",
+      "direction": "SHORT",
+      "archived_score": 95,
+      "threshold": 80,
+      "reconstructed_components": {
+        "base": 50,
+        "large_fvg": 10,
+        "ltf_downtrend": 12,
+        "htf_downtrend": 18,
+        "healthy_rsi": 5
+      },
+      "reconstructed_base_score": 95,
+      "difference_to_archived": 0,
+      "note": "Indicator window can differ from original; difference may include trendline +8. No fabricated components.",
+      "final_decision": "WATCHLIST",
+      "blockers": "thin_orderbook"
+    }
+  },
+  {
+    "setup_id": "CFGUSDT_5_1788988200000_BULLISH",
+    "asset": "CFGUSDT",
+    "conditions": {
+      "FVG": true,
+      "Structure": true,
+      "Liquidity": false,
+      "HTF": "UP",
+      "VWAP": "NO_RECORDED_FAILURE",
+      "Orderbook": "FAIL",
+      "Spread": "NO_RECORDED_FAILURE",
+      "Mitigation": "NO_RECORDED_FAILURE",
+      "Rejection": true,
+      "Entry": true,
+      "Score": 100,
+      "Final": "WATCHLIST"
+    },
+    "first_technical_candidate_at": 1788989142.5533137,
+    "first_execution_blockers": [
+      "correlated_btc_opposition",
+      "thin_orderbook",
+      "higher_4h_opposition"
+    ],
+    "first_irreversible": {
+      "at": 1788990976.0332384,
+      "reason": "fvg_fully_filled"
+    },
+    "entry": {
+      "signal": "LONG",
+      "entry": 0.1201,
+      "sl": 0.118875,
+      "tp": 0.1219375,
+      "rr": 1.5,
+      "score": 100,
+      "rsi": 65.67164179104475,
+      "adx": 41.75689668367237,
+      "trend": "UP",
+      "htf": "UP",
+      "factors": [
+        "large_fvg",
+        "ltf_uptrend",
+        "htf_uptrend",
+        "strong_adx",
+        "fvg_retest",
+        "regime_trend",
+        "relative_volume",
+        "structure_up"
+      ],
+      "structure": {
+        "direction": "UP",
+        "event": "CHOCH_UP",
+        "sweep": null,
+        "swing_high": 0.1196,
+        "swing_low": 0.1169
+      },
+      "reasoning": {
+        "regime": "TREND",
+        "efficiency": 0.3176470588235279,
+        "relative_volume": 1.0669825197670235,
+        "liquidity_sweep": null,
+        "version": "observable_rules_v1",
+        "setup": "fvg_retest",
+        "side": "LONG",
+        "explanation": "Цена вернулась к дисбалансу и закрылась в сторону предполагаемого входа.",
+        "invalidates": "Пробой границы зоны/стопа, потеря актуальности цены или новый риск-сигнал.",
+        "win_probability": null
+      },
+      "setup": "fvg_retest",
+      "regime": "TREND",
+      "trendlines": {
+        "support": null,
+        "resistance": null,
+        "bullish_retest": false,
+        "bearish_retest": false
+      },
+      "relative_volume": 1.0669825197670235,
+      "market": null,
+      "strategy_version": "structure_v2"
+    },
+    "replay_diagnostics": {},
+    "fvg": {
+      "type": "BULLISH",
+      "top": 0.1195,
+      "bottom": 0.1192,
+      "ce": 0.11935,
+      "candle_time": 1788988200000,
+      "formed_at": 1788988500000,
+      "gap_size": 0.2516778523489889,
+      "index": 348,
+      "touches": 1,
+      "touch_bars": 1,
+      "fill_fraction": 0.3333333333333025,
+      "displacement_atr": 1.2499999999999993,
+      "age": 1,
+      "state": "PARTIAL"
+    },
+    "current_price": 0.1201,
+    "atr": 0.0009285714285714294,
+    "distance_absolute": 0.0007500000000000007,
+    "units": "price absolute; ATR price absolute; distance/ATR dimensionless",
+    "tick_size": "UNKNOWN: archived exchange instrument filters absent",
+    "original_entry_levels": {
+      "entry": null,
+      "sl": null,
+      "tp": null
+    },
+    "score_components": {
+      "setup_id": "CFGUSDT_5_1788988200000_BULLISH",
+      "asset": "CFGUSDT",
+      "direction": "LONG",
+      "archived_score": 100,
+      "threshold": 80,
+      "reconstructed_components": {
+        "base": 50,
+        "large_fvg": 10,
+        "ltf_uptrend": 12,
+        "htf_uptrend": 18,
+        "strong_adx": 10
+      },
+      "reconstructed_base_score": 100,
+      "difference_to_archived": 0,
+      "note": "Indicator window can differ from original; difference may include trendline +8. No fabricated components.",
+      "final_decision": "WATCHLIST",
+      "blockers": "correlated_btc_opposition; wide_spread; thin_orderbook; higher_4h_opposition"
+    }
+  },
+  {
+    "setup_id": "BLESSUSDT_5_1788989700000_BEARISH",
+    "asset": "BLESSUSDT",
+    "conditions": {
+      "FVG": true,
+      "Structure": true,
+      "Liquidity": false,
+      "HTF": "DOWN",
+      "VWAP": "FAIL",
+      "Orderbook": "FAIL",
+      "Spread": "NO_RECORDED_FAILURE",
+      "Mitigation": "NO_RECORDED_FAILURE",
+      "Rejection": true,
+      "Entry": true,
+      "Score": 100,
+      "Final": "WATCHLIST"
+    },
+    "first_technical_candidate_at": 1788991542.5356648,
+    "first_execution_blockers": [
+      "extended_from_vwap",
+      "thin_orderbook"
+    ],
+    "first_irreversible": {
+      "at": 1788996356.2213285,
+      "reason": "observation_expired"
+    },
+    "entry": {
+      "signal": "SHORT",
+      "entry": 0.008375,
+      "sl": 0.0084329,
+      "tp": 0.008288150000000001,
+      "rr": 1.5,
+      "score": 100,
+      "rsi": 38.61671469740634,
+      "adx": 37.74219911647264,
+      "trend": "DOWN",
+      "htf": "DOWN",
+      "factors": [
+        "large_fvg",
+        "ltf_downtrend",
+        "htf_downtrend",
+        "strong_adx",
+        "healthy_rsi",
+        "fvg_retest",
+        "regime_transition",
+        "relative_volume",
+        "structure_down"
+      ],
+      "structure": {
+        "direction": "DOWN",
+        "event": "CHOCH_DOWN",
+        "sweep": null,
+        "swing_high": 0.008477,
+        "swing_low": 0.008342
+      },
+      "reasoning": {
+        "regime": "TRANSITION",
+        "efficiency": 0.2,
+        "relative_volume": 1.0145910076111024,
+        "liquidity_sweep": null,
+        "version": "observable_rules_v1",
+        "setup": "fvg_retest",
+        "side": "SHORT",
+        "explanation": "Цена вернулась к дисбалансу и закрылась в сторону предполагаемого входа.",
+        "invalidates": "Пробой границы зоны/стопа, потеря актуальности цены или новый риск-сигнал.",
+        "win_probability": null
+      },
+      "setup": "fvg_retest",
+      "regime": "TRANSITION",
+      "trendlines": {
+        "support": null,
+        "resistance": {
+          "price": 0.008446666666666667,
+          "slope": -4.3333333333333305e-06,
+          "anchors": [
+            1788987300000,
+            1788989100000
+          ]
+        },
+        "bullish_retest": false,
+        "bearish_retest": false
+      },
+      "relative_volume": 1.0145910076111024,
+      "market": null,
+      "strategy_version": "structure_v2"
+    },
+    "replay_diagnostics": {},
+    "fvg": {
+      "type": "BEARISH",
+      "top": 0.00842,
+      "bottom": 0.008401,
+      "ce": 0.008410500000000001,
+      "candle_time": 1788989700000,
+      "formed_at": 1788990000000,
+      "gap_size": 0.22565320665083038,
+      "index": 345,
+      "touches": 1,
+      "touch_bars": 1,
+      "fill_fraction": 0.0,
+      "displacement_atr": 1.1748251748252114,
+      "age": 4,
+      "state": "RETESTED"
+    },
+    "current_price": 0.008348,
+    "atr": 3.6857142857142914e-05,
+    "distance_absolute": 6.250000000000179e-05,
+    "units": "price absolute; ATR price absolute; distance/ATR dimensionless",
+    "tick_size": "UNKNOWN: archived exchange instrument filters absent",
+    "original_entry_levels": {
+      "entry": null,
+      "sl": null,
+      "tp": null
+    },
+    "score_components": {
+      "setup_id": "BLESSUSDT_5_1788989700000_BEARISH",
+      "asset": "BLESSUSDT",
+      "direction": "SHORT",
+      "archived_score": 100,
+      "threshold": 80,
+      "reconstructed_components": {
+        "base": 50,
+        "large_fvg": 10,
+        "ltf_downtrend": 12,
+        "htf_downtrend": 18,
+        "strong_adx": 10,
+        "healthy_rsi": 5
+      },
+      "reconstructed_base_score": 100,
+      "difference_to_archived": 0,
+      "note": "Indicator window can differ from original; difference may include trendline +8. No fabricated components.",
+      "final_decision": "WATCHLIST",
+      "blockers": "extended_from_vwap; thin_orderbook"
+    }
+  },
+  {
+    "setup_id": "FARTCOINUSDT_5_1788990300000_BEARISH",
+    "asset": "FARTCOINUSDT",
+    "conditions": {
+      "FVG": true,
+      "Structure": true,
+      "Liquidity": false,
+      "HTF": "DOWN",
+      "VWAP": "FAIL",
+      "Orderbook": "FAIL",
+      "Spread": "NO_RECORDED_FAILURE",
+      "Mitigation": "NO_RECORDED_FAILURE",
+      "Rejection": true,
+      "Entry": true,
+      "Score": 100,
+      "Final": "WATCHLIST"
+    },
+    "first_technical_candidate_at": 1788991521.658954,
+    "first_execution_blockers": [
+      "extended_from_vwap",
+      "thin_orderbook"
+    ],
+    "first_irreversible": {
+      "at": 1788996913.473934,
+      "reason": "observation_expired"
+    },
+    "entry": {
+      "signal": "SHORT",
+      "entry": 0.14848,
+      "sl": 0.15044824999999998,
+      "tp": 0.14552762500000005,
+      "rr": 1.5,
+      "score": 100,
+      "rsi": 39.31623931623931,
+      "adx": 45.92975905822737,
+      "trend": "DOWN",
+      "htf": "DOWN",
+      "factors": [
+        "large_fvg",
+        "ltf_downtrend",
+        "htf_downtrend",
+        "strong_adx",
+        "healthy_rsi",
+        "fvg_retest",
+        "regime_transition",
+        "relative_volume",
+        "structure_down"
+      ],
+      "structure": {
+        "direction": "DOWN",
+        "event": "BOS_DOWN",
+        "sweep": null,
+        "swing_high": 0.1517,
+        "swing_low": 0.14688
+      },
+      "reasoning": {
+        "regime": "TRANSITION",
+        "efficiency": 0.22346368715083664,
+        "relative_volume": 1.0432859692951975,
+        "liquidity_sweep": null,
+        "version": "observable_rules_v1",
+        "setup": "fvg_retest",
+        "side": "SHORT",
+        "explanation": "Цена вернулась к дисбалансу и закрылась в сторону предполагаемого входа.",
+        "invalidates": "Пробой границы зоны/стопа, потеря актуальности цены или новый риск-сигнал.",
+        "win_probability": null
+      },
+      "setup": "fvg_retest",
+      "regime": "TRANSITION",
+      "trendlines": {
+        "support": null,
+        "resistance": null,
+        "bullish_retest": false,
+        "bearish_retest": false
+      },
+      "relative_volume": 1.0432859692951975,
+      "market": null,
+      "strategy_version": "structure_v2"
+    },
+    "replay_diagnostics": {},
+    "fvg": {
+      "type": "BEARISH",
+      "top": 0.15005,
+      "bottom": 0.14861,
+      "ce": 0.14933,
+      "candle_time": 1788990300000,
+      "formed_at": 1788990600000,
+      "gap_size": 0.9596801066311209,
+      "index": 347,
+      "touches": 1,
+      "touch_bars": 1,
+      "fill_fraction": 0.3541666666666747,
+      "displacement_atr": 2.9424778761062167,
+      "age": 2,
+      "state": "PARTIAL"
+    },
+    "current_price": 0.14805,
+    "atr": 0.0011378571428571408,
+    "distance_absolute": 0.0012800000000000034,
+    "units": "price absolute; ATR price absolute; distance/ATR dimensionless",
+    "tick_size": "UNKNOWN: archived exchange instrument filters absent",
+    "original_entry_levels": {
+      "entry": null,
+      "sl": null,
+      "tp": null
+    },
+    "score_components": {
+      "setup_id": "FARTCOINUSDT_5_1788990300000_BEARISH",
+      "asset": "FARTCOINUSDT",
+      "direction": "SHORT",
+      "archived_score": 100,
+      "threshold": 80,
+      "reconstructed_components": {
+        "base": 50,
+        "large_fvg": 10,
+        "ltf_downtrend": 12,
+        "htf_downtrend": 18,
+        "strong_adx": 10,
+        "healthy_rsi": 5
+      },
+      "reconstructed_base_score": 100,
+      "difference_to_archived": 0,
+      "note": "Indicator window can differ from original; difference may include trendline +8. No fabricated components.",
+      "final_decision": "WATCHLIST",
+      "blockers": "extended_from_vwap; thin_orderbook"
+    }
+  },
+  {
+    "setup_id": "CRCLUSDT_5_1788990300000_BEARISH",
+    "asset": "CRCLUSDT",
+    "conditions": {
+      "FVG": true,
+      "Structure": true,
+      "Liquidity": false,
+      "HTF": "DOWN",
+      "VWAP": "FAIL",
+      "Orderbook": "NO_RECORDED_FAILURE",
+      "Spread": "NO_RECORDED_FAILURE",
+      "Mitigation": "NO_RECORDED_FAILURE",
+      "Rejection": true,
+      "Entry": true,
+      "Score": 95,
+      "Final": "WATCHLIST"
+    },
+    "first_technical_candidate_at": 1788991213.58931,
+    "first_execution_blockers": [
+      "extended_from_vwap",
+      "higher_4h_opposition"
+    ],
+    "first_irreversible": {
+      "at": 1788994897.5537145,
+      "reason": "fvg_fully_filled"
+    },
+    "entry": {
+      "signal": "SHORT",
+      "entry": 92.04,
+      "sl": 92.23925,
+      "tp": 91.74112500000001,
+      "rr": 1.5,
+      "score": 95,
+      "rsi": 41.55844155844166,
+      "adx": 55.3072053572106,
+      "trend": "DOWN",
+      "htf": "DOWN",
+      "factors": [
+        "ltf_downtrend",
+        "htf_downtrend",
+        "strong_adx",
+        "healthy_rsi",
+        "fvg_retest",
+        "regime_transition",
+        "relative_volume",
+        "structure_down"
+      ],
+      "structure": {
+        "direction": "DOWN",
+        "event": "BOS_DOWN",
+        "sweep": "SELL_SIDE",
+        "swing_high": 92.62,
+        "swing_low": 92.02
+      },
+      "reasoning": {
+        "regime": "TRANSITION",
+        "efficiency": 0.23505976095617584,
+        "relative_volume": 0.9755669177627728,
+        "liquidity_sweep": null,
+        "version": "observable_rules_v1",
+        "setup": "fvg_retest",
+        "side": "SHORT",
+        "explanation": "Цена вернулась к дисбалансу и закрылась в сторону предполагаемого входа.",
+        "invalidates": "Пробой границы зоны/стопа, потеря актуальности цены или новый риск-сигнал.",
+        "win_probability": null
+      },
+      "setup": "fvg_retest",
+      "regime": "TRANSITION",
+      "trendlines": {
+        "support": null,
+        "resistance": {
+          "price": 92.42200000000003,
+          "slope": -0.01799999999999784,
+          "anchors": [
+            1788986100000,
+            1788987600000
+          ]
+        },
+        "bullish_retest": false,
+        "bearish_retest": false
+      },
+      "relative_volume": 0.9755669177627728,
+      "market": null,
+      "strategy_version": "structure_v2"
+    },
+    "replay_diagnostics": {},
+    "fvg": {
+      "type": "BEARISH",
+      "top": 92.17,
+      "bottom": 92.09,
+      "ce": 92.13,
+      "candle_time": 1788990300000,
+      "formed_at": 1788990600000,
+      "gap_size": 0.0867961375718762,
+      "index": 348,
+      "touches": 1,
+      "touch_bars": 1,
+      "fill_fraction": 0.12499999999988898,
+      "displacement_atr": 1.659259259259231,
+      "age": 1,
+      "state": "PARTIAL"
+    },
+    "current_price": 92.09,
+    "atr": 0.19785714285714157,
+    "distance_absolute": 0.03999999999999204,
+    "units": "price absolute; ATR price absolute; distance/ATR dimensionless",
+    "tick_size": "UNKNOWN: archived exchange instrument filters absent",
+    "original_entry_levels": {
+      "entry": null,
+      "sl": null,
+      "tp": null
+    },
+    "score_components": {
+      "setup_id": "CRCLUSDT_5_1788990300000_BEARISH",
+      "asset": "CRCLUSDT",
+      "direction": "SHORT",
+      "archived_score": 90,
+      "threshold": 80,
+      "reconstructed_components": {
+        "base": 50,
+        "ltf_downtrend": 12,
+        "htf_downtrend": 18,
+        "strong_adx": 10
+      },
+      "reconstructed_base_score": 90,
+      "difference_to_archived": 0,
+      "note": "Indicator window can differ from original; difference may include trendline +8. No fabricated components.",
+      "final_decision": "WATCHLIST",
+      "blockers": "extended_from_vwap; higher_4h_opposition"
+    }
+  },
+  {
+    "setup_id": "ORDIUSDT_5_1788990300000_BEARISH",
+    "asset": "ORDIUSDT",
+    "conditions": {
+      "FVG": true,
+      "Structure": true,
+      "Liquidity": false,
+      "HTF": "RANGE",
+      "VWAP": "FAIL",
+      "Orderbook": "FAIL",
+      "Spread": "NO_RECORDED_FAILURE",
+      "Mitigation": "NO_RECORDED_FAILURE",
+      "Rejection": true,
+      "Entry": true,
+      "Score": 87,
+      "Final": "WATCHLIST"
+    },
+    "first_technical_candidate_at": 1788991533.3028333,
+    "first_execution_blockers": [
+      "extended_from_vwap",
+      "thin_orderbook",
+      "higher_4h_opposition"
+    ],
+    "first_irreversible": {
+      "at": 1788996925.450617,
+      "reason": "observation_expired"
+    },
+    "entry": {
+      "signal": "SHORT",
+      "entry": 4.101,
+      "sl": 4.129874999999999,
+      "tp": 4.057687500000001,
+      "rr": 1.5,
+      "score": 87,
+      "rsi": 38.51851851851869,
+      "adx": 30.109800475455522,
+      "trend": "DOWN",
+      "htf": "RANGE",
+      "factors": [
+        "large_fvg",
+        "ltf_downtrend",
+        "strong_adx",
+        "healthy_rsi",
+        "fvg_retest",
+        "regime_transition",
+        "relative_volume",
+        "structure_down"
+      ],
+      "structure": {
+        "direction": "DOWN",
+        "event": "BOS_DOWN",
+        "sweep": null,
+        "swing_high": 4.151,
+        "swing_low": 4.077
+      },
+      "reasoning": {
+        "regime": "TRANSITION",
+        "efficiency": 0.15736040609136895,
+        "relative_volume": 1.364292675981806,
+        "liquidity_sweep": null,
+        "version": "observable_rules_v1",
+        "setup": "fvg_retest",
+        "side": "SHORT",
+        "explanation": "Цена вернулась к дисбалансу и закрылась в сторону предполагаемого входа.",
+        "invalidates": "Пробой границы зоны/стопа, потеря актуальности цены или новый риск-сигнал.",
+        "win_probability": null
+      },
+      "setup": "fvg_retest",
+      "regime": "TRANSITION",
+      "trendlines": {
+        "support": null,
+        "resistance": {
+          "price": 4.148,
+          "slope": -0.000500000000000019,
+          "anchors": [
+            1788987600000,
+            1788989400000
+          ]
+        },
+        "bullish_retest": false,
+        "bearish_retest": false
+      },
+      "relative_volume": 1.364292675981806,
+      "market": null,
+      "strategy_version": "structure_v2"
+    },
+    "replay_diagnostics": {},
+    "fvg": {
+      "type": "BEARISH",
+      "top": 4.124,
+      "bottom": 4.101,
+      "ce": 4.1125,
+      "candle_time": 1788990300000,
+      "formed_at": 1788990600000,
+      "gap_size": 0.5577109602327762,
+      "index": 347,
+      "touches": 1,
+      "touch_bars": 2,
+      "fill_fraction": 0.4782608695652291,
+      "displacement_atr": 2.884422110552792,
+      "age": 2,
+      "state": "PARTIAL"
+    },
+    "current_price": 4.09,
+    "atr": 0.01678571428571431,
+    "distance_absolute": 0.022499999999999964,
+    "units": "price absolute; ATR price absolute; distance/ATR dimensionless",
+    "tick_size": "UNKNOWN: archived exchange instrument filters absent",
+    "original_entry_levels": {
+      "entry": null,
+      "sl": null,
+      "tp": null
+    },
+    "score_components": {
+      "setup_id": "ORDIUSDT_5_1788990300000_BEARISH",
+      "asset": "ORDIUSDT",
+      "direction": "SHORT",
+      "archived_score": 87,
+      "threshold": 80,
+      "reconstructed_components": {
+        "base": 50,
+        "large_fvg": 10,
+        "ltf_downtrend": 12,
+        "strong_adx": 10,
+        "healthy_rsi": 5
+      },
+      "reconstructed_base_score": 87,
+      "difference_to_archived": 0,
+      "note": "Indicator window can differ from original; difference may include trendline +8. No fabricated components.",
+      "final_decision": "WATCHLIST",
+      "blockers": "extended_from_vwap; thin_orderbook; higher_4h_opposition"
+    }
+  },
+  {
+    "setup_id": "EIGENUSDT_5_1788990300000_BEARISH",
+    "asset": "EIGENUSDT",
+    "conditions": {
+      "FVG": true,
+      "Structure": true,
+      "Liquidity": false,
+      "HTF": "RANGE",
+      "VWAP": "FAIL",
+      "Orderbook": "FAIL",
+      "Spread": "NO_RECORDED_FAILURE",
+      "Mitigation": "NO_RECORDED_FAILURE",
+      "Rejection": true,
+      "Entry": true,
+      "Score": 82,
+      "Final": "WATCHLIST"
+    },
+    "first_technical_candidate_at": 1788991534.111903,
+    "first_execution_blockers": [
+      "extended_from_vwap",
+      "thin_orderbook",
+      "higher_4h_opposition"
+    ],
+    "first_irreversible": {
+      "at": 1788996926.2107317,
+      "reason": "observation_expired"
+    },
+    "entry": {
+      "signal": "SHORT",
+      "entry": 0.2057,
+      "sl": 0.20745,
+      "tp": 0.203075,
+      "rr": 1.5,
+      "score": 82,
+      "rsi": 33.05084745762707,
+      "adx": 34.23474196509995,
+      "trend": "DOWN",
+      "htf": "RANGE",
+      "factors": [
+        "large_fvg",
+        "ltf_downtrend",
+        "strong_adx",
+        "fvg_retest",
+        "regime_transition",
+        "relative_volume",
+        "structure_down"
+      ],
+      "structure": {
+        "direction": "DOWN",
+        "event": "BOS_DOWN",
+        "sweep": null,
+        "swing_high": 0.2109,
+        "swing_low": 0.2046
+      },
+      "reasoning": {
+        "regime": "TRANSITION",
+        "efficiency": 0.1445783132530133,
+        "relative_volume": 1.0675223818584845,
+        "liquidity_sweep": null,
+        "version": "observable_rules_v1",
+        "setup": "fvg_retest",
+        "side": "SHORT",
+        "explanation": "Цена вернулась к дисбалансу и закрылась в сторону предполагаемого входа.",
+        "invalidates": "Пробой границы зоны/стопа, потеря актуальности цены или новый риск-сигнал.",
+        "win_probability": null
+      },
+      "setup": "fvg_retest",
+      "regime": "TRANSITION",
+      "trendlines": {
+        "support": null,
+        "resistance": {
+          "price": 0.21048,
+          "slope": -5.9999999999998944e-05,
+          "anchors": [
+            1788987600000,
+            1788989100000
+          ]
+        },
+        "bullish_retest": false,
+        "bearish_retest": false
+      },
+      "relative_volume": 1.0675223818584845,
+      "market": null,
+      "strategy_version": "structure_v2"
+    },
+    "replay_diagnostics": {},
+    "fvg": {
+      "type": "BEARISH",
+      "top": 0.207,
+      "bottom": 0.2058,
+      "ce": 0.2064,
+      "candle_time": 1788990300000,
+      "formed_at": 1788990600000,
+      "gap_size": 0.579710144927526,
+      "index": 347,
+      "touches": 1,
+      "touch_bars": 2,
+      "fill_fraction": 0.6666666666666744,
+      "displacement_atr": 1.750000000000003,
+      "age": 2,
+      "state": "PARTIAL"
+    },
+    "current_price": 0.2054,
+    "atr": 0.001285714285714287,
+    "distance_absolute": 0.0010000000000000009,
+    "units": "price absolute; ATR price absolute; distance/ATR dimensionless",
+    "tick_size": "UNKNOWN: archived exchange instrument filters absent",
+    "original_entry_levels": {
+      "entry": null,
+      "sl": null,
+      "tp": null
+    },
+    "score_components": {
+      "setup_id": "EIGENUSDT_5_1788990300000_BEARISH",
+      "asset": "EIGENUSDT",
+      "direction": "SHORT",
+      "archived_score": 82,
+      "threshold": 80,
+      "reconstructed_components": {
+        "base": 50,
+        "large_fvg": 10,
+        "ltf_downtrend": 12,
+        "strong_adx": 10
+      },
+      "reconstructed_base_score": 82,
+      "difference_to_archived": 0,
+      "note": "Indicator window can differ from original; difference may include trendline +8. No fabricated components.",
+      "final_decision": "WATCHLIST",
+      "blockers": "extended_from_vwap; thin_orderbook; higher_4h_opposition"
+    }
+  },
+  {
+    "setup_id": "POPCATUSDT_5_1788990300000_BEARISH",
+    "asset": "POPCATUSDT",
+    "conditions": {
+      "FVG": true,
+      "Structure": true,
+      "Liquidity": false,
+      "HTF": "DOWN",
+      "VWAP": "FAIL",
+      "Orderbook": "FAIL",
+      "Spread": "NO_RECORDED_FAILURE",
+      "Mitigation": "NO_RECORDED_FAILURE",
+      "Rejection": true,
+      "Entry": true,
+      "Score": 100,
+      "Final": "WATCHLIST"
+    },
+    "first_technical_candidate_at": 1788991535.7875853,
+    "first_execution_blockers": [
+      "extended_from_vwap",
+      "thin_orderbook",
+      "higher_4h_opposition"
+    ],
+    "first_irreversible": {
+      "at": 1788996927.084949,
+      "reason": "observation_expired"
+    },
+    "entry": {
+      "signal": "SHORT",
+      "entry": 0.04948,
+      "sl": 0.049785249999999996,
+      "tp": 0.049022125000000014,
+      "rr": 1.5,
+      "score": 100,
+      "rsi": 31.63265306122443,
+      "adx": 50.150209888178225,
+      "trend": "DOWN",
+      "htf": "DOWN",
+      "factors": [
+        "large_fvg",
+        "ltf_downtrend",
+        "htf_downtrend",
+        "strong_adx",
+        "fvg_retest",
+        "regime_trend",
+        "relative_volume",
+        "structure_down"
+      ],
+      "structure": {
+        "direction": "DOWN",
+        "event": "BOS_DOWN",
+        "sweep": null,
+        "swing_high": 0.05024,
+        "swing_low": 0.04923
+      },
+      "reasoning": {
+        "regime": "TREND",
+        "efficiency": 0.2523364485981305,
+        "relative_volume": 1.1088257378974875,
+        "liquidity_sweep": null,
+        "version": "observable_rules_v1",
+        "setup": "fvg_retest",
+        "side": "SHORT",
+        "explanation": "Цена вернулась к дисбалансу и закрылась в сторону предполагаемого входа.",
+        "invalidates": "Пробой границы зоны/стопа, потеря актуальности цены или новый риск-сигнал.",
+        "win_probability": null
+      },
+      "setup": "fvg_retest",
+      "regime": "TREND",
+      "trendlines": {
+        "support": null,
+        "resistance": {
+          "price": 0.049883,
+          "slope": -5.100000000000035e-05,
+          "anchors": [
+            1788986100000,
+            1788989100000
+          ]
+        },
+        "bullish_retest": false,
+        "bearish_retest": false
+      },
+      "relative_volume": 1.1088257378974875,
+      "market": null,
+      "strategy_version": "structure_v2"
+    },
+    "replay_diagnostics": {},
+    "fvg": {
+      "type": "BEARISH",
+      "top": 0.04971,
+      "bottom": 0.04949,
+      "ce": 0.0496,
+      "candle_time": 1788990300000,
+      "formed_at": 1788990600000,
+      "gap_size": 0.44256688795010657,
+      "index": 347,
+      "touches": 1,
+      "touch_bars": 2,
+      "fill_fraction": 0.5,
+      "displacement_atr": 2.2935153583617844,
+      "age": 2,
+      "state": "PARTIAL"
+    },
+    "current_price": 0.04944,
+    "atr": 0.0002149999999999989,
+    "distance_absolute": 0.00016000000000000042,
+    "units": "price absolute; ATR price absolute; distance/ATR dimensionless",
+    "tick_size": "UNKNOWN: archived exchange instrument filters absent",
+    "original_entry_levels": {
+      "entry": null,
+      "sl": null,
+      "tp": null
+    },
+    "score_components": {
+      "setup_id": "POPCATUSDT_5_1788990300000_BEARISH",
+      "asset": "POPCATUSDT",
+      "direction": "SHORT",
+      "archived_score": 100,
+      "threshold": 80,
+      "reconstructed_components": {
+        "base": 50,
+        "large_fvg": 10,
+        "ltf_downtrend": 12,
+        "htf_downtrend": 18,
+        "strong_adx": 10
+      },
+      "reconstructed_base_score": 100,
+      "difference_to_archived": 0,
+      "note": "Indicator window can differ from original; difference may include trendline +8. No fabricated components.",
+      "final_decision": "WATCHLIST",
+      "blockers": "extended_from_vwap; thin_orderbook; higher_4h_opposition"
+    }
+  },
+  {
+    "setup_id": "AXSUSDT_5_1788990300000_BEARISH",
+    "asset": "AXSUSDT",
+    "conditions": {
+      "FVG": true,
+      "Structure": true,
+      "Liquidity": false,
+      "HTF": "RANGE",
+      "VWAP": "NO_RECORDED_FAILURE",
+      "Orderbook": "FAIL",
+      "Spread": "NO_RECORDED_FAILURE",
+      "Mitigation": "NO_RECORDED_FAILURE",
+      "Rejection": true,
+      "Entry": true,
+      "Score": 87,
+      "Final": "WATCHLIST"
+    },
+    "first_technical_candidate_at": 1788991543.6304848,
+    "first_execution_blockers": [
+      "thin_orderbook",
+      "higher_4h_opposition"
+    ],
+    "first_irreversible": {
+      "at": 1788996929.9832804,
+      "reason": "observation_expired"
+    },
+    "entry": {
+      "signal": "SHORT",
+      "entry": 0.9335,
+      "sl": 0.9375575,
+      "tp": 0.9274137499999999,
+      "rr": 1.5,
+      "score": 87,
+      "rsi": 40.522875816993334,
+      "adx": 31.478738424809762,
+      "trend": "DOWN",
+      "htf": "RANGE",
+      "factors": [
+        "large_fvg",
+        "ltf_downtrend",
+        "strong_adx",
+        "healthy_rsi",
+        "fvg_retest",
+        "regime_transition",
+        "relative_volume",
+        "structure_down"
+      ],
+      "structure": {
+        "direction": "DOWN",
+        "event": "CHOCH_DOWN",
+        "sweep": null,
+        "swing_high": 0.9422,
+        "swing_low": 0.928
+      },
+      "reasoning": {
+        "regime": "TRANSITION",
+        "efficiency": 0.10138248847926253,
+        "relative_volume": 1.1356238528746678,
+        "liquidity_sweep": null,
+        "version": "observable_rules_v1",
+        "setup": "fvg_retest",
+        "side": "SHORT",
+        "explanation": "Цена вернулась к дисбалансу и закрылась в сторону предполагаемого входа.",
+        "invalidates": "Пробой границы зоны/стопа, потеря актуальности цены или новый риск-сигнал.",
+        "win_probability": null
+      },
+      "setup": "fvg_retest",
+      "regime": "TRANSITION",
+      "trendlines": {
+        "support": null,
+        "resistance": null,
+        "bullish_retest": false,
+        "bearish_retest": false
+      },
+      "relative_volume": 1.1356238528746678,
+      "market": null,
+      "strategy_version": "structure_v2"
+    },
+    "replay_diagnostics": {},
+    "fvg": {
+      "type": "BEARISH",
+      "top": 0.9365,
+      "bottom": 0.932,
+      "ce": 0.93425,
+      "candle_time": 1788990300000,
+      "formed_at": 1788990600000,
+      "gap_size": 0.4805125467164921,
+      "index": 347,
+      "touches": 1,
+      "touch_bars": 2,
+      "fill_fraction": 0.6666666666666748,
+      "displacement_atr": 3.0760563380281387,
+      "age": 2,
+      "state": "PARTIAL"
+    },
+    "current_price": 0.9325,
+    "atr": 0.003021428571428564,
+    "distance_absolute": 0.0017500000000000293,
+    "units": "price absolute; ATR price absolute; distance/ATR dimensionless",
+    "tick_size": "UNKNOWN: archived exchange instrument filters absent",
+    "original_entry_levels": {
+      "entry": null,
+      "sl": null,
+      "tp": null
+    },
+    "score_components": {
+      "setup_id": "AXSUSDT_5_1788990300000_BEARISH",
+      "asset": "AXSUSDT",
+      "direction": "SHORT",
+      "archived_score": 87,
+      "threshold": 80,
+      "reconstructed_components": {
+        "base": 50,
+        "large_fvg": 10,
+        "ltf_downtrend": 12,
+        "strong_adx": 10,
+        "healthy_rsi": 5
+      },
+      "reconstructed_base_score": 87,
+      "difference_to_archived": 0,
+      "note": "Indicator window can differ from original; difference may include trendline +8. No fabricated components.",
+      "final_decision": "WATCHLIST",
+      "blockers": "thin_orderbook; higher_4h_opposition"
+    }
+  },
+  {
+    "setup_id": "EPICUSDT_5_1789000200000_BEARISH",
+    "asset": "EPICUSDT",
+    "conditions": {
+      "FVG": true,
+      "Structure": true,
+      "Liquidity": false,
+      "HTF": "RANGE",
+      "VWAP": "NO_RECORDED_FAILURE",
+      "Orderbook": "FAIL",
+      "Spread": "NO_RECORDED_FAILURE",
+      "Mitigation": "NO_RECORDED_FAILURE",
+      "Rejection": true,
+      "Entry": true,
+      "Score": 82,
+      "Final": "WATCHLIST"
+    },
+    "first_technical_candidate_at": 1789002610.3011384,
+    "first_execution_blockers": [
+      "thin_orderbook"
+    ],
+    "first_irreversible": {
+      "at": 1789004322.4752283,
+      "reason": "fvg_fully_filled"
+    },
+    "entry": {
+      "signal": "SHORT",
+      "entry": 0.3737,
+      "sl": 0.37638750000000004,
+      "tp": 0.3696687499999999,
+      "rr": 1.5,
+      "score": 82,
+      "rsi": 32.214765100671286,
+      "adx": 34.09031518913589,
+      "trend": "DOWN",
+      "htf": "RANGE",
+      "factors": [
+        "large_fvg",
+        "ltf_downtrend",
+        "strong_adx",
+        "fvg_retest",
+        "regime_transition",
+        "relative_volume",
+        "structure_down"
+      ],
+      "structure": {
+        "direction": "DOWN",
+        "event": "BOS_DOWN",
+        "sweep": null,
+        "swing_high": 0.3812,
+        "swing_low": 0.3714
+      },
+      "reasoning": {
+        "regime": "TRANSITION",
+        "efficiency": 0.1527093596059125,
+        "relative_volume": 0.960477844066746,
+        "liquidity_sweep": null,
+        "version": "observable_rules_v1",
+        "setup": "fvg_retest",
+        "side": "SHORT",
+        "explanation": "Цена вернулась к дисбалансу и закрылась в сторону предполагаемого входа.",
+        "invalidates": "Пробой границы зоны/стопа, потеря актуальности цены или новый риск-сигнал.",
+        "win_probability": null
+      },
+      "setup": "fvg_retest",
+      "regime": "TRANSITION",
+      "trendlines": {
+        "support": null,
+        "resistance": {
+          "price": 0.3805499999999999,
+          "slope": -5.000000000000837e-05,
+          "anchors": [
+            1788997200000,
+            1788998400000
+          ]
+        },
+        "bullish_retest": false,
+        "bearish_retest": false
+      },
+      "relative_volume": 0.960477844066746,
+      "market": null,
+      "strategy_version": "structure_v2"
+    },
+    "replay_diagnostics": {},
+    "fvg": {
+      "type": "BEARISH",
+      "top": 0.3758,
+      "bottom": 0.3743,
+      "ce": 0.37505,
+      "candle_time": 1789000200000,
+      "formed_at": 1789000500000,
+      "gap_size": 0.399148483235764,
+      "index": 343,
+      "touches": 1,
+      "touch_bars": 1,
+      "fill_fraction": 0.06666666666665927,
+      "displacement_atr": 2.163636363636387,
+      "age": 6,
+      "state": "PARTIAL"
+    },
+    "current_price": 0.3742,
+    "atr": 0.0016785714285714262,
+    "distance_absolute": 0.0008500000000000174,
+    "units": "price absolute; ATR price absolute; distance/ATR dimensionless",
+    "tick_size": "UNKNOWN: archived exchange instrument filters absent",
+    "original_entry_levels": {
+      "entry": null,
+      "sl": null,
+      "tp": null
+    },
+    "score_components": {
+      "setup_id": "EPICUSDT_5_1789000200000_BEARISH",
+      "asset": "EPICUSDT",
+      "direction": "SHORT",
+      "archived_score": 82,
+      "threshold": 80,
+      "reconstructed_components": {
+        "base": 50,
+        "large_fvg": 10,
+        "ltf_downtrend": 12,
+        "strong_adx": 10
+      },
+      "reconstructed_base_score": 82,
+      "difference_to_archived": 0,
+      "note": "Indicator window can differ from original; difference may include trendline +8. No fabricated components.",
+      "final_decision": "WATCHLIST",
+      "blockers": "thin_orderbook"
+    }
+  },
+  {
+    "setup_id": "BASEDUSDT_5_1789000500000_BEARISH",
+    "asset": "BASEDUSDT",
+    "conditions": {
+      "FVG": true,
+      "Structure": true,
+      "Liquidity": false,
+      "HTF": "DOWN",
+      "VWAP": "NO_RECORDED_FAILURE",
+      "Orderbook": "FAIL",
+      "Spread": "NO_RECORDED_FAILURE",
+      "Mitigation": "NO_RECORDED_FAILURE",
+      "Rejection": true,
+      "Entry": true,
+      "Score": 100,
+      "Final": "WATCHLIST"
+    },
+    "first_technical_candidate_at": 1789002014.1565158,
+    "first_execution_blockers": [
+      "thin_orderbook"
+    ],
+    "first_irreversible": {
+      "at": 1789002066.7074158,
+      "reason": "fvg_fully_filled"
+    },
+    "entry": {
+      "signal": "SHORT",
+      "entry": 0.06116,
+      "sl": 0.06140175,
+      "tp": 0.060797375,
+      "rr": 1.5,
+      "score": 100,
+      "rsi": 36.269430051813316,
+      "adx": 43.38820337330032,
+      "trend": "DOWN",
+      "htf": "DOWN",
+      "factors": [
+        "large_fvg",
+        "ltf_downtrend",
+        "htf_downtrend",
+        "strong_adx",
+        "healthy_rsi",
+        "fvg_retest",
+        "regime_transition",
+        "relative_volume",
+        "structure_down"
+      ],
+      "structure": {
+        "direction": "DOWN",
+        "event": "BOS_DOWN",
+        "sweep": null,
+        "swing_high": 0.06213,
+        "swing_low": 0.06072
+      },
+      "reasoning": {
+        "regime": "TRANSITION",
+        "efficiency": 0.1297709923664127,
+        "relative_volume": 1.327035090593186,
+        "liquidity_sweep": null,
+        "version": "observable_rules_v1",
+        "setup": "fvg_retest",
+        "side": "SHORT",
+        "explanation": "Цена вернулась к дисбалансу и закрылась в сторону предполагаемого входа.",
+        "invalidates": "Пробой границы зоны/стопа, потеря актуальности цены или новый риск-сигнал.",
+        "win_probability": null
+      },
+      "setup": "fvg_retest",
+      "regime": "TRANSITION",
+      "trendlines": {
+        "support": null,
+        "resistance": {
+          "price": 0.06207,
+          "slope": -6.666666666666725e-06,
+          "anchors": [
+            1788992700000,
+            1788999000000
+          ]
+        },
+        "bullish_retest": false,
+        "bearish_retest": false
+      },
+      "relative_volume": 1.327035090593186,
+      "market": null,
+      "strategy_version": "structure_v2"
+    },
+    "replay_diagnostics": {},
+    "fvg": {
+      "type": "BEARISH",
+      "top": 0.0613,
+      "bottom": 0.06122,
+      "ce": 0.061259999999999995,
+      "candle_time": 1789000500000,
+      "formed_at": 1789000800000,
+      "gap_size": 0.1305057096248021,
+      "index": 346,
+      "touches": 1,
+      "touch_bars": 1,
+      "fill_fraction": 0.6249999999999891,
+      "displacement_atr": 0.8189415041782827,
+      "age": 3,
+      "state": "PARTIAL"
+    },
+    "current_price": 0.06114,
+    "atr": 0.0002907142857142845,
+    "distance_absolute": 0.00011999999999999511,
+    "units": "price absolute; ATR price absolute; distance/ATR dimensionless",
+    "tick_size": "UNKNOWN: archived exchange instrument filters absent",
+    "original_entry_levels": {
+      "entry": null,
+      "sl": null,
+      "tp": null
+    },
+    "score_components": {
+      "setup_id": "BASEDUSDT_5_1789000500000_BEARISH",
+      "asset": "BASEDUSDT",
+      "direction": "SHORT",
+      "archived_score": 100,
+      "threshold": 80,
+      "reconstructed_components": {
+        "base": 50,
+        "large_fvg": 10,
+        "ltf_downtrend": 12,
+        "htf_downtrend": 18,
+        "strong_adx": 10,
+        "healthy_rsi": 5
+      },
+      "reconstructed_base_score": 100,
+      "difference_to_archived": 0,
+      "note": "Indicator window can differ from original; difference may include trendline +8. No fabricated components.",
+      "final_decision": "INVALIDATED",
+      "blockers": "fvg_fully_filled"
+    }
+  },
+  {
+    "setup_id": "ZKCUSDT_5_1789000800000_BEARISH",
+    "asset": "ZKCUSDT",
+    "conditions": {
+      "FVG": true,
+      "Structure": true,
+      "Liquidity": false,
+      "HTF": "RANGE",
+      "VWAP": "NO_RECORDED_FAILURE",
+      "Orderbook": "FAIL",
+      "Spread": "NO_RECORDED_FAILURE",
+      "Mitigation": "NO_RECORDED_FAILURE",
+      "Rejection": true,
+      "Entry": true,
+      "Score": 82,
+      "Final": "WATCHLIST"
+    },
+    "first_technical_candidate_at": 1789002626.6270056,
+    "first_execution_blockers": [
+      "thin_orderbook",
+      "higher_4h_opposition"
+    ],
+    "first_irreversible": {
+      "at": 1789002663.1469114,
+      "reason": "fvg_fully_filled"
+    },
+    "entry": null,
+    "replay_diagnostics": {
+      "no_recent_retest": 1
+    },
+    "fvg": {
+      "type": "BEARISH",
+      "top": 0.04787,
+      "bottom": 0.04763,
+      "ce": 0.04775,
+      "candle_time": 1789000800000,
+      "formed_at": 1789001100000,
+      "gap_size": 0.5013578441612787,
+      "index": 345,
+      "touches": 1,
+      "touch_bars": 2,
+      "fill_fraction": 0.6250000000000072,
+      "displacement_atr": 1.8456591639871525,
+      "age": 4,
+      "state": "PARTIAL"
+    },
+    "current_price": 0.04772,
+    "atr": 0.00022214285714285579,
+    "distance_absolute": 3.0000000000002247e-05,
+    "units": "price absolute; ATR price absolute; distance/ATR dimensionless",
+    "tick_size": "UNKNOWN: archived exchange instrument filters absent",
+    "original_entry_levels": {
+      "entry": null,
+      "sl": null,
+      "tp": null
+    },
+    "score_components": {
+      "setup_id": "ZKCUSDT_5_1789000800000_BEARISH",
+      "asset": "ZKCUSDT",
+      "direction": "SHORT",
+      "archived_score": 82,
+      "threshold": 80,
+      "reconstructed_components": {
+        "base": 50,
+        "large_fvg": 10,
+        "ltf_downtrend": 12,
+        "strong_adx": 10
+      },
+      "reconstructed_base_score": 82,
+      "difference_to_archived": 0,
+      "note": "Indicator window can differ from original; difference may include trendline +8. No fabricated components.",
+      "final_decision": "INVALIDATED",
+      "blockers": "fvg_fully_filled"
+    }
+  },
+  {
+    "setup_id": "TRUMPUSDT_5_1789003800000_BEARISH",
+    "asset": "TRUMPUSDT",
+    "conditions": {
+      "FVG": true,
+      "Structure": true,
+      "Liquidity": false,
+      "HTF": "DOWN",
+      "VWAP": "FAIL",
+      "Orderbook": "NO_RECORDED_FAILURE",
+      "Spread": "NO_RECORDED_FAILURE",
+      "Mitigation": "NO_RECORDED_FAILURE",
+      "Rejection": true,
+      "Entry": true,
+      "Score": 95,
+      "Final": "WATCHLIST"
+    },
+    "first_technical_candidate_at": 1789005024.3935964,
+    "first_execution_blockers": [
+      "extended_from_vwap"
+    ],
+    "first_irreversible": {
+      "at": 1789007712.1045706,
+      "reason": "fvg_ce_invalidated"
+    },
+    "entry": {
+      "signal": "SHORT",
+      "entry": 1.999,
+      "sl": 2.017425,
+      "tp": 1.9713625000000006,
+      "rr": 1.5,
+      "score": 95,
+      "rsi": 42.352941176470644,
+      "adx": 23.305914822080442,
+      "trend": "DOWN",
+      "htf": "DOWN",
+      "factors": [
+        "large_fvg",
+        "ltf_downtrend",
+        "htf_downtrend",
+        "healthy_rsi",
+        "fvg_retest",
+        "regime_transition",
+        "relative_volume",
+        "structure_down"
+      ],
+      "structure": {
+        "direction": "DOWN",
+        "event": "CHOCH_DOWN",
+        "sweep": null,
+        "swing_high": 2.035,
+        "swing_low": 2.001
+      },
+      "reasoning": {
+        "regime": "TRANSITION",
+        "efficiency": 0.2586206896551705,
+        "relative_volume": 0.8583284375247487,
+        "liquidity_sweep": null,
+        "version": "observable_rules_v1",
+        "setup": "fvg_retest",
+        "side": "SHORT",
+        "explanation": "Цена вернулась к дисбалансу и закрылась в сторону предполагаемого входа.",
+        "invalidates": "Пробой границы зоны/стопа, потеря актуальности цены или новый риск-сигнал.",
+        "win_probability": null
+      },
+      "setup": "fvg_retest",
+      "regime": "TRANSITION",
+      "trendlines": {
+        "support": null,
+        "resistance": null,
+        "bullish_retest": false,
+        "bearish_retest": false
+      },
+      "relative_volume": 0.8583284375247487,
+      "market": null,
+      "strategy_version": "structure_v2"
+    },
+    "replay_diagnostics": {},
+    "fvg": {
+      "type": "BEARISH",
+      "top": 2.013,
+      "bottom": 2.002,
+      "ce": 2.0075,
+      "candle_time": 1789003800000,
+      "formed_at": 1789004100000,
+      "gap_size": 0.5464480874316999,
+      "index": 347,
+      "touches": 1,
+      "touch_bars": 2,
+      "fill_fraction": 0.2727272727272801,
+      "displacement_atr": 1.0898203592814615,
+      "age": 2,
+      "state": "PARTIAL"
+    },
+    "current_price": 2.0,
+    "atr": 0.012642857142857147,
+    "distance_absolute": 0.00749999999999984,
+    "units": "price absolute; ATR price absolute; distance/ATR dimensionless",
+    "tick_size": "UNKNOWN: archived exchange instrument filters absent",
+    "original_entry_levels": {
+      "entry": null,
+      "sl": null,
+      "tp": null
+    },
+    "score_components": {
+      "setup_id": "TRUMPUSDT_5_1789003800000_BEARISH",
+      "asset": "TRUMPUSDT",
+      "direction": "SHORT",
+      "archived_score": 95,
+      "threshold": 80,
+      "reconstructed_components": {
+        "base": 50,
+        "large_fvg": 10,
+        "ltf_downtrend": 12,
+        "htf_downtrend": 18,
+        "healthy_rsi": 5
+      },
+      "reconstructed_base_score": 95,
+      "difference_to_archived": 0,
+      "note": "Indicator window can differ from original; difference may include trendline +8. No fabricated components.",
+      "final_decision": "WATCHLIST",
+      "blockers": "extended_from_vwap"
+    }
+  },
+  {
+    "setup_id": "ZAMAUSDT_5_1789012200000_BEARISH",
+    "asset": "ZAMAUSDT",
+    "conditions": {
+      "FVG": true,
+      "Structure": true,
+      "Liquidity": false,
+      "HTF": "DOWN",
+      "VWAP": "FAIL",
+      "Orderbook": "FAIL",
+      "Spread": "NO_RECORDED_FAILURE",
+      "Mitigation": "NO_RECORDED_FAILURE",
+      "Rejection": true,
+      "Entry": true,
+      "Score": 100,
+      "Final": "WATCHLIST"
+    },
+    "first_technical_candidate_at": 1789013415.0002527,
+    "first_execution_blockers": [
+      "extended_from_vwap",
+      "thin_orderbook"
+    ],
+    "first_irreversible": null,
+    "entry": {
+      "signal": "SHORT",
+      "entry": 0.04852,
+      "sl": 0.04870075,
+      "tp": 0.048248875,
+      "rr": 1.5,
+      "score": 100,
+      "rsi": 61.17647058823531,
+      "adx": 52.59307660150264,
+      "trend": "DOWN",
+      "htf": "DOWN",
+      "factors": [
+        "large_fvg",
+        "ltf_downtrend",
+        "htf_downtrend",
+        "strong_adx",
+        "healthy_rsi",
+        "fvg_retest",
+        "regime_trend",
+        "relative_volume",
+        "structure_down"
+      ],
+      "structure": {
+        "direction": "DOWN",
+        "event": "BOS_DOWN",
+        "sweep": null,
+        "swing_high": 0.04883,
+        "swing_low": 0.04821
+      },
+      "reasoning": {
+        "regime": "TREND",
+        "efficiency": 0.399999999999997,
+        "relative_volume": 0.8460014552597325,
+        "liquidity_sweep": null,
+        "version": "observable_rules_v1",
+        "setup": "fvg_retest",
+        "side": "SHORT",
+        "explanation": "Цена вернулась к дисбалансу и закрылась в сторону предполагаемого входа.",
+        "invalidates": "Пробой границы зоны/стопа, потеря актуальности цены или новый риск-сигнал.",
+        "win_probability": null
+      },
+      "setup": "fvg_retest",
+      "regime": "TREND",
+      "trendlines": {
+        "support": null,
+        "resistance": null,
+        "bullish_retest": false,
+        "bearish_retest": false
+      },
+      "relative_volume": 0.8460014552597325,
+      "market": null,
+      "strategy_version": "structure_v2"
+    },
+    "replay_diagnostics": {},
+    "fvg": {
+      "type": "BEARISH",
+      "top": 0.04866,
+      "bottom": 0.04854,
+      "ce": 0.048600000000000004,
+      "candle_time": 1789012200000,
+      "formed_at": 1789012500000,
+      "gap_size": 0.2466091245376121,
+      "index": 347,
+      "touches": 1,
+      "touch_bars": 2,
+      "fill_fraction": 0.5833333333333285,
+      "displacement_atr": 1.1666666666666563,
+      "age": 2,
+      "state": "PARTIAL"
+    },
+    "current_price": 0.0485,
+    "atr": 0.00011642857142856941,
+    "distance_absolute": 0.00010000000000000286,
+    "units": "price absolute; ATR price absolute; distance/ATR dimensionless",
+    "tick_size": "UNKNOWN: archived exchange instrument filters absent",
+    "original_entry_levels": {
+      "entry": null,
+      "sl": null,
+      "tp": null
+    },
+    "score_components": {
+      "setup_id": "ZAMAUSDT_5_1789012200000_BEARISH",
+      "asset": "ZAMAUSDT",
+      "direction": "SHORT",
+      "archived_score": 100,
+      "threshold": 80,
+      "reconstructed_components": {
+        "base": 50,
+        "large_fvg": 10,
+        "ltf_downtrend": 12,
+        "htf_downtrend": 18,
+        "strong_adx": 10,
+        "healthy_rsi": 5
+      },
+      "reconstructed_base_score": 100,
+      "difference_to_archived": 0,
+      "note": "Indicator window can differ from original; difference may include trendline +8. No fabricated components.",
+      "final_decision": "WATCHLIST",
+      "blockers": "extended_from_vwap; thin_orderbook"
+    }
+  }
+]

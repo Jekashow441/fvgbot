@@ -1,0 +1,2774 @@
+[
+  {
+    "setup_id": "NOTUSDT_5_1788982200000_BEARISH",
+    "scope": "Historical closed OHLC through same engine. Reference deep book/funding/breadth; news disabled. Not actual historical execution replay.",
+    "row": {
+      "fvg": {
+        "type": "BEARISH",
+        "top": 0.0004498,
+        "bottom": 0.0004487,
+        "ce": 0.00044925,
+        "candle_time": 1788982200000,
+        "formed_at": 1788982500000,
+        "gap_size": 0.24455313472653903,
+        "index": 336,
+        "touches": 1,
+        "touch_bars": 1,
+        "fill_fraction": 0.1818181818181908,
+        "displacement_atr": 1.0335570469798336,
+        "age": 13,
+        "state": "PARTIAL"
+      },
+      "zones": [
+        {
+          "type": "BEARISH",
+          "top": 0.0004498,
+          "bottom": 0.0004487,
+          "ce": 0.00044925,
+          "candle_time": 1788982200000,
+          "formed_at": 1788982500000,
+          "gap_size": 0.24455313472653903,
+          "index": 336,
+          "touches": 1,
+          "touch_bars": 1,
+          "fill_fraction": 0.1818181818181908,
+          "displacement_atr": 1.0335570469798336,
+          "age": 13,
+          "state": "PARTIAL"
+        }
+      ],
+      "assessments": {
+        "1788982200000BEARISH": {
+          "score": 87,
+          "score_kind": "pre-learning rule score",
+          "status": "WATCHLIST",
+          "signal_may_form": false,
+          "checks": {
+            "FVG": true,
+            "Zone eligibility": true,
+            "HTF bias": false,
+            "Structure": true,
+            "Liquidity": false,
+            "Entry": true
+          },
+          "structure": {
+            "direction": "DOWN",
+            "event": "CHOCH_DOWN",
+            "sweep": null,
+            "swing_high": 0.0004483,
+            "swing_low": 0.0004424
+          },
+          "current_price": 0.0004474,
+          "rejections": [],
+          "analysis_bar": 1788986400000,
+          "required_next_conditions": [
+            "Retest after FVG formation within the configured closed-bar window.",
+            "Directional closed candle beyond CE, within the entry distance and volume limits.",
+            "All HTF/structure/price/cost/news/book/risk gates must pass; score >= 80."
+          ],
+          "policy": {
+            "min_score": 80,
+            "min_turnover": 500000.0
+          },
+          "execution_rejections": [
+            "orderbook_unavailable",
+            "higher_4h_opposition"
+          ]
+        }
+      },
+      "signal": null,
+      "signal_created": null,
+      "current_price": 0.0004474,
+      "htf_timeframe": "60",
+      "htf_context": {
+        "trend": "RANGE",
+        "adx": 33.273781171143305,
+        "rsi": 31.955922865013733,
+        "atr_pct": 1.2927158273381294
+      },
+      "cooldown_until": null,
+      "processed_candle": "1788986400000",
+      "analysis_key": "6684f636485da34d47f3:1788986400000:STALE:None:295.5405269",
+      "intelligence": {
+        "trend": "DOWN",
+        "adx": 58.86870617010112,
+        "rsi": 45.96273291925455,
+        "atr_pct": 0.44064116482533866,
+        "status": "OK",
+        "atr": 1.971428571428565e-06,
+        "relative_volume": 1.2041816255324684,
+        "range_atr": 0.7608695652173848,
+        "rolling_vwap": 0.000452539803280784,
+        "distance_vwap_atr": -2.6071465917020604,
+        "resistance": 0.0004615,
+        "support": 0.0004424,
+        "benchmark": {
+          "status": "OK",
+          "correlation": 1.0,
+          "beta": 0.9999999999999999,
+          "relative_return": 0.0
+        },
+        "regime": "TREND",
+        "higher_4h": {
+          "trend": "UP",
+          "adx": 30.987166244232053,
+          "rsi": 35.08196721311481,
+          "atr_pct": 3.2502569373072956
+        }
+      },
+      "news": {
+        "coverage": "DISABLED",
+        "blockers": [],
+        "events": []
+      },
+      "qualification": {
+        "status": "STALE",
+        "reasons": [
+          "backtest_stale"
+        ]
+      },
+      "microstructure": {
+        "status": "STALE"
+      },
+      "blockers": [
+        "orderbook_unavailable",
+        "higher_4h_opposition"
+      ],
+      "base_blockers": [],
+      "research_mode": "paper",
+      "setup_diagnostics": {},
+      "strict_ce": true,
+      "market": {
+        "eligible": true,
+        "volume_rank": 1,
+        "turnover_24h": 100000000.0,
+        "breadth": 0.5,
+        "funding_rate": 0.0,
+        "spread_bps": 1
+      },
+      "updated_at": "2026-09-11T13:18:29.028292+00:00"
+    },
+    "traces": [
+      {
+        "id": 1,
+        "observed_at": 1788986744.9969141,
+        "kind": "ENTRY_CONTEXT_CHECK",
+        "signal_id": "NOTUSDT_5_1788982200000_BEARISH",
+        "payload": "{\"symbol\": \"NOTUSDT\", \"score\": 87, \"rejections\": [\"orderbook_unavailable\", \"higher_4h_opposition\"], \"microstructure\": {\"status\": \"STALE\"}, \"higher_4h\": {\"trend\": \"UP\", \"adx\": 30.987166244232053, \"rsi\": 35.08196721311481, \"atr_pct\": 3.2502569373072956}, \"distance_vwap_atr\": -2.6071465917020604, \"min_book_depth_usdt\": 25000.0, \"max_spread_bps\": 15.0}"
+      }
+    ],
+    "mock_sent": 0,
+    "temporary_trades": 0
+  },
+  {
+    "setup_id": "ROBOUSDT_5_1788982500000_BEARISH",
+    "scope": "Historical closed OHLC through same engine. Reference deep book/funding/breadth; news disabled. Not actual historical execution replay.",
+    "row": {
+      "fvg": {
+        "type": "BEARISH",
+        "top": 0.01026,
+        "bottom": 0.01024,
+        "ce": 0.01025,
+        "candle_time": 1788982500000,
+        "formed_at": 1788982800000,
+        "gap_size": 0.19493177387913435,
+        "index": 341,
+        "touches": 1,
+        "touch_bars": 2,
+        "fill_fraction": 0.5,
+        "displacement_atr": 2.1538461538461586,
+        "age": 8,
+        "state": "PARTIAL"
+      },
+      "zones": [
+        {
+          "type": "BEARISH",
+          "top": 0.01026,
+          "bottom": 0.01024,
+          "ce": 0.01025,
+          "candle_time": 1788982500000,
+          "formed_at": 1788982800000,
+          "gap_size": 0.19493177387913435,
+          "index": 341,
+          "touches": 1,
+          "touch_bars": 2,
+          "fill_fraction": 0.5,
+          "displacement_atr": 2.1538461538461586,
+          "age": 8,
+          "state": "PARTIAL"
+        },
+        {
+          "type": "BEARISH",
+          "top": 0.0103,
+          "bottom": 0.01026,
+          "ce": 0.010280000000000001,
+          "candle_time": 1788982200000,
+          "formed_at": 1788982500000,
+          "gap_size": 0.38834951456310784,
+          "index": 340,
+          "touches": 0,
+          "touch_bars": 0,
+          "fill_fraction": 0.0,
+          "displacement_atr": 2.3333333333333335,
+          "age": 9,
+          "state": "FRESH"
+        }
+      ],
+      "assessments": {
+        "1788982500000BEARISH": {
+          "score": 100,
+          "score_kind": "pre-learning rule score",
+          "status": "POTENTIAL",
+          "signal_may_form": false,
+          "checks": {
+            "FVG": true,
+            "Zone eligibility": true,
+            "HTF bias": true,
+            "Structure": true,
+            "Liquidity": false,
+            "Entry": true
+          },
+          "structure": {
+            "direction": "DOWN",
+            "event": "BOS_DOWN",
+            "sweep": null,
+            "swing_high": 0.01039,
+            "swing_low": 0.0101
+          },
+          "current_price": 0.01022,
+          "rejections": [],
+          "analysis_bar": 1788985200000,
+          "required_next_conditions": [
+            "Retest after FVG formation within the configured closed-bar window.",
+            "Directional closed candle beyond CE, within the entry distance and volume limits.",
+            "All HTF/structure/price/cost/news/book/risk gates must pass; score >= 80."
+          ],
+          "policy": {
+            "min_score": 80,
+            "min_turnover": 500000.0
+          },
+          "execution_rejections": [
+            "extended_from_vwap",
+            "orderbook_unavailable"
+          ]
+        },
+        "1788982200000BEARISH": {
+          "score": 100,
+          "score_kind": "pre-learning rule score",
+          "status": "POTENTIAL",
+          "signal_may_form": false,
+          "checks": {
+            "FVG": true,
+            "Zone eligibility": true,
+            "HTF bias": true,
+            "Structure": true,
+            "Liquidity": false,
+            "Entry": false
+          },
+          "structure": {
+            "direction": "DOWN",
+            "event": "BOS_DOWN",
+            "sweep": null,
+            "swing_high": 0.01039,
+            "swing_low": 0.0101
+          },
+          "current_price": 0.01022,
+          "rejections": [
+            "no_recent_retest"
+          ],
+          "analysis_bar": 1788985200000,
+          "required_next_conditions": [
+            "Retest after FVG formation within the configured closed-bar window.",
+            "Directional closed candle beyond CE, within the entry distance and volume limits.",
+            "All HTF/structure/price/cost/news/book/risk gates must pass; score >= 80."
+          ],
+          "policy": {
+            "min_score": 80,
+            "min_turnover": 500000.0
+          }
+        }
+      },
+      "signal": null,
+      "signal_created": null,
+      "current_price": 0.01021,
+      "htf_timeframe": "60",
+      "htf_context": {
+        "trend": "DOWN",
+        "adx": 31.246456860457418,
+        "rsi": 27.47252747252746,
+        "atr_pct": 1.5155767611563258
+      },
+      "cooldown_until": null,
+      "processed_candle": "1788985200000",
+      "analysis_key": "6684f636485da34d47f3:1788985200000:STALE:None:300.1086056",
+      "intelligence": {
+        "trend": "DOWN",
+        "adx": 61.78833213295053,
+        "rsi": 35.89743589743554,
+        "atr_pct": 0.4263349175286549,
+        "status": "OK",
+        "atr": 4.357142857142853e-05,
+        "relative_volume": 2.514386930948507,
+        "range_atr": 1.1475409836065913,
+        "rolling_vwap": 0.010466461990894847,
+        "distance_vwap_atr": -5.656504709062068,
+        "resistance": 0.01078,
+        "support": 0.0101,
+        "benchmark": {
+          "status": "OK",
+          "correlation": 1.0,
+          "beta": 1.0000000000000007,
+          "relative_return": 0.0
+        },
+        "regime": "TREND",
+        "higher_4h": {
+          "trend": "DOWN",
+          "adx": 29.76524960404149,
+          "rsi": 25.082508250825057,
+          "atr_pct": 4.0906539433062035
+        }
+      },
+      "news": {
+        "coverage": "DISABLED",
+        "blockers": [],
+        "events": []
+      },
+      "qualification": {
+        "status": "STALE",
+        "reasons": [
+          "backtest_stale"
+        ]
+      },
+      "microstructure": {
+        "status": "STALE"
+      },
+      "blockers": [
+        "extended_from_vwap",
+        "orderbook_unavailable"
+      ],
+      "base_blockers": [],
+      "research_mode": "paper",
+      "setup_diagnostics": {
+        "no_recent_retest": 1
+      },
+      "strict_ce": true,
+      "market": {
+        "eligible": true,
+        "volume_rank": 1,
+        "turnover_24h": 100000000.0,
+        "breadth": 0.5,
+        "funding_rate": 0.0,
+        "spread_bps": 1
+      },
+      "updated_at": "2026-09-11T13:18:33.699885+00:00"
+    },
+    "traces": [
+      {
+        "id": 1,
+        "observed_at": 1788985507.590965,
+        "kind": "ENTRY_CONTEXT_CHECK",
+        "signal_id": "ROBOUSDT_5_1788982500000_BEARISH",
+        "payload": "{\"symbol\": \"ROBOUSDT\", \"score\": 100, \"rejections\": [\"extended_from_vwap\", \"orderbook_unavailable\"], \"microstructure\": {\"status\": \"STALE\"}, \"higher_4h\": {\"trend\": \"DOWN\", \"adx\": 29.76524960404149, \"rsi\": 25.082508250825057, \"atr_pct\": 4.0906539433062035}, \"distance_vwap_atr\": -5.656504709062068, \"min_book_depth_usdt\": 25000.0, \"max_spread_bps\": 15.0}"
+      }
+    ],
+    "mock_sent": 0,
+    "temporary_trades": 0
+  },
+  {
+    "setup_id": "ORDIUSDT_5_1788982500000_BEARISH",
+    "scope": "Historical closed OHLC through same engine. Reference deep book/funding/breadth; news disabled. Not actual historical execution replay.",
+    "row": {
+      "fvg": {
+        "type": "BULLISH",
+        "top": 4.144,
+        "bottom": 4.138,
+        "ce": 4.141,
+        "candle_time": 1788985800000,
+        "formed_at": 1788986100000,
+        "gap_size": 0.14499758337361593,
+        "index": 348,
+        "touches": 1,
+        "touch_bars": 1,
+        "fill_fraction": 0.33333333333328397,
+        "displacement_atr": 1.2564102564102557,
+        "age": 1,
+        "state": "PARTIAL"
+      },
+      "zones": [
+        {
+          "type": "BULLISH",
+          "top": 4.144,
+          "bottom": 4.138,
+          "ce": 4.141,
+          "candle_time": 1788985800000,
+          "formed_at": 1788986100000,
+          "gap_size": 0.14499758337361593,
+          "index": 348,
+          "touches": 1,
+          "touch_bars": 1,
+          "fill_fraction": 0.33333333333328397,
+          "displacement_atr": 1.2564102564102557,
+          "age": 1,
+          "state": "PARTIAL"
+        },
+        {
+          "type": "BEARISH",
+          "top": 4.161,
+          "bottom": 4.153,
+          "ce": 4.157,
+          "candle_time": 1788982500000,
+          "formed_at": 1788982800000,
+          "gap_size": 0.19226147560682547,
+          "index": 337,
+          "touches": 2,
+          "touch_bars": 2,
+          "fill_fraction": 0.7500000000000278,
+          "displacement_atr": 2.276422764227573,
+          "age": 12,
+          "state": "PARTIAL"
+        }
+      ],
+      "assessments": {
+        "1788985800000BULLISH": {
+          "score": 75,
+          "score_kind": "pre-learning rule score",
+          "status": "WATCHLIST",
+          "signal_may_form": false,
+          "checks": {
+            "FVG": true,
+            "Zone eligibility": true,
+            "HTF bias": false,
+            "Structure": false,
+            "Liquidity": false,
+            "Entry": false
+          },
+          "structure": {
+            "direction": "DOWN",
+            "event": "BOS_DOWN",
+            "sweep": null,
+            "swing_high": 4.155,
+            "swing_low": 4.101
+          },
+          "current_price": 4.147,
+          "rejections": [
+            "no_bullish_rejection"
+          ],
+          "analysis_bar": 1788986400000,
+          "required_next_conditions": [
+            "Retest after FVG formation within the configured closed-bar window.",
+            "Directional closed candle beyond CE, within the entry distance and volume limits.",
+            "All HTF/structure/price/cost/news/book/risk gates must pass; score >= 80."
+          ],
+          "policy": {
+            "min_score": 80,
+            "min_turnover": 500000.0
+          }
+        },
+        "1788982500000BEARISH": {
+          "score": 87,
+          "score_kind": "pre-learning rule score",
+          "status": "WATCHLIST",
+          "signal_may_form": false,
+          "checks": {
+            "FVG": true,
+            "Zone eligibility": true,
+            "HTF bias": false,
+            "Structure": true,
+            "Liquidity": false,
+            "Entry": true
+          },
+          "structure": {
+            "direction": "DOWN",
+            "event": "BOS_DOWN",
+            "sweep": null,
+            "swing_high": 4.155,
+            "swing_low": 4.101
+          },
+          "current_price": 4.147,
+          "rejections": [],
+          "analysis_bar": 1788986400000,
+          "required_next_conditions": [
+            "Retest after FVG formation within the configured closed-bar window.",
+            "Directional closed candle beyond CE, within the entry distance and volume limits.",
+            "All HTF/structure/price/cost/news/book/risk gates must pass; score >= 80."
+          ],
+          "policy": {
+            "min_score": 80,
+            "min_turnover": 500000.0
+          },
+          "execution_rejections": [
+            "orderbook_unavailable",
+            "higher_4h_opposition"
+          ]
+        }
+      },
+      "signal": null,
+      "signal_created": null,
+      "current_price": 4.147,
+      "htf_timeframe": "60",
+      "htf_context": {
+        "trend": "RANGE",
+        "adx": 44.437835573644364,
+        "rsi": 25.55282555282541,
+        "atr_pct": 1.4427568072518464
+      },
+      "cooldown_until": null,
+      "processed_candle": "1788986400000",
+      "analysis_key": "6684f636485da34d47f3:1788986400000:STALE:None:301.6163626",
+      "intelligence": {
+        "trend": "DOWN",
+        "adx": 56.599580713354385,
+        "rsi": 44.09448818897641,
+        "atr_pct": 0.44782803403492866,
+        "status": "OK",
+        "atr": 0.018571428571428492,
+        "relative_volume": 1.4683739814444874,
+        "range_atr": 0.48461538461535725,
+        "rolling_vwap": 4.176329101917719,
+        "distance_vwap_atr": -1.5792593340309988,
+        "resistance": 4.261,
+        "support": 4.101,
+        "benchmark": {
+          "status": "OK",
+          "correlation": 1.0,
+          "beta": 0.9999999999999998,
+          "relative_return": 0.0
+        },
+        "regime": "TREND",
+        "higher_4h": {
+          "trend": "UP",
+          "adx": 45.89050350855872,
+          "rsi": 42.61603375527423,
+          "atr_pct": 3.4148704286752234
+        }
+      },
+      "news": {
+        "coverage": "DISABLED",
+        "blockers": [],
+        "events": []
+      },
+      "qualification": {
+        "status": "STALE",
+        "reasons": [
+          "backtest_stale"
+        ]
+      },
+      "microstructure": {
+        "status": "STALE"
+      },
+      "blockers": [
+        "orderbook_unavailable",
+        "higher_4h_opposition"
+      ],
+      "base_blockers": [],
+      "research_mode": "paper",
+      "setup_diagnostics": {
+        "no_bullish_rejection": 1
+      },
+      "strict_ce": true,
+      "market": {
+        "eligible": true,
+        "volume_rank": 1,
+        "turnover_24h": 100000000.0,
+        "breadth": 0.5,
+        "funding_rate": 0.0,
+        "spread_bps": 1
+      },
+      "updated_at": "2026-09-11T13:18:34.999341+00:00"
+    },
+    "traces": [
+      {
+        "id": 1,
+        "observed_at": 1788986730.4931746,
+        "kind": "ENTRY_CONTEXT_CHECK",
+        "signal_id": "ORDIUSDT_5_1788982500000_BEARISH",
+        "payload": "{\"symbol\": \"ORDIUSDT\", \"score\": 87, \"rejections\": [\"orderbook_unavailable\", \"higher_4h_opposition\"], \"microstructure\": {\"status\": \"STALE\"}, \"higher_4h\": {\"trend\": \"UP\", \"adx\": 45.89050350855872, \"rsi\": 42.61603375527423, \"atr_pct\": 3.4148704286752234}, \"distance_vwap_atr\": -1.5792593340309988, \"min_book_depth_usdt\": 25000.0, \"max_spread_bps\": 15.0}"
+      }
+    ],
+    "mock_sent": 0,
+    "temporary_trades": 0
+  },
+  {
+    "setup_id": "MARSCOINUSDT_5_1788983400000_BEARISH",
+    "scope": "Historical closed OHLC through same engine. Reference deep book/funding/breadth; news disabled. Not actual historical execution replay.",
+    "row": {
+      "fvg": {
+        "type": "BEARISH",
+        "top": 0.12016,
+        "bottom": 0.11919,
+        "ce": 0.119675,
+        "candle_time": 1788983400000,
+        "formed_at": 1788983700000,
+        "gap_size": 0.8072569906790934,
+        "index": 348,
+        "touches": 1,
+        "touch_bars": 1,
+        "fill_fraction": 0.3711340206185564,
+        "displacement_atr": 1.9366197183098615,
+        "age": 1,
+        "state": "PARTIAL"
+      },
+      "zones": [
+        {
+          "type": "BEARISH",
+          "top": 0.12016,
+          "bottom": 0.11919,
+          "ce": 0.119675,
+          "candle_time": 1788983400000,
+          "formed_at": 1788983700000,
+          "gap_size": 0.8072569906790934,
+          "index": 348,
+          "touches": 1,
+          "touch_bars": 1,
+          "fill_fraction": 0.3711340206185564,
+          "displacement_atr": 1.9366197183098615,
+          "age": 1,
+          "state": "PARTIAL"
+        }
+      ],
+      "assessments": {
+        "1788983400000BEARISH": {
+          "score": 100,
+          "score_kind": "pre-learning rule score",
+          "status": "POTENTIAL",
+          "signal_may_form": false,
+          "checks": {
+            "FVG": true,
+            "Zone eligibility": true,
+            "HTF bias": true,
+            "Structure": true,
+            "Liquidity": false,
+            "Entry": true
+          },
+          "structure": {
+            "direction": "DOWN",
+            "event": "CHOCH_DOWN",
+            "sweep": "SELL_SIDE",
+            "swing_high": 0.12216,
+            "swing_low": 0.11745
+          },
+          "current_price": 0.11851,
+          "rejections": [],
+          "analysis_bar": 1788984000000,
+          "required_next_conditions": [
+            "Retest after FVG formation within the configured closed-bar window.",
+            "Directional closed candle beyond CE, within the entry distance and volume limits.",
+            "All HTF/structure/price/cost/news/book/risk gates must pass; score >= 80."
+          ],
+          "policy": {
+            "min_score": 80,
+            "min_turnover": 500000.0
+          },
+          "execution_rejections": [
+            "extended_from_vwap",
+            "orderbook_unavailable",
+            "higher_4h_unavailable_or_stale"
+          ]
+        }
+      },
+      "signal": null,
+      "signal_created": null,
+      "current_price": 0.11846,
+      "htf_timeframe": "60",
+      "htf_context": {
+        "trend": "DOWN",
+        "adx": 16.428178779869477,
+        "rsi": 28.269944341372934,
+        "atr_pct": 7.1494759136912265
+      },
+      "cooldown_until": null,
+      "processed_candle": "1788984000000",
+      "analysis_key": "6684f636485da34d47f3:1788984000000:STALE:None:302.1042397",
+      "intelligence": {
+        "trend": "DOWN",
+        "adx": 44.460464813059886,
+        "rsi": 33.705772811918095,
+        "atr_pct": 1.416999168243789,
+        "status": "OK",
+        "atr": 0.0016792857142857145,
+        "relative_volume": 5.7883477393365,
+        "range_atr": 2.060399829859637,
+        "rolling_vwap": 0.12646017088825542,
+        "distance_vwap_atr": -4.734257440900717,
+        "resistance": 0.13907,
+        "support": 0.11625,
+        "benchmark": {
+          "status": "OK",
+          "correlation": 1.0,
+          "beta": 1.0000000000000002,
+          "relative_return": 0.0
+        },
+        "regime": "TREND",
+        "higher_4h": {
+          "trend": "UNKNOWN",
+          "error": "ValueError"
+        }
+      },
+      "news": {
+        "coverage": "DISABLED",
+        "blockers": [],
+        "events": []
+      },
+      "qualification": {
+        "status": "STALE",
+        "reasons": [
+          "backtest_stale"
+        ]
+      },
+      "microstructure": {
+        "status": "STALE"
+      },
+      "blockers": [
+        "extended_from_vwap",
+        "orderbook_unavailable",
+        "higher_4h_unavailable_or_stale"
+      ],
+      "base_blockers": [],
+      "research_mode": "paper",
+      "setup_diagnostics": {},
+      "strict_ce": true,
+      "market": {
+        "eligible": true,
+        "volume_rank": 1,
+        "turnover_24h": 100000000.0,
+        "breadth": 0.5,
+        "funding_rate": 0.0,
+        "spread_bps": 1
+      },
+      "updated_at": "2026-09-11T13:18:35.385620+00:00"
+    },
+    "traces": [
+      {
+        "id": 1,
+        "observed_at": 1788984310.7441902,
+        "kind": "HTF_DATA_UNAVAILABLE",
+        "signal_id": null,
+        "payload": "{\"symbol\": \"MARSCOINUSDT\", \"timeframe\": \"240\", \"error\": \"ValueError\", \"reason\": \"insufficient_closed_candles\"}"
+      },
+      {
+        "id": 2,
+        "observed_at": 1788984310.7441902,
+        "kind": "ENTRY_CONTEXT_CHECK",
+        "signal_id": "MARSCOINUSDT_5_1788983400000_BEARISH",
+        "payload": "{\"symbol\": \"MARSCOINUSDT\", \"score\": 100, \"rejections\": [\"extended_from_vwap\", \"orderbook_unavailable\", \"higher_4h_unavailable_or_stale\"], \"microstructure\": {\"status\": \"STALE\"}, \"higher_4h\": {\"trend\": \"UNKNOWN\", \"error\": \"ValueError\"}, \"distance_vwap_atr\": -4.734257440900717, \"min_book_depth_usdt\": 25000.0, \"max_spread_bps\": 15.0}"
+      }
+    ],
+    "mock_sent": 0,
+    "temporary_trades": 0
+  },
+  {
+    "setup_id": "MORPHOUSDT_5_1788983400000_BEARISH",
+    "scope": "Historical closed OHLC through same engine. Reference deep book/funding/breadth; news disabled. Not actual historical execution replay.",
+    "row": {
+      "fvg": {
+        "type": "BEARISH",
+        "top": 2.339,
+        "bottom": 2.322,
+        "ce": 2.3305,
+        "candle_time": 1788983400000,
+        "formed_at": 1788983700000,
+        "gap_size": 0.7268063274903763,
+        "index": 347,
+        "touches": 1,
+        "touch_bars": 2,
+        "fill_fraction": 0.4705882352941207,
+        "displacement_atr": 3.7333333333333427,
+        "age": 2,
+        "state": "PARTIAL"
+      },
+      "zones": [
+        {
+          "type": "BEARISH",
+          "top": 2.339,
+          "bottom": 2.322,
+          "ce": 2.3305,
+          "candle_time": 1788983400000,
+          "formed_at": 1788983700000,
+          "gap_size": 0.7268063274903763,
+          "index": 347,
+          "touches": 1,
+          "touch_bars": 2,
+          "fill_fraction": 0.4705882352941207,
+          "displacement_atr": 3.7333333333333427,
+          "age": 2,
+          "state": "PARTIAL"
+        }
+      ],
+      "assessments": {
+        "1788983400000BEARISH": {
+          "score": 95,
+          "score_kind": "pre-learning rule score",
+          "status": "ENTRY APPROACHING",
+          "signal_may_form": false,
+          "checks": {
+            "FVG": true,
+            "Zone eligibility": true,
+            "HTF bias": true,
+            "Structure": true,
+            "Liquidity": false,
+            "Entry": true
+          },
+          "structure": {
+            "direction": "DOWN",
+            "event": "BOS_DOWN",
+            "sweep": null,
+            "swing_high": 2.348,
+            "swing_low": 2.33
+          },
+          "current_price": 2.322,
+          "rejections": [],
+          "analysis_bar": 1788984300000,
+          "required_next_conditions": [
+            "Retest after FVG formation within the configured closed-bar window.",
+            "Directional closed candle beyond CE, within the entry distance and volume limits.",
+            "All HTF/structure/price/cost/news/book/risk gates must pass; score >= 80."
+          ],
+          "policy": {
+            "min_score": 80,
+            "min_turnover": 500000.0
+          },
+          "execution_rejections": [
+            "orderbook_unavailable"
+          ]
+        }
+      },
+      "signal": null,
+      "signal_created": null,
+      "current_price": 2.323,
+      "htf_timeframe": "60",
+      "htf_context": {
+        "trend": "DOWN",
+        "adx": 17.85679596137583,
+        "rsi": 42.85714285714279,
+        "atr_pct": 1.604064039408864
+      },
+      "cooldown_until": null,
+      "processed_candle": "1788984300000",
+      "analysis_key": "6684f636485da34d47f3:1788984300000:STALE:None:302.9117729",
+      "intelligence": {
+        "trend": "DOWN",
+        "adx": 20.092570589642484,
+        "rsi": 39.47368421052637,
+        "atr_pct": 0.4060538944259878,
+        "status": "OK",
+        "atr": 0.009428571428571437,
+        "relative_volume": 10.417767206449739,
+        "range_atr": 2.2272727272727155,
+        "rolling_vwap": 2.3460745533903706,
+        "distance_vwap_atr": -2.5533617232211183,
+        "resistance": 2.396,
+        "support": 2.315,
+        "benchmark": {
+          "status": "OK",
+          "correlation": 1.0,
+          "beta": 0.9999999999999996,
+          "relative_return": 0.0
+        },
+        "regime": "RANGE",
+        "higher_4h": {
+          "trend": "RANGE",
+          "adx": 31.170683935110507,
+          "rsi": 22.40963855421691,
+          "atr_pct": 2.9710591133004947
+        }
+      },
+      "news": {
+        "coverage": "DISABLED",
+        "blockers": [],
+        "events": []
+      },
+      "qualification": {
+        "status": "STALE",
+        "reasons": [
+          "backtest_stale"
+        ]
+      },
+      "microstructure": {
+        "status": "STALE"
+      },
+      "blockers": [
+        "orderbook_unavailable"
+      ],
+      "base_blockers": [],
+      "research_mode": "paper",
+      "setup_diagnostics": {},
+      "strict_ce": true,
+      "market": {
+        "eligible": true,
+        "volume_rank": 1,
+        "turnover_24h": 100000000.0,
+        "breadth": 0.5,
+        "funding_rate": 0.0,
+        "spread_bps": 1
+      },
+      "updated_at": "2026-09-11T13:18:36.416102+00:00"
+    },
+    "traces": [
+      {
+        "id": 1,
+        "observed_at": 1788984630.0328202,
+        "kind": "ENTRY_CONTEXT_CHECK",
+        "signal_id": "MORPHOUSDT_5_1788983400000_BEARISH",
+        "payload": "{\"symbol\": \"MORPHOUSDT\", \"score\": 95, \"rejections\": [\"orderbook_unavailable\"], \"microstructure\": {\"status\": \"STALE\"}, \"higher_4h\": {\"trend\": \"RANGE\", \"adx\": 31.170683935110507, \"rsi\": 22.40963855421691, \"atr_pct\": 2.9710591133004947}, \"distance_vwap_atr\": -2.5533617232211183, \"min_book_depth_usdt\": 25000.0, \"max_spread_bps\": 15.0}"
+      }
+    ],
+    "mock_sent": 0,
+    "temporary_trades": 0
+  },
+  {
+    "setup_id": "CFGUSDT_5_1788988200000_BULLISH",
+    "scope": "Historical closed OHLC through same engine. Reference deep book/funding/breadth; news disabled. Not actual historical execution replay.",
+    "row": {
+      "fvg": {
+        "type": "BULLISH",
+        "top": 0.1195,
+        "bottom": 0.1192,
+        "ce": 0.11935,
+        "candle_time": 1788988200000,
+        "formed_at": 1788988500000,
+        "gap_size": 0.2516778523489889,
+        "index": 348,
+        "touches": 1,
+        "touch_bars": 1,
+        "fill_fraction": 0.3333333333333025,
+        "displacement_atr": 1.2499999999999993,
+        "age": 1,
+        "state": "PARTIAL"
+      },
+      "zones": [
+        {
+          "type": "BULLISH",
+          "top": 0.1195,
+          "bottom": 0.1192,
+          "ce": 0.11935,
+          "candle_time": 1788988200000,
+          "formed_at": 1788988500000,
+          "gap_size": 0.2516778523489889,
+          "index": 348,
+          "touches": 1,
+          "touch_bars": 1,
+          "fill_fraction": 0.3333333333333025,
+          "displacement_atr": 1.2499999999999993,
+          "age": 1,
+          "state": "PARTIAL"
+        }
+      ],
+      "assessments": {
+        "1788988200000BULLISH": {
+          "score": 100,
+          "score_kind": "pre-learning rule score",
+          "status": "POTENTIAL",
+          "signal_may_form": false,
+          "checks": {
+            "FVG": true,
+            "Zone eligibility": true,
+            "HTF bias": true,
+            "Structure": true,
+            "Liquidity": false,
+            "Entry": true
+          },
+          "structure": {
+            "direction": "UP",
+            "event": "CHOCH_UP",
+            "sweep": null,
+            "swing_high": 0.1196,
+            "swing_low": 0.1169
+          },
+          "current_price": 0.1201,
+          "rejections": [],
+          "analysis_bar": 1788988800000,
+          "required_next_conditions": [
+            "Retest after FVG formation within the configured closed-bar window.",
+            "Directional closed candle beyond CE, within the entry distance and volume limits.",
+            "All HTF/structure/price/cost/news/book/risk gates must pass; score >= 80."
+          ],
+          "policy": {
+            "min_score": 80,
+            "min_turnover": 500000.0
+          },
+          "execution_rejections": [
+            "orderbook_unavailable",
+            "higher_4h_opposition"
+          ]
+        }
+      },
+      "signal": null,
+      "signal_created": null,
+      "current_price": 0.1201,
+      "htf_timeframe": "60",
+      "htf_context": {
+        "trend": "UP",
+        "adx": 37.83549830803599,
+        "rsi": 50.515463917525786,
+        "atr_pct": 2.151246404602109
+      },
+      "cooldown_until": null,
+      "processed_candle": "1788988800000",
+      "analysis_key": "6684f636485da34d47f3:1788988800000:STALE:None:303.7133432",
+      "intelligence": {
+        "trend": "UP",
+        "adx": 41.75689668367237,
+        "rsi": 65.67164179104475,
+        "atr_pct": 0.7731652194599745,
+        "status": "OK",
+        "atr": 0.0009285714285714294,
+        "relative_volume": 1.0669825197670235,
+        "range_atr": 0.7538461538461448,
+        "rolling_vwap": 0.11843022493465764,
+        "distance_vwap_atr": 1.798219301137919,
+        "resistance": 0.121,
+        "support": 0.1154,
+        "benchmark": {
+          "status": "OK",
+          "correlation": 1.0,
+          "beta": 1.0000000000000002,
+          "relative_return": 0.0
+        },
+        "regime": "TREND",
+        "higher_4h": {
+          "trend": "DOWN",
+          "adx": 74.31502550683028,
+          "rsi": 43.376623376623364,
+          "atr_pct": 5.531914893617022
+        }
+      },
+      "news": {
+        "coverage": "DISABLED",
+        "blockers": [],
+        "events": []
+      },
+      "qualification": {
+        "status": "STALE",
+        "reasons": [
+          "backtest_stale"
+        ]
+      },
+      "microstructure": {
+        "status": "STALE"
+      },
+      "blockers": [
+        "orderbook_unavailable",
+        "higher_4h_opposition"
+      ],
+      "base_blockers": [],
+      "research_mode": "paper",
+      "setup_diagnostics": {},
+      "strict_ce": true,
+      "market": {
+        "eligible": true,
+        "volume_rank": 1,
+        "turnover_24h": 100000000.0,
+        "breadth": 0.5,
+        "funding_rate": 0.0,
+        "spread_bps": 1
+      },
+      "updated_at": "2026-09-11T13:18:36.988352+00:00"
+    },
+    "traces": [
+      {
+        "id": 1,
+        "observed_at": 1788989142.5533137,
+        "kind": "ENTRY_CONTEXT_CHECK",
+        "signal_id": "CFGUSDT_5_1788988200000_BULLISH",
+        "payload": "{\"symbol\": \"CFGUSDT\", \"score\": 100, \"rejections\": [\"orderbook_unavailable\", \"higher_4h_opposition\"], \"microstructure\": {\"status\": \"STALE\"}, \"higher_4h\": {\"trend\": \"DOWN\", \"adx\": 74.31502550683028, \"rsi\": 43.376623376623364, \"atr_pct\": 5.531914893617022}, \"distance_vwap_atr\": 1.798219301137919, \"min_book_depth_usdt\": 25000.0, \"max_spread_bps\": 15.0}"
+      }
+    ],
+    "mock_sent": 0,
+    "temporary_trades": 0
+  },
+  {
+    "setup_id": "BLESSUSDT_5_1788989700000_BEARISH",
+    "scope": "Historical closed OHLC through same engine. Reference deep book/funding/breadth; news disabled. Not actual historical execution replay.",
+    "row": {
+      "fvg": {
+        "type": "BEARISH",
+        "top": 0.00842,
+        "bottom": 0.008401,
+        "ce": 0.008410500000000001,
+        "candle_time": 1788989700000,
+        "formed_at": 1788990000000,
+        "gap_size": 0.22565320665083038,
+        "index": 345,
+        "touches": 1,
+        "touch_bars": 1,
+        "fill_fraction": 0.0,
+        "displacement_atr": 1.1748251748252114,
+        "age": 4,
+        "state": "RETESTED"
+      },
+      "zones": [
+        {
+          "type": "BEARISH",
+          "top": 0.00842,
+          "bottom": 0.008401,
+          "ce": 0.008410500000000001,
+          "candle_time": 1788989700000,
+          "formed_at": 1788990000000,
+          "gap_size": 0.22565320665083038,
+          "index": 345,
+          "touches": 1,
+          "touch_bars": 1,
+          "fill_fraction": 0.0,
+          "displacement_atr": 1.1748251748252114,
+          "age": 4,
+          "state": "RETESTED"
+        }
+      ],
+      "assessments": {
+        "1788989700000BEARISH": {
+          "score": 100,
+          "score_kind": "pre-learning rule score",
+          "status": "POTENTIAL",
+          "signal_may_form": false,
+          "checks": {
+            "FVG": true,
+            "Zone eligibility": true,
+            "HTF bias": true,
+            "Structure": true,
+            "Liquidity": false,
+            "Entry": true
+          },
+          "structure": {
+            "direction": "DOWN",
+            "event": "CHOCH_DOWN",
+            "sweep": null,
+            "swing_high": 0.008477,
+            "swing_low": 0.008342
+          },
+          "current_price": 0.008375,
+          "rejections": [],
+          "analysis_bar": 1788991200000,
+          "required_next_conditions": [
+            "Retest after FVG formation within the configured closed-bar window.",
+            "Directional closed candle beyond CE, within the entry distance and volume limits.",
+            "All HTF/structure/price/cost/news/book/risk gates must pass; score >= 80."
+          ],
+          "policy": {
+            "min_score": 80,
+            "min_turnover": 500000.0
+          },
+          "execution_rejections": [
+            "extended_from_vwap",
+            "orderbook_unavailable"
+          ]
+        }
+      },
+      "signal": null,
+      "signal_created": null,
+      "current_price": 0.008348,
+      "htf_timeframe": "60",
+      "htf_context": {
+        "trend": "DOWN",
+        "adx": 81.38454112534028,
+        "rsi": 28.469387755101934,
+        "atr_pct": 1.8467770761348745
+      },
+      "cooldown_until": null,
+      "processed_candle": "1788991200000",
+      "analysis_key": "6684f636485da34d47f3:1788991200000:STALE:None:304.1267581",
+      "intelligence": {
+        "trend": "DOWN",
+        "adx": 37.74219911647264,
+        "rsi": 38.61671469740634,
+        "atr_pct": 0.44008528784648254,
+        "status": "OK",
+        "atr": 3.6857142857142914e-05,
+        "relative_volume": 1.0145910076111024,
+        "range_atr": 1.112403100775222,
+        "rolling_vwap": 0.00853769360626799,
+        "distance_vwap_atr": -4.4141676119221795,
+        "resistance": 0.008749,
+        "support": 0.008319,
+        "benchmark": {
+          "status": "OK",
+          "correlation": 1.0,
+          "beta": 1.0,
+          "relative_return": 0.0
+        },
+        "regime": "TREND",
+        "higher_4h": {
+          "trend": "DOWN",
+          "adx": 18.973704679688854,
+          "rsi": 26.243945398502888,
+          "atr_pct": 4.099275901739192
+        }
+      },
+      "news": {
+        "coverage": "DISABLED",
+        "blockers": [],
+        "events": []
+      },
+      "qualification": {
+        "status": "STALE",
+        "reasons": [
+          "backtest_stale"
+        ]
+      },
+      "microstructure": {
+        "status": "STALE"
+      },
+      "blockers": [
+        "extended_from_vwap",
+        "orderbook_unavailable"
+      ],
+      "base_blockers": [],
+      "research_mode": "paper",
+      "setup_diagnostics": {},
+      "strict_ce": true,
+      "market": {
+        "eligible": true,
+        "volume_rank": 1,
+        "turnover_24h": 100000000.0,
+        "breadth": 0.5,
+        "funding_rate": 0.0,
+        "spread_bps": 1
+      },
+      "updated_at": "2026-09-11T13:18:37.406112+00:00"
+    },
+    "traces": [
+      {
+        "id": 1,
+        "observed_at": 1788991542.5356648,
+        "kind": "ENTRY_CONTEXT_CHECK",
+        "signal_id": "BLESSUSDT_5_1788989700000_BEARISH",
+        "payload": "{\"symbol\": \"BLESSUSDT\", \"score\": 100, \"rejections\": [\"extended_from_vwap\", \"orderbook_unavailable\"], \"microstructure\": {\"status\": \"STALE\"}, \"higher_4h\": {\"trend\": \"DOWN\", \"adx\": 18.973704679688854, \"rsi\": 26.243945398502888, \"atr_pct\": 4.099275901739192}, \"distance_vwap_atr\": -4.4141676119221795, \"min_book_depth_usdt\": 25000.0, \"max_spread_bps\": 15.0}"
+      }
+    ],
+    "mock_sent": 0,
+    "temporary_trades": 0
+  },
+  {
+    "setup_id": "FARTCOINUSDT_5_1788990300000_BEARISH",
+    "scope": "Historical closed OHLC through same engine. Reference deep book/funding/breadth; news disabled. Not actual historical execution replay.",
+    "row": {
+      "fvg": {
+        "type": "BEARISH",
+        "top": 0.15005,
+        "bottom": 0.14861,
+        "ce": 0.14933,
+        "candle_time": 1788990300000,
+        "formed_at": 1788990600000,
+        "gap_size": 0.9596801066311209,
+        "index": 347,
+        "touches": 1,
+        "touch_bars": 1,
+        "fill_fraction": 0.3541666666666747,
+        "displacement_atr": 2.9424778761062167,
+        "age": 2,
+        "state": "PARTIAL"
+      },
+      "zones": [
+        {
+          "type": "BEARISH",
+          "top": 0.15005,
+          "bottom": 0.14861,
+          "ce": 0.14933,
+          "candle_time": 1788990300000,
+          "formed_at": 1788990600000,
+          "gap_size": 0.9596801066311209,
+          "index": 347,
+          "touches": 1,
+          "touch_bars": 1,
+          "fill_fraction": 0.3541666666666747,
+          "displacement_atr": 2.9424778761062167,
+          "age": 2,
+          "state": "PARTIAL"
+        }
+      ],
+      "assessments": {
+        "1788990300000BEARISH": {
+          "score": 100,
+          "score_kind": "pre-learning rule score",
+          "status": "ENTRY APPROACHING",
+          "signal_may_form": false,
+          "checks": {
+            "FVG": true,
+            "Zone eligibility": true,
+            "HTF bias": true,
+            "Structure": true,
+            "Liquidity": false,
+            "Entry": true
+          },
+          "structure": {
+            "direction": "DOWN",
+            "event": "BOS_DOWN",
+            "sweep": null,
+            "swing_high": 0.1517,
+            "swing_low": 0.14688
+          },
+          "current_price": 0.14848,
+          "rejections": [],
+          "analysis_bar": 1788991200000,
+          "required_next_conditions": [
+            "Retest after FVG formation within the configured closed-bar window.",
+            "Directional closed candle beyond CE, within the entry distance and volume limits.",
+            "All HTF/structure/price/cost/news/book/risk gates must pass; score >= 80."
+          ],
+          "policy": {
+            "min_score": 80,
+            "min_turnover": 500000.0
+          },
+          "execution_rejections": [
+            "extended_from_vwap",
+            "orderbook_unavailable"
+          ]
+        }
+      },
+      "signal": null,
+      "signal_created": null,
+      "current_price": 0.14805,
+      "htf_timeframe": "60",
+      "htf_context": {
+        "trend": "DOWN",
+        "adx": 31.016041631225818,
+        "rsi": 21.357123546904603,
+        "atr_pct": 3.0058742657167845
+      },
+      "cooldown_until": null,
+      "processed_candle": "1788991200000",
+      "analysis_key": "6684f636485da34d47f3:1788991200000:STALE:None:305.1750113",
+      "intelligence": {
+        "trend": "DOWN",
+        "adx": 45.92975905822737,
+        "rsi": 39.31623931623931,
+        "atr_pct": 0.7663369766009838,
+        "status": "OK",
+        "atr": 0.0011378571428571408,
+        "relative_volume": 1.0432859692951975,
+        "range_atr": 0.949152542372881,
+        "rolling_vwap": 0.15724853894979918,
+        "distance_vwap_atr": -7.706186145460684,
+        "resistance": 0.16766,
+        "support": 0.14688,
+        "benchmark": {
+          "status": "OK",
+          "correlation": 1.0,
+          "beta": 1.0000000000000002,
+          "relative_return": 0.0
+        },
+        "regime": "TREND",
+        "higher_4h": {
+          "trend": "RANGE",
+          "adx": 26.50903510424186,
+          "rsi": 28.46267709875235,
+          "atr_pct": 5.199890934391398
+        }
+      },
+      "news": {
+        "coverage": "DISABLED",
+        "blockers": [],
+        "events": []
+      },
+      "qualification": {
+        "status": "STALE",
+        "reasons": [
+          "backtest_stale"
+        ]
+      },
+      "microstructure": {
+        "status": "STALE"
+      },
+      "blockers": [
+        "extended_from_vwap",
+        "orderbook_unavailable"
+      ],
+      "base_blockers": [],
+      "research_mode": "paper",
+      "setup_diagnostics": {},
+      "strict_ce": true,
+      "market": {
+        "eligible": true,
+        "volume_rank": 1,
+        "turnover_24h": 100000000.0,
+        "breadth": 0.5,
+        "funding_rate": 0.0,
+        "spread_bps": 1
+      },
+      "updated_at": "2026-09-11T13:18:38.470865+00:00"
+    },
+    "traces": [
+      {
+        "id": 1,
+        "observed_at": 1788991521.658954,
+        "kind": "ENTRY_CONTEXT_CHECK",
+        "signal_id": "FARTCOINUSDT_5_1788990300000_BEARISH",
+        "payload": "{\"symbol\": \"FARTCOINUSDT\", \"score\": 100, \"rejections\": [\"extended_from_vwap\", \"orderbook_unavailable\"], \"microstructure\": {\"status\": \"STALE\"}, \"higher_4h\": {\"trend\": \"RANGE\", \"adx\": 26.50903510424186, \"rsi\": 28.46267709875235, \"atr_pct\": 5.199890934391398}, \"distance_vwap_atr\": -7.706186145460684, \"min_book_depth_usdt\": 25000.0, \"max_spread_bps\": 15.0}"
+      }
+    ],
+    "mock_sent": 0,
+    "temporary_trades": 0
+  },
+  {
+    "setup_id": "CRCLUSDT_5_1788990300000_BEARISH",
+    "scope": "Historical closed OHLC through same engine. Reference deep book/funding/breadth; news disabled. Not actual historical execution replay.",
+    "row": {
+      "fvg": {
+        "type": "BEARISH",
+        "top": 92.17,
+        "bottom": 92.09,
+        "ce": 92.13,
+        "candle_time": 1788990300000,
+        "formed_at": 1788990600000,
+        "gap_size": 0.0867961375718762,
+        "index": 348,
+        "touches": 1,
+        "touch_bars": 1,
+        "fill_fraction": 0.12499999999988898,
+        "displacement_atr": 1.659259259259231,
+        "age": 1,
+        "state": "PARTIAL"
+      },
+      "zones": [
+        {
+          "type": "BEARISH",
+          "top": 92.17,
+          "bottom": 92.09,
+          "ce": 92.13,
+          "candle_time": 1788990300000,
+          "formed_at": 1788990600000,
+          "gap_size": 0.0867961375718762,
+          "index": 348,
+          "touches": 1,
+          "touch_bars": 1,
+          "fill_fraction": 0.12499999999988898,
+          "displacement_atr": 1.659259259259231,
+          "age": 1,
+          "state": "PARTIAL"
+        }
+      ],
+      "assessments": {
+        "1788990300000BEARISH": {
+          "score": 95,
+          "score_kind": "pre-learning rule score",
+          "status": "POTENTIAL",
+          "signal_may_form": false,
+          "checks": {
+            "FVG": true,
+            "Zone eligibility": true,
+            "HTF bias": true,
+            "Structure": true,
+            "Liquidity": false,
+            "Entry": true
+          },
+          "structure": {
+            "direction": "DOWN",
+            "event": "BOS_DOWN",
+            "sweep": "SELL_SIDE",
+            "swing_high": 92.62,
+            "swing_low": 92.02
+          },
+          "current_price": 92.04,
+          "rejections": [],
+          "analysis_bar": 1788990900000,
+          "required_next_conditions": [
+            "Retest after FVG formation within the configured closed-bar window.",
+            "Directional closed candle beyond CE, within the entry distance and volume limits.",
+            "All HTF/structure/price/cost/news/book/risk gates must pass; score >= 80."
+          ],
+          "policy": {
+            "min_score": 80,
+            "min_turnover": 500000.0
+          },
+          "execution_rejections": [
+            "extended_from_vwap",
+            "orderbook_unavailable",
+            "higher_4h_opposition"
+          ]
+        }
+      },
+      "signal": null,
+      "signal_created": null,
+      "current_price": 92.09,
+      "htf_timeframe": "60",
+      "htf_context": {
+        "trend": "DOWN",
+        "adx": 31.025295678078237,
+        "rsi": 24.70904207699199,
+        "atr_pct": 1.6436952877630862
+      },
+      "cooldown_until": null,
+      "processed_candle": "1788990900000",
+      "analysis_key": "6684f636485da34d47f3:1788990900000:STALE:None:305.6200388",
+      "intelligence": {
+        "trend": "DOWN",
+        "adx": 55.3072053572106,
+        "rsi": 41.55844155844166,
+        "atr_pct": 0.2149686471720356,
+        "status": "OK",
+        "atr": 0.19785714285714157,
+        "relative_volume": 0.9755669177627728,
+        "range_atr": 0.6064981949458035,
+        "rolling_vwap": 94.71475681573638,
+        "distance_vwap_atr": -13.518626505526884,
+        "resistance": 97.05,
+        "support": 91.9,
+        "benchmark": {
+          "status": "OK",
+          "correlation": 0.9999999999999999,
+          "beta": 1.0000000000000002,
+          "relative_return": 0.0
+        },
+        "regime": "TREND",
+        "higher_4h": {
+          "trend": "UP",
+          "adx": 45.48324865714159,
+          "rsi": 20.096852300242105,
+          "atr_pct": 2.5664246573239837
+        }
+      },
+      "news": {
+        "coverage": "DISABLED",
+        "blockers": [],
+        "events": []
+      },
+      "qualification": {
+        "status": "STALE",
+        "reasons": [
+          "backtest_stale"
+        ]
+      },
+      "microstructure": {
+        "status": "STALE"
+      },
+      "blockers": [
+        "extended_from_vwap",
+        "orderbook_unavailable",
+        "higher_4h_opposition"
+      ],
+      "base_blockers": [],
+      "research_mode": "paper",
+      "setup_diagnostics": {},
+      "strict_ce": true,
+      "market": {
+        "eligible": true,
+        "volume_rank": 1,
+        "turnover_24h": 100000000.0,
+        "breadth": 0.5,
+        "funding_rate": 0.0,
+        "spread_bps": 1
+      },
+      "updated_at": "2026-09-11T13:18:39.012189+00:00"
+    },
+    "traces": [
+      {
+        "id": 1,
+        "observed_at": 1788991213.58931,
+        "kind": "ENTRY_CONTEXT_CHECK",
+        "signal_id": "CRCLUSDT_5_1788990300000_BEARISH",
+        "payload": "{\"symbol\": \"CRCLUSDT\", \"score\": 95, \"rejections\": [\"extended_from_vwap\", \"orderbook_unavailable\", \"higher_4h_opposition\"], \"microstructure\": {\"status\": \"STALE\"}, \"higher_4h\": {\"trend\": \"UP\", \"adx\": 45.48324865714159, \"rsi\": 20.096852300242105, \"atr_pct\": 2.5664246573239837}, \"distance_vwap_atr\": -13.518626505526884, \"min_book_depth_usdt\": 25000.0, \"max_spread_bps\": 15.0}"
+      }
+    ],
+    "mock_sent": 0,
+    "temporary_trades": 0
+  },
+  {
+    "setup_id": "ORDIUSDT_5_1788990300000_BEARISH",
+    "scope": "Historical closed OHLC through same engine. Reference deep book/funding/breadth; news disabled. Not actual historical execution replay.",
+    "row": {
+      "fvg": {
+        "type": "BEARISH",
+        "top": 4.124,
+        "bottom": 4.101,
+        "ce": 4.1125,
+        "candle_time": 1788990300000,
+        "formed_at": 1788990600000,
+        "gap_size": 0.5577109602327762,
+        "index": 347,
+        "touches": 1,
+        "touch_bars": 2,
+        "fill_fraction": 0.4782608695652291,
+        "displacement_atr": 2.884422110552792,
+        "age": 2,
+        "state": "PARTIAL"
+      },
+      "zones": [
+        {
+          "type": "BEARISH",
+          "top": 4.124,
+          "bottom": 4.101,
+          "ce": 4.1125,
+          "candle_time": 1788990300000,
+          "formed_at": 1788990600000,
+          "gap_size": 0.5577109602327762,
+          "index": 347,
+          "touches": 1,
+          "touch_bars": 2,
+          "fill_fraction": 0.4782608695652291,
+          "displacement_atr": 2.884422110552792,
+          "age": 2,
+          "state": "PARTIAL"
+        }
+      ],
+      "assessments": {
+        "1788990300000BEARISH": {
+          "score": 87,
+          "score_kind": "pre-learning rule score",
+          "status": "WATCHLIST",
+          "signal_may_form": false,
+          "checks": {
+            "FVG": true,
+            "Zone eligibility": true,
+            "HTF bias": false,
+            "Structure": true,
+            "Liquidity": false,
+            "Entry": true
+          },
+          "structure": {
+            "direction": "DOWN",
+            "event": "BOS_DOWN",
+            "sweep": null,
+            "swing_high": 4.151,
+            "swing_low": 4.077
+          },
+          "current_price": 4.101,
+          "rejections": [],
+          "analysis_bar": 1788991200000,
+          "required_next_conditions": [
+            "Retest after FVG formation within the configured closed-bar window.",
+            "Directional closed candle beyond CE, within the entry distance and volume limits.",
+            "All HTF/structure/price/cost/news/book/risk gates must pass; score >= 80."
+          ],
+          "policy": {
+            "min_score": 80,
+            "min_turnover": 500000.0
+          },
+          "execution_rejections": [
+            "extended_from_vwap",
+            "orderbook_unavailable",
+            "higher_4h_opposition"
+          ]
+        }
+      },
+      "signal": null,
+      "signal_created": null,
+      "current_price": 4.09,
+      "htf_timeframe": "60",
+      "htf_context": {
+        "trend": "RANGE",
+        "adx": 53.67117015224234,
+        "rsi": 21.077283372365315,
+        "atr_pct": 1.480114229992342
+      },
+      "cooldown_until": null,
+      "processed_candle": "1788991200000",
+      "analysis_key": "6684f636485da34d47f3:1788991200000:STALE:None:306.2864816",
+      "intelligence": {
+        "trend": "DOWN",
+        "adx": 30.109800475455522,
+        "rsi": 38.51851851851869,
+        "atr_pct": 0.4093078343261231,
+        "status": "OK",
+        "atr": 0.01678571428571431,
+        "relative_volume": 1.364292675981806,
+        "range_atr": 1.3702127659574261,
+        "rolling_vwap": 4.155596008256599,
+        "distance_vwap_atr": -3.2525281514569597,
+        "resistance": 4.245,
+        "support": 4.077,
+        "benchmark": {
+          "status": "OK",
+          "correlation": 1.0,
+          "beta": 1.0000000000000004,
+          "relative_return": 0.0
+        },
+        "regime": "TREND",
+        "higher_4h": {
+          "trend": "UP",
+          "adx": 45.89050350855872,
+          "rsi": 42.61603375527423,
+          "atr_pct": 3.4148704286752234
+        }
+      },
+      "news": {
+        "coverage": "DISABLED",
+        "blockers": [],
+        "events": []
+      },
+      "qualification": {
+        "status": "STALE",
+        "reasons": [
+          "backtest_stale"
+        ]
+      },
+      "microstructure": {
+        "status": "STALE"
+      },
+      "blockers": [
+        "extended_from_vwap",
+        "orderbook_unavailable",
+        "higher_4h_opposition"
+      ],
+      "base_blockers": [],
+      "research_mode": "paper",
+      "setup_diagnostics": {},
+      "strict_ce": true,
+      "market": {
+        "eligible": true,
+        "volume_rank": 1,
+        "turnover_24h": 100000000.0,
+        "breadth": 0.5,
+        "funding_rate": 0.0,
+        "spread_bps": 1
+      },
+      "updated_at": "2026-09-11T13:18:39.542773+00:00"
+    },
+    "traces": [
+      {
+        "id": 1,
+        "observed_at": 1788991533.3028333,
+        "kind": "ENTRY_CONTEXT_CHECK",
+        "signal_id": "ORDIUSDT_5_1788990300000_BEARISH",
+        "payload": "{\"symbol\": \"ORDIUSDT\", \"score\": 87, \"rejections\": [\"extended_from_vwap\", \"orderbook_unavailable\", \"higher_4h_opposition\"], \"microstructure\": {\"status\": \"STALE\"}, \"higher_4h\": {\"trend\": \"UP\", \"adx\": 45.89050350855872, \"rsi\": 42.61603375527423, \"atr_pct\": 3.4148704286752234}, \"distance_vwap_atr\": -3.2525281514569597, \"min_book_depth_usdt\": 25000.0, \"max_spread_bps\": 15.0}"
+      }
+    ],
+    "mock_sent": 0,
+    "temporary_trades": 0
+  },
+  {
+    "setup_id": "EIGENUSDT_5_1788990300000_BEARISH",
+    "scope": "Historical closed OHLC through same engine. Reference deep book/funding/breadth; news disabled. Not actual historical execution replay.",
+    "row": {
+      "fvg": {
+        "type": "BEARISH",
+        "top": 0.207,
+        "bottom": 0.2058,
+        "ce": 0.2064,
+        "candle_time": 1788990300000,
+        "formed_at": 1788990600000,
+        "gap_size": 0.579710144927526,
+        "index": 347,
+        "touches": 1,
+        "touch_bars": 2,
+        "fill_fraction": 0.6666666666666744,
+        "displacement_atr": 1.750000000000003,
+        "age": 2,
+        "state": "PARTIAL"
+      },
+      "zones": [
+        {
+          "type": "BEARISH",
+          "top": 0.207,
+          "bottom": 0.2058,
+          "ce": 0.2064,
+          "candle_time": 1788990300000,
+          "formed_at": 1788990600000,
+          "gap_size": 0.579710144927526,
+          "index": 347,
+          "touches": 1,
+          "touch_bars": 2,
+          "fill_fraction": 0.6666666666666744,
+          "displacement_atr": 1.750000000000003,
+          "age": 2,
+          "state": "PARTIAL"
+        }
+      ],
+      "assessments": {
+        "1788990300000BEARISH": {
+          "score": 82,
+          "score_kind": "pre-learning rule score",
+          "status": "WATCHLIST",
+          "signal_may_form": false,
+          "checks": {
+            "FVG": true,
+            "Zone eligibility": true,
+            "HTF bias": false,
+            "Structure": true,
+            "Liquidity": false,
+            "Entry": true
+          },
+          "structure": {
+            "direction": "DOWN",
+            "event": "BOS_DOWN",
+            "sweep": null,
+            "swing_high": 0.2109,
+            "swing_low": 0.2046
+          },
+          "current_price": 0.2057,
+          "rejections": [],
+          "analysis_bar": 1788991200000,
+          "required_next_conditions": [
+            "Retest after FVG formation within the configured closed-bar window.",
+            "Directional closed candle beyond CE, within the entry distance and volume limits.",
+            "All HTF/structure/price/cost/news/book/risk gates must pass; score >= 80."
+          ],
+          "policy": {
+            "min_score": 80,
+            "min_turnover": 500000.0
+          },
+          "execution_rejections": [
+            "extended_from_vwap",
+            "orderbook_unavailable",
+            "higher_4h_opposition"
+          ]
+        }
+      },
+      "signal": null,
+      "signal_created": null,
+      "current_price": 0.2054,
+      "htf_timeframe": "60",
+      "htf_context": {
+        "trend": "RANGE",
+        "adx": 19.643018519673863,
+        "rsi": 32.013201320132,
+        "atr_pct": 2.0818899819869774
+      },
+      "cooldown_until": null,
+      "processed_candle": "1788991200000",
+      "analysis_key": "6684f636485da34d47f3:1788991200000:STALE:None:308.0538206",
+      "intelligence": {
+        "trend": "DOWN",
+        "adx": 34.23474196509995,
+        "rsi": 33.05084745762707,
+        "atr_pct": 0.6250434057920695,
+        "status": "OK",
+        "atr": 0.001285714285714287,
+        "relative_volume": 1.0675223818584845,
+        "range_atr": 1.0111111111111066,
+        "rolling_vwap": 0.21102939393698805,
+        "distance_vwap_atr": -4.14508417321293,
+        "resistance": 0.2168,
+        "support": 0.2046,
+        "benchmark": {
+          "status": "OK",
+          "correlation": 1.0,
+          "beta": 1.0,
+          "relative_return": 0.0
+        },
+        "regime": "TREND",
+        "higher_4h": {
+          "trend": "UP",
+          "adx": 46.454349211278476,
+          "rsi": 45.87813620071685,
+          "atr_pct": 4.006465369007498
+        }
+      },
+      "news": {
+        "coverage": "DISABLED",
+        "blockers": [],
+        "events": []
+      },
+      "qualification": {
+        "status": "STALE",
+        "reasons": [
+          "backtest_stale"
+        ]
+      },
+      "microstructure": {
+        "status": "STALE"
+      },
+      "blockers": [
+        "extended_from_vwap",
+        "orderbook_unavailable",
+        "higher_4h_opposition"
+      ],
+      "base_blockers": [],
+      "research_mode": "paper",
+      "setup_diagnostics": {},
+      "strict_ce": true,
+      "market": {
+        "eligible": true,
+        "volume_rank": 1,
+        "turnover_24h": 100000000.0,
+        "breadth": 0.5,
+        "funding_rate": 0.0,
+        "spread_bps": 1
+      },
+      "updated_at": "2026-09-11T13:18:41.347198+00:00"
+    },
+    "traces": [
+      {
+        "id": 1,
+        "observed_at": 1788991534.111903,
+        "kind": "ENTRY_CONTEXT_CHECK",
+        "signal_id": "EIGENUSDT_5_1788990300000_BEARISH",
+        "payload": "{\"symbol\": \"EIGENUSDT\", \"score\": 82, \"rejections\": [\"extended_from_vwap\", \"orderbook_unavailable\", \"higher_4h_opposition\"], \"microstructure\": {\"status\": \"STALE\"}, \"higher_4h\": {\"trend\": \"UP\", \"adx\": 46.454349211278476, \"rsi\": 45.87813620071685, \"atr_pct\": 4.006465369007498}, \"distance_vwap_atr\": -4.14508417321293, \"min_book_depth_usdt\": 25000.0, \"max_spread_bps\": 15.0}"
+      }
+    ],
+    "mock_sent": 0,
+    "temporary_trades": 0
+  },
+  {
+    "setup_id": "POPCATUSDT_5_1788990300000_BEARISH",
+    "scope": "Historical closed OHLC through same engine. Reference deep book/funding/breadth; news disabled. Not actual historical execution replay.",
+    "row": {
+      "fvg": {
+        "type": "BEARISH",
+        "top": 0.04971,
+        "bottom": 0.04949,
+        "ce": 0.0496,
+        "candle_time": 1788990300000,
+        "formed_at": 1788990600000,
+        "gap_size": 0.44256688795010657,
+        "index": 347,
+        "touches": 1,
+        "touch_bars": 2,
+        "fill_fraction": 0.5,
+        "displacement_atr": 2.2935153583617844,
+        "age": 2,
+        "state": "PARTIAL"
+      },
+      "zones": [
+        {
+          "type": "BEARISH",
+          "top": 0.04971,
+          "bottom": 0.04949,
+          "ce": 0.0496,
+          "candle_time": 1788990300000,
+          "formed_at": 1788990600000,
+          "gap_size": 0.44256688795010657,
+          "index": 347,
+          "touches": 1,
+          "touch_bars": 2,
+          "fill_fraction": 0.5,
+          "displacement_atr": 2.2935153583617844,
+          "age": 2,
+          "state": "PARTIAL"
+        }
+      ],
+      "assessments": {
+        "1788990300000BEARISH": {
+          "score": 100,
+          "score_kind": "pre-learning rule score",
+          "status": "ENTRY APPROACHING",
+          "signal_may_form": false,
+          "checks": {
+            "FVG": true,
+            "Zone eligibility": true,
+            "HTF bias": true,
+            "Structure": true,
+            "Liquidity": false,
+            "Entry": true
+          },
+          "structure": {
+            "direction": "DOWN",
+            "event": "BOS_DOWN",
+            "sweep": null,
+            "swing_high": 0.05024,
+            "swing_low": 0.04923
+          },
+          "current_price": 0.04948,
+          "rejections": [],
+          "analysis_bar": 1788991200000,
+          "required_next_conditions": [
+            "Retest after FVG formation within the configured closed-bar window.",
+            "Directional closed candle beyond CE, within the entry distance and volume limits.",
+            "All HTF/structure/price/cost/news/book/risk gates must pass; score >= 80."
+          ],
+          "policy": {
+            "min_score": 80,
+            "min_turnover": 500000.0
+          },
+          "execution_rejections": [
+            "extended_from_vwap",
+            "orderbook_unavailable",
+            "higher_4h_opposition"
+          ]
+        }
+      },
+      "signal": null,
+      "signal_created": null,
+      "current_price": 0.04944,
+      "htf_timeframe": "60",
+      "htf_context": {
+        "trend": "DOWN",
+        "adx": 35.79355467169114,
+        "rsi": 23.247232472324768,
+        "atr_pct": 1.6233766233766256
+      },
+      "cooldown_until": null,
+      "processed_candle": "1788991200000",
+      "analysis_key": "6684f636485da34d47f3:1788991200000:STALE:None:308.4322525",
+      "intelligence": {
+        "trend": "DOWN",
+        "adx": 50.150209888178225,
+        "rsi": 31.63265306122443,
+        "atr_pct": 0.43451899757477547,
+        "status": "OK",
+        "atr": 0.0002149999999999989,
+        "relative_volume": 1.1088257378974875,
+        "range_atr": 0.6976744186046424,
+        "rolling_vwap": 0.05075282994028714,
+        "distance_vwap_atr": -5.9201392571495,
+        "resistance": 0.05186,
+        "support": 0.04923,
+        "benchmark": {
+          "status": "OK",
+          "correlation": 1.0,
+          "beta": 1.0000000000000002,
+          "relative_return": 0.0
+        },
+        "regime": "TREND",
+        "higher_4h": {
+          "trend": "UP",
+          "adx": 14.965657034616362,
+          "rsi": 33.46938775510205,
+          "atr_pct": 3.026058908411851
+        }
+      },
+      "news": {
+        "coverage": "DISABLED",
+        "blockers": [],
+        "events": []
+      },
+      "qualification": {
+        "status": "STALE",
+        "reasons": [
+          "backtest_stale"
+        ]
+      },
+      "microstructure": {
+        "status": "STALE"
+      },
+      "blockers": [
+        "extended_from_vwap",
+        "orderbook_unavailable",
+        "higher_4h_opposition"
+      ],
+      "base_blockers": [],
+      "research_mode": "paper",
+      "setup_diagnostics": {},
+      "strict_ce": true,
+      "market": {
+        "eligible": true,
+        "volume_rank": 1,
+        "turnover_24h": 100000000.0,
+        "breadth": 0.5,
+        "funding_rate": 0.0,
+        "spread_bps": 1
+      },
+      "updated_at": "2026-09-11T13:18:41.720570+00:00"
+    },
+    "traces": [
+      {
+        "id": 1,
+        "observed_at": 1788991535.7875853,
+        "kind": "ENTRY_CONTEXT_CHECK",
+        "signal_id": "POPCATUSDT_5_1788990300000_BEARISH",
+        "payload": "{\"symbol\": \"POPCATUSDT\", \"score\": 100, \"rejections\": [\"extended_from_vwap\", \"orderbook_unavailable\", \"higher_4h_opposition\"], \"microstructure\": {\"status\": \"STALE\"}, \"higher_4h\": {\"trend\": \"UP\", \"adx\": 14.965657034616362, \"rsi\": 33.46938775510205, \"atr_pct\": 3.026058908411851}, \"distance_vwap_atr\": -5.9201392571495, \"min_book_depth_usdt\": 25000.0, \"max_spread_bps\": 15.0}"
+      }
+    ],
+    "mock_sent": 0,
+    "temporary_trades": 0
+  },
+  {
+    "setup_id": "AXSUSDT_5_1788990300000_BEARISH",
+    "scope": "Historical closed OHLC through same engine. Reference deep book/funding/breadth; news disabled. Not actual historical execution replay.",
+    "row": {
+      "fvg": {
+        "type": "BEARISH",
+        "top": 0.9365,
+        "bottom": 0.932,
+        "ce": 0.93425,
+        "candle_time": 1788990300000,
+        "formed_at": 1788990600000,
+        "gap_size": 0.4805125467164921,
+        "index": 347,
+        "touches": 1,
+        "touch_bars": 2,
+        "fill_fraction": 0.6666666666666748,
+        "displacement_atr": 3.0760563380281387,
+        "age": 2,
+        "state": "PARTIAL"
+      },
+      "zones": [
+        {
+          "type": "BEARISH",
+          "top": 0.9365,
+          "bottom": 0.932,
+          "ce": 0.93425,
+          "candle_time": 1788990300000,
+          "formed_at": 1788990600000,
+          "gap_size": 0.4805125467164921,
+          "index": 347,
+          "touches": 1,
+          "touch_bars": 2,
+          "fill_fraction": 0.6666666666666748,
+          "displacement_atr": 3.0760563380281387,
+          "age": 2,
+          "state": "PARTIAL"
+        }
+      ],
+      "assessments": {
+        "1788990300000BEARISH": {
+          "score": 87,
+          "score_kind": "pre-learning rule score",
+          "status": "WATCHLIST",
+          "signal_may_form": false,
+          "checks": {
+            "FVG": true,
+            "Zone eligibility": true,
+            "HTF bias": false,
+            "Structure": true,
+            "Liquidity": false,
+            "Entry": true
+          },
+          "structure": {
+            "direction": "DOWN",
+            "event": "CHOCH_DOWN",
+            "sweep": null,
+            "swing_high": 0.9422,
+            "swing_low": 0.928
+          },
+          "current_price": 0.9335,
+          "rejections": [],
+          "analysis_bar": 1788991200000,
+          "required_next_conditions": [
+            "Retest after FVG formation within the configured closed-bar window.",
+            "Directional closed candle beyond CE, within the entry distance and volume limits.",
+            "All HTF/structure/price/cost/news/book/risk gates must pass; score >= 80."
+          ],
+          "policy": {
+            "min_score": 80,
+            "min_turnover": 500000.0
+          },
+          "execution_rejections": [
+            "orderbook_unavailable",
+            "higher_4h_opposition"
+          ]
+        }
+      },
+      "signal": null,
+      "signal_created": null,
+      "current_price": 0.9325,
+      "htf_timeframe": "60",
+      "htf_context": {
+        "trend": "RANGE",
+        "adx": 23.44544111950355,
+        "rsi": 27.19298245614047,
+        "atr_pct": 1.171737567497285
+      },
+      "cooldown_until": null,
+      "processed_candle": "1788991200000",
+      "analysis_key": "6684f636485da34d47f3:1788991200000:STALE:None:308.7861446",
+      "intelligence": {
+        "trend": "DOWN",
+        "adx": 31.478738424809762,
+        "rsi": 40.522875816993334,
+        "atr_pct": 0.32366669217231536,
+        "status": "OK",
+        "atr": 0.003021428571428564,
+        "relative_volume": 1.1356238528746678,
+        "range_atr": 0.9267139479905543,
+        "rolling_vwap": 0.9421822683558413,
+        "distance_vwap_atr": -2.8735639948410974,
+        "resistance": 0.9593,
+        "support": 0.928,
+        "benchmark": {
+          "status": "OK",
+          "correlation": 1.0,
+          "beta": 0.9999999999999997,
+          "relative_return": 0.0
+        },
+        "regime": "TREND",
+        "higher_4h": {
+          "trend": "UP",
+          "adx": 35.4044639320325,
+          "rsi": 39.233954451345724,
+          "atr_pct": 2.2231173805976967
+        }
+      },
+      "news": {
+        "coverage": "DISABLED",
+        "blockers": [],
+        "events": []
+      },
+      "qualification": {
+        "status": "STALE",
+        "reasons": [
+          "backtest_stale"
+        ]
+      },
+      "microstructure": {
+        "status": "STALE"
+      },
+      "blockers": [
+        "orderbook_unavailable",
+        "higher_4h_opposition"
+      ],
+      "base_blockers": [],
+      "research_mode": "paper",
+      "setup_diagnostics": {},
+      "strict_ce": true,
+      "market": {
+        "eligible": true,
+        "volume_rank": 1,
+        "turnover_24h": 100000000.0,
+        "breadth": 0.5,
+        "funding_rate": 0.0,
+        "spread_bps": 1
+      },
+      "updated_at": "2026-09-11T13:18:42.044281+00:00"
+    },
+    "traces": [
+      {
+        "id": 1,
+        "observed_at": 1788991543.6304848,
+        "kind": "ENTRY_CONTEXT_CHECK",
+        "signal_id": "AXSUSDT_5_1788990300000_BEARISH",
+        "payload": "{\"symbol\": \"AXSUSDT\", \"score\": 87, \"rejections\": [\"orderbook_unavailable\", \"higher_4h_opposition\"], \"microstructure\": {\"status\": \"STALE\"}, \"higher_4h\": {\"trend\": \"UP\", \"adx\": 35.4044639320325, \"rsi\": 39.233954451345724, \"atr_pct\": 2.2231173805976967}, \"distance_vwap_atr\": -2.8735639948410974, \"min_book_depth_usdt\": 25000.0, \"max_spread_bps\": 15.0}"
+      }
+    ],
+    "mock_sent": 0,
+    "temporary_trades": 0
+  },
+  {
+    "setup_id": "EPICUSDT_5_1789000200000_BEARISH",
+    "scope": "Historical closed OHLC through same engine. Reference deep book/funding/breadth; news disabled. Not actual historical execution replay.",
+    "row": {
+      "fvg": {
+        "type": "BEARISH",
+        "top": 0.3758,
+        "bottom": 0.3743,
+        "ce": 0.37505,
+        "candle_time": 1789000200000,
+        "formed_at": 1789000500000,
+        "gap_size": 0.399148483235764,
+        "index": 343,
+        "touches": 1,
+        "touch_bars": 1,
+        "fill_fraction": 0.06666666666665927,
+        "displacement_atr": 2.163636363636387,
+        "age": 6,
+        "state": "PARTIAL"
+      },
+      "zones": [
+        {
+          "type": "BEARISH",
+          "top": 0.3758,
+          "bottom": 0.3743,
+          "ce": 0.37505,
+          "candle_time": 1789000200000,
+          "formed_at": 1789000500000,
+          "gap_size": 0.399148483235764,
+          "index": 343,
+          "touches": 1,
+          "touch_bars": 1,
+          "fill_fraction": 0.06666666666665927,
+          "displacement_atr": 2.163636363636387,
+          "age": 6,
+          "state": "PARTIAL"
+        }
+      ],
+      "assessments": {
+        "1789000200000BEARISH": {
+          "score": 82,
+          "score_kind": "pre-learning rule score",
+          "status": "WATCHLIST",
+          "signal_may_form": false,
+          "checks": {
+            "FVG": true,
+            "Zone eligibility": true,
+            "HTF bias": false,
+            "Structure": true,
+            "Liquidity": false,
+            "Entry": true
+          },
+          "structure": {
+            "direction": "DOWN",
+            "event": "BOS_DOWN",
+            "sweep": null,
+            "swing_high": 0.3812,
+            "swing_low": 0.3714
+          },
+          "current_price": 0.3737,
+          "rejections": [],
+          "analysis_bar": 1789002300000,
+          "required_next_conditions": [
+            "Retest after FVG formation within the configured closed-bar window.",
+            "Directional closed candle beyond CE, within the entry distance and volume limits.",
+            "All HTF/structure/price/cost/news/book/risk gates must pass; score >= 80."
+          ],
+          "policy": {
+            "min_score": 80,
+            "min_turnover": 500000.0
+          },
+          "execution_rejections": [
+            "orderbook_unavailable"
+          ]
+        }
+      },
+      "signal": null,
+      "signal_created": null,
+      "current_price": 0.3742,
+      "htf_timeframe": "60",
+      "htf_context": {
+        "trend": "RANGE",
+        "adx": 19.77167290229403,
+        "rsi": 23.48993288590607,
+        "atr_pct": 2.9506437768240334
+      },
+      "cooldown_until": null,
+      "processed_candle": "1789002300000",
+      "analysis_key": "6684f636485da34d47f3:1789002300000:STALE:None:309.3006119",
+      "intelligence": {
+        "trend": "DOWN",
+        "adx": 34.09031518913589,
+        "rsi": 32.214765100671286,
+        "atr_pct": 0.4491761917504486,
+        "status": "OK",
+        "atr": 0.0016785714285714262,
+        "relative_volume": 0.960477844066746,
+        "range_atr": 0.6553191489361652,
+        "rolling_vwap": 0.3747473978458964,
+        "distance_vwap_atr": -0.6239816954276517,
+        "resistance": 0.3999,
+        "support": 0.3402,
+        "benchmark": {
+          "status": "OK",
+          "correlation": 1.0,
+          "beta": 1.0,
+          "relative_return": 0.0
+        },
+        "regime": "TREND",
+        "higher_4h": {
+          "trend": "DOWN",
+          "adx": 13.64478962407574,
+          "rsi": 52.718286655683684,
+          "atr_pct": 5.687900490011309
+        }
+      },
+      "news": {
+        "coverage": "DISABLED",
+        "blockers": [],
+        "events": []
+      },
+      "qualification": {
+        "status": "STALE",
+        "reasons": [
+          "backtest_stale"
+        ]
+      },
+      "microstructure": {
+        "status": "STALE"
+      },
+      "blockers": [
+        "orderbook_unavailable"
+      ],
+      "base_blockers": [],
+      "research_mode": "paper",
+      "setup_diagnostics": {},
+      "strict_ce": true,
+      "market": {
+        "eligible": true,
+        "volume_rank": 1,
+        "turnover_24h": 100000000.0,
+        "breadth": 0.5,
+        "funding_rate": 0.0,
+        "spread_bps": 1
+      },
+      "updated_at": "2026-09-11T13:18:42.572351+00:00"
+    },
+    "traces": [
+      {
+        "id": 1,
+        "observed_at": 1789002610.3011384,
+        "kind": "ENTRY_CONTEXT_CHECK",
+        "signal_id": "EPICUSDT_5_1789000200000_BEARISH",
+        "payload": "{\"symbol\": \"EPICUSDT\", \"score\": 82, \"rejections\": [\"orderbook_unavailable\"], \"microstructure\": {\"status\": \"STALE\"}, \"higher_4h\": {\"trend\": \"DOWN\", \"adx\": 13.64478962407574, \"rsi\": 52.718286655683684, \"atr_pct\": 5.687900490011309}, \"distance_vwap_atr\": -0.6239816954276517, \"min_book_depth_usdt\": 25000.0, \"max_spread_bps\": 15.0}"
+      }
+    ],
+    "mock_sent": 0,
+    "temporary_trades": 0
+  },
+  {
+    "setup_id": "BASEDUSDT_5_1789000500000_BEARISH",
+    "scope": "Historical closed OHLC through same engine. Reference deep book/funding/breadth; news disabled. Not actual historical execution replay.",
+    "row": {
+      "fvg": {
+        "type": "BEARISH",
+        "top": 0.0613,
+        "bottom": 0.06122,
+        "ce": 0.061259999999999995,
+        "candle_time": 1789000500000,
+        "formed_at": 1789000800000,
+        "gap_size": 0.1305057096248021,
+        "index": 346,
+        "touches": 1,
+        "touch_bars": 1,
+        "fill_fraction": 0.6249999999999891,
+        "displacement_atr": 0.8189415041782827,
+        "age": 3,
+        "state": "PARTIAL"
+      },
+      "zones": [
+        {
+          "type": "BEARISH",
+          "top": 0.0613,
+          "bottom": 0.06122,
+          "ce": 0.061259999999999995,
+          "candle_time": 1789000500000,
+          "formed_at": 1789000800000,
+          "gap_size": 0.1305057096248021,
+          "index": 346,
+          "touches": 1,
+          "touch_bars": 1,
+          "fill_fraction": 0.6249999999999891,
+          "displacement_atr": 0.8189415041782827,
+          "age": 3,
+          "state": "PARTIAL"
+        }
+      ],
+      "assessments": {
+        "1789000500000BEARISH": {
+          "score": 100,
+          "score_kind": "pre-learning rule score",
+          "status": "ENTRY APPROACHING",
+          "signal_may_form": false,
+          "checks": {
+            "FVG": true,
+            "Zone eligibility": true,
+            "HTF bias": true,
+            "Structure": true,
+            "Liquidity": false,
+            "Entry": true
+          },
+          "structure": {
+            "direction": "DOWN",
+            "event": "BOS_DOWN",
+            "sweep": null,
+            "swing_high": 0.06213,
+            "swing_low": 0.06072
+          },
+          "current_price": 0.06116,
+          "rejections": [],
+          "analysis_bar": 1789001700000,
+          "required_next_conditions": [
+            "Retest after FVG formation within the configured closed-bar window.",
+            "Directional closed candle beyond CE, within the entry distance and volume limits.",
+            "All HTF/structure/price/cost/news/book/risk gates must pass; score >= 80."
+          ],
+          "policy": {
+            "min_score": 80,
+            "min_turnover": 500000.0
+          },
+          "execution_rejections": [
+            "orderbook_unavailable"
+          ]
+        }
+      },
+      "signal": null,
+      "signal_created": null,
+      "current_price": 0.06114,
+      "htf_timeframe": "60",
+      "htf_context": {
+        "trend": "DOWN",
+        "adx": 52.53902092583348,
+        "rsi": 22.019147084421192,
+        "atr_pct": 2.668644305334951
+      },
+      "cooldown_until": null,
+      "processed_candle": "1789001700000",
+      "analysis_key": "6684f636485da34d47f3:1789001700000:STALE:None:309.6759045",
+      "intelligence": {
+        "trend": "DOWN",
+        "adx": 43.38820337330032,
+        "rsi": 36.269430051813316,
+        "atr_pct": 0.47533401849948415,
+        "status": "OK",
+        "atr": 0.0002907142857142845,
+        "relative_volume": 1.327035090593186,
+        "range_atr": 0.7567567567567529,
+        "rolling_vwap": 0.06191813048755884,
+        "distance_vwap_atr": -2.6078198589247785,
+        "resistance": 0.06729,
+        "support": 0.05685,
+        "benchmark": {
+          "status": "OK",
+          "correlation": 1.0,
+          "beta": 1.0,
+          "relative_return": 0.0
+        },
+        "regime": "TREND",
+        "higher_4h": {
+          "trend": "DOWN",
+          "adx": 27.289614956189748,
+          "rsi": 31.20728929384964,
+          "atr_pct": 3.2879085344728067
+        }
+      },
+      "news": {
+        "coverage": "DISABLED",
+        "blockers": [],
+        "events": []
+      },
+      "qualification": {
+        "status": "STALE",
+        "reasons": [
+          "backtest_stale"
+        ]
+      },
+      "microstructure": {
+        "status": "STALE"
+      },
+      "blockers": [
+        "orderbook_unavailable"
+      ],
+      "base_blockers": [],
+      "research_mode": "paper",
+      "setup_diagnostics": {},
+      "strict_ce": true,
+      "market": {
+        "eligible": true,
+        "volume_rank": 1,
+        "turnover_24h": 100000000.0,
+        "breadth": 0.5,
+        "funding_rate": 0.0,
+        "spread_bps": 1
+      },
+      "updated_at": "2026-09-11T13:18:43.099565+00:00"
+    },
+    "traces": [
+      {
+        "id": 1,
+        "observed_at": 1789002014.1565158,
+        "kind": "ENTRY_CONTEXT_CHECK",
+        "signal_id": "BASEDUSDT_5_1789000500000_BEARISH",
+        "payload": "{\"symbol\": \"BASEDUSDT\", \"score\": 100, \"rejections\": [\"orderbook_unavailable\"], \"microstructure\": {\"status\": \"STALE\"}, \"higher_4h\": {\"trend\": \"DOWN\", \"adx\": 27.289614956189748, \"rsi\": 31.20728929384964, \"atr_pct\": 3.2879085344728067}, \"distance_vwap_atr\": -2.6078198589247785, \"min_book_depth_usdt\": 25000.0, \"max_spread_bps\": 15.0}"
+      }
+    ],
+    "mock_sent": 0,
+    "temporary_trades": 0
+  },
+  {
+    "setup_id": "ZKCUSDT_5_1789000800000_BEARISH",
+    "scope": "Historical closed OHLC through same engine. Reference deep book/funding/breadth; news disabled. Not actual historical execution replay.",
+    "row": {
+      "signal": null,
+      "blockers": [
+        "noncontiguous_candles"
+      ],
+      "status": "INVALID_CANDLES"
+    },
+    "traces": [],
+    "mock_sent": 0,
+    "temporary_trades": 0
+  },
+  {
+    "setup_id": "TRUMPUSDT_5_1789003800000_BEARISH",
+    "scope": "Historical closed OHLC through same engine. Reference deep book/funding/breadth; news disabled. Not actual historical execution replay.",
+    "row": {
+      "fvg": {
+        "type": "BEARISH",
+        "top": 2.013,
+        "bottom": 2.002,
+        "ce": 2.0075,
+        "candle_time": 1789003800000,
+        "formed_at": 1789004100000,
+        "gap_size": 0.5464480874316999,
+        "index": 347,
+        "touches": 1,
+        "touch_bars": 2,
+        "fill_fraction": 0.2727272727272801,
+        "displacement_atr": 1.0898203592814615,
+        "age": 2,
+        "state": "PARTIAL"
+      },
+      "zones": [
+        {
+          "type": "BEARISH",
+          "top": 2.013,
+          "bottom": 2.002,
+          "ce": 2.0075,
+          "candle_time": 1789003800000,
+          "formed_at": 1789004100000,
+          "gap_size": 0.5464480874316999,
+          "index": 347,
+          "touches": 1,
+          "touch_bars": 2,
+          "fill_fraction": 0.2727272727272801,
+          "displacement_atr": 1.0898203592814615,
+          "age": 2,
+          "state": "PARTIAL"
+        }
+      ],
+      "assessments": {
+        "1789003800000BEARISH": {
+          "score": 95,
+          "score_kind": "pre-learning rule score",
+          "status": "ENTRY APPROACHING",
+          "signal_may_form": false,
+          "checks": {
+            "FVG": true,
+            "Zone eligibility": true,
+            "HTF bias": true,
+            "Structure": true,
+            "Liquidity": false,
+            "Entry": true
+          },
+          "structure": {
+            "direction": "DOWN",
+            "event": "CHOCH_DOWN",
+            "sweep": null,
+            "swing_high": 2.035,
+            "swing_low": 2.001
+          },
+          "current_price": 1.999,
+          "rejections": [],
+          "analysis_bar": 1789004700000,
+          "required_next_conditions": [
+            "Retest after FVG formation within the configured closed-bar window.",
+            "Directional closed candle beyond CE, within the entry distance and volume limits.",
+            "All HTF/structure/price/cost/news/book/risk gates must pass; score >= 80."
+          ],
+          "policy": {
+            "min_score": 80,
+            "min_turnover": 500000.0
+          },
+          "execution_rejections": [
+            "extended_from_vwap",
+            "orderbook_unavailable"
+          ]
+        }
+      },
+      "signal": null,
+      "signal_created": null,
+      "current_price": 2.0,
+      "htf_timeframe": "60",
+      "htf_context": {
+        "trend": "DOWN",
+        "adx": 38.475382241243615,
+        "rsi": 23.232323232323267,
+        "atr_pct": 2.5159914712153535
+      },
+      "cooldown_until": null,
+      "processed_candle": "1789004700000",
+      "analysis_key": "6684f636485da34d47f3:1789004700000:STALE:None:314.1402469",
+      "intelligence": {
+        "trend": "DOWN",
+        "adx": 23.305914822080442,
+        "rsi": 42.352941176470644,
+        "atr_pct": 0.6324590866862003,
+        "status": "OK",
+        "atr": 0.012642857142857147,
+        "relative_volume": 0.8583284375247487,
+        "range_atr": 0.7118644067796527,
+        "rolling_vwap": 2.0584544909388502,
+        "distance_vwap_atr": -4.702615102507919,
+        "resistance": 2.19,
+        "support": 1.969,
+        "benchmark": {
+          "status": "OK",
+          "correlation": 1.0,
+          "beta": 0.9999999999999994,
+          "relative_return": 0.0
+        },
+        "regime": "RANGE",
+        "higher_4h": {
+          "trend": "RANGE",
+          "adx": 19.236452686451077,
+          "rsi": 25.33333333333337,
+          "atr_pct": 3.601381351751355
+        }
+      },
+      "news": {
+        "coverage": "DISABLED",
+        "blockers": [],
+        "events": []
+      },
+      "qualification": {
+        "status": "STALE",
+        "reasons": [
+          "backtest_stale"
+        ]
+      },
+      "microstructure": {
+        "status": "STALE"
+      },
+      "blockers": [
+        "extended_from_vwap",
+        "orderbook_unavailable"
+      ],
+      "base_blockers": [],
+      "research_mode": "paper",
+      "setup_diagnostics": {},
+      "strict_ce": true,
+      "market": {
+        "eligible": true,
+        "volume_rank": 1,
+        "turnover_24h": 100000000.0,
+        "breadth": 0.5,
+        "funding_rate": 0.0,
+        "spread_bps": 1
+      },
+      "updated_at": "2026-09-11T13:18:47.639227+00:00"
+    },
+    "traces": [
+      {
+        "id": 1,
+        "observed_at": 1789005024.3935964,
+        "kind": "ENTRY_CONTEXT_CHECK",
+        "signal_id": "TRUMPUSDT_5_1789003800000_BEARISH",
+        "payload": "{\"symbol\": \"TRUMPUSDT\", \"score\": 95, \"rejections\": [\"extended_from_vwap\", \"orderbook_unavailable\"], \"microstructure\": {\"status\": \"STALE\"}, \"higher_4h\": {\"trend\": \"RANGE\", \"adx\": 19.236452686451077, \"rsi\": 25.33333333333337, \"atr_pct\": 3.601381351751355}, \"distance_vwap_atr\": -4.702615102507919, \"min_book_depth_usdt\": 25000.0, \"max_spread_bps\": 15.0}"
+      }
+    ],
+    "mock_sent": 0,
+    "temporary_trades": 0
+  },
+  {
+    "setup_id": "ZAMAUSDT_5_1789012200000_BEARISH",
+    "scope": "Historical closed OHLC through same engine. Reference deep book/funding/breadth; news disabled. Not actual historical execution replay.",
+    "row": {
+      "fvg": null,
+      "zones": [],
+      "assessments": {},
+      "signal": null,
+      "signal_created": null,
+      "current_price": 0.0485,
+      "htf_timeframe": null,
+      "htf_context": null,
+      "cooldown_until": null,
+      "processed_candle": "1789013100000",
+      "analysis_key": "6684f636485da34d47f3:1789013100000:STALE:None:318.3062372",
+      "intelligence": {
+        "trend": "DOWN",
+        "adx": 52.59307660150264,
+        "rsi": 61.17647058823531,
+        "atr_pct": 0.23995995760216285,
+        "status": "OK",
+        "atr": 0.00011642857142856941,
+        "relative_volume": 0.8460014552597325,
+        "range_atr": 0.9447852760736273,
+        "rolling_vwap": 0.04888886150583615,
+        "distance_vwap_atr": -3.1681356329485726,
+        "resistance": 0.05275,
+        "support": 0.04267,
+        "benchmark": {
+          "status": "OK",
+          "correlation": 1.0,
+          "beta": 0.9999999999999999,
+          "relative_return": 0.0
+        },
+        "regime": "TREND"
+      },
+      "news": {
+        "coverage": "DISABLED",
+        "blockers": [],
+        "events": []
+      },
+      "qualification": {
+        "status": "STALE",
+        "reasons": [
+          "backtest_stale"
+        ]
+      },
+      "microstructure": null,
+      "blockers": [],
+      "base_blockers": [],
+      "research_mode": "paper",
+      "setup_diagnostics": {},
+      "strict_ce": true,
+      "market": {
+        "eligible": true,
+        "volume_rank": 1,
+        "turnover_24h": 100000000.0,
+        "breadth": 0.5,
+        "funding_rate": 0.0,
+        "spread_bps": 1
+      },
+      "updated_at": "2026-09-11T13:18:51.485737+00:00"
+    },
+    "traces": [],
+    "mock_sent": 0,
+    "temporary_trades": 0
+  }
+]

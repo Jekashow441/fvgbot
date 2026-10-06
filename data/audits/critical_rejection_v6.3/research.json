@@ -1,0 +1,810 @@
+{
+  "scope": "offline causal research; no production writes",
+  "runtime": {
+    "configured": 80,
+    "loaded_settings": 80,
+    "effective_generator_settings": 80,
+    "class_default": 65,
+    "environment_override": "No score key in _apply_env_overrides mapping",
+    "database": "settings loader reads JSON; database override is paper_balance only",
+    "historical_observed_policies": {
+      "80": 17100,
+      "None": 4,
+      "65": 270,
+      "60": 8,
+      "50": 6,
+      "75": 1
+    },
+    "runtime_dashboard_policies": [
+      {
+        "asset": "BTCUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "PONSUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "PONSUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "XAUUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "USELESSUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "CLUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "SPCXUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "AAVEUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "MARSCOINUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "XAGUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "MSTRUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "XAUTUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "XAUTUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "VIRTUALUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "BEATUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "STRKUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "STRKUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "CRVUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "AKEUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "POLUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "POLUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "MNTUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "DRAMUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "FFUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "GRAMUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "MINAUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "HEMIUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "EGLDUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "TRXUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "LDOUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "SKRUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "PYTHUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "MORPHOUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "GALAUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "STXUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "SKYUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "MUUUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "PAXGUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "BMTUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "PIEVERSEUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "REUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "HUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "FORMUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "CCUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "CCUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "CCUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "AAOIUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "ORDIUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "KSMUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "SYRUPUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "SYRUPUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "OPNUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "ZAMAUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "PORTALUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "PORTALUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "DGAIUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "DGAIUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "TWTUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "GIGGLEUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "AMZNUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "BLESSUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "BLESSUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "DELLUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "DELLUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "POETUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "PROVEUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "0GUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "MELANIAUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "IRENUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "GWEIUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "GWEIUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "ALLOUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "PIPPINUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "IDUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "SPKUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "BASEDUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "AIXBTUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "BABYUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "RUNEUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "SENTUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "WDCUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "WDCUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "RESOLVUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "RESOLVUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "NOMUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "IOTAUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "KAIAUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "FOGOUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "WALUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "BREVUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "BREVUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "SKYAI1USDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "TRBUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "ZILUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "STABLEUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "EULUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "STOUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "POWERUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "MEUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "NIGHTUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "FLRUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "ELSAUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "COAIUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "OPGUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "FLUIDUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "DOODUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "APRUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "BIGTIMEUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "MEGAUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "TACUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "TRIAUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "ERAUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "ERAUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "ERAUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "BBUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "BARDUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "JELLYJELLYUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "NESAUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "XVGUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "CKBUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "IMXUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "PHAROSUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "PHAROSUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "SOFIUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      },
+      {
+        "asset": "SOFIUSDT",
+        "analysis_bar": 1789033800000,
+        "threshold": 80
+      }
+    ],
+    "runtime_values": [
+      80
+    ],
+    "is_running": true
+  },
+  "cohort": {
+    "old_rejection_cohort": 1610,
+    "cards": 1654,
+    "covered": 1499,
+    "reaction_matrix": {
+      "wick": {
+        "count": 489,
+        "FAIL": 266,
+        "PASS": 223
+      },
+      "body": {
+        "count": 1213,
+        "N/A": 584,
+        "PASS": 629
+      },
+      "close_ce": {},
+      "engulfing": {
+        "count": 869,
+        "N/A": 520,
+        "PASS": 349
+      },
+      "displacement": {
+        "count": 703,
+        "N/A": 441,
+        "PASS": 262
+      },
+      "mss_choch": {
+        "count": 139,
+        "N/A": 102,
+        "PASS": 37
+      },
+      "multiple": {
+        "count": 1040,
+        "N/A": 516,
+        "PASS": 524
+      }
+    },
+    "modes": {
+      "A": {
+        "covered": 1466,
+        "passed": 629,
+        "entry_without_historical_market_context": 33,
+        "potential": "UNKNOWN: no archived counterfactual execution context",
+        "confirmed": "UNKNOWN: not replayed execution"
+      },
+      "B": {
+        "covered": 1466,
+        "passed": 489,
+        "entry_without_historical_market_context": 53,
+        "potential": "UNKNOWN: no archived counterfactual execution context",
+        "confirmed": "UNKNOWN: not replayed execution"
+      },
+      "C": {
+        "covered": 1466,
+        "passed": 629,
+        "entry_without_historical_market_context": 33,
+        "potential": "UNKNOWN: no archived counterfactual execution context",
+        "confirmed": "UNKNOWN: not replayed execution"
+      },
+      "D": {
+        "covered": 1466,
+        "passed": 262,
+        "entry_without_historical_market_context": 0,
+        "potential": "UNKNOWN: no archived counterfactual execution context",
+        "confirmed": "UNKNOWN: not replayed execution"
+      },
+      "E": {
+        "covered": 1466,
+        "passed": 37,
+        "entry_without_historical_market_context": 0,
+        "potential": "UNKNOWN: no archived counterfactual execution context",
+        "confirmed": "UNKNOWN: not replayed execution"
+      },
+      "F": {
+        "covered": 1466,
+        "passed": 725,
+        "entry_without_historical_market_context": 73,
+        "potential": "UNKNOWN: no archived counterfactual execution context",
+        "confirmed": "UNKNOWN: not replayed execution"
+      }
+    },
+    "recorded_liquidity_ever_pass": 136,
+    "replay_count": 30,
+    "random_replay_count": 20,
+    "actual_reaction_ever_pass": 662,
+    "actual_reaction_ever_fail": 845,
+    "recorded_entry_old_rejection_fail": 18,
+    "replays_without_bars": [
+      "ZILUSDT_5_1789002000000_BULLISH",
+      "AEONUSDT_5_1789011000000_BULLISH"
+    ]
+  },
+  "reference": {
+    "count": 3462,
+    "formation_first_failures": {
+      "volume": 914,
+      "body": 1298,
+      "atr": 640,
+      "formation_rules_pass": 485,
+      "size": 125
+    },
+    "quality": {
+      "C": 3318,
+      "B": 144
+    },
+    "body_atr_overlap": {
+      "body_True_atr_True": 1524,
+      "body_False_atr_True": 437,
+      "body_True_atr_False": 640,
+      "body_False_atr_False": 861
+    },
+    "body_atr_pearson": 0.16375833048145075,
+    "body_152_count": 152,
+    "body_152_quality": {
+      "C": 139,
+      "B": 13
+    },
+    "body_152_only_body_fail": 105,
+    "volume_649_count": 649,
+    "volume_649_recomputed": {
+      "FAIL": 486,
+      "PASS": 163
+    },
+    "all_volume": {
+      "FAIL": 2156,
+      "PASS": 1306
+    },
+    "old_high_quality_expanded_rechecked": 323,
+    "old_high_quality_expanded_correct_sweep": 113,
+    "idealized_count": 144,
+    "idealized_quality": {
+      "B": 144
+    },
+    "htf_unknown": 3343
+  },
+  "scores": {
+    "count": 18,
+    "bins": {
+      "below60": 0,
+      "60-64": 0,
+      "65-69": 0,
+      "70-74": 0,
+      "75-79": 0,
+      "80+": 18
+    },
+    "thresholds": {
+      "80": 18
+    }
+  },
+  "mtf": {
+    "assets": 17,
+    "quality_by_tf": {
+      "1": 0,
+      "5": 0,
+      "15": 2,
+      "60": 7,
+      "240": 6
+    },
+    "relationships": 2
+  }
+}

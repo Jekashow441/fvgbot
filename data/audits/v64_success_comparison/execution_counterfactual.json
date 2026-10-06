@@ -1,0 +1,528 @@
+{
+  "current": [
+    {
+      "setup_id": "NOTUSDT_5_1788982200000_BEARISH",
+      "remaining": [
+        "thin_orderbook",
+        "higher_4h_opposition"
+      ],
+      "recorded_gate_proxy": false
+    },
+    {
+      "setup_id": "ROBOUSDT_5_1788982500000_BEARISH",
+      "remaining": [
+        "extended_from_vwap",
+        "thin_orderbook"
+      ],
+      "recorded_gate_proxy": false
+    },
+    {
+      "setup_id": "ORDIUSDT_5_1788982500000_BEARISH",
+      "remaining": [
+        "thin_orderbook",
+        "higher_4h_opposition"
+      ],
+      "recorded_gate_proxy": false
+    },
+    {
+      "setup_id": "MARSCOINUSDT_5_1788983400000_BEARISH",
+      "remaining": [
+        "extended_from_vwap",
+        "orderbook_unavailable",
+        "higher_4h_unavailable_or_stale"
+      ],
+      "recorded_gate_proxy": false
+    },
+    {
+      "setup_id": "MORPHOUSDT_5_1788983400000_BEARISH",
+      "remaining": [
+        "thin_orderbook"
+      ],
+      "recorded_gate_proxy": false
+    },
+    {
+      "setup_id": "CFGUSDT_5_1788988200000_BULLISH",
+      "remaining": [
+        "correlated_btc_opposition",
+        "thin_orderbook",
+        "higher_4h_opposition"
+      ],
+      "recorded_gate_proxy": false
+    },
+    {
+      "setup_id": "BLESSUSDT_5_1788989700000_BEARISH",
+      "remaining": [
+        "extended_from_vwap",
+        "thin_orderbook"
+      ],
+      "recorded_gate_proxy": false
+    },
+    {
+      "setup_id": "FARTCOINUSDT_5_1788990300000_BEARISH",
+      "remaining": [
+        "extended_from_vwap",
+        "thin_orderbook"
+      ],
+      "recorded_gate_proxy": false
+    },
+    {
+      "setup_id": "CRCLUSDT_5_1788990300000_BEARISH",
+      "remaining": [
+        "extended_from_vwap",
+        "higher_4h_opposition"
+      ],
+      "recorded_gate_proxy": false
+    },
+    {
+      "setup_id": "ORDIUSDT_5_1788990300000_BEARISH",
+      "remaining": [
+        "extended_from_vwap",
+        "thin_orderbook",
+        "higher_4h_opposition"
+      ],
+      "recorded_gate_proxy": false
+    },
+    {
+      "setup_id": "EIGENUSDT_5_1788990300000_BEARISH",
+      "remaining": [
+        "extended_from_vwap",
+        "thin_orderbook",
+        "higher_4h_opposition"
+      ],
+      "recorded_gate_proxy": false
+    },
+    {
+      "setup_id": "POPCATUSDT_5_1788990300000_BEARISH",
+      "remaining": [
+        "extended_from_vwap",
+        "thin_orderbook",
+        "higher_4h_opposition"
+      ],
+      "recorded_gate_proxy": false
+    },
+    {
+      "setup_id": "AXSUSDT_5_1788990300000_BEARISH",
+      "remaining": [
+        "thin_orderbook",
+        "higher_4h_opposition"
+      ],
+      "recorded_gate_proxy": false
+    },
+    {
+      "setup_id": "EPICUSDT_5_1789000200000_BEARISH",
+      "remaining": [
+        "thin_orderbook"
+      ],
+      "recorded_gate_proxy": false
+    },
+    {
+      "setup_id": "BASEDUSDT_5_1789000500000_BEARISH",
+      "remaining": [
+        "thin_orderbook"
+      ],
+      "recorded_gate_proxy": false
+    },
+    {
+      "setup_id": "ZKCUSDT_5_1789000800000_BEARISH",
+      "remaining": [
+        "thin_orderbook",
+        "higher_4h_opposition"
+      ],
+      "recorded_gate_proxy": false
+    },
+    {
+      "setup_id": "TRUMPUSDT_5_1789003800000_BEARISH",
+      "remaining": [
+        "extended_from_vwap"
+      ],
+      "recorded_gate_proxy": false
+    },
+    {
+      "setup_id": "ZAMAUSDT_5_1789012200000_BEARISH",
+      "remaining": [
+        "extended_from_vwap",
+        "thin_orderbook"
+      ],
+      "recorded_gate_proxy": false
+    }
+  ],
+  "vwap_soft": [
+    {
+      "setup_id": "NOTUSDT_5_1788982200000_BEARISH",
+      "remaining": [
+        "thin_orderbook",
+        "higher_4h_opposition"
+      ],
+      "recorded_gate_proxy": false
+    },
+    {
+      "setup_id": "ROBOUSDT_5_1788982500000_BEARISH",
+      "remaining": [
+        "thin_orderbook"
+      ],
+      "recorded_gate_proxy": false
+    },
+    {
+      "setup_id": "ORDIUSDT_5_1788982500000_BEARISH",
+      "remaining": [
+        "thin_orderbook",
+        "higher_4h_opposition"
+      ],
+      "recorded_gate_proxy": false
+    },
+    {
+      "setup_id": "MARSCOINUSDT_5_1788983400000_BEARISH",
+      "remaining": [
+        "orderbook_unavailable",
+        "higher_4h_unavailable_or_stale"
+      ],
+      "recorded_gate_proxy": false
+    },
+    {
+      "setup_id": "MORPHOUSDT_5_1788983400000_BEARISH",
+      "remaining": [
+        "thin_orderbook"
+      ],
+      "recorded_gate_proxy": false
+    },
+    {
+      "setup_id": "CFGUSDT_5_1788988200000_BULLISH",
+      "remaining": [
+        "correlated_btc_opposition",
+        "thin_orderbook",
+        "higher_4h_opposition"
+      ],
+      "recorded_gate_proxy": false
+    },
+    {
+      "setup_id": "BLESSUSDT_5_1788989700000_BEARISH",
+      "remaining": [
+        "thin_orderbook"
+      ],
+      "recorded_gate_proxy": false
+    },
+    {
+      "setup_id": "FARTCOINUSDT_5_1788990300000_BEARISH",
+      "remaining": [
+        "thin_orderbook"
+      ],
+      "recorded_gate_proxy": false
+    },
+    {
+      "setup_id": "CRCLUSDT_5_1788990300000_BEARISH",
+      "remaining": [
+        "higher_4h_opposition"
+      ],
+      "recorded_gate_proxy": false
+    },
+    {
+      "setup_id": "ORDIUSDT_5_1788990300000_BEARISH",
+      "remaining": [
+        "thin_orderbook",
+        "higher_4h_opposition"
+      ],
+      "recorded_gate_proxy": false
+    },
+    {
+      "setup_id": "EIGENUSDT_5_1788990300000_BEARISH",
+      "remaining": [
+        "thin_orderbook",
+        "higher_4h_opposition"
+      ],
+      "recorded_gate_proxy": false
+    },
+    {
+      "setup_id": "POPCATUSDT_5_1788990300000_BEARISH",
+      "remaining": [
+        "thin_orderbook",
+        "higher_4h_opposition"
+      ],
+      "recorded_gate_proxy": false
+    },
+    {
+      "setup_id": "AXSUSDT_5_1788990300000_BEARISH",
+      "remaining": [
+        "thin_orderbook",
+        "higher_4h_opposition"
+      ],
+      "recorded_gate_proxy": false
+    },
+    {
+      "setup_id": "EPICUSDT_5_1789000200000_BEARISH",
+      "remaining": [
+        "thin_orderbook"
+      ],
+      "recorded_gate_proxy": false
+    },
+    {
+      "setup_id": "BASEDUSDT_5_1789000500000_BEARISH",
+      "remaining": [
+        "thin_orderbook"
+      ],
+      "recorded_gate_proxy": false
+    },
+    {
+      "setup_id": "ZKCUSDT_5_1789000800000_BEARISH",
+      "remaining": [
+        "thin_orderbook",
+        "higher_4h_opposition"
+      ],
+      "recorded_gate_proxy": false
+    },
+    {
+      "setup_id": "TRUMPUSDT_5_1789003800000_BEARISH",
+      "remaining": [],
+      "recorded_gate_proxy": true
+    },
+    {
+      "setup_id": "ZAMAUSDT_5_1789012200000_BEARISH",
+      "remaining": [
+        "thin_orderbook"
+      ],
+      "recorded_gate_proxy": false
+    }
+  ],
+  "book_soft": [
+    {
+      "setup_id": "NOTUSDT_5_1788982200000_BEARISH",
+      "remaining": [
+        "higher_4h_opposition"
+      ],
+      "recorded_gate_proxy": false
+    },
+    {
+      "setup_id": "ROBOUSDT_5_1788982500000_BEARISH",
+      "remaining": [
+        "extended_from_vwap"
+      ],
+      "recorded_gate_proxy": false
+    },
+    {
+      "setup_id": "ORDIUSDT_5_1788982500000_BEARISH",
+      "remaining": [
+        "higher_4h_opposition"
+      ],
+      "recorded_gate_proxy": false
+    },
+    {
+      "setup_id": "MARSCOINUSDT_5_1788983400000_BEARISH",
+      "remaining": [
+        "extended_from_vwap",
+        "orderbook_unavailable",
+        "higher_4h_unavailable_or_stale"
+      ],
+      "recorded_gate_proxy": false
+    },
+    {
+      "setup_id": "MORPHOUSDT_5_1788983400000_BEARISH",
+      "remaining": [],
+      "recorded_gate_proxy": true
+    },
+    {
+      "setup_id": "CFGUSDT_5_1788988200000_BULLISH",
+      "remaining": [
+        "correlated_btc_opposition",
+        "higher_4h_opposition"
+      ],
+      "recorded_gate_proxy": false
+    },
+    {
+      "setup_id": "BLESSUSDT_5_1788989700000_BEARISH",
+      "remaining": [
+        "extended_from_vwap"
+      ],
+      "recorded_gate_proxy": false
+    },
+    {
+      "setup_id": "FARTCOINUSDT_5_1788990300000_BEARISH",
+      "remaining": [
+        "extended_from_vwap"
+      ],
+      "recorded_gate_proxy": false
+    },
+    {
+      "setup_id": "CRCLUSDT_5_1788990300000_BEARISH",
+      "remaining": [
+        "extended_from_vwap",
+        "higher_4h_opposition"
+      ],
+      "recorded_gate_proxy": false
+    },
+    {
+      "setup_id": "ORDIUSDT_5_1788990300000_BEARISH",
+      "remaining": [
+        "extended_from_vwap",
+        "higher_4h_opposition"
+      ],
+      "recorded_gate_proxy": false
+    },
+    {
+      "setup_id": "EIGENUSDT_5_1788990300000_BEARISH",
+      "remaining": [
+        "extended_from_vwap",
+        "higher_4h_opposition"
+      ],
+      "recorded_gate_proxy": false
+    },
+    {
+      "setup_id": "POPCATUSDT_5_1788990300000_BEARISH",
+      "remaining": [
+        "extended_from_vwap",
+        "higher_4h_opposition"
+      ],
+      "recorded_gate_proxy": false
+    },
+    {
+      "setup_id": "AXSUSDT_5_1788990300000_BEARISH",
+      "remaining": [
+        "higher_4h_opposition"
+      ],
+      "recorded_gate_proxy": false
+    },
+    {
+      "setup_id": "EPICUSDT_5_1789000200000_BEARISH",
+      "remaining": [],
+      "recorded_gate_proxy": true
+    },
+    {
+      "setup_id": "BASEDUSDT_5_1789000500000_BEARISH",
+      "remaining": [],
+      "recorded_gate_proxy": true
+    },
+    {
+      "setup_id": "ZKCUSDT_5_1789000800000_BEARISH",
+      "remaining": [
+        "higher_4h_opposition"
+      ],
+      "recorded_gate_proxy": false
+    },
+    {
+      "setup_id": "TRUMPUSDT_5_1789003800000_BEARISH",
+      "remaining": [
+        "extended_from_vwap"
+      ],
+      "recorded_gate_proxy": false
+    },
+    {
+      "setup_id": "ZAMAUSDT_5_1789012200000_BEARISH",
+      "remaining": [
+        "extended_from_vwap"
+      ],
+      "recorded_gate_proxy": false
+    }
+  ],
+  "both_soft": [
+    {
+      "setup_id": "NOTUSDT_5_1788982200000_BEARISH",
+      "remaining": [
+        "higher_4h_opposition"
+      ],
+      "recorded_gate_proxy": false
+    },
+    {
+      "setup_id": "ROBOUSDT_5_1788982500000_BEARISH",
+      "remaining": [],
+      "recorded_gate_proxy": true
+    },
+    {
+      "setup_id": "ORDIUSDT_5_1788982500000_BEARISH",
+      "remaining": [
+        "higher_4h_opposition"
+      ],
+      "recorded_gate_proxy": false
+    },
+    {
+      "setup_id": "MARSCOINUSDT_5_1788983400000_BEARISH",
+      "remaining": [
+        "orderbook_unavailable",
+        "higher_4h_unavailable_or_stale"
+      ],
+      "recorded_gate_proxy": false
+    },
+    {
+      "setup_id": "MORPHOUSDT_5_1788983400000_BEARISH",
+      "remaining": [],
+      "recorded_gate_proxy": true
+    },
+    {
+      "setup_id": "CFGUSDT_5_1788988200000_BULLISH",
+      "remaining": [
+        "correlated_btc_opposition",
+        "higher_4h_opposition"
+      ],
+      "recorded_gate_proxy": false
+    },
+    {
+      "setup_id": "BLESSUSDT_5_1788989700000_BEARISH",
+      "remaining": [],
+      "recorded_gate_proxy": true
+    },
+    {
+      "setup_id": "FARTCOINUSDT_5_1788990300000_BEARISH",
+      "remaining": [],
+      "recorded_gate_proxy": true
+    },
+    {
+      "setup_id": "CRCLUSDT_5_1788990300000_BEARISH",
+      "remaining": [
+        "higher_4h_opposition"
+      ],
+      "recorded_gate_proxy": false
+    },
+    {
+      "setup_id": "ORDIUSDT_5_1788990300000_BEARISH",
+      "remaining": [
+        "higher_4h_opposition"
+      ],
+      "recorded_gate_proxy": false
+    },
+    {
+      "setup_id": "EIGENUSDT_5_1788990300000_BEARISH",
+      "remaining": [
+        "higher_4h_opposition"
+      ],
+      "recorded_gate_proxy": false
+    },
+    {
+      "setup_id": "POPCATUSDT_5_1788990300000_BEARISH",
+      "remaining": [
+        "higher_4h_opposition"
+      ],
+      "recorded_gate_proxy": false
+    },
+    {
+      "setup_id": "AXSUSDT_5_1788990300000_BEARISH",
+      "remaining": [
+        "higher_4h_opposition"
+      ],
+      "recorded_gate_proxy": false
+    },
+    {
+      "setup_id": "EPICUSDT_5_1789000200000_BEARISH",
+      "remaining": [],
+      "recorded_gate_proxy": true
+    },
+    {
+      "setup_id": "BASEDUSDT_5_1789000500000_BEARISH",
+      "remaining": [],
+      "recorded_gate_proxy": true
+    },
+    {
+      "setup_id": "ZKCUSDT_5_1789000800000_BEARISH",
+      "remaining": [
+        "higher_4h_opposition"
+      ],
+      "recorded_gate_proxy": false
+    },
+    {
+      "setup_id": "TRUMPUSDT_5_1789003800000_BEARISH",
+      "remaining": [],
+      "recorded_gate_proxy": true
+    },
+    {
+      "setup_id": "ZAMAUSDT_5_1789012200000_BEARISH",
+      "remaining": [],
+      "recorded_gate_proxy": true
+    }
+  ]
+}

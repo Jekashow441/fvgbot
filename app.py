@@ -1,13 +1,32 @@
-import asyncio
+﻿import asyncio
 import json
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect
 from fastapi.responses import HTMLResponse
-from core.settings import cfg
-from trading.engine import LATEST_DATA
+from core.settings import cfg, reload_settings
+from trading.engine import LATEST_DATA, MARKET_DATA, BENCHMARKS, SCAN_STATUS
+from trading.news import NEWS_STATE, news_context
+from trading.research import REPORTS, QUEUE, RUNNING, load_report, qualify
 from trading.paper_trading import get_paper_stats
+from trading.learning import learning_summary, factor_performance
 from core.database import get_equity_curve, get_history_signals, get_active_signals
 
 app = FastAPI(title="FVG Scalper Dashboard")
+
+@app.get("/health")
+async def health():
+    reload_settings()
+    from trading.telemetry import system_health
+    diagnostics=system_health()
+    return {
+        "ok": diagnostics['status']!='CRITICAL',
+        "service_alive":True,
+        "system_status":diagnostics['status'],
+        "diagnostics":diagnostics,
+        "is_running": cfg.is_running,
+        "symbols_count": SCAN_STATUS['selected'] if cfg.scan_all_symbols else len(cfg.symbols),
+        "configured_symbols_count": len(cfg.symbols),
+        "active_trades": get_paper_stats().get("active_count", 0),
+    }
 
 @app.get("/")
 async def index():
@@ -15,7 +34,45 @@ async def index():
 
 @app.get("/api/status")
 async def get_status():
-    return LATEST_DATA
+    reload_settings()
+    return {"is_running": cfg.is_running, "data": LATEST_DATA, "stats": get_paper_stats(), "scan":SCAN_STATUS}
+
+@app.get("/api/market")
+async def api_market():
+    return {"contracts": len(MARKET_DATA), "eligible": sum(x["eligible"] for x in MARKET_DATA.values()), "data": MARKET_DATA}
+
+@app.get("/api/quality")
+async def api_quality():
+    from trading.quality import quality_report
+    return quality_report()
+
+
+@app.get('/api/setups')
+async def api_setups():
+    from trading.setup_journal import report
+    return {'mode':'historical_observations','setups':report()}
+
+
+@app.get('/api/setups/{key}')
+async def api_setup_history(key: str):
+    from trading.setup_journal import history
+    return {'events':history(key)}
+
+@app.get("/api/research")
+async def api_research():
+    return {"queued": len(QUEUE), "running": sorted(RUNNING), "reports": {s: qualify(r) for s, r in REPORTS.items()},
+            "news_sources": NEWS_STATE,
+            "benchmarks": {s: {k: v for k, v in row.items() if k != "candles"} for s, row in BENCHMARKS.items()}}
+
+@app.get("/api/coin/{symbol}")
+async def api_coin(symbol: str):
+    import re
+    from fastapi import HTTPException
+    if not re.fullmatch(r"[A-Z0-9]+USDT", symbol):
+        raise HTTPException(400, "Expected an uppercase USDT symbol")
+    report = load_report(symbol)
+    return {"symbol": symbol, "live": LATEST_DATA.get(symbol), "research": report,
+            "qualification": qualify(report), "news": news_context(symbol)}
 
 @app.get("/api/equity")
 async def api_equity():
@@ -29,13 +86,23 @@ async def api_trades():
 async def api_active_trades():
     return get_active_signals()
 
+@app.get("/api/factors")
+async def api_factors():
+    reload_settings()
+    return learning_summary()
+
+@app.get("/api/factor_performance")
+async def api_factor_performance():
+    reload_settings()
+    return factor_performance(min_trades=1)
+
 @app.websocket("/ws")
 async def ws(websocket: WebSocket):
     await websocket.accept()
     last_data_hash = 0
     try:
         while True:
-            # We don't need to load_settings, we use global cfg and assume settings updates reflect there
+            reload_settings()
             current_data = {
                 "is_running": cfg.is_running,
                 "data": LATEST_DATA,
@@ -43,10 +110,10 @@ async def ws(websocket: WebSocket):
             }
             
             # Simple hash to check if data changed significantly
-            current_hash = hash(str(current_data))
+            current_hash = hash(json.dumps(current_data, sort_keys=True, default=str))
             
             if current_hash != last_data_hash:
-                await websocket.send_text(json.dumps(current_data))
+                await websocket.send_text(json.dumps(current_data, default=str))
                 last_data_hash = current_hash
                 
             await asyncio.sleep(1) # Check every second, but only send if changed
@@ -328,6 +395,27 @@ tr:hover { background: var(--surface2); }
         let html = `<div class="card" style="margin-bottom:0;">
           <h2 style="border:none; padding:0; margin-bottom:10px;"><span>${symbol}</span> <span>${price ? price.toFixed(4) : '...'}</span></h2>`;
           
+        if (info.qualification) {
+            html += `<p>Бэктест: <span class="val">${info.qualification.status}</span></p>`;
+            const sample = info.qualification.sample;
+            if (sample) html += `<p>Сделок вне обучающего периода: ${sample.trades} | Winrate: ${sample.win_rate_pct == null ? 'нет оценки' : sample.win_rate_pct.toFixed(1) + '%'}</p>`;
+        }
+        if (info.intelligence) html += `<p>Режим: ${info.intelligence.regime || '-'} | BTC корреляция: ${info.intelligence.benchmark?.correlation?.toFixed(2) ?? '-'}</p>`;
+        if (info.research_mode) html += `<p>Режим допуска: ${info.research_mode === 'paper' ? 'Исследовательские paper-сигналы' : 'Строгая статистическая проверка'}</p>`;
+        if (info.setup_diagnostics && Object.keys(info.setup_diagnostics).length) html += `<p>Фильтры сетапа: ${Object.entries(info.setup_diagnostics).map(([key, count]) => key + ': ' + count).join(', ')}</p>`;
+        if (info.blockers?.length) html += `<p>Вход заблокирован: ${info.blockers.join(', ')}</p>`;
+        if (info.news) {
+            html += `<p>Новости: ${info.news.coverage}</p>`;
+            for (const event of (info.news.events || []).slice(0, 3)) {
+                const safe = value => { const el = document.createElement('span'); el.textContent = value; return el.innerHTML; };
+                html += `<p>${safe(event.title)}<br><small>${safe(event.possible_impact)}</small></p>`;
+            }
+        }
+        html += `<p><a href="/api/coin/${encodeURIComponent(symbol)}" target="_blank" rel="noopener">Полный отчёт и источники</a></p>`;
+        if (info.market) {
+            html += `<p>24h оборот: <span class="val">${(info.market.turnover_24h / 1e6).toFixed(1)}M USDT</span> | Ранг: ${info.market.volume_rank}</p>`;
+            html += `<p>Спред: ${info.market.spread_bps.toFixed(1)} bps | Растущий оборот рынка: ${(info.market.breadth * 100).toFixed(0)}%</p>`;
+        }
         if (fvg) {
             const fvgClass = fvg.type === 'BULLISH' ? 'bullish' : 'bearish';
             html += `<p>Latest FVG: <span class="${fvgClass}">${fvg.type}</span></p>`;
@@ -338,8 +426,14 @@ tr:hover { background: var(--surface2); }
         
         if (sig) {
             const sigClass = sig.signal === 'LONG' ? 'long' : 'short';
+            const factors = Array.isArray(sig.factors) ? sig.factors.join(', ') : '-';
             html += `<div class="signal ${sigClass}">
-                <p style="color:var(--text);font-weight:bold;margin-bottom:10px;">${sig.signal} SIGNAL</p>
+                <p style="color:var(--text);font-weight:bold;margin-bottom:10px;">${sig.signal} SIGNAL | Качество (не вероятность): ${sig.score || 0}/100</p>
+                <p>Trend: <span class="val">${sig.trend || '-'}</span> | HTF: <span class="val">${sig.htf || '-'}</span></p>
+                <p>ADX: <span class="val">${sig.adx ? sig.adx.toFixed(1) : '-'}</span> | RSI: <span class="val">${sig.rsi ? sig.rsi.toFixed(1) : '-'}</span></p>
+                <p>Доказательность: ${sig.evidence || "не оценена"} | Трендовая линия: ${sig.trendlines?.bullish_retest || sig.trendlines?.bearish_retest ? "подтверждённый ретест" : "нет ретеста"}</p>
+                <p>Структура: ${sig.structure?.event || "-"} | RVOL: ${(sig.relative_volume || 0).toFixed(2)}x</p>
+                <p>Factors: <span class="val">${factors}</span></p>
                 <p>Entry: <span class="val">${sig.entry.toFixed(4)}</span></p>
                 <p>Stop Loss: <span class="val">${sig.sl.toFixed(4)}</span></p>
                 <p>Take Profit: <span class="val">${sig.tp.toFixed(4)}</span></p>

@@ -1,0 +1,73 @@
+{
+  "audit": "FULL_TECHNICAL_AUDIT_V6.3",
+  "created_utc": "2026-09-10T08:34:00Z",
+  "version": "research_v6.3",
+  "scope": "Frozen current version; read-only audit",
+  "source_changes": 0,
+  "runtime": {
+    "service_alive": true,
+    "is_running": true,
+    "system_status": "WARNING",
+    "selected_symbols": 411,
+    "universe_note": "Dynamic eligible universe moved between 410 and 411 during the audit snapshot.",
+    "last_cycle": {"selected": 410, "fresh": 410, "stale": 0, "failed": 0, "skipped": 0, "duration_seconds": 27.45},
+    "htf": {"not_required": 214, "fresh_cached": 156, "fresh": 1, "unavailable": 1},
+    "pending_deliveries": 0,
+    "research_queue": {"queued": 260, "running": ["CVXUSDT"], "gate_mode": "paper"},
+    "active_trades": 0
+  },
+  "night_window": {
+    "start_utc": "2026-09-09T19:47:20Z",
+    "end_utc": "2026-09-10T04:16:33Z",
+    "setup_events": 17667,
+    "distinct_setups": 1654,
+    "assets": 432,
+    "entry_candidates": 18,
+    "generated": 0,
+    "queued": 0,
+    "sent": 0,
+    "stages": {"WATCHLIST": 1249, "EXPIRED": 589, "INVALIDATED": 886, "POTENTIAL": 345, "DEVELOPING": 168, "ENTRY APPROACHING": 157},
+    "checks": {"FVG": 1650, "Zone eligibility": 1607, "Structure": 1307, "HTF bias": 540, "HTF_and_structure": 429, "Liquidity": 136, "Entry": 18},
+    "top_entry_blockers": [
+      {"reason": "thin_orderbook", "setups": 15, "percent_of_candidates": 83.33},
+      {"reason": "extended_from_vwap", "setups": 10, "percent_of_candidates": 55.56},
+      {"reason": "higher_4h_opposition", "setups": 9, "percent_of_candidates": 50.0},
+      {"reason": "wide_spread", "setups": 2, "percent_of_candidates": 11.11},
+      {"reason": "fvg_fully_filled", "setups": 2, "percent_of_candidates": 11.11}
+    ],
+    "top_observation_blockers": [
+      {"reason": "no_recent_retest", "setups": 1249, "percent_of_all": 75.51},
+      {"reason": "fvg_fully_filled", "setups": 671, "percent_of_all": 40.57},
+      {"reason": "htf_opposition", "setups": 630, "percent_of_all": 38.09},
+      {"reason": "no_bearish_rejection", "setups": 539, "percent_of_all": 32.59},
+      {"reason": "no_bullish_rejection", "setups": 392, "percent_of_all": 23.70}
+    ],
+    "historical_scan_coverage": "unknown in this window because V6.2 did not persist scan-cycle outcomes"
+  },
+  "ledger": {"scan_cycles": 307, "setup_events": 30119, "pipeline_events": 154, "signals": 328, "wins": 165, "losses": 163, "archived_win_rate_percent": 50.3, "outbox_rows": 2, "delivery_attempt_rows": 0, "system_reports": 1, "legacy_sent_rows_without_receipt": 2},
+  "tests": {"command": "python -m unittest discover -s scripts -p test_*.py", "passed": 129, "failed": 0},
+  "root_cause": {
+    "primary": ["retest/rejection is required and most zones never produce a causal closed-candle confirmation", "final live gates reject the small candidate set, especially orderbook depth, VWAP extension and 4h opposition"],
+    "not_root_cause": ["scanner is not limited to 30 configured symbols when scan_all_symbols=true", "current Score threshold is not the only gate", "no evidence of a new look-ahead leak in the causal replay"],
+    "classification": "No signal is currently the result of policy gates, not a Telegram-only delivery loss."
+  },
+  "known_gaps": [
+    "Per-operation latency is not persisted; only whole-cycle duration is measurable.",
+    "Liquidity model covers the latest swing sweep only; equal highs/lows, session pools and internal/external liquidity are absent.",
+    "Raw/Valid/Quality/TradeCandidate/Confirmed are not separate durable state events; quality and assessment are payload fields.",
+    "The effective live FVG scan is timeframe 5 with 60-minute context; configured 15/60 FVG timeframes are not independently scanned per asset.",
+    "News is keyword/RSS screening with unknown severity and is not causal market-event verification.",
+    "The dashboard WebSocket loop can attempt send_text after a client close, producing RuntimeError in supervisor logs.",
+    "Ticker refresh failure is caught by the scanner but lacks a dedicated durable ticker-failure event.",
+    "Two legacy SENT outbox rows have no sent_at or Telegram message_id, so their historical API receipt cannot be independently proven.",
+    "The heuristic Score does not independently encode all final structure/liquidity/execution gates; Score 100 can still be rejected."
+  ],
+  "top_current_opportunities": [
+    {"symbol": "BEATUSDT", "side": "SHORT", "stage": "ENTRY APPROACHING", "score": 100, "missing": "no_bearish_rejection"},
+    {"symbol": "NIULAIUSDT", "side": "SHORT", "stage": "ENTRY APPROACHING", "score": 100, "missing": "no_bearish_rejection"},
+    {"symbol": "ZAMAUSDT", "side": "SHORT", "stage": "ENTRY APPROACHING", "score": 100, "missing": "entry_too_far"},
+    {"symbol": "STORJUSDT", "side": "SHORT", "stage": "ENTRY APPROACHING", "score": 100, "missing": "no_bearish_rejection"},
+    {"symbol": "JASMYUSDT", "side": "SHORT", "stage": "ENTRY APPROACHING", "score": 95, "missing": "no_bearish_rejection; thin_orderbook"}
+  ],
+  "conclusion": "SYSTEM WARNING; scanner and delivery workers alive, no pending delivery. Freeze V6.3; no source or threshold changes made by this audit."
+}

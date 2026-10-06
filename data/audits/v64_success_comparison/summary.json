@@ -1,0 +1,46 @@
+{
+  "real_candidates": 18,
+  "first_execution_reasons": {
+    "thin_orderbook": 15,
+    "higher_4h_opposition": 9,
+    "extended_from_vwap": 10,
+    "orderbook_unavailable": 1,
+    "higher_4h_unavailable_or_stale": 1,
+    "correlated_btc_opposition": 1
+  },
+  "counterfactual_gate_survivors": {
+    "current": 0,
+    "vwap_soft": 1,
+    "book_soft": 3,
+    "both_soft": 8
+  },
+  "entry_reconstructed": 17,
+  "durable_states": {
+    "WATCHLIST": 138,
+    "EXPIRED": 9,
+    "POTENTIAL": 82,
+    "INVALIDATED": 8,
+    "ENTRY APPROACHING": 8,
+    "DEVELOPING": 9
+  },
+  "cohorts": {
+    "idealized": 144,
+    "actual_snapshot_detector_accepts": 10,
+    "classifications": {
+      "EXPECTED_RULE_REJECTION": 134,
+      "PREVIOUS_RESEARCH_FALSE_NEGATIVE": 10
+    },
+    "volume_restored": 163
+  },
+  "historical_reference_context": {
+    "mock_sent": 0,
+    "temporary_trades": 0,
+    "blockers": {
+      "orderbook_unavailable": 16,
+      "higher_4h_opposition": 8,
+      "extended_from_vwap": 9,
+      "higher_4h_unavailable_or_stale": 1,
+      "noncontiguous_candles": 1
+    }
+  }
+}

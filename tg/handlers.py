@@ -60,6 +60,22 @@ async def global_error_handler(event: ErrorEvent):
     return True # Handle the error and prevent crash
 
 # --- Handlers ---
+@router.message(Command("why_not_signal"))
+async def cmd_why_not_signal(message: Message, command: CommandObject):
+    settings=load_settings()
+    if str(message.chat.id)!=str(settings.tg_chat_id):
+        return
+    from trading.setup_visibility import diagnostic,render
+    from trading.setup_journal import history
+    if not command.args:
+        await message.answer('Использование: /why_not_signal <Setup ID>')
+        return
+    key=command.args.strip()
+    if len(key)>180:
+        await message.answer('Некорректный Setup ID.')
+        return
+    await message.answer(render(diagnostic(history(key))))
+
 @router.message(Command("balance"))
 async def cmd_balance(message: Message, command: CommandObject):
     if not command.args:
@@ -69,6 +85,8 @@ async def cmd_balance(message: Message, command: CommandObject):
     try:
         new_balance = float(command.args)
         cfg = load_settings()
+        from trading.paper_account import reset_balance
+        reset_balance(new_balance)
         cfg.paper_balance = new_balance
         save_settings(cfg)
         await message.answer(f"✅ Virtual Balance updated to <b>{new_balance:.2f} USDT</b>", parse_mode="HTML")
@@ -218,6 +236,42 @@ async def cb_toggle_ce(call: CallbackQuery):
     await call.answer(f"Strict CE {'Enabled' if cfg.fvg_strict_mitigation else 'Disabled'}!")
     await _safe_edit_markup(call.message, reply_markup=kb.get_settings_kb())
 
+@router.callback_query(F.data == "change_min_score")
+async def cb_change_min_score(call: CallbackQuery):
+    cfg = load_settings()
+    scores = [50, 60, 65, 70, 75, 80]
+    try:
+        idx = scores.index(cfg.min_signal_score)
+        next_score = scores[(idx + 1) % len(scores)]
+    except ValueError:
+        next_score = 65
+    cfg.min_signal_score = next_score
+    save_settings(cfg)
+    await call.answer(f"Min signal score: {next_score}/100")
+    await _safe_edit_markup(call.message, reply_markup=kb.get_settings_kb())
+
+@router.callback_query(F.data == "toggle_factor_learning")
+async def cb_toggle_factor_learning(call: CallbackQuery):
+    cfg = load_settings()
+    cfg.enable_factor_learning = not cfg.enable_factor_learning
+    save_settings(cfg)
+    await call.answer(f"Factor learning {'enabled' if cfg.enable_factor_learning else 'disabled'}")
+    await _safe_edit_markup(call.message, reply_markup=kb.get_settings_kb())
+
+@router.callback_query(F.data == "change_loss_cooldown")
+async def cb_change_loss_cooldown(call: CallbackQuery):
+    cfg = load_settings()
+    values = [0, 15, 30, 45, 60, 120]
+    try:
+        idx = values.index(cfg.loss_cooldown_minutes)
+        next_value = values[(idx + 1) % len(values)]
+    except ValueError:
+        next_value = 45
+    cfg.loss_cooldown_minutes = next_value
+    save_settings(cfg)
+    await call.answer(f"Loss cooldown: {next_value} minutes")
+    await _safe_edit_markup(call.message, reply_markup=kb.get_settings_kb())
+
 @router.callback_query(F.data == "show_balance")
 async def cb_show_balance(call: CallbackQuery):
     cfg = load_settings()
@@ -233,7 +287,7 @@ async def cb_show_stats(call: CallbackQuery):
     stats = get_paper_stats()
     await call.answer()
     msg = (
-        f"📊 <b>Trading Statistics</b>\n\n"
+        f"📊 <b>Историческая статистика всех версий</b>\nСтарые WIN/LOSS содержат расхождения с PnL. Качество текущей версии: /quality.\n\n"
         f"<b>Balance:</b> {stats['balance']:.2f} USDT\n"
         f"<b>Total Trades:</b> {stats['total_trades']}\n"
         f"<b>Wins:</b> {stats['wins']} | <b>Losses:</b> {stats['losses']}\n"
@@ -292,7 +346,14 @@ async def cb_test_signal(call: CallbackQuery):
             "signal": "LONG",
             "entry": 65000.00,
             "sl": 64500.00,
-            "tp": 66000.00
+            "tp": 66000.00,
+            "rr": cfg.risk_reward,
+            "score": 85,
+            "rsi": 52.0,
+            "adx": 31.0,
+            "trend": "UP",
+            "htf": "UP",
+            "factors": ["test_signal", "htf_uptrend", "healthy_rsi"]
         },
         "current_price": 64950.00
     }
@@ -327,3 +388,107 @@ async def cb_preview_chart(call: CallbackQuery):
     
     photo = BufferedInputFile(buf.read(), filename=f"{symbol}_fvg.png")
     await call.message.answer_photo(photo, caption=f"📊 <b>{symbol}</b> {fvg['type']} FVG Setup", parse_mode="HTML")
+
+
+async def _answer_quick_signal(message):
+    import asyncio
+    from core.settings import reload_settings
+    from trading.engine import LATEST_DATA
+    from trading.signal_delivery import quick_signal
+    settings = reload_settings()
+    if str(message.chat.id) != settings.tg_chat_id:
+        await message.answer("Запрос доступен в настроенном чате бота.")
+        return
+    try:
+        # A quick request now performs a bounded fresh scan when the cache has
+        # no valid entry; allow enough time for exchange data and HTF checks.
+        text = await asyncio.wait_for(quick_signal(LATEST_DATA), timeout=45)
+    except asyncio.TimeoutError:
+        text = "Свежий ручной анализ занял слишком долго. Попробуй ещё раз через несколько секунд."
+    await message.answer(text, parse_mode="HTML", reply_markup=kb.get_main_menu_kb())
+
+
+@router.callback_query(F.data == "quick_signal")
+async def cb_quick_signal(call: CallbackQuery):
+    await call.answer("Проверяю свежие результаты анализа…")
+    if call.message:
+        await _answer_quick_signal(call.message)
+
+
+@router.message(Command("signal"))
+async def cmd_quick_signal(message: Message):
+    await _answer_quick_signal(message)
+
+
+async def _answer_quality(message):
+    from html import escape
+    from trading.quality import quality_report
+    settings = load_settings()
+    if str(message.chat.id) != settings.tg_chat_id:
+        return
+    report = quality_report()
+    lines = [f"🎯 <b>Цель winrate: {report['target_pct']:.0f}%</b>",
+             f"Минимум {report['minimum_sample']} закрытых paper-сделок на сценарий; также проверяется результат после расходов."]
+    from trading.version import STRATEGY_VERSION
+    current = [(key, value) for key, value in report['cohorts'].items() if key.startswith(STRATEGY_VERSION+'/')]
+    if not current:
+        lines.append("У текущей версии пока нет закрытых сделок. Цель не подтверждена.")
+    for key, item in sorted(current, key=lambda pair: -pair[1]['trades'])[:8]:
+        interval = item['interval_95']
+        lines.append(f"\n{escape(key)}\nСделок: {item['trades']} | Winrate: {item['win_rate']:.1f}%\nИнтервал 95%: {interval[0]:.1f}–{interval[1]:.1f}% | {item['target_status']}")
+    lines.append("\nЭто статистика закрытых paper-позиций, не вероятность следующего сигнала. Коррелированные сделки снижают надёжность оценки.")
+    await message.answer("\n".join(lines), parse_mode='HTML', reply_markup=kb.get_main_menu_kb())
+
+
+@router.callback_query(F.data == 'strategy_quality')
+async def cb_strategy_quality(call: CallbackQuery):
+    await call.answer()
+    if call.message:
+        await _answer_quality(call.message)
+
+
+@router.message(Command('quality'))
+async def cmd_strategy_quality(message: Message):
+    await _answer_quality(message)
+
+
+async def _answer_setup_journal(message):
+    from html import escape
+    from datetime import datetime, timezone
+    from trading.setup_journal import report
+    settings=load_settings()
+    if str(message.chat.id)!=settings.tg_chat_id:
+        return
+    rows=report()
+    if not rows:
+        await message.answer('Нет актуальных данных для проверки сигнала. Журнал пока пуст. INSUFFICIENT DATA',reply_markup=kb.get_main_menu_kb())
+        return
+    texts=['📋 Журнал наблюдений. Это история анализа, а не команда входить сейчас.']
+    rows.sort(key=lambda r: (r['signal_may_form'],r['display_status'] in ('ENTRY APPROACHING','POTENTIAL','DEVELOPING'),r['payload'].get('fvg_quality') or 0),reverse=True)
+    for row in rows[:3]:
+        p=row['payload']
+        def value(name):
+            raw=p.get(name)
+            return str(raw)[:200] if raw is not None else 'INSUFFICIENT DATA'
+        date=datetime.fromtimestamp(row['observed_at'],timezone.utc).isoformat(timespec='seconds')
+        texts.append(f"\n{row['category']} | {escape(row['display_status'])}\nID: {escape(row['setup_id'])}\nDate/Time: {date}\nAsset: {value('asset')} | TF: {value('timeframe')} | {value('direction')}\nHTF Bias: {value('htf_bias')}\nMarket Structure: {value('market_structure')}\nLiquidity: {value('liquidity')}\nFVG / Entry Zone: {value('entry_zone')}\nFVG Quality (setup score): {value('fvg_quality')}\nEntry: {value('entry')} | SL: {value('sl')}\nTP1: {value('tp1')} | TP2: {value('tp2')} | R:R: {value('rr')}\nConfirmation Required: {value('confirmation_required')}\nInvalidation: {value('invalidation')}\nReason: {escape(row['reason'])}\nConfidence: INSUFFICIENT DATA — probability not calibrated\nResult: {value('result')}")
+        assessment=p.get('assessment',{})
+        texts[-1]+='\nCurrent price: '+value('current_price')
+        if row['signal_may_form']:
+            texts[-1]+='\nSIGNAL MAY FORM — условия входа ещё не выполнены.'
+        if assessment:
+            texts[-1]+='\nChecks: '+str(assessment.get('checks'))+'\nMissing: '+', '.join(assessment.get('rejections',[]))+'\nRequired next conditions:\n'+'\n'.join(assessment.get('required_next_conditions',[]))
+    for text in texts[1:]:
+        await message.answer(texts[0]+'\n'+text,parse_mode=None,reply_markup=kb.get_main_menu_kb())
+
+
+@router.callback_query(F.data=='setup_journal')
+async def cb_setup_journal(call: CallbackQuery):
+    await call.answer()
+    if call.message:
+        await _answer_setup_journal(call.message)
+
+
+@router.message(Command('setups'))
+async def cmd_setups(message: Message):
+    await _answer_setup_journal(message)

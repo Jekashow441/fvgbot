@@ -1,10 +1,12 @@
-fastapi
+﻿fastapi
 uvicorn[standard]
 pandas
 numpy
 requests
+aiohttp
 aiogram>=3.0.0
 pydantic
 pydantic-settings
+python-dotenv
 matplotlib
 mplfinance

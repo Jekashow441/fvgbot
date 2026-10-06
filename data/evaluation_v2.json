@@ -1,0 +1,58 @@
+{
+  "BTCUSDT": {
+    "model": "fixed SL/TP, next-open execution, stop-first ambiguity",
+    "limitations": [
+      "No historical market-wide turnover/spread filter",
+      "No live learning, cooldown, portfolio limits or trailing",
+      "Single-symbol results are not live winrate"
+    ],
+    "all": {
+      "trades": 0,
+      "win_rate_pct": null,
+      "win_rate_95pct_interval": null,
+      "expectancy_r": null,
+      "net_r": 0.0,
+      "profit_factor": null,
+      "max_drawdown_r": 0.0
+    },
+    "last_third": {
+      "trades": 0,
+      "win_rate_pct": null,
+      "win_rate_95pct_interval": null,
+      "expectancy_r": null,
+      "net_r": 0.0,
+      "profit_factor": null,
+      "max_drawdown_r": 0.0
+    },
+    "open_positions": 0,
+    "pending_signals": 0
+  },
+  "ETHUSDT": {
+    "model": "fixed SL/TP, next-open execution, stop-first ambiguity",
+    "limitations": [
+      "No historical market-wide turnover/spread filter",
+      "No live learning, cooldown, portfolio limits or trailing",
+      "Single-symbol results are not live winrate"
+    ],
+    "all": {
+      "trades": 0,
+      "win_rate_pct": null,
+      "win_rate_95pct_interval": null,
+      "expectancy_r": null,
+      "net_r": 0.0,
+      "profit_factor": null,
+      "max_drawdown_r": 0.0
+    },
+    "last_third": {
+      "trades": 0,
+      "win_rate_pct": null,
+      "win_rate_95pct_interval": null,
+      "expectancy_r": null,
+      "net_r": 0.0,
+      "profit_factor": null,
+      "max_drawdown_r": 0.0
+    },
+    "open_positions": 0,
+    "pending_signals": 0
+  }
+}

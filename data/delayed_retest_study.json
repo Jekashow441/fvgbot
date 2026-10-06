@@ -1,0 +1,471 @@
+{
+  "complete": true,
+  "hypothesis": "Balanced with five-bar retest confirmation window; unchanged distance, cost, risk, volume and score gates.",
+  "limitations": "Previously explored historical data; no independent holdout, live news, book, funding, portfolio or trailing. Never auto-promote.",
+  "symbols": {
+    "BTCUSDT": {
+      "data": {
+        "start_ms": 1786566900000,
+        "end_ms": 1788899400000,
+        "sha256": "5803d7d1e0422d556943fb3a0d47a2385158bb7843752bfdeb0220698b42ba16"
+      },
+      "balanced": {
+        "metrics": {
+          "trades": 0,
+          "win_rate_pct": null,
+          "win_rate_95pct_interval": null,
+          "expectancy_r": null,
+          "net_r": 0.0,
+          "profit_factor": null,
+          "max_drawdown_r": 0.0
+        },
+        "exit_reasons": {},
+        "average_minutes": null,
+        "rejected": {
+          "no_recent_retest": 2718,
+          "no_bearish_rejection": 311,
+          "low_relative_volume": 134,
+          "entry_too_far": 93,
+          "no_bullish_rejection": 409,
+          "zone_exhausted": 365,
+          "ema_opposition": 13,
+          "rsi_extreme": 5,
+          "entry_cost_or_gap": 4,
+          "structure_opposition": 7,
+          "htf_opposition": 3
+        },
+        "open_positions": 0,
+        "pending_signals": 0
+      },
+      "retest_5bars": {
+        "metrics": {
+          "trades": 0,
+          "win_rate_pct": null,
+          "win_rate_95pct_interval": null,
+          "expectancy_r": null,
+          "net_r": 0.0,
+          "profit_factor": null,
+          "max_drawdown_r": 0.0
+        },
+        "exit_reasons": {},
+        "average_minutes": null,
+        "rejected": {
+          "no_recent_retest": 2482,
+          "no_bearish_rejection": 348,
+          "low_relative_volume": 155,
+          "entry_too_far": 139,
+          "no_bullish_rejection": 468,
+          "zone_exhausted": 438,
+          "ema_opposition": 13,
+          "rsi_extreme": 5,
+          "entry_cost_or_gap": 4,
+          "structure_opposition": 7,
+          "htf_opposition": 3
+        },
+        "open_positions": 0,
+        "pending_signals": 0
+      }
+    },
+    "ETHUSDT": {
+      "data": {
+        "start_ms": 1786566600000,
+        "end_ms": 1788899100000,
+        "sha256": "04dab42e24eac9c3c3469c0fbba82967c8c00605ee8b9366e5179e92a453df54"
+      },
+      "balanced": {
+        "metrics": {
+          "trades": 1,
+          "win_rate_pct": 100.0,
+          "win_rate_95pct_interval": [
+            20.654329147389294,
+            100.0
+          ],
+          "expectancy_r": 1.2383934663861809,
+          "net_r": 1.2383934663861809,
+          "profit_factor": null,
+          "max_drawdown_r": 0.0
+        },
+        "exit_reasons": {
+          "TP": 1
+        },
+        "average_minutes": 225.0,
+        "rejected": {
+          "no_recent_retest": 2483,
+          "no_bearish_rejection": 316,
+          "low_relative_volume": 125,
+          "zone_exhausted": 275,
+          "no_bullish_rejection": 347,
+          "entry_too_far": 78,
+          "rsi_extreme": 4,
+          "ema_opposition": 11,
+          "structure_opposition": 5,
+          "entry_cost_or_gap": 2,
+          "htf_opposition": 5
+        },
+        "open_positions": 0,
+        "pending_signals": 0
+      },
+      "retest_5bars": {
+        "metrics": {
+          "trades": 1,
+          "win_rate_pct": 100.0,
+          "win_rate_95pct_interval": [
+            20.654329147389294,
+            100.0
+          ],
+          "expectancy_r": 1.2383934663861809,
+          "net_r": 1.2383934663861809,
+          "profit_factor": null,
+          "max_drawdown_r": 0.0
+        },
+        "exit_reasons": {
+          "TP": 1
+        },
+        "average_minutes": 225.0,
+        "rejected": {
+          "no_recent_retest": 2300,
+          "no_bearish_rejection": 363,
+          "low_relative_volume": 166,
+          "zone_exhausted": 308,
+          "no_bullish_rejection": 388,
+          "entry_too_far": 98,
+          "rsi_extreme": 4,
+          "ema_opposition": 11,
+          "structure_opposition": 5,
+          "entry_cost_or_gap": 2,
+          "htf_opposition": 6
+        },
+        "open_positions": 0,
+        "pending_signals": 0
+      }
+    },
+    "SOLUSDT": {
+      "data": {
+        "start_ms": 1786566900000,
+        "end_ms": 1788899400000,
+        "sha256": "9404661bcaf25f965ffa58b4ad24f653247d04dfc609e5c749559cc8ad7fe651"
+      },
+      "balanced": {
+        "metrics": {
+          "trades": 1,
+          "win_rate_pct": 0.0,
+          "win_rate_95pct_interval": [
+            0.0,
+            79.34567085261071
+          ],
+          "expectancy_r": -1.3377578001057606,
+          "net_r": -1.3377578001057606,
+          "profit_factor": 0.0,
+          "max_drawdown_r": 1.3377578001057606
+        },
+        "exit_reasons": {
+          "SL": 1
+        },
+        "average_minutes": 35.0,
+        "rejected": {
+          "no_recent_retest": 3061,
+          "no_bearish_rejection": 289,
+          "zone_exhausted": 271,
+          "no_bullish_rejection": 413,
+          "low_relative_volume": 146,
+          "entry_too_far": 124,
+          "ema_opposition": 11,
+          "rsi_extreme": 7,
+          "structure_opposition": 7,
+          "entry_cost_or_gap": 2,
+          "htf_opposition": 3
+        },
+        "open_positions": 0,
+        "pending_signals": 0
+      },
+      "retest_5bars": {
+        "metrics": {
+          "trades": 1,
+          "win_rate_pct": 0.0,
+          "win_rate_95pct_interval": [
+            0.0,
+            79.34567085261071
+          ],
+          "expectancy_r": -1.3377578001057606,
+          "net_r": -1.3377578001057606,
+          "profit_factor": 0.0,
+          "max_drawdown_r": 1.3377578001057606
+        },
+        "exit_reasons": {
+          "SL": 1
+        },
+        "average_minutes": 35.0,
+        "rejected": {
+          "no_recent_retest": 2810,
+          "no_bearish_rejection": 334,
+          "zone_exhausted": 327,
+          "no_bullish_rejection": 479,
+          "low_relative_volume": 183,
+          "entry_too_far": 171,
+          "ema_opposition": 11,
+          "rsi_extreme": 7,
+          "structure_opposition": 7,
+          "entry_cost_or_gap": 2,
+          "htf_opposition": 3
+        },
+        "open_positions": 0,
+        "pending_signals": 0
+      }
+    },
+    "XRPUSDT": {
+      "data": {
+        "start_ms": 1786566900000,
+        "end_ms": 1788899400000,
+        "sha256": "affc5ce283aee40274a2574a5999c56705f96f102d3372b48f820cb2ca627f4b"
+      },
+      "balanced": {
+        "metrics": {
+          "trades": 3,
+          "win_rate_pct": 33.33333333333333,
+          "win_rate_95pct_interval": [
+            6.14903152761605,
+            79.23450448735122
+          ],
+          "expectancy_r": -0.4242969386742634,
+          "net_r": -1.27289081602279,
+          "profit_factor": 0.48436956814224497,
+          "max_drawdown_r": 2.468610728495438
+        },
+        "exit_reasons": {
+          "TP": 1,
+          "SL": 2
+        },
+        "average_minutes": 30.0,
+        "rejected": {
+          "no_recent_retest": 2744,
+          "no_bearish_rejection": 303,
+          "entry_too_far": 102,
+          "no_bullish_rejection": 343,
+          "low_relative_volume": 126,
+          "zone_exhausted": 270,
+          "ema_opposition": 14,
+          "structure_opposition": 6,
+          "htf_opposition": 4,
+          "rsi_extreme": 3,
+          "entry_cost_or_gap": 4
+        },
+        "open_positions": 0,
+        "pending_signals": 0
+      },
+      "retest_5bars": {
+        "metrics": {
+          "trades": 3,
+          "win_rate_pct": 33.33333333333333,
+          "win_rate_95pct_interval": [
+            6.14903152761605,
+            79.23450448735122
+          ],
+          "expectancy_r": -0.4242969386742634,
+          "net_r": -1.27289081602279,
+          "profit_factor": 0.48436956814224497,
+          "max_drawdown_r": 2.468610728495438
+        },
+        "exit_reasons": {
+          "TP": 1,
+          "SL": 2
+        },
+        "average_minutes": 30.0,
+        "rejected": {
+          "no_recent_retest": 2524,
+          "no_bearish_rejection": 353,
+          "entry_too_far": 136,
+          "no_bullish_rejection": 396,
+          "low_relative_volume": 152,
+          "zone_exhausted": 312,
+          "ema_opposition": 14,
+          "structure_opposition": 7,
+          "htf_opposition": 4,
+          "rsi_extreme": 3,
+          "entry_cost_or_gap": 5
+        },
+        "open_positions": 0,
+        "pending_signals": 0
+      }
+    },
+    "AVAXUSDT": {
+      "data": {
+        "start_ms": 1786521600000,
+        "end_ms": 1788854100000,
+        "sha256": "da4042f864f594980ef423e6cbf759b03cfe9c0478649735223aaeb52b4de6b0"
+      },
+      "balanced": {
+        "metrics": {
+          "trades": 3,
+          "win_rate_pct": 66.66666666666666,
+          "win_rate_95pct_interval": [
+            20.76549551264879,
+            93.85096847238394
+          ],
+          "expectancy_r": 0.4553939075841869,
+          "net_r": 1.3661817227525608,
+          "profit_factor": 2.1416788735288343,
+          "max_drawdown_r": 1.1966427289048511
+        },
+        "exit_reasons": {
+          "SL": 1,
+          "TP": 2
+        },
+        "average_minutes": 63.333333333333336,
+        "rejected": {
+          "no_recent_retest": 2678,
+          "no_bullish_rejection": 440,
+          "low_relative_volume": 135,
+          "no_bearish_rejection": 321,
+          "zone_exhausted": 322,
+          "entry_too_far": 106,
+          "structure_opposition": 10,
+          "ema_opposition": 9,
+          "htf_opposition": 4,
+          "rsi_extreme": 2,
+          "entry_cost_or_gap": 3
+        },
+        "open_positions": 0,
+        "pending_signals": 0
+      },
+      "retest_5bars": {
+        "metrics": {
+          "trades": 3,
+          "win_rate_pct": 66.66666666666666,
+          "win_rate_95pct_interval": [
+            20.76549551264879,
+            93.85096847238394
+          ],
+          "expectancy_r": 0.4553939075841869,
+          "net_r": 1.3661817227525608,
+          "profit_factor": 2.1416788735288343,
+          "max_drawdown_r": 1.1966427289048511
+        },
+        "exit_reasons": {
+          "SL": 1,
+          "TP": 2
+        },
+        "average_minutes": 63.333333333333336,
+        "rejected": {
+          "no_recent_retest": 2446,
+          "no_bullish_rejection": 504,
+          "low_relative_volume": 167,
+          "no_bearish_rejection": 364,
+          "entry_too_far": 143,
+          "zone_exhausted": 377,
+          "structure_opposition": 11,
+          "ema_opposition": 9,
+          "htf_opposition": 4,
+          "rsi_extreme": 2,
+          "entry_cost_or_gap": 3
+        },
+        "open_positions": 0,
+        "pending_signals": 0
+      }
+    },
+    "LINKUSDT": {
+      "data": {
+        "start_ms": 1786520400000,
+        "end_ms": 1788852900000,
+        "sha256": "55ae9dc7f3b07a1be79782c7f98429fd36625148af1c88e2c66e3d5cc5afa878"
+      },
+      "balanced": {
+        "metrics": {
+          "trades": 3,
+          "win_rate_pct": 66.66666666666666,
+          "win_rate_95pct_interval": [
+            20.76549551264879,
+            93.85096847238394
+          ],
+          "expectancy_r": 0.37568246415630996,
+          "net_r": 1.12704739246893,
+          "profit_factor": 1.9501687805309929,
+          "max_drawdown_r": 1.1861549395877753
+        },
+        "exit_reasons": {
+          "TP": 2,
+          "SL": 1
+        },
+        "average_minutes": 45.0,
+        "rejected": {
+          "no_recent_retest": 3611,
+          "no_bullish_rejection": 395,
+          "no_bearish_rejection": 291,
+          "low_relative_volume": 166,
+          "zone_exhausted": 262,
+          "ema_opposition": 17,
+          "entry_too_far": 138,
+          "htf_opposition": 9,
+          "structure_opposition": 13,
+          "entry_cost_or_gap": 2,
+          "rsi_extreme": 1
+        },
+        "open_positions": 0,
+        "pending_signals": 0
+      },
+      "retest_5bars": {
+        "metrics": {
+          "trades": 4,
+          "win_rate_pct": 50.0,
+          "win_rate_95pct_interval": [
+            15.003570882017147,
+            84.99642911798286
+          ],
+          "expectancy_r": -0.058732140382507014,
+          "net_r": -0.23492856153002806,
+          "profit_factor": 0.9078035739367596,
+          "max_drawdown_r": 1.4124591737749226
+        },
+        "exit_reasons": {
+          "TP": 2,
+          "SL": 2
+        },
+        "average_minutes": 41.25,
+        "rejected": {
+          "no_recent_retest": 3341,
+          "no_bullish_rejection": 460,
+          "no_bearish_rejection": 350,
+          "low_relative_volume": 208,
+          "zone_exhausted": 307,
+          "ema_opposition": 17,
+          "entry_too_far": 191,
+          "htf_opposition": 9,
+          "structure_opposition": 13,
+          "entry_cost_or_gap": 2,
+          "rsi_extreme": 1
+        },
+        "open_positions": 0,
+        "pending_signals": 0
+      }
+    }
+  },
+  "variants": [
+    "balanced",
+    "retest_5bars"
+  ],
+  "pooled": {
+    "balanced": {
+      "trades": 11,
+      "win_rate_pct": 54.54545454545454,
+      "win_rate_95pct_interval": [
+        28.008775568998818,
+        78.72904245601195
+      ],
+      "expectancy_r": 0.10190672413446554,
+      "net_r": 1.1209739654791209,
+      "profit_factor": 1.1811187371257672,
+      "max_drawdown_r": 2.625655218929107
+    },
+    "retest_5bars": {
+      "trades": 12,
+      "win_rate_pct": 50.0,
+      "win_rate_95pct_interval": [
+        25.377817039342222,
+        74.62218296065778
+      ],
+      "expectancy_r": -0.02008349904331978,
+      "net_r": -0.24100198851983734,
+      "profit_factor": 0.9680840350111857,
+      "max_drawdown_r": 2.717752323308029
+    }
+  }
+}

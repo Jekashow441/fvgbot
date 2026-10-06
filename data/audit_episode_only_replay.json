@@ -1,0 +1,211 @@
+{
+  "complete": true,
+  "fingerprint": "e5ae063bcc6468e1df78",
+  "symbols": {
+    "BTCUSDT": {
+      "metrics": {
+        "trades": 1,
+        "win_rate_pct": 100.0,
+        "win_rate_95pct_interval": [
+          20.654329147389294,
+          100.0
+        ],
+        "expectancy_r": 1.2309130517034796,
+        "net_r": 1.2309130517034796,
+        "profit_factor": null,
+        "max_drawdown_r": 0.0
+      },
+      "open": 0,
+      "pending": 0,
+      "start": 1786619400000,
+      "end": 1788951900000,
+      "data_sha256": "5ac46e80826d829720024fa7e0dceb3487a92f588355d7c631ea910a245922f0",
+      "rejected": {
+        "no_recent_retest": 1955,
+        "entry_too_far": 103,
+        "no_bullish_rejection": 204,
+        "low_relative_volume": 184,
+        "no_bearish_rejection": 165,
+        "ema_opposition": 13,
+        "rsi_extreme": 5,
+        "zone_exhausted": 31,
+        "entry_cost_or_gap": 4,
+        "structure_opposition": 8,
+        "htf_opposition": 4
+      }
+    },
+    "ETHUSDT": {
+      "metrics": {
+        "trades": 4,
+        "win_rate_pct": 0.0,
+        "win_rate_95pct_interval": [
+          0.0,
+          48.990002040399915
+        ],
+        "expectancy_r": -1.3081040189831188,
+        "net_r": -5.232416075932475,
+        "profit_factor": 0.0,
+        "max_drawdown_r": 5.232416075932475
+      },
+      "open": 0,
+      "pending": 0,
+      "start": 1786618800000,
+      "end": 1788951300000,
+      "data_sha256": "2e40479857eeb70f830a923d43929bc97e71419cb3a08b8d644c8634bd59fd00",
+      "rejected": {
+        "no_recent_retest": 1602,
+        "entry_too_far": 75,
+        "no_bullish_rejection": 160,
+        "rsi_extreme": 4,
+        "no_bearish_rejection": 123,
+        "low_relative_volume": 128,
+        "htf_opposition": 3,
+        "zone_exhausted": 12,
+        "structure_opposition": 5,
+        "ema_opposition": 10,
+        "entry_cost_or_gap": 2
+      }
+    },
+    "SOLUSDT": {
+      "metrics": {
+        "trades": 4,
+        "win_rate_pct": 0.0,
+        "win_rate_95pct_interval": [
+          0.0,
+          48.990002040399915
+        ],
+        "expectancy_r": -1.2857664143096281,
+        "net_r": -5.1430656572385125,
+        "profit_factor": 0.0,
+        "max_drawdown_r": 5.1430656572385125
+      },
+      "open": 0,
+      "pending": 0,
+      "start": 1786618800000,
+      "end": 1788951300000,
+      "data_sha256": "40a3c1930067681cb9d8bbdfa6979089b7cf08e3db804f73b66ba342e65b1336",
+      "rejected": {
+        "low_relative_volume": 207,
+        "no_recent_retest": 2199,
+        "entry_too_far": 119,
+        "no_bullish_rejection": 230,
+        "ema_opposition": 6,
+        "no_bearish_rejection": 186,
+        "structure_opposition": 10,
+        "rsi_extreme": 8,
+        "entry_cost_or_gap": 4,
+        "zone_exhausted": 13,
+        "htf_opposition": 3
+      }
+    },
+    "XRPUSDT": {
+      "metrics": {
+        "trades": 1,
+        "win_rate_pct": 100.0,
+        "win_rate_95pct_interval": [
+          20.654329147389294,
+          100.0
+        ],
+        "expectancy_r": 1.195719912472648,
+        "net_r": 1.195719912472648,
+        "profit_factor": null,
+        "max_drawdown_r": 0.0
+      },
+      "open": 0,
+      "pending": 0,
+      "start": 1786619100000,
+      "end": 1788951600000,
+      "data_sha256": "1fd152f7e3dc6370496fefefb62169b863620283b261949008c116146d95c1c4",
+      "rejected": {
+        "no_recent_retest": 1819,
+        "low_relative_volume": 169,
+        "no_bullish_rejection": 216,
+        "entry_too_far": 110,
+        "no_bearish_rejection": 149,
+        "ema_opposition": 12,
+        "structure_opposition": 13,
+        "htf_opposition": 6,
+        "zone_exhausted": 9,
+        "entry_cost_or_gap": 8,
+        "rsi_extreme": 3
+      }
+    },
+    "AVAXUSDT": {
+      "metrics": {
+        "trades": 3,
+        "win_rate_pct": 66.66666666666666,
+        "win_rate_95pct_interval": [
+          20.76549551264879,
+          93.85096847238394
+        ],
+        "expectancy_r": 0.4553939075841869,
+        "net_r": 1.3661817227525608,
+        "profit_factor": 2.1416788735288343,
+        "max_drawdown_r": 1.1966427289048511
+      },
+      "open": 0,
+      "pending": 0,
+      "start": 1786575600000,
+      "end": 1788908100000,
+      "data_sha256": "65c9cae7976a6db7ed4a94c492d7b673443c1372cd95680b55c6d78c820cdc19",
+      "rejected": {
+        "no_recent_retest": 1704,
+        "entry_too_far": 120,
+        "no_bullish_rejection": 241,
+        "no_bearish_rejection": 168,
+        "structure_opposition": 12,
+        "low_relative_volume": 162,
+        "zone_exhausted": 31,
+        "htf_opposition": 9,
+        "ema_opposition": 15,
+        "rsi_extreme": 4,
+        "entry_cost_or_gap": 4
+      }
+    },
+    "LINKUSDT": {
+      "metrics": {
+        "trades": 1,
+        "win_rate_pct": 100.0,
+        "win_rate_95pct_interval": [
+          20.654329147389294,
+          100.0
+        ],
+        "expectancy_r": 1.1356717198118107,
+        "net_r": 1.1356717198118107,
+        "profit_factor": null,
+        "max_drawdown_r": 0.0
+      },
+      "open": 0,
+      "pending": 0,
+      "start": 1786574700000,
+      "end": 1788907200000,
+      "data_sha256": "d3c0629099e57b8bd07ae45ef2ba07722e59c66010d2022d487a197cb0011b3e",
+      "rejected": {
+        "no_recent_retest": 2546,
+        "entry_too_far": 127,
+        "low_relative_volume": 190,
+        "no_bearish_rejection": 150,
+        "htf_opposition": 8,
+        "ema_opposition": 19,
+        "structure_opposition": 13,
+        "no_bullish_rejection": 242,
+        "entry_cost_or_gap": 7,
+        "zone_exhausted": 12,
+        "rsi_extreme": 1
+      }
+    }
+  },
+  "limitations": "Retrospective previously studied data. Fixed SL/TP core replay only, no live portfolio/news/book/funding/trailing/learning.",
+  "pooled": {
+    "trades": 14,
+    "win_rate_pct": 35.714285714285715,
+    "win_rate_95pct_interval": [
+      16.344490737202737,
+      61.23599531785959
+    ],
+    "expectancy_r": -0.38907109474503493,
+    "net_r": -5.446995326430489,
+    "profit_factor": 0.5293003160930926,
+    "max_drawdown_r": 6.746215048973786
+  }
+}

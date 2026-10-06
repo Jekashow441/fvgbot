@@ -1,0 +1,76 @@
+{
+  "mode": "synthetic temporary database",
+  "score": 95,
+  "detected_zones": 1,
+  "confirmed": 1,
+  "generated": 1,
+  "queued": 1,
+  "sent": 1,
+  "temporary_paper_trades": 1,
+  "production_trades_created": 0,
+  "receipt": 424242,
+  "events": [
+    "ENTRY_CONTEXT_CHECK",
+    "SIGNAL_GENERATED",
+    "SIGNAL_QUEUED",
+    "SIGNAL_SENT"
+  ],
+  "threshold": 80,
+  "preceding_typed_sweep": [
+    {
+      "pool": "internal",
+      "level": 99.0,
+      "sweep_open": 1789031400000
+    },
+    {
+      "pool": "local",
+      "level": 99.0,
+      "sweep_open": 1789031400000
+    },
+    {
+      "pool": "external",
+      "level": 99.0,
+      "sweep_open": 1789031400000
+    },
+    {
+      "pool": "equal_lows",
+      "level": 99.0,
+      "sweep_open": 1789031400000
+    },
+    {
+      "pool": "previous_day",
+      "level": 99.0,
+      "sweep_open": 1789031400000
+    },
+    {
+      "pool": "session",
+      "level": 99.0,
+      "sweep_open": 1789031400000
+    },
+    {
+      "pool": "internal",
+      "level": 98.5,
+      "sweep_open": 1789032900000
+    },
+    {
+      "pool": "local",
+      "level": 98.5,
+      "sweep_open": 1789032900000
+    },
+    {
+      "pool": "external",
+      "level": 98.5,
+      "sweep_open": 1789032900000
+    },
+    {
+      "pool": "previous_day",
+      "level": 99.0,
+      "sweep_open": 1789032900000
+    },
+    {
+      "pool": "session",
+      "level": 98.5,
+      "sweep_open": 1789032900000
+    }
+  ]
+}

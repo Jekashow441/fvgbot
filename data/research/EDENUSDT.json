@@ -1,0 +1,129 @@
+{
+  "symbol": "EDENUSDT",
+  "version": "research_v6.3",
+  "fingerprint": "146d51e8aafb3a1686fa",
+  "as_of": 1789155543376,
+  "status": "COMPLETE",
+  "data_quality": {
+    "complete": true,
+    "bars": 25919,
+    "start_ms": 1781379600000,
+    "end_ms": 1789155000000,
+    "htf_bars": 2509,
+    "btc_bars": 25919
+  },
+  "baseline": {
+    "folds": [
+      {
+        "trades": 3,
+        "win_rate_pct": 66.66666666666666,
+        "win_rate_95pct_interval": [
+          20.76549551264879,
+          93.85096847238394
+        ],
+        "expectancy_r": 0.44172040136267393,
+        "net_r": 1.3251612040880218,
+        "profit_factor": 2.1578179206267656,
+        "max_drawdown_r": 1.144533333333334
+      },
+      {
+        "trades": 4,
+        "win_rate_pct": 50.0,
+        "win_rate_95pct_interval": [
+          15.003570882017147,
+          84.99642911798286
+        ],
+        "expectancy_r": 0.20455791292023934,
+        "net_r": 0.8182316516809574,
+        "profit_factor": 1.3519855427329845,
+        "max_drawdown_r": 2.324617213899793
+      },
+      {
+        "trades": 6,
+        "win_rate_pct": 50.0,
+        "win_rate_95pct_interval": [
+          18.761280689940868,
+          81.23871931005912
+        ],
+        "expectancy_r": 0.3120401577425175,
+        "net_r": 1.8722409464551049,
+        "profit_factor": 1.5491061904419292,
+        "max_drawdown_r": 2.342617784332881
+      }
+    ],
+    "out_of_sample": {
+      "trades": 13,
+      "win_rate_pct": 53.84615384615385,
+      "win_rate_95pct_interval": [
+        29.14343243183205,
+        76.79424569851186
+      ],
+      "expectancy_r": 0.30889490786339113,
+      "net_r": 4.015633802224085,
+      "profit_factor": 1.583772410381263,
+      "max_drawdown_r": 2.342617784332881
+    },
+    "open_at_fold_ends": 0
+  },
+  "enhanced": {
+    "folds": [
+      {
+        "trades": 2,
+        "win_rate_pct": 50.0,
+        "win_rate_95pct_interval": [
+          9.452865480086615,
+          90.54713451991339
+        ],
+        "expectancy_r": -0.007769913419912067,
+        "net_r": -0.015539826839824133,
+        "profit_factor": 0.9864225650863606,
+        "max_drawdown_r": 1.144533333333334
+      },
+      {
+        "trades": 3,
+        "win_rate_pct": 66.66666666666666,
+        "win_rate_95pct_interval": [
+          20.76549551264879,
+          93.85096847238394
+        ],
+        "expectancy_r": 0.6155359102763273,
+        "net_r": 1.8466077308289819,
+        "profit_factor": 2.424586584488085,
+        "max_drawdown_r": 1.2962411347517684
+      },
+      {
+        "trades": 2,
+        "win_rate_pct": 50.0,
+        "win_rate_95pct_interval": [
+          9.452865480086615,
+          90.54713451991339
+        ],
+        "expectancy_r": 0.4308870347503755,
+        "net_r": 0.861774069500751,
+        "profit_factor": 1.7508323263927363,
+        "max_drawdown_r": 1.1477583465818766
+      }
+    ],
+    "out_of_sample": {
+      "trades": 7,
+      "win_rate_pct": 57.14285714285714,
+      "win_rate_95pct_interval": [
+        25.04542304090258,
+        84.17830777373732
+      ],
+      "expectancy_r": 0.3846917104985584,
+      "net_r": 2.6928419734899087,
+      "profit_factor": 1.7504019365473764,
+      "max_drawdown_r": 1.3117809615915925
+    },
+    "open_at_fold_ends": 0
+  },
+  "method": "Fixed parameters; chronological 40/20/20/20 split; next-open entries; SL first if ambiguous; fees/slippage deducted.",
+  "limitations": [
+    "Not full live portfolio execution: no trailing, cooldown or adaptive learning.",
+    "No historical news, orderbook, funding charges or universe snapshots in this price-only test.",
+    "Open positions at fold ends excluded from closed-trade metrics.",
+    "Current-listed universe can have survivorship bias; 90 days is not all market regimes.",
+    "Comparison tests a hypothesis and does not guarantee higher future winrate."
+  ]
+}

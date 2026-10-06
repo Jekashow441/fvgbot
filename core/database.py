@@ -81,13 +81,16 @@ def init_db():
                         "exit_price": "REAL", "closed_ts": "TEXT", "trend": "TEXT",
                         "rsi": "REAL", "htf": "TEXT", "signature": "TEXT", "adx": "REAL",
                         "ml_features": "TEXT", "ml_prob": "REAL",
-                        "loss_tags": "TEXT", "loss_notes": "TEXT", "exit_reason": "TEXT"}
+                        "loss_tags": "TEXT", "loss_notes": "TEXT", "exit_reason": "TEXT",
+                        "initial_risk": "REAL", "rr": "REAL", "signal_id": "TEXT", "closed_at_ms": "INTEGER"}
             for col, t in new_cols.items():
                 if col not in existing:
                     try:
                         con.execute(f"ALTER TABLE signals ADD COLUMN {col} {t}")
                     except sqlite3.OperationalError as e:
                         print(f"[DB] миграция колонки {col}: {e}")
+            con.execute("CREATE UNIQUE INDEX IF NOT EXISTS unique_generated_trade ON signals(signal_id) WHERE signal_id IS NOT NULL")
+            con.execute("CREATE TABLE IF NOT EXISTS paper_level_events(id INTEGER PRIMARY KEY,trade_id INTEGER NOT NULL,observed_at REAL NOT NULL,sl REAL,tp REAL,reason TEXT NOT NULL)")
         print("[DB] схема готова (совместима со всеми версиями)")
     except sqlite3.Error as e:
         print(f"[DB] ошибка инициализации: {e}")
@@ -95,23 +98,55 @@ def init_db():
 
 def log_signal(sig):
     with _conn() as con:
+        con.execute('BEGIN IMMEDIATE')
+        if sig.get('max_active_limit') is not None:
+            if con.execute("SELECT COUNT(*) FROM signals WHERE outcome='OPEN'").fetchone()[0] >= sig['max_active_limit'] or con.execute("SELECT 1 FROM signals WHERE outcome='OPEN' AND symbol=?",(sig['symbol'],)).fetchone():
+                return None
         cur = con.execute(
-            """INSERT INTO signals
-               (ts, entry_ts, symbol, side, score, entry, sl, tp, rsi, trend, htf, adx, factors, signature, ml_features, ml_prob)
-               VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
+            """INSERT OR IGNORE INTO signals
+               (ts, entry_ts, symbol, side, score, entry, sl, tp, rsi, trend, htf, adx,
+                factors, signature, ml_features, ml_prob, initial_risk, rr, signal_id)
+               VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)""",
             (datetime.now().isoformat(), sig["entry_ts"], sig["symbol"], sig["side"],
              sig["score"], sig["entry"], sig["sl"], sig["tp"], sig["rsi"], sig["trend"],
              sig.get("htf"), sig.get("adx"), json.dumps(sig.get("factors", [])),
              sig.get("signature"),
              json.dumps(sig.get("ml_features")) if sig.get("ml_features") is not None else None,
-             sig.get("ml_prob")))
-        return cur.lastrowid
+             sig.get("ml_prob"), sig.get("initial_risk"), sig.get("rr"), sig.get("signal_id")))
+        if cur.rowcount == 0:
+            return None
+        trade_id=cur.lastrowid
+        import time
+        con.execute("INSERT INTO paper_level_events(trade_id,observed_at,sl,tp,reason) VALUES(?,?,?,?,?)",(trade_id,time.time(),sig['sl'],sig['tp'],'INITIAL'))
+        return trade_id
 
 
 def close_signal(signal_id, outcome, exit_price, pnl_pct, exit_reason=None):
     with _conn() as con:
         con.execute("UPDATE signals SET outcome=?, exit_price=?, pnl_pct=?, closed_ts=?, exit_reason=? WHERE id=?",
                     (outcome, exit_price, pnl_pct, datetime.now().isoformat(), exit_reason, signal_id))
+
+
+def update_signal_levels(signal_id, sl=None, tp=None, reason="LEVEL_UPDATE"):
+    """Обновляет уровни активной paper-сделки, например после breakeven/trailing.
+    Возвращает True, если сделка найдена и обновлена."""
+    fields, values = [], []
+    if sl is not None:
+        fields.append("sl=?")
+        values.append(sl)
+    if tp is not None:
+        fields.append("tp=?")
+        values.append(tp)
+    if not fields:
+        return False
+    values.append(signal_id)
+    with _conn() as con:
+        cur = con.execute(f"UPDATE signals SET {', '.join(fields)} WHERE id=? AND outcome='OPEN'", values)
+        if cur.rowcount > 0:
+            import time
+            levels=con.execute('SELECT sl,tp FROM signals WHERE id=?',(signal_id,)).fetchone()
+            con.execute('INSERT INTO paper_level_events(trade_id,observed_at,sl,tp,reason) VALUES(?,?,?,?,?)',(signal_id,time.time(),levels['sl'],levels['tp'],reason))
+        return cur.rowcount > 0
 
 
 def get_signal(signal_id):
@@ -137,7 +172,7 @@ def get_active_signals():
     with _conn() as con:
         return [dict(r) for r in con.execute(
             "SELECT id, ts, symbol, side, score, entry, sl, tp, rsi, trend, htf, "
-            "adx, ml_prob, factors FROM signals WHERE outcome='OPEN' "
+            "adx, ml_prob, factors, initial_risk, rr, ml_features FROM signals WHERE outcome='OPEN' "
             "ORDER BY id DESC").fetchall()]
 
 
@@ -155,7 +190,7 @@ def get_history_signals(limit=100):
 def get_closed_signals():
     with _conn() as con:
         return [dict(r) for r in con.execute(
-            "SELECT factors, outcome, pnl_pct, score, signature FROM signals "
+            "SELECT factors, outcome, pnl_pct, score, signature, ml_features FROM signals "
             "WHERE outcome IN ('WIN','LOSS')").fetchall()]
 
 
@@ -361,7 +396,7 @@ def get_closed_today(today_iso):
     """Закрытые сделки за сегодня (по дате закрытия) — для дневного риск-лимита."""
     with _conn() as con:
         return [dict(r) for r in con.execute(
-            "SELECT outcome, pnl_pct FROM signals WHERE outcome IN ('WIN','LOSS') "
+            "SELECT outcome, pnl_pct, ml_features FROM signals WHERE outcome IN ('WIN','LOSS') "
             "AND substr(COALESCE(closed_ts, ts),1,10)=?", (today_iso,)).fetchall()]
 
 
@@ -370,7 +405,7 @@ def current_loss_streak():
     with _conn() as con:
         rows = con.execute(
             "SELECT outcome FROM signals WHERE outcome IN ('WIN','LOSS') "
-            "ORDER BY id DESC LIMIT 50").fetchall()
+            "ORDER BY closed_ts DESC, id DESC LIMIT 50").fetchall()
     streak = 0
     for r in rows:
         if r["outcome"] == "LOSS":
@@ -479,7 +514,7 @@ def get_stats():
     wins, losses = stats.get("WIN", 0), stats.get("LOSS", 0)
     closed = wins + losses
     gw, gl = pf_row["gross_win"], pf_row["gross_loss"]
-    pf = round(gw / gl, 2) if gl > 0 else (round(gw, 2) if gw > 0 else 0.0)
+    pf = round(gw / gl, 2) if gl > 0 else None
     return {"total": sum(stats.values()), "open": stats.get("OPEN", 0),
             "wins": wins, "losses": losses,
             "win_rate": round(wins / closed * 100, 1) if closed else 0.0,

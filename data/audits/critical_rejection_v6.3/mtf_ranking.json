@@ -1,0 +1,6447 @@
+[
+  {
+    "asset": "NOTUSDT",
+    "decision_ms": 1788986700000,
+    "timeframes": {
+      "1": {
+        "available": true,
+        "structure": {
+          "direction": "DOWN",
+          "event": "BOS_DOWN",
+          "sweep": null,
+          "swing_high": 0.0004489,
+          "swing_low": 0.0004424
+        },
+        "zones": [
+          {
+            "type": "BEARISH",
+            "top": 0.0004468,
+            "bottom": 0.000446,
+            "formed_at": 1788985500000,
+            "candle_time": 1788985440000,
+            "ce": 0.0004464,
+            "displacement": true,
+            "liquidity": true,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 0.0004458,
+            "bottom": 0.0004454,
+            "formed_at": 1788985680000,
+            "candle_time": 1788985620000,
+            "ce": 0.0004456,
+            "displacement": false,
+            "liquidity": true,
+            "structure_aligned": false,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.0004458,
+            "bottom": 0.0004454,
+            "formed_at": 1788985800000,
+            "candle_time": 1788985740000,
+            "ce": 0.0004456,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 0.0004456,
+            "bottom": 0.0004454,
+            "formed_at": 1788985920000,
+            "candle_time": 1788985860000,
+            "ce": 0.0004455,
+            "displacement": false,
+            "liquidity": true,
+            "structure_aligned": false,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 0.0004463,
+            "bottom": 0.0004456,
+            "formed_at": 1788985980000,
+            "candle_time": 1788985920000,
+            "ce": 0.00044594999999999997,
+            "displacement": false,
+            "liquidity": true,
+            "structure_aligned": false,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 0.0004475,
+            "bottom": 0.0004463,
+            "formed_at": 1788986040000,
+            "candle_time": 1788985980000,
+            "ce": 0.00044689999999999997,
+            "displacement": true,
+            "liquidity": true,
+            "structure_aligned": false,
+            "invalid": "fvg_ce_invalidated",
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 0.0004478,
+            "bottom": 0.0004477,
+            "formed_at": 1788986160000,
+            "candle_time": 1788986100000,
+            "ce": 0.00044775,
+            "displacement": false,
+            "liquidity": true,
+            "structure_aligned": false,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.0004475,
+            "bottom": 0.0004474,
+            "formed_at": 1788986580000,
+            "candle_time": 1788986520000,
+            "ce": 0.00044744999999999995,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          }
+        ],
+        "quality_count": 0
+      },
+      "5": {
+        "available": true,
+        "structure": {
+          "direction": "DOWN",
+          "event": "CHOCH_DOWN",
+          "sweep": null,
+          "swing_high": 0.0004483,
+          "swing_low": 0.0004424
+        },
+        "zones": [
+          {
+            "type": "BEARISH",
+            "top": 0.0004514,
+            "bottom": 0.0004513,
+            "formed_at": 1788981000000,
+            "candle_time": 1788980700000,
+            "ce": 0.00045135,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": false,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.0004504,
+            "bottom": 0.0004498,
+            "formed_at": 1788982200000,
+            "candle_time": 1788981900000,
+            "ce": 0.0004501,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": false,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.0004498,
+            "bottom": 0.0004487,
+            "formed_at": 1788982500000,
+            "candle_time": 1788982200000,
+            "ce": 0.00044925,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": false,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.0004487,
+            "bottom": 0.0004477,
+            "formed_at": 1788982800000,
+            "candle_time": 1788982500000,
+            "ce": 0.0004482,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": false,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.0004467,
+            "bottom": 0.000445,
+            "formed_at": 1788983700000,
+            "candle_time": 1788983400000,
+            "ce": 0.00044585,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 0.0004474,
+            "bottom": 0.000446,
+            "formed_at": 1788986100000,
+            "candle_time": 1788985800000,
+            "ce": 0.00044669999999999996,
+            "displacement": true,
+            "liquidity": true,
+            "structure_aligned": false,
+            "invalid": null,
+            "quality": false
+          }
+        ],
+        "quality_count": 0
+      },
+      "15": {
+        "available": true,
+        "structure": {
+          "direction": "DOWN",
+          "event": "BOS_DOWN",
+          "sweep": "SELL_SIDE",
+          "swing_high": 0.0004585,
+          "swing_low": 0.0004468
+        },
+        "zones": [
+          {
+            "type": "BULLISH",
+            "top": 0.0004544,
+            "bottom": 0.000454,
+            "formed_at": 1788972300000,
+            "candle_time": 1788971400000,
+            "ce": 0.0004542,
+            "displacement": false,
+            "liquidity": true,
+            "structure_aligned": false,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.000456,
+            "bottom": 0.0004555,
+            "formed_at": 1788975900000,
+            "candle_time": 1788975000000,
+            "ce": 0.00045575,
+            "displacement": false,
+            "liquidity": true,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.0004539,
+            "bottom": 0.0004528,
+            "formed_at": 1788980400000,
+            "candle_time": 1788979500000,
+            "ce": 0.00045335,
+            "displacement": false,
+            "liquidity": true,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.0004517,
+            "bottom": 0.0004515,
+            "formed_at": 1788981300000,
+            "candle_time": 1788980400000,
+            "ce": 0.0004516,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.0004504,
+            "bottom": 0.0004498,
+            "formed_at": 1788982200000,
+            "candle_time": 1788981300000,
+            "ce": 0.0004501,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.0004498,
+            "bottom": 0.0004472,
+            "formed_at": 1788983100000,
+            "candle_time": 1788982200000,
+            "ce": 0.0004485,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.0004468,
+            "bottom": 0.0004467,
+            "formed_at": 1788984000000,
+            "candle_time": 1788983100000,
+            "ce": 0.00044675,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          }
+        ],
+        "quality_count": 0
+      },
+      "60": {
+        "available": true,
+        "structure": {
+          "direction": "DOWN",
+          "event": "BOS_DOWN",
+          "sweep": null,
+          "swing_high": 0.0004651,
+          "swing_low": 0.0004468
+        },
+        "zones": [
+          {
+            "type": "BEARISH",
+            "top": 0.0004622,
+            "bottom": 0.0004592,
+            "formed_at": 1788922800000,
+            "candle_time": 1788919200000,
+            "ce": 0.0004607,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.0004607,
+            "bottom": 0.0004577,
+            "formed_at": 1788948000000,
+            "candle_time": 1788944400000,
+            "ce": 0.0004592,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.0004544,
+            "bottom": 0.0004528,
+            "formed_at": 1788980400000,
+            "candle_time": 1788976800000,
+            "ce": 0.00045359999999999997,
+            "displacement": false,
+            "liquidity": true,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          }
+        ],
+        "quality_count": 0
+      },
+      "240": {
+        "available": true,
+        "structure": {
+          "direction": "DOWN",
+          "event": "CHOCH_DOWN",
+          "sweep": null,
+          "swing_high": 0.0004891,
+          "swing_low": 0.0004486
+        },
+        "zones": [
+          {
+            "type": "BULLISH",
+            "top": 0.000463,
+            "bottom": 0.0004618,
+            "formed_at": 1788782400000,
+            "candle_time": 1788768000000,
+            "ce": 0.00046239999999999996,
+            "displacement": false,
+            "liquidity": true,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 0.0004664,
+            "bottom": 0.0004644,
+            "formed_at": 1788796800000,
+            "candle_time": 1788782400000,
+            "ce": 0.00046540000000000004,
+            "displacement": false,
+            "liquidity": true,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          }
+        ],
+        "quality_count": 0
+      }
+    },
+    "relationships": []
+  },
+  {
+    "asset": "ROBOUSDT",
+    "decision_ms": 1788985500000,
+    "timeframes": {
+      "1": {
+        "available": true,
+        "structure": {
+          "direction": "UP",
+          "event": "CHOCH_UP",
+          "sweep": null,
+          "swing_high": 0.01025,
+          "swing_low": 0.0101
+        },
+        "zones": [
+          {
+            "type": "BULLISH",
+            "top": 0.01019,
+            "bottom": 0.01018,
+            "formed_at": 1788984360000,
+            "candle_time": 1788984300000,
+            "ce": 0.010185,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": false,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.01019,
+            "bottom": 0.01018,
+            "formed_at": 1788984480000,
+            "candle_time": 1788984420000,
+            "ce": 0.010185,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 0.01019,
+            "bottom": 0.01018,
+            "formed_at": 1788984600000,
+            "candle_time": 1788984540000,
+            "ce": 0.010185,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": false,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 0.01021,
+            "bottom": 0.0102,
+            "formed_at": 1788984900000,
+            "candle_time": 1788984840000,
+            "ce": 0.010205,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 0.01023,
+            "bottom": 0.01022,
+            "formed_at": 1788985140000,
+            "candle_time": 1788985080000,
+            "ce": 0.010225,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.01023,
+            "bottom": 0.01022,
+            "formed_at": 1788985260000,
+            "candle_time": 1788985200000,
+            "ce": 0.010225,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": false,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 0.01023,
+            "bottom": 0.01022,
+            "formed_at": 1788985380000,
+            "candle_time": 1788985320000,
+            "ce": 0.010225,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          }
+        ],
+        "quality_count": 0
+      },
+      "5": {
+        "available": true,
+        "structure": {
+          "direction": "DOWN",
+          "event": "BOS_DOWN",
+          "sweep": null,
+          "swing_high": 0.01039,
+          "swing_low": 0.0101
+        },
+        "zones": [
+          {
+            "type": "BEARISH",
+            "top": 0.01033,
+            "bottom": 0.01032,
+            "formed_at": 1788981900000,
+            "candle_time": 1788981600000,
+            "ce": 0.010325,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.0103,
+            "bottom": 0.01026,
+            "formed_at": 1788982500000,
+            "candle_time": 1788982200000,
+            "ce": 0.010280000000000001,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.01026,
+            "bottom": 0.01024,
+            "formed_at": 1788982800000,
+            "candle_time": 1788982500000,
+            "ce": 0.01025,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.0102,
+            "bottom": 0.01019,
+            "formed_at": 1788983400000,
+            "candle_time": 1788983100000,
+            "ce": 0.010195,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.01019,
+            "bottom": 0.01018,
+            "formed_at": 1788983700000,
+            "candle_time": 1788983400000,
+            "ce": 0.010185,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 0.01021,
+            "bottom": 0.0102,
+            "formed_at": 1788984900000,
+            "candle_time": 1788984600000,
+            "ce": 0.010205,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": false,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          }
+        ],
+        "quality_count": 0
+      },
+      "15": {
+        "available": true,
+        "structure": {
+          "direction": "DOWN",
+          "event": "BOS_DOWN",
+          "sweep": "SELL_SIDE",
+          "swing_high": 0.01062,
+          "swing_low": 0.0102
+        },
+        "zones": [
+          {
+            "type": "BEARISH",
+            "top": 0.01043,
+            "bottom": 0.01038,
+            "formed_at": 1788975900000,
+            "candle_time": 1788975000000,
+            "ce": 0.010405000000000001,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.0103,
+            "bottom": 0.01023,
+            "formed_at": 1788983100000,
+            "candle_time": 1788982200000,
+            "ce": 0.010265,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          }
+        ],
+        "quality_count": 0
+      },
+      "60": {
+        "available": true,
+        "structure": {
+          "direction": "DOWN",
+          "event": "BOS_DOWN",
+          "sweep": null,
+          "swing_high": 0.01081,
+          "swing_low": 0.01057
+        },
+        "zones": [
+          {
+            "type": "BEARISH",
+            "top": 0.01068,
+            "bottom": 0.01066,
+            "formed_at": 1788915600000,
+            "candle_time": 1788912000000,
+            "ce": 0.010669999999999999,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.01047,
+            "bottom": 0.0104,
+            "formed_at": 1788976800000,
+            "candle_time": 1788973200000,
+            "ce": 0.010435,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          }
+        ],
+        "quality_count": 0
+      },
+      "240": {
+        "available": true,
+        "structure": {
+          "direction": "DOWN",
+          "event": "CHOCH_DOWN",
+          "sweep": null,
+          "swing_high": 0.01211,
+          "swing_low": 0.01137
+        },
+        "zones": [
+          {
+            "type": "BEARISH",
+            "top": 0.01171,
+            "bottom": 0.01141,
+            "formed_at": 1788883200000,
+            "candle_time": 1788868800000,
+            "ce": 0.01156,
+            "displacement": true,
+            "liquidity": true,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": true
+          }
+        ],
+        "quality_count": 1
+      }
+    },
+    "relationships": []
+  },
+  {
+    "asset": "ORDIUSDT",
+    "decision_ms": 1788991500000,
+    "timeframes": {
+      "1": {
+        "available": true,
+        "structure": {
+          "direction": "DOWN",
+          "event": "CHOCH_DOWN",
+          "sweep": null,
+          "swing_high": 4.112,
+          "swing_low": 4.092
+        },
+        "zones": [
+          {
+            "type": "BEARISH",
+            "top": 4.13,
+            "bottom": 4.128,
+            "formed_at": 1788990300000,
+            "candle_time": 1788990240000,
+            "ce": 4.129,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 4.128,
+            "bottom": 4.125,
+            "formed_at": 1788990360000,
+            "candle_time": 1788990300000,
+            "ce": 4.1265,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 4.125,
+            "bottom": 4.12,
+            "formed_at": 1788990420000,
+            "candle_time": 1788990360000,
+            "ce": 4.1225000000000005,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 4.115,
+            "bottom": 4.107,
+            "formed_at": 1788990540000,
+            "candle_time": 1788990480000,
+            "ce": 4.111000000000001,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 4.107,
+            "bottom": 4.091,
+            "formed_at": 1788990600000,
+            "candle_time": 1788990540000,
+            "ce": 4.099,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 4.098,
+            "bottom": 4.091,
+            "formed_at": 1788990720000,
+            "candle_time": 1788990660000,
+            "ce": 4.0945,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": false,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 4.102,
+            "bottom": 4.098,
+            "formed_at": 1788991200000,
+            "candle_time": 1788991140000,
+            "ce": 4.1,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": false,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          }
+        ],
+        "quality_count": 0
+      },
+      "5": {
+        "available": true,
+        "structure": {
+          "direction": "DOWN",
+          "event": "BOS_DOWN",
+          "sweep": null,
+          "swing_high": 4.151,
+          "swing_low": 4.077
+        },
+        "zones": [
+          {
+            "type": "BULLISH",
+            "top": 4.144,
+            "bottom": 4.138,
+            "formed_at": 1788986100000,
+            "candle_time": 1788985800000,
+            "ce": 4.141,
+            "displacement": true,
+            "liquidity": true,
+            "structure_aligned": false,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 4.142,
+            "bottom": 4.141,
+            "formed_at": 1788988200000,
+            "candle_time": 1788987900000,
+            "ce": 4.141500000000001,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 4.141,
+            "bottom": 4.134,
+            "formed_at": 1788989700000,
+            "candle_time": 1788989400000,
+            "ce": 4.1375,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 4.124,
+            "bottom": 4.101,
+            "formed_at": 1788990600000,
+            "candle_time": 1788990300000,
+            "ce": 4.1125,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          }
+        ],
+        "quality_count": 0
+      },
+      "15": {
+        "available": true,
+        "structure": {
+          "direction": "DOWN",
+          "event": "BOS_DOWN",
+          "sweep": "SELL_SIDE",
+          "swing_high": 4.159,
+          "swing_low": 4.101
+        },
+        "zones": [
+          {
+            "type": "BEARISH",
+            "top": 4.18,
+            "bottom": 4.173,
+            "formed_at": 1788980400000,
+            "candle_time": 1788979500000,
+            "ce": 4.1765,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 4.164,
+            "bottom": 4.152,
+            "formed_at": 1788983100000,
+            "candle_time": 1788982200000,
+            "ce": 4.1579999999999995,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          }
+        ],
+        "quality_count": 0
+      },
+      "60": {
+        "available": true,
+        "structure": {
+          "direction": "DOWN",
+          "event": "BOS_DOWN",
+          "sweep": null,
+          "swing_high": 4.261,
+          "swing_low": 4.117
+        },
+        "zones": [
+          {
+            "type": "BEARISH",
+            "top": 4.346,
+            "bottom": 4.253,
+            "formed_at": 1788948000000,
+            "candle_time": 1788944400000,
+            "ce": 4.2995,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 4.251,
+            "bottom": 4.23,
+            "formed_at": 1788951600000,
+            "candle_time": 1788948000000,
+            "ce": 4.240500000000001,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 4.164,
+            "bottom": 4.159,
+            "formed_at": 1788984000000,
+            "candle_time": 1788980400000,
+            "ce": 4.1615,
+            "displacement": false,
+            "liquidity": true,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          }
+        ],
+        "quality_count": 0
+      },
+      "240": {
+        "available": true,
+        "structure": {
+          "direction": "DOWN",
+          "event": "CHOCH_DOWN",
+          "sweep": null,
+          "swing_high": 4.511,
+          "swing_low": 4.289
+        },
+        "zones": [
+          {
+            "type": "BULLISH",
+            "top": 4.225,
+            "bottom": 4.195,
+            "formed_at": 1788724800000,
+            "candle_time": 1788710400000,
+            "ce": 4.21,
+            "displacement": false,
+            "liquidity": true,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 4.305,
+            "bottom": 4.261,
+            "formed_at": 1788955200000,
+            "candle_time": 1788940800000,
+            "ce": 4.2829999999999995,
+            "displacement": false,
+            "liquidity": true,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          }
+        ],
+        "quality_count": 0
+      }
+    },
+    "relationships": []
+  },
+  {
+    "asset": "MARSCOINUSDT",
+    "decision_ms": 1788984600000,
+    "timeframes": {
+      "1": {
+        "available": true,
+        "structure": {
+          "direction": "DOWN",
+          "event": "BOS_DOWN",
+          "sweep": null,
+          "swing_high": 0.11934,
+          "swing_low": 0.11609
+        },
+        "zones": [
+          {
+            "type": "BEARISH",
+            "top": 0.12045,
+            "bottom": 0.12034,
+            "formed_at": 1788983400000,
+            "candle_time": 1788983340000,
+            "ce": 0.120395,
+            "displacement": false,
+            "liquidity": true,
+            "structure_aligned": false,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.12022,
+            "bottom": 0.11996,
+            "formed_at": 1788983460000,
+            "candle_time": 1788983400000,
+            "ce": 0.12009,
+            "displacement": false,
+            "liquidity": true,
+            "structure_aligned": false,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.11976,
+            "bottom": 0.1194,
+            "formed_at": 1788983580000,
+            "candle_time": 1788983520000,
+            "ce": 0.11958,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": false,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.11934,
+            "bottom": 0.11915,
+            "formed_at": 1788983640000,
+            "candle_time": 1788983580000,
+            "ce": 0.119245,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.11895,
+            "bottom": 0.11856,
+            "formed_at": 1788983700000,
+            "candle_time": 1788983640000,
+            "ce": 0.118755,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.11848,
+            "bottom": 0.1178,
+            "formed_at": 1788984060000,
+            "candle_time": 1788984000000,
+            "ce": 0.11814,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 0.11804,
+            "bottom": 0.11768,
+            "formed_at": 1788984240000,
+            "candle_time": 1788984180000,
+            "ce": 0.11786,
+            "displacement": false,
+            "liquidity": true,
+            "structure_aligned": false,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 0.11846,
+            "bottom": 0.11824,
+            "formed_at": 1788984300000,
+            "candle_time": 1788984240000,
+            "ce": 0.11835,
+            "displacement": false,
+            "liquidity": true,
+            "structure_aligned": false,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 0.11892,
+            "bottom": 0.11855,
+            "formed_at": 1788984360000,
+            "candle_time": 1788984300000,
+            "ce": 0.11873500000000001,
+            "displacement": false,
+            "liquidity": true,
+            "structure_aligned": false,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.11892,
+            "bottom": 0.11794,
+            "formed_at": 1788984480000,
+            "candle_time": 1788984420000,
+            "ce": 0.11843000000000001,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          }
+        ],
+        "quality_count": 0
+      },
+      "5": {
+        "available": true,
+        "structure": {
+          "direction": "DOWN",
+          "event": "CHOCH_DOWN",
+          "sweep": null,
+          "swing_high": 0.12216,
+          "swing_low": 0.11745
+        },
+        "zones": [
+          {
+            "type": "BEARISH",
+            "top": 0.12158,
+            "bottom": 0.11992,
+            "formed_at": 1788980400000,
+            "candle_time": 1788980100000,
+            "ce": 0.12075,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.11915,
+            "bottom": 0.11909,
+            "formed_at": 1788980700000,
+            "candle_time": 1788980400000,
+            "ce": 0.11912,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.12016,
+            "bottom": 0.11919,
+            "formed_at": 1788983700000,
+            "candle_time": 1788983400000,
+            "ce": 0.119675,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          }
+        ],
+        "quality_count": 0
+      },
+      "15": {
+        "available": true,
+        "structure": {
+          "direction": "DOWN",
+          "event": "BOS_DOWN",
+          "sweep": null,
+          "swing_high": 0.12383,
+          "swing_low": 0.11625
+        },
+        "zones": [
+          {
+            "type": "BEARISH",
+            "top": 0.12646,
+            "bottom": 0.1264,
+            "formed_at": 1788967800000,
+            "candle_time": 1788966900000,
+            "ce": 0.12643,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.12483,
+            "bottom": 0.12347,
+            "formed_at": 1788971400000,
+            "candle_time": 1788970500000,
+            "ce": 0.12415,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.12211,
+            "bottom": 0.12074,
+            "formed_at": 1788972300000,
+            "candle_time": 1788971400000,
+            "ce": 0.121425,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 0.12075,
+            "bottom": 0.12039,
+            "formed_at": 1788976800000,
+            "candle_time": 1788975900000,
+            "ce": 0.12057,
+            "displacement": false,
+            "liquidity": true,
+            "structure_aligned": false,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.12082,
+            "bottom": 0.11992,
+            "formed_at": 1788980400000,
+            "candle_time": 1788979500000,
+            "ce": 0.12037,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          }
+        ],
+        "quality_count": 0
+      },
+      "60": {
+        "available": true,
+        "structure": {
+          "direction": "DOWN",
+          "event": "BOS_DOWN",
+          "sweep": null,
+          "swing_high": 0.14952,
+          "swing_low": 0.11625
+        },
+        "zones": [
+          {
+            "type": "BEARISH",
+            "top": 0.12581,
+            "bottom": 0.12289,
+            "formed_at": 1788919200000,
+            "candle_time": 1788915600000,
+            "ce": 0.12435,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 0.13508,
+            "bottom": 0.1267,
+            "formed_at": 1788930000000,
+            "candle_time": 1788926400000,
+            "ce": 0.13089,
+            "displacement": true,
+            "liquidity": true,
+            "structure_aligned": false,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.13419,
+            "bottom": 0.13108,
+            "formed_at": 1788966000000,
+            "candle_time": 1788962400000,
+            "ce": 0.132635,
+            "displacement": false,
+            "liquidity": true,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.12218,
+            "bottom": 0.12141,
+            "formed_at": 1788973200000,
+            "candle_time": 1788969600000,
+            "ce": 0.121795,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          }
+        ],
+        "quality_count": 0
+      },
+      "240": {
+        "available": true,
+        "structure": {
+          "direction": "UP",
+          "event": "BOS_UP",
+          "sweep": "SELL_SIDE",
+          "swing_high": 0.26986,
+          "swing_low": 0.1172
+        },
+        "zones": [
+          {
+            "type": "BEARISH",
+            "top": 0.2031,
+            "bottom": 0.20287,
+            "formed_at": 1788696000000,
+            "candle_time": 1788681600000,
+            "ce": 0.202985,
+            "displacement": false,
+            "liquidity": true,
+            "structure_aligned": false,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.18094,
+            "bottom": 0.1734,
+            "formed_at": 1788753600000,
+            "candle_time": 1788739200000,
+            "ce": 0.17717,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": false,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.14936,
+            "bottom": 0.14862,
+            "formed_at": 1788840000000,
+            "candle_time": 1788825600000,
+            "ce": 0.14899,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": false,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          }
+        ],
+        "quality_count": 0
+      }
+    },
+    "relationships": []
+  },
+  {
+    "asset": "MORPHOUSDT",
+    "decision_ms": 1788984600000,
+    "timeframes": {
+      "1": {
+        "available": true,
+        "structure": {
+          "direction": "DOWN",
+          "event": "CHOCH_DOWN",
+          "sweep": null,
+          "swing_high": 2.347,
+          "swing_low": 2.315
+        },
+        "zones": [
+          {
+            "type": "BEARISH",
+            "top": 2.34,
+            "bottom": 2.323,
+            "formed_at": 1788983640000,
+            "candle_time": 1788983580000,
+            "ce": 2.3315,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 2.324,
+            "bottom": 2.322,
+            "formed_at": 1788984060000,
+            "candle_time": 1788984000000,
+            "ce": 2.323,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": false,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 2.328,
+            "bottom": 2.327,
+            "formed_at": 1788984180000,
+            "candle_time": 1788984120000,
+            "ce": 2.3274999999999997,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": false,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 2.328,
+            "bottom": 2.326,
+            "formed_at": 1788984300000,
+            "candle_time": 1788984240000,
+            "ce": 2.327,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 2.326,
+            "bottom": 2.322,
+            "formed_at": 1788984480000,
+            "candle_time": 1788984420000,
+            "ce": 2.324,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          }
+        ],
+        "quality_count": 0
+      },
+      "5": {
+        "available": true,
+        "structure": {
+          "direction": "DOWN",
+          "event": "BOS_DOWN",
+          "sweep": null,
+          "swing_high": 2.348,
+          "swing_low": 2.33
+        },
+        "zones": [
+          {
+            "type": "BEARISH",
+            "top": 2.345,
+            "bottom": 2.344,
+            "formed_at": 1788979200000,
+            "candle_time": 1788978900000,
+            "ce": 2.3445,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 2.34,
+            "bottom": 2.339,
+            "formed_at": 1788980100000,
+            "candle_time": 1788979800000,
+            "ce": 2.3395,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 2.338,
+            "bottom": 2.336,
+            "formed_at": 1788981300000,
+            "candle_time": 1788981000000,
+            "ce": 2.3369999999999997,
+            "displacement": true,
+            "liquidity": true,
+            "structure_aligned": false,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 2.338,
+            "bottom": 2.335,
+            "formed_at": 1788981900000,
+            "candle_time": 1788981600000,
+            "ce": 2.3365,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 2.338,
+            "bottom": 2.335,
+            "formed_at": 1788982500000,
+            "candle_time": 1788982200000,
+            "ce": 2.3365,
+            "displacement": true,
+            "liquidity": true,
+            "structure_aligned": false,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 2.339,
+            "bottom": 2.322,
+            "formed_at": 1788983700000,
+            "candle_time": 1788983400000,
+            "ce": 2.3305,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          }
+        ],
+        "quality_count": 0
+      },
+      "15": {
+        "available": true,
+        "structure": {
+          "direction": "UP",
+          "event": "CHOCH_UP",
+          "sweep": "SELL_SIDE",
+          "swing_high": 2.379,
+          "swing_low": 2.319
+        },
+        "zones": [
+          {
+            "type": "BEARISH",
+            "top": 2.361,
+            "bottom": 2.348,
+            "formed_at": 1788966900000,
+            "candle_time": 1788966000000,
+            "ce": 2.3545,
+            "displacement": true,
+            "liquidity": true,
+            "structure_aligned": false,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 2.368,
+            "bottom": 2.348,
+            "formed_at": 1788972300000,
+            "candle_time": 1788971400000,
+            "ce": 2.3579999999999997,
+            "displacement": true,
+            "liquidity": true,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 2.363,
+            "bottom": 2.362,
+            "formed_at": 1788975000000,
+            "candle_time": 1788974100000,
+            "ce": 2.3625,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": false,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 2.362,
+            "bottom": 2.359,
+            "formed_at": 1788975900000,
+            "candle_time": 1788975000000,
+            "ce": 2.3605,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": false,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 2.346,
+            "bottom": 2.345,
+            "formed_at": 1788979500000,
+            "candle_time": 1788978600000,
+            "ce": 2.3455000000000004,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": false,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          }
+        ],
+        "quality_count": 0
+      },
+      "60": {
+        "available": true,
+        "structure": {
+          "direction": "DOWN",
+          "event": "BOS_DOWN",
+          "sweep": "SELL_SIDE",
+          "swing_high": 2.396,
+          "swing_low": 2.319
+        },
+        "zones": [
+          {
+            "type": "BEARISH",
+            "top": 2.365,
+            "bottom": 2.347,
+            "formed_at": 1788915600000,
+            "candle_time": 1788912000000,
+            "ce": 2.356,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 2.352,
+            "bottom": 2.339,
+            "formed_at": 1788930000000,
+            "candle_time": 1788926400000,
+            "ce": 2.3455,
+            "displacement": true,
+            "liquidity": true,
+            "structure_aligned": false,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 2.379,
+            "bottom": 2.375,
+            "formed_at": 1788940800000,
+            "candle_time": 1788937200000,
+            "ce": 2.377,
+            "displacement": true,
+            "liquidity": true,
+            "structure_aligned": false,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 2.379,
+            "bottom": 2.368,
+            "formed_at": 1788948000000,
+            "candle_time": 1788944400000,
+            "ce": 2.3735,
+            "displacement": true,
+            "liquidity": true,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          }
+        ],
+        "quality_count": 0
+      },
+      "240": {
+        "available": true,
+        "structure": {
+          "direction": "DOWN",
+          "event": "CHOCH_DOWN",
+          "sweep": null,
+          "swing_high": 2.651,
+          "swing_low": 2.297
+        },
+        "zones": [
+          {
+            "type": "BEARISH",
+            "top": 2.546,
+            "bottom": 2.489,
+            "formed_at": 1788796800000,
+            "candle_time": 1788782400000,
+            "ce": 2.5175,
+            "displacement": true,
+            "liquidity": true,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": true
+          }
+        ],
+        "quality_count": 1
+      }
+    },
+    "relationships": []
+  },
+  {
+    "asset": "CFGUSDT",
+    "decision_ms": 1788989100000,
+    "timeframes": {
+      "1": {
+        "available": true,
+        "structure": {
+          "direction": "UP",
+          "event": "BOS_UP",
+          "sweep": null,
+          "swing_high": 0.121,
+          "swing_low": 0.1194
+        },
+        "zones": [
+          {
+            "type": "BULLISH",
+            "top": 0.1198,
+            "bottom": 0.119,
+            "formed_at": 1788988260000,
+            "candle_time": 1788988200000,
+            "ce": 0.1194,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.12,
+            "bottom": 0.1198,
+            "formed_at": 1788988680000,
+            "candle_time": 1788988620000,
+            "ce": 0.1199,
+            "displacement": true,
+            "liquidity": true,
+            "structure_aligned": false,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 0.1197,
+            "bottom": 0.1196,
+            "formed_at": 1788988920000,
+            "candle_time": 1788988860000,
+            "ce": 0.11965,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 0.1199,
+            "bottom": 0.1198,
+            "formed_at": 1788988980000,
+            "candle_time": 1788988920000,
+            "ce": 0.11985000000000001,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          }
+        ],
+        "quality_count": 0
+      },
+      "5": {
+        "available": true,
+        "structure": {
+          "direction": "UP",
+          "event": "CHOCH_UP",
+          "sweep": null,
+          "swing_high": 0.1196,
+          "swing_low": 0.1169
+        },
+        "zones": [
+          {
+            "type": "BULLISH",
+            "top": 0.1174,
+            "bottom": 0.1173,
+            "formed_at": 1788983100000,
+            "candle_time": 1788982800000,
+            "ce": 0.11735000000000001,
+            "displacement": false,
+            "liquidity": true,
+            "structure_aligned": false,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 0.1186,
+            "bottom": 0.118,
+            "formed_at": 1788985200000,
+            "candle_time": 1788984900000,
+            "ce": 0.11829999999999999,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": false,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 0.1195,
+            "bottom": 0.1192,
+            "formed_at": 1788988500000,
+            "candle_time": 1788988200000,
+            "ce": 0.11935,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          }
+        ],
+        "quality_count": 0
+      },
+      "15": {
+        "available": true,
+        "structure": {
+          "direction": "UP",
+          "event": "CHOCH_UP",
+          "sweep": null,
+          "swing_high": 0.1196,
+          "swing_low": 0.1169
+        },
+        "zones": [
+          {
+            "type": "BULLISH",
+            "top": 0.1176,
+            "bottom": 0.117,
+            "formed_at": 1788970500000,
+            "candle_time": 1788969600000,
+            "ce": 0.1173,
+            "displacement": true,
+            "liquidity": true,
+            "structure_aligned": false,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.1192,
+            "bottom": 0.1189,
+            "formed_at": 1788975900000,
+            "candle_time": 1788975000000,
+            "ce": 0.11905,
+            "displacement": false,
+            "liquidity": true,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.1182,
+            "bottom": 0.1179,
+            "formed_at": 1788981300000,
+            "candle_time": 1788980400000,
+            "ce": 0.11805,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 0.1183,
+            "bottom": 0.1182,
+            "formed_at": 1788985800000,
+            "candle_time": 1788984900000,
+            "ce": 0.11825,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          }
+        ],
+        "quality_count": 0
+      },
+      "60": {
+        "available": true,
+        "structure": {
+          "direction": "UP",
+          "event": "CHOCH_UP",
+          "sweep": null,
+          "swing_high": 0.1226,
+          "swing_low": 0.1154
+        },
+        "zones": [
+          {
+            "type": "BULLISH",
+            "top": 0.1175,
+            "bottom": 0.1155,
+            "formed_at": 1788930000000,
+            "candle_time": 1788926400000,
+            "ce": 0.11649999999999999,
+            "displacement": true,
+            "liquidity": true,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 0.1185,
+            "bottom": 0.1184,
+            "formed_at": 1788933600000,
+            "candle_time": 1788930000000,
+            "ce": 0.11845,
+            "displacement": true,
+            "liquidity": true,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          }
+        ],
+        "quality_count": 0
+      },
+      "240": {
+        "available": true,
+        "structure": {
+          "direction": "UP",
+          "event": "CHOCH_UP",
+          "sweep": null,
+          "swing_high": 0.1237,
+          "swing_low": 0.1128
+        },
+        "zones": [
+          {
+            "type": "BULLISH",
+            "top": 0.1087,
+            "bottom": 0.1061,
+            "formed_at": 1788739200000,
+            "candle_time": 1788724800000,
+            "ce": 0.1074,
+            "displacement": true,
+            "liquidity": true,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": true
+          },
+          {
+            "type": "BULLISH",
+            "top": 0.1194,
+            "bottom": 0.1092,
+            "formed_at": 1788753600000,
+            "candle_time": 1788739200000,
+            "ce": 0.11430000000000001,
+            "displacement": true,
+            "liquidity": true,
+            "structure_aligned": true,
+            "invalid": "fvg_ce_invalidated",
+            "quality": false
+          }
+        ],
+        "quality_count": 1
+      }
+    },
+    "relationships": []
+  },
+  {
+    "asset": "BLESSUSDT",
+    "decision_ms": 1788991500000,
+    "timeframes": {
+      "1": {
+        "available": true,
+        "structure": {
+          "direction": "DOWN",
+          "event": "BOS_DOWN",
+          "sweep": null,
+          "swing_high": 0.008477,
+          "swing_low": 0.008319
+        },
+        "zones": [
+          {
+            "type": "BEARISH",
+            "top": 0.00839,
+            "bottom": 0.008375,
+            "formed_at": 1788990300000,
+            "candle_time": 1788990240000,
+            "ce": 0.008382500000000001,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.008367,
+            "bottom": 0.008357,
+            "formed_at": 1788990480000,
+            "candle_time": 1788990420000,
+            "ce": 0.008362,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.00835,
+            "bottom": 0.008335,
+            "formed_at": 1788990540000,
+            "candle_time": 1788990480000,
+            "ce": 0.0083425,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 0.008337,
+            "bottom": 0.008332,
+            "formed_at": 1788990720000,
+            "candle_time": 1788990660000,
+            "ce": 0.008334500000000002,
+            "displacement": false,
+            "liquidity": true,
+            "structure_aligned": false,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 0.008362,
+            "bottom": 0.008358,
+            "formed_at": 1788990900000,
+            "candle_time": 1788990840000,
+            "ce": 0.00836,
+            "displacement": false,
+            "liquidity": true,
+            "structure_aligned": false,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 0.008365,
+            "bottom": 0.008363,
+            "formed_at": 1788990960000,
+            "candle_time": 1788990900000,
+            "ce": 0.008364,
+            "displacement": false,
+            "liquidity": true,
+            "structure_aligned": false,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 0.008374,
+            "bottom": 0.008365,
+            "formed_at": 1788991020000,
+            "candle_time": 1788990960000,
+            "ce": 0.008369499999999998,
+            "displacement": false,
+            "liquidity": true,
+            "structure_aligned": false,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 0.008387,
+            "bottom": 0.008375,
+            "formed_at": 1788991080000,
+            "candle_time": 1788991020000,
+            "ce": 0.008381,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": false,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.008384,
+            "bottom": 0.008375,
+            "formed_at": 1788991440000,
+            "candle_time": 1788991380000,
+            "ce": 0.008379500000000002,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          }
+        ],
+        "quality_count": 0
+      },
+      "5": {
+        "available": true,
+        "structure": {
+          "direction": "DOWN",
+          "event": "CHOCH_DOWN",
+          "sweep": null,
+          "swing_high": 0.008477,
+          "swing_low": 0.008342
+        },
+        "zones": [
+          {
+            "type": "BEARISH",
+            "top": 0.00846,
+            "bottom": 0.008457,
+            "formed_at": 1788988500000,
+            "candle_time": 1788988200000,
+            "ce": 0.0084585,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": false,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.008448,
+            "bottom": 0.00842,
+            "formed_at": 1788989700000,
+            "candle_time": 1788989400000,
+            "ce": 0.008434,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": false,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.00842,
+            "bottom": 0.008401,
+            "formed_at": 1788990000000,
+            "candle_time": 1788989700000,
+            "ce": 0.008410500000000001,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": false,
+            "invalid": null,
+            "quality": false
+          }
+        ],
+        "quality_count": 0
+      },
+      "15": {
+        "available": true,
+        "structure": {
+          "direction": "DOWN",
+          "event": "BOS_DOWN",
+          "sweep": "SELL_SIDE",
+          "swing_high": 0.008503,
+          "swing_low": 0.008342
+        },
+        "zones": [
+          {
+            "type": "BEARISH",
+            "top": 0.008632,
+            "bottom": 0.008623,
+            "formed_at": 1788975900000,
+            "candle_time": 1788975000000,
+            "ce": 0.0086275,
+            "displacement": false,
+            "liquidity": true,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.008611,
+            "bottom": 0.008601,
+            "formed_at": 1788980400000,
+            "candle_time": 1788979500000,
+            "ce": 0.008605999999999999,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.008574,
+            "bottom": 0.008531,
+            "formed_at": 1788983100000,
+            "candle_time": 1788982200000,
+            "ce": 0.008552500000000001,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.008509,
+            "bottom": 0.008466,
+            "formed_at": 1788984000000,
+            "candle_time": 1788983100000,
+            "ce": 0.008487499999999999,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": "fvg_ce_invalidated",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.008425,
+            "bottom": 0.008398,
+            "formed_at": 1788990300000,
+            "candle_time": 1788989400000,
+            "ce": 0.008411499999999999,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          }
+        ],
+        "quality_count": 0
+      },
+      "60": {
+        "available": true,
+        "structure": {
+          "direction": "DOWN",
+          "event": "BOS_DOWN",
+          "sweep": null,
+          "swing_high": 0.009423,
+          "swing_low": 0.008443
+        },
+        "zones": [
+          {
+            "type": "BEARISH",
+            "top": 0.009216,
+            "bottom": 0.0092,
+            "formed_at": 1788919200000,
+            "candle_time": 1788915600000,
+            "ce": 0.009208000000000001,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.009139,
+            "bottom": 0.00908,
+            "formed_at": 1788922800000,
+            "candle_time": 1788919200000,
+            "ce": 0.0091095,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.00904,
+            "bottom": 0.009038,
+            "formed_at": 1788926400000,
+            "candle_time": 1788922800000,
+            "ce": 0.009038999999999998,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.008952,
+            "bottom": 0.008873,
+            "formed_at": 1788940800000,
+            "candle_time": 1788937200000,
+            "ce": 0.0089125,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.008578,
+            "bottom": 0.008503,
+            "formed_at": 1788984000000,
+            "candle_time": 1788980400000,
+            "ce": 0.0085405,
+            "displacement": false,
+            "liquidity": true,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          }
+        ],
+        "quality_count": 0
+      },
+      "240": {
+        "available": true,
+        "structure": {
+          "direction": "DOWN",
+          "event": "CHOCH_DOWN",
+          "sweep": null,
+          "swing_high": 0.00956,
+          "swing_low": 0.009151
+        },
+        "zones": [
+          {
+            "type": "BULLISH",
+            "top": 0.009466,
+            "bottom": 0.009441,
+            "formed_at": 1788696000000,
+            "candle_time": 1788681600000,
+            "ce": 0.0094535,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.009425,
+            "bottom": 0.009403,
+            "formed_at": 1788840000000,
+            "candle_time": 1788825600000,
+            "ce": 0.009413999999999999,
+            "displacement": false,
+            "liquidity": true,
+            "structure_aligned": false,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.009147,
+            "bottom": 0.009038,
+            "formed_at": 1788926400000,
+            "candle_time": 1788912000000,
+            "ce": 0.0090925,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.008918,
+            "bottom": 0.008892,
+            "formed_at": 1788940800000,
+            "candle_time": 1788926400000,
+            "ce": 0.008905,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          }
+        ],
+        "quality_count": 0
+      }
+    },
+    "relationships": []
+  },
+  {
+    "asset": "FARTCOINUSDT",
+    "decision_ms": 1788991500000,
+    "timeframes": {
+      "1": {
+        "available": true,
+        "structure": {
+          "direction": "UP",
+          "event": "CHOCH_UP",
+          "sweep": null,
+          "swing_high": 0.14912,
+          "swing_low": 0.14762
+        },
+        "zones": [
+          {
+            "type": "BEARISH",
+            "top": 0.15067,
+            "bottom": 0.1501,
+            "formed_at": 1788990300000,
+            "candle_time": 1788990240000,
+            "ce": 0.150385,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.15005,
+            "bottom": 0.14978,
+            "formed_at": 1788990360000,
+            "candle_time": 1788990300000,
+            "ce": 0.149915,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.14973,
+            "bottom": 0.14965,
+            "formed_at": 1788990420000,
+            "candle_time": 1788990360000,
+            "ce": 0.14969,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.14932,
+            "bottom": 0.14818,
+            "formed_at": 1788990480000,
+            "candle_time": 1788990420000,
+            "ce": 0.14875,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": "fvg_ce_invalidated",
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 0.14791,
+            "bottom": 0.1477,
+            "formed_at": 1788990720000,
+            "candle_time": 1788990660000,
+            "ce": 0.14780500000000002,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": false,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          }
+        ],
+        "quality_count": 0
+      },
+      "5": {
+        "available": true,
+        "structure": {
+          "direction": "DOWN",
+          "event": "BOS_DOWN",
+          "sweep": null,
+          "swing_high": 0.1517,
+          "swing_low": 0.14688
+        },
+        "zones": [
+          {
+            "type": "BEARISH",
+            "top": 0.15094,
+            "bottom": 0.15048,
+            "formed_at": 1788989700000,
+            "candle_time": 1788989400000,
+            "ce": 0.15071,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.15005,
+            "bottom": 0.14861,
+            "formed_at": 1788990600000,
+            "candle_time": 1788990300000,
+            "ce": 0.14933,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          }
+        ],
+        "quality_count": 0
+      },
+      "15": {
+        "available": true,
+        "structure": {
+          "direction": "DOWN",
+          "event": "BOS_DOWN",
+          "sweep": null,
+          "swing_high": 0.16284,
+          "swing_low": 0.1493
+        },
+        "zones": [
+          {
+            "type": "BEARISH",
+            "top": 0.1596,
+            "bottom": 0.15843,
+            "formed_at": 1788979500000,
+            "candle_time": 1788978600000,
+            "ce": 0.159015,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.15704,
+            "bottom": 0.15643,
+            "formed_at": 1788981300000,
+            "candle_time": 1788980400000,
+            "ce": 0.156735,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.15573,
+            "bottom": 0.15533,
+            "formed_at": 1788983100000,
+            "candle_time": 1788982200000,
+            "ce": 0.15553,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.15374,
+            "bottom": 0.15249,
+            "formed_at": 1788984000000,
+            "candle_time": 1788983100000,
+            "ce": 0.153115,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          }
+        ],
+        "quality_count": 0
+      },
+      "60": {
+        "available": true,
+        "structure": {
+          "direction": "DOWN",
+          "event": "CHOCH_DOWN",
+          "sweep": null,
+          "swing_high": 0.17079,
+          "swing_low": 0.16321
+        },
+        "zones": [
+          {
+            "type": "BULLISH",
+            "top": 0.16617,
+            "bottom": 0.16506,
+            "formed_at": 1788930000000,
+            "candle_time": 1788926400000,
+            "ce": 0.165615,
+            "displacement": true,
+            "liquidity": true,
+            "structure_aligned": false,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 0.16921,
+            "bottom": 0.16874,
+            "formed_at": 1788937200000,
+            "candle_time": 1788933600000,
+            "ce": 0.168975,
+            "displacement": false,
+            "liquidity": true,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.16966,
+            "bottom": 0.16826,
+            "formed_at": 1788948000000,
+            "candle_time": 1788944400000,
+            "ce": 0.16896,
+            "displacement": true,
+            "liquidity": true,
+            "structure_aligned": false,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.16813,
+            "bottom": 0.16763,
+            "formed_at": 1788962400000,
+            "candle_time": 1788958800000,
+            "ce": 0.16788,
+            "displacement": false,
+            "liquidity": true,
+            "structure_aligned": false,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.16411,
+            "bottom": 0.16284,
+            "formed_at": 1788969600000,
+            "candle_time": 1788966000000,
+            "ce": 0.163475,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.16002,
+            "bottom": 0.15741,
+            "formed_at": 1788980400000,
+            "candle_time": 1788976800000,
+            "ce": 0.158715,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.15408,
+            "bottom": 0.15264,
+            "formed_at": 1788984000000,
+            "candle_time": 1788980400000,
+            "ce": 0.15336,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          }
+        ],
+        "quality_count": 0
+      },
+      "240": {
+        "available": true,
+        "structure": {
+          "direction": "DOWN",
+          "event": "CHOCH_DOWN",
+          "sweep": null,
+          "swing_high": 0.17583,
+          "swing_low": 0.16764
+        },
+        "zones": [
+          {
+            "type": "BEARISH",
+            "top": 0.17642,
+            "bottom": 0.1756,
+            "formed_at": 1788753600000,
+            "candle_time": 1788739200000,
+            "ce": 0.17601,
+            "displacement": true,
+            "liquidity": true,
+            "structure_aligned": false,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.16572,
+            "bottom": 0.16284,
+            "formed_at": 1788969600000,
+            "candle_time": 1788955200000,
+            "ce": 0.16428,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          }
+        ],
+        "quality_count": 0
+      }
+    },
+    "relationships": []
+  },
+  {
+    "asset": "CRCLUSDT",
+    "decision_ms": 1788991500000,
+    "timeframes": {
+      "1": {
+        "available": true,
+        "structure": {
+          "direction": "DOWN",
+          "event": "CHOCH_DOWN",
+          "sweep": null,
+          "swing_high": 92.11,
+          "swing_low": 91.9
+        },
+        "zones": [
+          {
+            "type": "BEARISH",
+            "top": 92.2,
+            "bottom": 92.17,
+            "formed_at": 1788990360000,
+            "candle_time": 1788990300000,
+            "ce": 92.185,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": false,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 92.17,
+            "bottom": 92.12,
+            "formed_at": 1788990420000,
+            "candle_time": 1788990360000,
+            "ce": 92.14500000000001,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": false,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 92.12,
+            "bottom": 92.05,
+            "formed_at": 1788990480000,
+            "candle_time": 1788990420000,
+            "ce": 92.08500000000001,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 92.05,
+            "bottom": 91.99,
+            "formed_at": 1788990540000,
+            "candle_time": 1788990480000,
+            "ce": 92.02,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 91.96,
+            "bottom": 91.93,
+            "formed_at": 1788990600000,
+            "candle_time": 1788990540000,
+            "ce": 91.945,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 91.95,
+            "bottom": 91.94,
+            "formed_at": 1788990840000,
+            "candle_time": 1788990780000,
+            "ce": 91.945,
+            "displacement": false,
+            "liquidity": true,
+            "structure_aligned": false,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 92.04,
+            "bottom": 91.96,
+            "formed_at": 1788990900000,
+            "candle_time": 1788990840000,
+            "ce": 92.0,
+            "displacement": true,
+            "liquidity": true,
+            "structure_aligned": false,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          }
+        ],
+        "quality_count": 0
+      },
+      "5": {
+        "available": true,
+        "structure": {
+          "direction": "DOWN",
+          "event": "BOS_DOWN",
+          "sweep": null,
+          "swing_high": 92.62,
+          "swing_low": 92.02
+        },
+        "zones": [
+          {
+            "type": "BEARISH",
+            "top": 92.53,
+            "bottom": 92.51,
+            "formed_at": 1788987000000,
+            "candle_time": 1788986700000,
+            "ce": 92.52000000000001,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 92.42,
+            "bottom": 92.26,
+            "formed_at": 1788988500000,
+            "candle_time": 1788988200000,
+            "ce": 92.34,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 92.27,
+            "bottom": 92.26,
+            "formed_at": 1788989100000,
+            "candle_time": 1788988800000,
+            "ce": 92.265,
+            "displacement": false,
+            "liquidity": true,
+            "structure_aligned": false,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 92.17,
+            "bottom": 92.09,
+            "formed_at": 1788990600000,
+            "candle_time": 1788990300000,
+            "ce": 92.13,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          }
+        ],
+        "quality_count": 0
+      },
+      "15": {
+        "available": true,
+        "structure": {
+          "direction": "DOWN",
+          "event": "BOS_DOWN",
+          "sweep": null,
+          "swing_high": 98.76,
+          "swing_low": 94.23
+        },
+        "zones": [
+          {
+            "type": "BEARISH",
+            "top": 94.28,
+            "bottom": 94.04,
+            "formed_at": 1788979500000,
+            "candle_time": 1788978600000,
+            "ce": 94.16,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 93.56,
+            "bottom": 93.37,
+            "formed_at": 1788984000000,
+            "candle_time": 1788983100000,
+            "ce": 93.465,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 92.94,
+            "bottom": 92.73,
+            "formed_at": 1788984900000,
+            "candle_time": 1788984000000,
+            "ce": 92.83500000000001,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          }
+        ],
+        "quality_count": 0
+      },
+      "60": {
+        "available": true,
+        "structure": {
+          "direction": "DOWN",
+          "event": "BOS_DOWN",
+          "sweep": null,
+          "swing_high": 99.04,
+          "swing_low": 95.24
+        },
+        "zones": [
+          {
+            "type": "BULLISH",
+            "top": 96.51,
+            "bottom": 96.32,
+            "formed_at": 1788919200000,
+            "candle_time": 1788915600000,
+            "ce": 96.41499999999999,
+            "displacement": false,
+            "liquidity": true,
+            "structure_aligned": false,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 96.94,
+            "bottom": 96.75,
+            "formed_at": 1788930000000,
+            "candle_time": 1788926400000,
+            "ce": 96.845,
+            "displacement": true,
+            "liquidity": true,
+            "structure_aligned": false,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 97.63,
+            "bottom": 97.41,
+            "formed_at": 1788948000000,
+            "candle_time": 1788944400000,
+            "ce": 97.52,
+            "displacement": true,
+            "liquidity": true,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 97.28,
+            "bottom": 97.05,
+            "formed_at": 1788962400000,
+            "candle_time": 1788958800000,
+            "ce": 97.16499999999999,
+            "displacement": true,
+            "liquidity": true,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": true
+          },
+          {
+            "type": "BEARISH",
+            "top": 93.62,
+            "bottom": 93.37,
+            "formed_at": 1788984000000,
+            "candle_time": 1788980400000,
+            "ce": 93.495,
+            "displacement": false,
+            "liquidity": true,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 92.94,
+            "bottom": 92.62,
+            "formed_at": 1788987600000,
+            "candle_time": 1788984000000,
+            "ce": 92.78,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          }
+        ],
+        "quality_count": 1
+      },
+      "240": {
+        "available": true,
+        "structure": {
+          "direction": "DOWN",
+          "event": "CHOCH_DOWN",
+          "sweep": null,
+          "swing_high": 105.75,
+          "swing_low": 101.38
+        },
+        "zones": [
+          {
+            "type": "BEARISH",
+            "top": 104.0,
+            "bottom": 103.5,
+            "formed_at": 1788768000000,
+            "candle_time": 1788753600000,
+            "ce": 103.75,
+            "displacement": false,
+            "liquidity": true,
+            "structure_aligned": false,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 102.84,
+            "bottom": 102.57,
+            "formed_at": 1788796800000,
+            "candle_time": 1788782400000,
+            "ce": 102.705,
+            "displacement": false,
+            "liquidity": true,
+            "structure_aligned": false,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 97.08,
+            "bottom": 96.67,
+            "formed_at": 1788897600000,
+            "candle_time": 1788883200000,
+            "ce": 96.875,
+            "displacement": true,
+            "liquidity": true,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 96.57,
+            "bottom": 95.53,
+            "formed_at": 1788969600000,
+            "candle_time": 1788955200000,
+            "ce": 96.05,
+            "displacement": true,
+            "liquidity": true,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": true
+          }
+        ],
+        "quality_count": 1
+      }
+    },
+    "relationships": []
+  },
+  {
+    "asset": "EIGENUSDT",
+    "decision_ms": 1788991500000,
+    "timeframes": {
+      "1": {
+        "available": true,
+        "structure": {
+          "direction": "DOWN",
+          "event": "CHOCH_DOWN",
+          "sweep": null,
+          "swing_high": 0.2066,
+          "swing_low": 0.2046
+        },
+        "zones": [
+          {
+            "type": "BEARISH",
+            "top": 0.207,
+            "bottom": 0.2063,
+            "formed_at": 1788990540000,
+            "candle_time": 1788990480000,
+            "ce": 0.20665,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.2061,
+            "bottom": 0.2053,
+            "formed_at": 1788990600000,
+            "candle_time": 1788990540000,
+            "ce": 0.2057,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 0.2056,
+            "bottom": 0.2053,
+            "formed_at": 1788990720000,
+            "candle_time": 1788990660000,
+            "ce": 0.20545000000000002,
+            "displacement": false,
+            "liquidity": true,
+            "structure_aligned": false,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          }
+        ],
+        "quality_count": 0
+      },
+      "5": {
+        "available": true,
+        "structure": {
+          "direction": "DOWN",
+          "event": "BOS_DOWN",
+          "sweep": null,
+          "swing_high": 0.2109,
+          "swing_low": 0.2046
+        },
+        "zones": [
+          {
+            "type": "BULLISH",
+            "top": 0.2104,
+            "bottom": 0.21,
+            "formed_at": 1788986400000,
+            "candle_time": 1788986100000,
+            "ce": 0.2102,
+            "displacement": false,
+            "liquidity": true,
+            "structure_aligned": false,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.2099,
+            "bottom": 0.2089,
+            "formed_at": 1788989700000,
+            "candle_time": 1788989400000,
+            "ce": 0.2094,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.2088,
+            "bottom": 0.2081,
+            "formed_at": 1788990000000,
+            "candle_time": 1788989700000,
+            "ce": 0.20845000000000002,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.2077,
+            "bottom": 0.2072,
+            "formed_at": 1788990300000,
+            "candle_time": 1788990000000,
+            "ce": 0.20745,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.207,
+            "bottom": 0.2058,
+            "formed_at": 1788990600000,
+            "candle_time": 1788990300000,
+            "ce": 0.2064,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          }
+        ],
+        "quality_count": 0
+      },
+      "15": {
+        "available": true,
+        "structure": {
+          "direction": "DOWN",
+          "event": "CHOCH_DOWN",
+          "sweep": null,
+          "swing_high": 0.2112,
+          "swing_low": 0.2062
+        },
+        "zones": [
+          {
+            "type": "BULLISH",
+            "top": 0.2142,
+            "bottom": 0.2141,
+            "formed_at": 1788978600000,
+            "candle_time": 1788977700000,
+            "ce": 0.21415,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.2139,
+            "bottom": 0.2114,
+            "formed_at": 1788983100000,
+            "candle_time": 1788982200000,
+            "ce": 0.21265,
+            "displacement": true,
+            "liquidity": true,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": true
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.2112,
+            "bottom": 0.2084,
+            "formed_at": 1788984000000,
+            "candle_time": 1788983100000,
+            "ce": 0.2098,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.2087,
+            "bottom": 0.2072,
+            "formed_at": 1788990300000,
+            "candle_time": 1788989400000,
+            "ce": 0.20795,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          }
+        ],
+        "quality_count": 1
+      },
+      "60": {
+        "available": true,
+        "structure": {
+          "direction": "DOWN",
+          "event": "BOS_DOWN",
+          "sweep": null,
+          "swing_high": 0.218,
+          "swing_low": 0.2085
+        },
+        "zones": [
+          {
+            "type": "BULLISH",
+            "top": 0.2133,
+            "bottom": 0.2099,
+            "formed_at": 1788930000000,
+            "candle_time": 1788926400000,
+            "ce": 0.2116,
+            "displacement": true,
+            "liquidity": true,
+            "structure_aligned": false,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 0.2164,
+            "bottom": 0.2156,
+            "formed_at": 1788937200000,
+            "candle_time": 1788933600000,
+            "ce": 0.21600000000000003,
+            "displacement": false,
+            "liquidity": true,
+            "structure_aligned": false,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.2163,
+            "bottom": 0.2144,
+            "formed_at": 1788948000000,
+            "candle_time": 1788944400000,
+            "ce": 0.21534999999999999,
+            "displacement": true,
+            "liquidity": true,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 0.2158,
+            "bottom": 0.2144,
+            "formed_at": 1788955200000,
+            "candle_time": 1788951600000,
+            "ce": 0.2151,
+            "displacement": false,
+            "liquidity": true,
+            "structure_aligned": false,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.2128,
+            "bottom": 0.211,
+            "formed_at": 1788984000000,
+            "candle_time": 1788980400000,
+            "ce": 0.21189999999999998,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          }
+        ],
+        "quality_count": 0
+      },
+      "240": {
+        "available": true,
+        "structure": {
+          "direction": "UP",
+          "event": "BOS_UP",
+          "sweep": "SELL_SIDE",
+          "swing_high": 0.2247,
+          "swing_low": 0.2076
+        },
+        "zones": [],
+        "quality_count": 0
+      }
+    },
+    "relationships": []
+  },
+  {
+    "asset": "POPCATUSDT",
+    "decision_ms": 1788991500000,
+    "timeframes": {
+      "1": {
+        "available": true,
+        "structure": {
+          "direction": "DOWN",
+          "event": "BOS_DOWN",
+          "sweep": null,
+          "swing_high": 0.05034,
+          "swing_low": 0.04938
+        },
+        "zones": [
+          {
+            "type": "BEARISH",
+            "top": 0.0498,
+            "bottom": 0.04978,
+            "formed_at": 1788990300000,
+            "candle_time": 1788990240000,
+            "ce": 0.04979,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.04975,
+            "bottom": 0.04974,
+            "formed_at": 1788990420000,
+            "candle_time": 1788990360000,
+            "ce": 0.049745,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.0497,
+            "bottom": 0.04967,
+            "formed_at": 1788990480000,
+            "candle_time": 1788990420000,
+            "ce": 0.049685,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.04965,
+            "bottom": 0.04948,
+            "formed_at": 1788990540000,
+            "candle_time": 1788990480000,
+            "ce": 0.049565,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 0.04945,
+            "bottom": 0.04937,
+            "formed_at": 1788990840000,
+            "candle_time": 1788990780000,
+            "ce": 0.049409999999999996,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": false,
+            "invalid": null,
+            "quality": false
+          }
+        ],
+        "quality_count": 0
+      },
+      "5": {
+        "available": true,
+        "structure": {
+          "direction": "DOWN",
+          "event": "BOS_DOWN",
+          "sweep": null,
+          "swing_high": 0.05024,
+          "swing_low": 0.04923
+        },
+        "zones": [
+          {
+            "type": "BEARISH",
+            "top": 0.0504,
+            "bottom": 0.05037,
+            "formed_at": 1788985500000,
+            "candle_time": 1788985200000,
+            "ce": 0.050385,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 0.05046,
+            "bottom": 0.05037,
+            "formed_at": 1788986100000,
+            "candle_time": 1788985800000,
+            "ce": 0.050415,
+            "displacement": true,
+            "liquidity": true,
+            "structure_aligned": false,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.05043,
+            "bottom": 0.05038,
+            "formed_at": 1788987000000,
+            "candle_time": 1788986700000,
+            "ce": 0.050405000000000005,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.0502,
+            "bottom": 0.05009,
+            "formed_at": 1788987900000,
+            "candle_time": 1788987600000,
+            "ce": 0.050145,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.05009,
+            "bottom": 0.05002,
+            "formed_at": 1788989700000,
+            "candle_time": 1788989400000,
+            "ce": 0.050055,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.05002,
+            "bottom": 0.0499,
+            "formed_at": 1788990000000,
+            "candle_time": 1788989700000,
+            "ce": 0.049960000000000004,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.04984,
+            "bottom": 0.04978,
+            "formed_at": 1788990300000,
+            "candle_time": 1788990000000,
+            "ce": 0.04981,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.04971,
+            "bottom": 0.04949,
+            "formed_at": 1788990600000,
+            "candle_time": 1788990300000,
+            "ce": 0.0496,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          }
+        ],
+        "quality_count": 0
+      },
+      "15": {
+        "available": true,
+        "structure": {
+          "direction": "DOWN",
+          "event": "BOS_DOWN",
+          "sweep": null,
+          "swing_high": 0.05186,
+          "swing_low": 0.0498
+        },
+        "zones": [
+          {
+            "type": "BEARISH",
+            "top": 0.05137,
+            "bottom": 0.05126,
+            "formed_at": 1788982200000,
+            "candle_time": 1788981300000,
+            "ce": 0.051315,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.05116,
+            "bottom": 0.05098,
+            "formed_at": 1788983100000,
+            "candle_time": 1788982200000,
+            "ce": 0.05107,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.05087,
+            "bottom": 0.05068,
+            "formed_at": 1788984000000,
+            "candle_time": 1788983100000,
+            "ce": 0.050775,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.04985,
+            "bottom": 0.04978,
+            "formed_at": 1788990300000,
+            "candle_time": 1788989400000,
+            "ce": 0.049815,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          }
+        ],
+        "quality_count": 0
+      },
+      "60": {
+        "available": true,
+        "structure": {
+          "direction": "DOWN",
+          "event": "BOS_DOWN",
+          "sweep": null,
+          "swing_high": 0.05186,
+          "swing_low": 0.05026
+        },
+        "zones": [
+          {
+            "type": "BEARISH",
+            "top": 0.05199,
+            "bottom": 0.05177,
+            "formed_at": 1788922800000,
+            "candle_time": 1788919200000,
+            "ce": 0.051879999999999996,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": false,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 0.0519,
+            "bottom": 0.05177,
+            "formed_at": 1788930000000,
+            "candle_time": 1788926400000,
+            "ce": 0.051835,
+            "displacement": false,
+            "liquidity": true,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.05237,
+            "bottom": 0.05214,
+            "formed_at": 1788948000000,
+            "candle_time": 1788944400000,
+            "ce": 0.052254999999999996,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": false,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.05133,
+            "bottom": 0.05075,
+            "formed_at": 1788984000000,
+            "candle_time": 1788980400000,
+            "ce": 0.05104,
+            "displacement": true,
+            "liquidity": true,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": true
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.05037,
+            "bottom": 0.05028,
+            "formed_at": 1788987600000,
+            "candle_time": 1788984000000,
+            "ce": 0.050324999999999995,
+            "displacement": false,
+            "liquidity": true,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          }
+        ],
+        "quality_count": 1
+      },
+      "240": {
+        "available": true,
+        "structure": {
+          "direction": "DOWN",
+          "event": "CHOCH_DOWN",
+          "sweep": null,
+          "swing_high": 0.05338,
+          "swing_low": 0.04978
+        },
+        "zones": [
+          {
+            "type": "BEARISH",
+            "top": 0.05282,
+            "bottom": 0.05281,
+            "formed_at": 1788753600000,
+            "candle_time": 1788739200000,
+            "ce": 0.052815,
+            "displacement": true,
+            "liquidity": true,
+            "structure_aligned": false,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          }
+        ],
+        "quality_count": 0
+      }
+    },
+    "relationships": []
+  },
+  {
+    "asset": "AXSUSDT",
+    "decision_ms": 1788991500000,
+    "timeframes": {
+      "1": {
+        "available": true,
+        "structure": {
+          "direction": "DOWN",
+          "event": "BOS_DOWN",
+          "sweep": null,
+          "swing_high": 0.935,
+          "swing_low": 0.928
+        },
+        "zones": [
+          {
+            "type": "BEARISH",
+            "top": 0.9377,
+            "bottom": 0.9368,
+            "formed_at": 1788990300000,
+            "candle_time": 1788990240000,
+            "ce": 0.9372499999999999,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.9365,
+            "bottom": 0.9364,
+            "formed_at": 1788990360000,
+            "candle_time": 1788990300000,
+            "ce": 0.93645,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.9363,
+            "bottom": 0.9349,
+            "formed_at": 1788990420000,
+            "candle_time": 1788990360000,
+            "ce": 0.9356,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.9336,
+            "bottom": 0.9317,
+            "formed_at": 1788990540000,
+            "candle_time": 1788990480000,
+            "ce": 0.93265,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.9315,
+            "bottom": 0.9296,
+            "formed_at": 1788990600000,
+            "candle_time": 1788990540000,
+            "ce": 0.93055,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 0.9312,
+            "bottom": 0.9296,
+            "formed_at": 1788990720000,
+            "candle_time": 1788990660000,
+            "ce": 0.9304,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": false,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 0.932,
+            "bottom": 0.9315,
+            "formed_at": 1788990900000,
+            "candle_time": 1788990840000,
+            "ce": 0.9317500000000001,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": false,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 0.933,
+            "bottom": 0.9327,
+            "formed_at": 1788991140000,
+            "candle_time": 1788991080000,
+            "ce": 0.93285,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": false,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 0.9335,
+            "bottom": 0.933,
+            "formed_at": 1788991200000,
+            "candle_time": 1788991140000,
+            "ce": 0.93325,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": false,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          }
+        ],
+        "quality_count": 0
+      },
+      "5": {
+        "available": true,
+        "structure": {
+          "direction": "DOWN",
+          "event": "CHOCH_DOWN",
+          "sweep": null,
+          "swing_high": 0.9422,
+          "swing_low": 0.928
+        },
+        "zones": [
+          {
+            "type": "BULLISH",
+            "top": 0.9399,
+            "bottom": 0.9393,
+            "formed_at": 1788986100000,
+            "candle_time": 1788985800000,
+            "ce": 0.9396,
+            "displacement": true,
+            "liquidity": true,
+            "structure_aligned": false,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.9401,
+            "bottom": 0.939,
+            "formed_at": 1788989700000,
+            "candle_time": 1788989400000,
+            "ce": 0.93955,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": false,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.9376,
+            "bottom": 0.9368,
+            "formed_at": 1788990300000,
+            "candle_time": 1788990000000,
+            "ce": 0.9372,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.9365,
+            "bottom": 0.932,
+            "formed_at": 1788990600000,
+            "candle_time": 1788990300000,
+            "ce": 0.93425,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 0.9322,
+            "bottom": 0.932,
+            "formed_at": 1788991200000,
+            "candle_time": 1788990900000,
+            "ce": 0.9321,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": false,
+            "invalid": null,
+            "quality": false
+          }
+        ],
+        "quality_count": 0
+      },
+      "15": {
+        "available": true,
+        "structure": {
+          "direction": "DOWN",
+          "event": "BOS_DOWN",
+          "sweep": "SELL_SIDE",
+          "swing_high": 0.9544,
+          "swing_low": 0.9312
+        },
+        "zones": [
+          {
+            "type": "BEARISH",
+            "top": 0.949,
+            "bottom": 0.9454,
+            "formed_at": 1788983100000,
+            "candle_time": 1788982200000,
+            "ce": 0.9472,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.9448,
+            "bottom": 0.9414,
+            "formed_at": 1788984000000,
+            "candle_time": 1788983100000,
+            "ce": 0.9431,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.9378,
+            "bottom": 0.9368,
+            "formed_at": 1788990300000,
+            "candle_time": 1788989400000,
+            "ce": 0.9373,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          }
+        ],
+        "quality_count": 0
+      },
+      "60": {
+        "available": true,
+        "structure": {
+          "direction": "DOWN",
+          "event": "BOS_DOWN",
+          "sweep": null,
+          "swing_high": 0.9612,
+          "swing_low": 0.9362
+        },
+        "zones": [
+          {
+            "type": "BEARISH",
+            "top": 0.9552,
+            "bottom": 0.9521,
+            "formed_at": 1788922800000,
+            "candle_time": 1788919200000,
+            "ce": 0.95365,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 0.9558,
+            "bottom": 0.9521,
+            "formed_at": 1788930000000,
+            "candle_time": 1788926400000,
+            "ce": 0.95395,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": false,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 0.9649,
+            "bottom": 0.9624,
+            "formed_at": 1788940800000,
+            "candle_time": 1788937200000,
+            "ce": 0.96365,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.9649,
+            "bottom": 0.9596,
+            "formed_at": 1788948000000,
+            "candle_time": 1788944400000,
+            "ce": 0.96225,
+            "displacement": true,
+            "liquidity": true,
+            "structure_aligned": false,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.9563,
+            "bottom": 0.9558,
+            "formed_at": 1788951600000,
+            "candle_time": 1788948000000,
+            "ce": 0.9560500000000001,
+            "displacement": false,
+            "liquidity": true,
+            "structure_aligned": false,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.9487,
+            "bottom": 0.9427,
+            "formed_at": 1788984000000,
+            "candle_time": 1788980400000,
+            "ce": 0.9457,
+            "displacement": true,
+            "liquidity": true,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": true
+          }
+        ],
+        "quality_count": 1
+      },
+      "240": {
+        "available": true,
+        "structure": {
+          "direction": "DOWN",
+          "event": "CHOCH_DOWN",
+          "sweep": null,
+          "swing_high": 0.987,
+          "swing_low": 0.9411
+        },
+        "zones": [],
+        "quality_count": 0
+      }
+    },
+    "relationships": []
+  },
+  {
+    "asset": "EPICUSDT",
+    "decision_ms": 1789002600000,
+    "timeframes": {
+      "1": {
+        "available": true,
+        "structure": {
+          "direction": "DOWN",
+          "event": "BOS_DOWN",
+          "sweep": null,
+          "swing_high": 0.3744,
+          "swing_low": 0.3714
+        },
+        "zones": [
+          {
+            "type": "BEARISH",
+            "top": 0.373,
+            "bottom": 0.3729,
+            "formed_at": 1789001400000,
+            "candle_time": 1789001340000,
+            "ce": 0.37295,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.3728,
+            "bottom": 0.3726,
+            "formed_at": 1789001460000,
+            "candle_time": 1789001400000,
+            "ce": 0.37270000000000003,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.3723,
+            "bottom": 0.3722,
+            "formed_at": 1789001880000,
+            "candle_time": 1789001820000,
+            "ce": 0.37224999999999997,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 0.3726,
+            "bottom": 0.3722,
+            "formed_at": 1789002000000,
+            "candle_time": 1789001940000,
+            "ce": 0.37239999999999995,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": false,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 0.373,
+            "bottom": 0.3728,
+            "formed_at": 1789002120000,
+            "candle_time": 1789002060000,
+            "ce": 0.3729,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": false,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 0.374,
+            "bottom": 0.3738,
+            "formed_at": 1789002360000,
+            "candle_time": 1789002300000,
+            "ce": 0.3739,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": false,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.374,
+            "bottom": 0.3739,
+            "formed_at": 1789002480000,
+            "candle_time": 1789002420000,
+            "ce": 0.37395,
+            "displacement": false,
+            "liquidity": true,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          }
+        ],
+        "quality_count": 0
+      },
+      "5": {
+        "available": true,
+        "structure": {
+          "direction": "DOWN",
+          "event": "BOS_DOWN",
+          "sweep": null,
+          "swing_high": 0.3812,
+          "swing_low": 0.3714
+        },
+        "zones": [
+          {
+            "type": "BULLISH",
+            "top": 0.3795,
+            "bottom": 0.3774,
+            "formed_at": 1788996900000,
+            "candle_time": 1788996600000,
+            "ce": 0.37845,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": false,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 0.3799,
+            "bottom": 0.3796,
+            "formed_at": 1788997200000,
+            "candle_time": 1788996900000,
+            "ce": 0.37975000000000003,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": false,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 0.3798,
+            "bottom": 0.3794,
+            "formed_at": 1788998700000,
+            "candle_time": 1788998400000,
+            "ce": 0.37960000000000005,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": false,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.3798,
+            "bottom": 0.3794,
+            "formed_at": 1788999300000,
+            "candle_time": 1788999000000,
+            "ce": 0.37960000000000005,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.3793,
+            "bottom": 0.3774,
+            "formed_at": 1788999600000,
+            "candle_time": 1788999300000,
+            "ce": 0.37835,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.3772,
+            "bottom": 0.3771,
+            "formed_at": 1788999900000,
+            "candle_time": 1788999600000,
+            "ce": 0.37715,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.3758,
+            "bottom": 0.3743,
+            "formed_at": 1789000500000,
+            "candle_time": 1789000200000,
+            "ce": 0.37505,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.3732,
+            "bottom": 0.3729,
+            "formed_at": 1789000800000,
+            "candle_time": 1789000500000,
+            "ce": 0.37305,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 0.3733,
+            "bottom": 0.3731,
+            "formed_at": 1789002300000,
+            "candle_time": 1789002000000,
+            "ce": 0.3732,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": false,
+            "invalid": null,
+            "quality": false
+          }
+        ],
+        "quality_count": 0
+      },
+      "15": {
+        "available": true,
+        "structure": {
+          "direction": "DOWN",
+          "event": "BOS_DOWN",
+          "sweep": null,
+          "swing_high": 0.3999,
+          "swing_low": 0.3402
+        },
+        "zones": [
+          {
+            "type": "BEARISH",
+            "top": 0.3961,
+            "bottom": 0.3946,
+            "formed_at": 1788984900000,
+            "candle_time": 1788984000000,
+            "ce": 0.39535,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 0.3948,
+            "bottom": 0.3946,
+            "formed_at": 1788986700000,
+            "candle_time": 1788985800000,
+            "ce": 0.3947,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": false,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.3948,
+            "bottom": 0.3946,
+            "formed_at": 1788988500000,
+            "candle_time": 1788987600000,
+            "ce": 0.3947,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.3914,
+            "bottom": 0.3818,
+            "formed_at": 1788992100000,
+            "candle_time": 1788991200000,
+            "ce": 0.3866,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.3803,
+            "bottom": 0.3786,
+            "formed_at": 1788995700000,
+            "candle_time": 1788994800000,
+            "ce": 0.37945,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 0.3788,
+            "bottom": 0.3786,
+            "formed_at": 1788997500000,
+            "candle_time": 1788996600000,
+            "ce": 0.37870000000000004,
+            "displacement": false,
+            "liquidity": true,
+            "structure_aligned": false,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.3788,
+            "bottom": 0.3771,
+            "formed_at": 1789000200000,
+            "candle_time": 1788999300000,
+            "ce": 0.37795,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.3755,
+            "bottom": 0.3734,
+            "formed_at": 1789001100000,
+            "candle_time": 1789000200000,
+            "ce": 0.37445,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          }
+        ],
+        "quality_count": 0
+      },
+      "60": {
+        "available": true,
+        "structure": {
+          "direction": "DOWN",
+          "event": "BOS_DOWN",
+          "sweep": null,
+          "swing_high": 0.4077,
+          "swing_low": 0.383
+        },
+        "zones": [
+          {
+            "type": "BEARISH",
+            "top": 0.4011,
+            "bottom": 0.4009,
+            "formed_at": 1788937200000,
+            "candle_time": 1788933600000,
+            "ce": 0.401,
+            "displacement": false,
+            "liquidity": true,
+            "structure_aligned": false,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.3969,
+            "bottom": 0.3901,
+            "formed_at": 1788966000000,
+            "candle_time": 1788962400000,
+            "ce": 0.39349999999999996,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 0.394,
+            "bottom": 0.3901,
+            "formed_at": 1788973200000,
+            "candle_time": 1788969600000,
+            "ce": 0.39205,
+            "displacement": true,
+            "liquidity": true,
+            "structure_aligned": false,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.3907,
+            "bottom": 0.3814,
+            "formed_at": 1788994800000,
+            "candle_time": 1788991200000,
+            "ce": 0.38605,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          }
+        ],
+        "quality_count": 0
+      },
+      "240": {
+        "available": true,
+        "structure": {
+          "direction": "DOWN",
+          "event": "CHOCH_DOWN",
+          "sweep": "SELL_SIDE",
+          "swing_high": 0.4234,
+          "swing_low": 0.3616
+        },
+        "zones": [
+          {
+            "type": "BEARISH",
+            "top": 0.4331,
+            "bottom": 0.4287,
+            "formed_at": 1788710400000,
+            "candle_time": 1788696000000,
+            "ce": 0.4309,
+            "displacement": true,
+            "liquidity": true,
+            "structure_aligned": false,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.382,
+            "bottom": 0.3806,
+            "formed_at": 1788796800000,
+            "candle_time": 1788782400000,
+            "ce": 0.3813,
+            "displacement": false,
+            "liquidity": true,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 0.3803,
+            "bottom": 0.3796,
+            "formed_at": 1788868800000,
+            "candle_time": 1788854400000,
+            "ce": 0.37995,
+            "displacement": false,
+            "liquidity": true,
+            "structure_aligned": false,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          }
+        ],
+        "quality_count": 0
+      }
+    },
+    "relationships": []
+  },
+  {
+    "asset": "BASEDUSDT",
+    "decision_ms": 1789002000000,
+    "timeframes": {
+      "1": {
+        "available": true,
+        "structure": {
+          "direction": "UP",
+          "event": "CHOCH_UP",
+          "sweep": null,
+          "swing_high": 0.06112,
+          "swing_low": 0.06084
+        },
+        "zones": [
+          {
+            "type": "BEARISH",
+            "top": 0.06137,
+            "bottom": 0.06122,
+            "formed_at": 1789000800000,
+            "candle_time": 1789000740000,
+            "ce": 0.061295,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.06118,
+            "bottom": 0.0611,
+            "formed_at": 1789000860000,
+            "candle_time": 1789000800000,
+            "ce": 0.06114,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.06104,
+            "bottom": 0.06102,
+            "formed_at": 1789000980000,
+            "candle_time": 1789000920000,
+            "ce": 0.06103,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.06095,
+            "bottom": 0.06089,
+            "formed_at": 1789001040000,
+            "candle_time": 1789000980000,
+            "ce": 0.06092,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 0.06093,
+            "bottom": 0.06089,
+            "formed_at": 1789001160000,
+            "candle_time": 1789001100000,
+            "ce": 0.06091,
+            "displacement": true,
+            "liquidity": true,
+            "structure_aligned": false,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.06099,
+            "bottom": 0.06093,
+            "formed_at": 1789001400000,
+            "candle_time": 1789001340000,
+            "ce": 0.06096,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 0.06105,
+            "bottom": 0.06093,
+            "formed_at": 1789001520000,
+            "candle_time": 1789001460000,
+            "ce": 0.06099,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 0.0611,
+            "bottom": 0.06109,
+            "formed_at": 1789001580000,
+            "candle_time": 1789001520000,
+            "ce": 0.061095,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.06113,
+            "bottom": 0.0611,
+            "formed_at": 1789001760000,
+            "candle_time": 1789001700000,
+            "ce": 0.061115,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": false,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.06108,
+            "bottom": 0.06107,
+            "formed_at": 1789001820000,
+            "candle_time": 1789001760000,
+            "ce": 0.061075000000000004,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": false,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          }
+        ],
+        "quality_count": 0
+      },
+      "5": {
+        "available": true,
+        "structure": {
+          "direction": "DOWN",
+          "event": "BOS_DOWN",
+          "sweep": null,
+          "swing_high": 0.06213,
+          "swing_low": 0.06072
+        },
+        "zones": [
+          {
+            "type": "BULLISH",
+            "top": 0.06155,
+            "bottom": 0.0615,
+            "formed_at": 1788996600000,
+            "candle_time": 1788996300000,
+            "ce": 0.061524999999999996,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": false,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 0.06174,
+            "bottom": 0.06171,
+            "formed_at": 1788996900000,
+            "candle_time": 1788996600000,
+            "ce": 0.061725,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": false,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.06184,
+            "bottom": 0.06175,
+            "formed_at": 1788999300000,
+            "candle_time": 1788999000000,
+            "ce": 0.061795,
+            "displacement": false,
+            "liquidity": true,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.0613,
+            "bottom": 0.06122,
+            "formed_at": 1789000800000,
+            "candle_time": 1789000500000,
+            "ce": 0.061259999999999995,
+            "displacement": false,
+            "liquidity": true,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.06118,
+            "bottom": 0.06112,
+            "formed_at": 1789001100000,
+            "candle_time": 1789000800000,
+            "ce": 0.061149999999999996,
+            "displacement": true,
+            "liquidity": true,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          }
+        ],
+        "quality_count": 0
+      },
+      "15": {
+        "available": true,
+        "structure": {
+          "direction": "DOWN",
+          "event": "BOS_DOWN",
+          "sweep": null,
+          "swing_high": 0.06213,
+          "swing_low": 0.05685
+        },
+        "zones": [
+          {
+            "type": "BEARISH",
+            "top": 0.06578,
+            "bottom": 0.06482,
+            "formed_at": 1788984000000,
+            "candle_time": 1788983100000,
+            "ce": 0.0653,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.06484,
+            "bottom": 0.06447,
+            "formed_at": 1788990300000,
+            "candle_time": 1788989400000,
+            "ce": 0.06465499999999999,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.06447,
+            "bottom": 0.06401,
+            "formed_at": 1788991200000,
+            "candle_time": 1788990300000,
+            "ce": 0.06423999999999999,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.06358,
+            "bottom": 0.06227,
+            "formed_at": 1788992100000,
+            "candle_time": 1788991200000,
+            "ce": 0.062925,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 0.06134,
+            "bottom": 0.06132,
+            "formed_at": 1788995700000,
+            "candle_time": 1788994800000,
+            "ce": 0.061329999999999996,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": false,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.06168,
+            "bottom": 0.06159,
+            "formed_at": 1789000200000,
+            "candle_time": 1788999300000,
+            "ce": 0.061634999999999995,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.06139,
+            "bottom": 0.06127,
+            "formed_at": 1789001100000,
+            "candle_time": 1789000200000,
+            "ce": 0.061329999999999996,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          }
+        ],
+        "quality_count": 0
+      },
+      "60": {
+        "available": true,
+        "structure": {
+          "direction": "DOWN",
+          "event": "BOS_DOWN",
+          "sweep": null,
+          "swing_high": 0.0679,
+          "swing_low": 0.06559
+        },
+        "zones": [
+          {
+            "type": "BULLISH",
+            "top": 0.0675,
+            "bottom": 0.06749,
+            "formed_at": 1788930000000,
+            "candle_time": 1788926400000,
+            "ce": 0.067495,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 0.06813,
+            "bottom": 0.06793,
+            "formed_at": 1788937200000,
+            "candle_time": 1788933600000,
+            "ce": 0.06803000000000001,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.06826,
+            "bottom": 0.06785,
+            "formed_at": 1788948000000,
+            "candle_time": 1788944400000,
+            "ce": 0.068055,
+            "displacement": true,
+            "liquidity": true,
+            "structure_aligned": false,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.06667,
+            "bottom": 0.06518,
+            "formed_at": 1788984000000,
+            "candle_time": 1788980400000,
+            "ce": 0.065925,
+            "displacement": true,
+            "liquidity": true,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": true
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.06358,
+            "bottom": 0.06196,
+            "formed_at": 1788994800000,
+            "candle_time": 1788991200000,
+            "ce": 0.06276999999999999,
+            "displacement": true,
+            "liquidity": true,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": true
+          }
+        ],
+        "quality_count": 2
+      },
+      "240": {
+        "available": true,
+        "structure": {
+          "direction": "DOWN",
+          "event": "CHOCH_DOWN",
+          "sweep": null,
+          "swing_high": 0.06868,
+          "swing_low": 0.06615
+        },
+        "zones": [
+          {
+            "type": "BEARISH",
+            "top": 0.06792,
+            "bottom": 0.06746,
+            "formed_at": 1788710400000,
+            "candle_time": 1788696000000,
+            "ce": 0.06769,
+            "displacement": false,
+            "liquidity": true,
+            "structure_aligned": false,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.06559,
+            "bottom": 0.06518,
+            "formed_at": 1788984000000,
+            "candle_time": 1788969600000,
+            "ce": 0.065385,
+            "displacement": true,
+            "liquidity": true,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": true
+          }
+        ],
+        "quality_count": 1
+      }
+    },
+    "relationships": []
+  },
+  {
+    "asset": "ZKCUSDT",
+    "decision_ms": 1789002600000,
+    "timeframes": {
+      "1": {
+        "available": true,
+        "structure": {
+          "direction": "UP",
+          "event": "CHOCH_UP",
+          "sweep": null,
+          "swing_high": 0.04757,
+          "swing_low": 0.04742
+        },
+        "zones": [
+          {
+            "type": "BEARISH",
+            "top": 0.0475,
+            "bottom": 0.04749,
+            "formed_at": 1789001460000,
+            "candle_time": 1789001400000,
+            "ce": 0.047494999999999996,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.04755,
+            "bottom": 0.0475,
+            "formed_at": 1789001820000,
+            "candle_time": 1789001760000,
+            "ce": 0.047525,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 0.04753,
+            "bottom": 0.04749,
+            "formed_at": 1789002060000,
+            "candle_time": 1789002000000,
+            "ce": 0.04751,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 0.04756,
+            "bottom": 0.04753,
+            "formed_at": 1789002120000,
+            "candle_time": 1789002060000,
+            "ce": 0.047545000000000004,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 0.04764,
+            "bottom": 0.0476,
+            "formed_at": 1789002240000,
+            "candle_time": 1789002180000,
+            "ce": 0.04762,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 0.04767,
+            "bottom": 0.04764,
+            "formed_at": 1789002300000,
+            "candle_time": 1789002240000,
+            "ce": 0.047655,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 0.04773,
+            "bottom": 0.04772,
+            "formed_at": 1789002360000,
+            "candle_time": 1789002300000,
+            "ce": 0.047725000000000004,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          }
+        ],
+        "quality_count": 0
+      },
+      "5": {
+        "available": true,
+        "structure": {
+          "direction": "DOWN",
+          "event": "CHOCH_DOWN",
+          "sweep": null,
+          "swing_high": 0.04844,
+          "swing_low": 0.04816
+        },
+        "zones": [
+          {
+            "type": "BULLISH",
+            "top": 0.04806,
+            "bottom": 0.04771,
+            "formed_at": 1788995100000,
+            "candle_time": 1788994800000,
+            "ce": 0.047885,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 0.04839,
+            "bottom": 0.04816,
+            "formed_at": 1788995400000,
+            "candle_time": 1788995100000,
+            "ce": 0.048275,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 0.04862,
+            "bottom": 0.0484,
+            "formed_at": 1788995700000,
+            "candle_time": 1788995400000,
+            "ce": 0.04851,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.04862,
+            "bottom": 0.04861,
+            "formed_at": 1788996300000,
+            "candle_time": 1788996000000,
+            "ce": 0.048615,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": false,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.0484,
+            "bottom": 0.04835,
+            "formed_at": 1788997200000,
+            "candle_time": 1788996900000,
+            "ce": 0.048375,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": false,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.04828,
+            "bottom": 0.04818,
+            "formed_at": 1788999600000,
+            "candle_time": 1788999300000,
+            "ce": 0.04823,
+            "displacement": false,
+            "liquidity": true,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.04815,
+            "bottom": 0.04806,
+            "formed_at": 1788999900000,
+            "candle_time": 1788999600000,
+            "ce": 0.048104999999999995,
+            "displacement": false,
+            "liquidity": true,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          }
+        ],
+        "quality_count": 0
+      },
+      "15": {
+        "available": true,
+        "structure": {
+          "direction": "DOWN",
+          "event": "BOS_DOWN",
+          "sweep": null,
+          "swing_high": 0.04874,
+          "swing_low": 0.04583
+        },
+        "zones": [
+          {
+            "type": "BEARISH",
+            "top": 0.04905,
+            "bottom": 0.04904,
+            "formed_at": 1788984000000,
+            "candle_time": 1788983100000,
+            "ce": 0.049045000000000005,
+            "displacement": false,
+            "liquidity": true,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.049,
+            "bottom": 0.04861,
+            "formed_at": 1788990300000,
+            "candle_time": 1788989400000,
+            "ce": 0.048805,
+            "displacement": true,
+            "liquidity": true,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": true
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.04856,
+            "bottom": 0.04855,
+            "formed_at": 1788991200000,
+            "candle_time": 1788990300000,
+            "ce": 0.048555,
+            "displacement": false,
+            "liquidity": true,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.04819,
+            "bottom": 0.0479,
+            "formed_at": 1788992100000,
+            "candle_time": 1788991200000,
+            "ce": 0.048045,
+            "displacement": true,
+            "liquidity": true,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 0.04847,
+            "bottom": 0.04788,
+            "formed_at": 1788995700000,
+            "candle_time": 1788994800000,
+            "ce": 0.048174999999999996,
+            "displacement": true,
+            "liquidity": true,
+            "structure_aligned": false,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.04847,
+            "bottom": 0.04844,
+            "formed_at": 1788997500000,
+            "candle_time": 1788996600000,
+            "ce": 0.048455,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.04789,
+            "bottom": 0.04763,
+            "formed_at": 1789001100000,
+            "candle_time": 1789000200000,
+            "ce": 0.04776,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          }
+        ],
+        "quality_count": 1
+      },
+      "60": {
+        "available": true,
+        "structure": {
+          "direction": "DOWN",
+          "event": "CHOCH_DOWN",
+          "sweep": null,
+          "swing_high": 0.04947,
+          "swing_low": 0.0476
+        },
+        "zones": [
+          {
+            "type": "BEARISH",
+            "top": 0.04859,
+            "bottom": 0.04855,
+            "formed_at": 1788991200000,
+            "candle_time": 1788987600000,
+            "ce": 0.04857,
+            "displacement": true,
+            "liquidity": true,
+            "structure_aligned": false,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          }
+        ],
+        "quality_count": 0
+      },
+      "240": {
+        "available": true,
+        "structure": {
+          "direction": "DOWN",
+          "event": "BOS_DOWN",
+          "sweep": "SELL_SIDE",
+          "swing_high": 0.05016,
+          "swing_low": 0.04759
+        },
+        "zones": [
+          {
+            "type": "BEARISH",
+            "top": 0.04926,
+            "bottom": 0.04893,
+            "formed_at": 1788710400000,
+            "candle_time": 1788696000000,
+            "ce": 0.049095,
+            "displacement": false,
+            "liquidity": true,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 0.04844,
+            "bottom": 0.04835,
+            "formed_at": 1788796800000,
+            "candle_time": 1788782400000,
+            "ce": 0.048394999999999994,
+            "displacement": false,
+            "liquidity": true,
+            "structure_aligned": false,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          }
+        ],
+        "quality_count": 0
+      }
+    },
+    "relationships": [
+      {
+        "htf": "15",
+        "ltf": "5",
+        "htf_fvg": {
+          "type": "BEARISH",
+          "top": 0.049,
+          "bottom": 0.04861,
+          "formed_at": 1788990300000,
+          "candle_time": 1788989400000,
+          "ce": 0.048805,
+          "displacement": true,
+          "liquidity": true,
+          "structure_aligned": true,
+          "invalid": null,
+          "quality": true
+        },
+        "ltf_fvg": {
+          "type": "BEARISH",
+          "top": 0.04862,
+          "bottom": 0.04861,
+          "formed_at": 1788996300000,
+          "candle_time": 1788996000000,
+          "ce": 0.048615,
+          "displacement": false,
+          "liquidity": false,
+          "structure_aligned": false,
+          "invalid": null,
+          "quality": false
+        }
+      }
+    ]
+  },
+  {
+    "asset": "TRUMPUSDT",
+    "decision_ms": 1789005000000,
+    "timeframes": {
+      "1": {
+        "available": true,
+        "structure": {
+          "direction": "DOWN",
+          "event": "CHOCH_DOWN",
+          "sweep": null,
+          "swing_high": 2.005,
+          "swing_low": 1.983
+        },
+        "zones": [
+          {
+            "type": "BEARISH",
+            "top": 2.016,
+            "bottom": 2.015,
+            "formed_at": 1789003800000,
+            "candle_time": 1789003740000,
+            "ce": 2.0155000000000003,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": false,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 1.996,
+            "bottom": 1.992,
+            "formed_at": 1789004340000,
+            "candle_time": 1789004280000,
+            "ce": 1.994,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 1.995,
+            "bottom": 1.992,
+            "formed_at": 1789004460000,
+            "candle_time": 1789004400000,
+            "ce": 1.9935,
+            "displacement": false,
+            "liquidity": true,
+            "structure_aligned": false,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 2.0,
+            "bottom": 1.997,
+            "formed_at": 1789004520000,
+            "candle_time": 1789004460000,
+            "ce": 1.9985,
+            "displacement": false,
+            "liquidity": true,
+            "structure_aligned": false,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          }
+        ],
+        "quality_count": 0
+      },
+      "5": {
+        "available": true,
+        "structure": {
+          "direction": "DOWN",
+          "event": "CHOCH_DOWN",
+          "sweep": null,
+          "swing_high": 2.035,
+          "swing_low": 2.001
+        },
+        "zones": [
+          {
+            "type": "BEARISH",
+            "top": 2.028,
+            "bottom": 2.021,
+            "formed_at": 1788999300000,
+            "candle_time": 1788999000000,
+            "ce": 2.0244999999999997,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 2.018,
+            "bottom": 2.017,
+            "formed_at": 1788999600000,
+            "candle_time": 1788999300000,
+            "ce": 2.0175,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 2.019,
+            "bottom": 2.014,
+            "formed_at": 1789002300000,
+            "candle_time": 1789002000000,
+            "ce": 2.0164999999999997,
+            "displacement": true,
+            "liquidity": true,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 2.026,
+            "bottom": 2.024,
+            "formed_at": 1789002600000,
+            "candle_time": 1789002300000,
+            "ce": 2.025,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 2.013,
+            "bottom": 2.002,
+            "formed_at": 1789004100000,
+            "candle_time": 1789003800000,
+            "ce": 2.0075,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          }
+        ],
+        "quality_count": 0
+      },
+      "15": {
+        "available": true,
+        "structure": {
+          "direction": "DOWN",
+          "event": "BOS_DOWN",
+          "sweep": null,
+          "swing_high": 2.037,
+          "swing_low": 2.001
+        },
+        "zones": [
+          {
+            "type": "BEARISH",
+            "top": 2.139,
+            "bottom": 2.137,
+            "formed_at": 1788989400000,
+            "candle_time": 1788988500000,
+            "ce": 2.138,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 2.129,
+            "bottom": 2.114,
+            "formed_at": 1788990300000,
+            "candle_time": 1788989400000,
+            "ce": 2.1215,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 2.109,
+            "bottom": 2.092,
+            "formed_at": 1788991200000,
+            "candle_time": 1788990300000,
+            "ce": 2.1005000000000003,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 2.055,
+            "bottom": 2.046,
+            "formed_at": 1788993900000,
+            "candle_time": 1788993000000,
+            "ce": 2.0505,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 2.039,
+            "bottom": 2.028,
+            "formed_at": 1788994800000,
+            "candle_time": 1788993900000,
+            "ce": 2.0335,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 2.025,
+            "bottom": 2.021,
+            "formed_at": 1788999300000,
+            "candle_time": 1788998400000,
+            "ce": 2.0229999999999997,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          }
+        ],
+        "quality_count": 0
+      },
+      "60": {
+        "available": true,
+        "structure": {
+          "direction": "DOWN",
+          "event": "BOS_DOWN",
+          "sweep": null,
+          "swing_high": 2.281,
+          "swing_low": 2.138
+        },
+        "zones": [
+          {
+            "type": "BEARISH",
+            "top": 2.243,
+            "bottom": 2.231,
+            "formed_at": 1788948000000,
+            "candle_time": 1788944400000,
+            "ce": 2.237,
+            "displacement": true,
+            "liquidity": true,
+            "structure_aligned": false,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 2.236,
+            "bottom": 2.231,
+            "formed_at": 1788955200000,
+            "candle_time": 1788951600000,
+            "ce": 2.2335000000000003,
+            "displacement": false,
+            "liquidity": true,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 2.21,
+            "bottom": 2.186,
+            "formed_at": 1788969600000,
+            "candle_time": 1788966000000,
+            "ce": 2.198,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 2.16,
+            "bottom": 2.152,
+            "formed_at": 1788984000000,
+            "candle_time": 1788980400000,
+            "ce": 2.156,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 2.114,
+            "bottom": 2.092,
+            "formed_at": 1788991200000,
+            "candle_time": 1788987600000,
+            "ce": 2.1029999999999998,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 2.043,
+            "bottom": 2.034,
+            "formed_at": 1788994800000,
+            "candle_time": 1788991200000,
+            "ce": 2.0385,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          }
+        ],
+        "quality_count": 0
+      },
+      "240": {
+        "available": true,
+        "structure": {
+          "direction": "DOWN",
+          "event": "BOS_DOWN",
+          "sweep": null,
+          "swing_high": 2.281,
+          "swing_low": 2.188
+        },
+        "zones": [
+          {
+            "type": "BEARISH",
+            "top": 2.336,
+            "bottom": 2.323,
+            "formed_at": 1788710400000,
+            "candle_time": 1788696000000,
+            "ce": 2.3295,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 2.292,
+            "bottom": 2.267,
+            "formed_at": 1788753600000,
+            "candle_time": 1788739200000,
+            "ce": 2.2794999999999996,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 2.21,
+            "bottom": 2.193,
+            "formed_at": 1788969600000,
+            "candle_time": 1788955200000,
+            "ce": 2.2015000000000002,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          }
+        ],
+        "quality_count": 0
+      }
+    },
+    "relationships": []
+  },
+  {
+    "asset": "ZAMAUSDT",
+    "decision_ms": 1789013400000,
+    "timeframes": {
+      "1": {
+        "available": true,
+        "structure": {
+          "direction": "UP",
+          "event": "BOS_UP",
+          "sweep": null,
+          "swing_high": 0.04861,
+          "swing_low": 0.04821
+        },
+        "zones": [
+          {
+            "type": "BEARISH",
+            "top": 0.0487,
+            "bottom": 0.04867,
+            "formed_at": 1789012200000,
+            "candle_time": 1789012140000,
+            "ce": 0.048685,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": false,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.04866,
+            "bottom": 0.04858,
+            "formed_at": 1789012260000,
+            "candle_time": 1789012200000,
+            "ce": 0.04862,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": false,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.04857,
+            "bottom": 0.04849,
+            "formed_at": 1789012320000,
+            "candle_time": 1789012260000,
+            "ce": 0.048530000000000004,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": false,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.04849,
+            "bottom": 0.04848,
+            "formed_at": 1789012380000,
+            "candle_time": 1789012320000,
+            "ce": 0.048485,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": false,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 0.04854,
+            "bottom": 0.04848,
+            "formed_at": 1789012500000,
+            "candle_time": 1789012440000,
+            "ce": 0.04851,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.04854,
+            "bottom": 0.04848,
+            "formed_at": 1789012680000,
+            "candle_time": 1789012620000,
+            "ce": 0.04851,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": false,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 0.04853,
+            "bottom": 0.04849,
+            "formed_at": 1789012980000,
+            "candle_time": 1789012920000,
+            "ce": 0.04851,
+            "displacement": true,
+            "liquidity": true,
+            "structure_aligned": true,
+            "invalid": "fvg_ce_invalidated",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.04858,
+            "bottom": 0.04857,
+            "formed_at": 1789013280000,
+            "candle_time": 1789013220000,
+            "ce": 0.048575,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": false,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.04855,
+            "bottom": 0.04854,
+            "formed_at": 1789013340000,
+            "candle_time": 1789013280000,
+            "ce": 0.048545000000000005,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": false,
+            "invalid": null,
+            "quality": false
+          }
+        ],
+        "quality_count": 0
+      },
+      "5": {
+        "available": true,
+        "structure": {
+          "direction": "DOWN",
+          "event": "BOS_DOWN",
+          "sweep": null,
+          "swing_high": 0.04883,
+          "swing_low": 0.04821
+        },
+        "zones": [
+          {
+            "type": "BULLISH",
+            "top": 0.04816,
+            "bottom": 0.04814,
+            "formed_at": 1789007700000,
+            "candle_time": 1789007400000,
+            "ce": 0.04815,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": false,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 0.04824,
+            "bottom": 0.0482,
+            "formed_at": 1789008000000,
+            "candle_time": 1789007700000,
+            "ce": 0.04822,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": false,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 0.04839,
+            "bottom": 0.04836,
+            "formed_at": 1789009500000,
+            "candle_time": 1789009200000,
+            "ce": 0.048375,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": false,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 0.04852,
+            "bottom": 0.0484,
+            "formed_at": 1789009800000,
+            "candle_time": 1789009500000,
+            "ce": 0.04846,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": false,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 0.04872,
+            "bottom": 0.04855,
+            "formed_at": 1789010100000,
+            "candle_time": 1789009800000,
+            "ce": 0.048635,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": false,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.04866,
+            "bottom": 0.04854,
+            "formed_at": 1789012500000,
+            "candle_time": 1789012200000,
+            "ce": 0.048600000000000004,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          }
+        ],
+        "quality_count": 0
+      },
+      "15": {
+        "available": true,
+        "structure": {
+          "direction": "DOWN",
+          "event": "BOS_DOWN",
+          "sweep": null,
+          "swing_high": 0.05049,
+          "swing_low": 0.04747
+        },
+        "zones": [
+          {
+            "type": "BULLISH",
+            "top": 0.04946,
+            "bottom": 0.04918,
+            "formed_at": 1788995700000,
+            "candle_time": 1788994800000,
+            "ce": 0.04932,
+            "displacement": false,
+            "liquidity": true,
+            "structure_aligned": false,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 0.04982,
+            "bottom": 0.0498,
+            "formed_at": 1788998400000,
+            "candle_time": 1788997500000,
+            "ce": 0.04981,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": false,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 0.05001,
+            "bottom": 0.04989,
+            "formed_at": 1788999300000,
+            "candle_time": 1788998400000,
+            "ce": 0.049949999999999994,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": false,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.04994,
+            "bottom": 0.04992,
+            "formed_at": 1789002900000,
+            "candle_time": 1789002000000,
+            "ce": 0.04993,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.04962,
+            "bottom": 0.0495,
+            "formed_at": 1789003800000,
+            "candle_time": 1789002900000,
+            "ce": 0.04956,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.04945,
+            "bottom": 0.04898,
+            "formed_at": 1789004700000,
+            "candle_time": 1789003800000,
+            "ce": 0.049215,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.04861,
+            "bottom": 0.04791,
+            "formed_at": 1789005600000,
+            "candle_time": 1789004700000,
+            "ce": 0.04826,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 0.04793,
+            "bottom": 0.04791,
+            "formed_at": 1789007400000,
+            "candle_time": 1789006500000,
+            "ce": 0.047920000000000004,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": false,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 0.04821,
+            "bottom": 0.04814,
+            "formed_at": 1789008300000,
+            "candle_time": 1789007400000,
+            "ce": 0.048175,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": false,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 0.04864,
+            "bottom": 0.04837,
+            "formed_at": 1789010100000,
+            "candle_time": 1789009200000,
+            "ce": 0.048505000000000006,
+            "displacement": false,
+            "liquidity": false,
+            "structure_aligned": false,
+            "invalid": null,
+            "quality": false
+          }
+        ],
+        "quality_count": 0
+      },
+      "60": {
+        "available": true,
+        "structure": {
+          "direction": "DOWN",
+          "event": "CHOCH_DOWN",
+          "sweep": null,
+          "swing_high": 0.05359,
+          "swing_low": 0.04267
+        },
+        "zones": [
+          {
+            "type": "BEARISH",
+            "top": 0.05108,
+            "bottom": 0.05105,
+            "formed_at": 1788944400000,
+            "candle_time": 1788940800000,
+            "ce": 0.051065,
+            "displacement": false,
+            "liquidity": true,
+            "structure_aligned": false,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 0.05282,
+            "bottom": 0.05247,
+            "formed_at": 1788976800000,
+            "candle_time": 1788973200000,
+            "ce": 0.052645,
+            "displacement": true,
+            "liquidity": false,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.05282,
+            "bottom": 0.05275,
+            "formed_at": 1788984000000,
+            "candle_time": 1788980400000,
+            "ce": 0.052785,
+            "displacement": false,
+            "liquidity": true,
+            "structure_aligned": false,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.05174,
+            "bottom": 0.04989,
+            "formed_at": 1788994800000,
+            "candle_time": 1788991200000,
+            "ce": 0.050815,
+            "displacement": true,
+            "liquidity": true,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": true
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.04982,
+            "bottom": 0.04837,
+            "formed_at": 1789005600000,
+            "candle_time": 1789002000000,
+            "ce": 0.049095,
+            "displacement": true,
+            "liquidity": true,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": true
+          }
+        ],
+        "quality_count": 2
+      },
+      "240": {
+        "available": true,
+        "structure": {
+          "direction": "DOWN",
+          "event": "CHOCH_DOWN",
+          "sweep": null,
+          "swing_high": 0.06362,
+          "swing_low": 0.05045
+        },
+        "zones": [
+          {
+            "type": "BEARISH",
+            "top": 0.05398,
+            "bottom": 0.05159,
+            "formed_at": 1788796800000,
+            "candle_time": 1788782400000,
+            "ce": 0.052785,
+            "displacement": true,
+            "liquidity": true,
+            "structure_aligned": false,
+            "invalid": null,
+            "quality": false
+          },
+          {
+            "type": "BULLISH",
+            "top": 0.05157,
+            "bottom": 0.05149,
+            "formed_at": 1788969600000,
+            "candle_time": 1788955200000,
+            "ce": 0.05153,
+            "displacement": false,
+            "liquidity": true,
+            "structure_aligned": true,
+            "invalid": "fvg_fully_filled",
+            "quality": false
+          },
+          {
+            "type": "BEARISH",
+            "top": 0.05157,
+            "bottom": 0.05049,
+            "formed_at": 1788998400000,
+            "candle_time": 1788984000000,
+            "ce": 0.05103,
+            "displacement": true,
+            "liquidity": true,
+            "structure_aligned": true,
+            "invalid": null,
+            "quality": true
+          }
+        ],
+        "quality_count": 1
+      }
+    },
+    "relationships": [
+      {
+        "htf": "60",
+        "ltf": "15",
+        "htf_fvg": {
+          "type": "BEARISH",
+          "top": 0.05174,
+          "bottom": 0.04989,
+          "formed_at": 1788994800000,
+          "candle_time": 1788991200000,
+          "ce": 0.050815,
+          "displacement": true,
+          "liquidity": true,
+          "structure_aligned": true,
+          "invalid": null,
+          "quality": true
+        },
+        "ltf_fvg": {
+          "type": "BEARISH",
+          "top": 0.04994,
+          "bottom": 0.04992,
+          "formed_at": 1789002900000,
+          "candle_time": 1789002000000,
+          "ce": 0.04993,
+          "displacement": false,
+          "liquidity": false,
+          "structure_aligned": true,
+          "invalid": null,
+          "quality": false
+        }
+      }
+    ]
+  }
+]

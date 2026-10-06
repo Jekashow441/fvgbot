@@ -1,0 +1,7088 @@
+[
+  {
+    "asset": "0GUSDT",
+    "candle_time": 1789022400000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": false,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 0.1903,
+        "sweep_open": 1789021500000
+      },
+      {
+        "pool": "local",
+        "level": 0.1903,
+        "sweep_open": 1789021500000
+      },
+      {
+        "pool": "equal_highs",
+        "level": 0.1903,
+        "sweep_open": 1789021500000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "1000BONKUSDT",
+    "candle_time": 1789017900000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "1000FLOKIUSDT",
+    "candle_time": 1789022700000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": false,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 0.02446,
+        "sweep_open": 1789021200000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "1000RATSUSDT",
+    "candle_time": 1789023600000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": false,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "1000RATSUSDT",
+    "candle_time": 1789023900000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "2ZUSDT",
+    "candle_time": 1789023900000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": false,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "AAOIUSDT",
+    "candle_time": 1789019400000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": false,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 108.02,
+        "sweep_open": 1789019100000
+      },
+      {
+        "pool": "local",
+        "level": 108.02,
+        "sweep_open": 1789019100000
+      },
+      {
+        "pool": "equal_highs",
+        "level": 108.02,
+        "sweep_open": 1789019100000
+      },
+      {
+        "pool": "session",
+        "level": 108.02,
+        "sweep_open": 1789019100000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "ACEUSDT",
+    "candle_time": 1789017000000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": false,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 0.15715,
+        "sweep_open": 1789015200000
+      },
+      {
+        "pool": "internal",
+        "level": 0.15707,
+        "sweep_open": 1789015500000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "ACEUSDT",
+    "candle_time": 1789018200000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "ACEUSDT",
+    "candle_time": 1789020000000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "ACUUSDT",
+    "candle_time": 1789028700000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "AEONUSDT",
+    "candle_time": 1788991500000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "AEROUSDT",
+    "candle_time": 1789013700000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "AEROUSDT",
+    "candle_time": 1789014300000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": false,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 0.5658,
+        "sweep_open": 1789012800000
+      },
+      {
+        "pool": "local",
+        "level": 0.5658,
+        "sweep_open": 1789012800000
+      },
+      {
+        "pool": "equal_highs",
+        "level": 0.5658,
+        "sweep_open": 1789012800000
+      },
+      {
+        "pool": "session",
+        "level": 0.5658,
+        "sweep_open": 1789012800000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "AEROUSDT",
+    "candle_time": 1789016400000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "AIOZUSDT",
+    "candle_time": 1788995100000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "ALGOUSDT",
+    "candle_time": 1789017900000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 0.09809,
+        "sweep_open": 1789016700000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "ALGOUSDT",
+    "candle_time": 1789018200000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 0.09809,
+        "sweep_open": 1789016700000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "ALGOUSDT",
+    "candle_time": 1789020600000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "AMDSTOCKUSDT",
+    "candle_time": 1789017600000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "AMDSTOCKUSDT",
+    "candle_time": 1789017900000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "ANIMEUSDT",
+    "candle_time": 1789021500000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "ANIMEUSDT",
+    "candle_time": 1789021800000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "ANIMEUSDT",
+    "candle_time": 1789023600000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "ANIMEUSDT",
+    "candle_time": 1789025100000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": false,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 0.003665,
+        "sweep_open": 1789024200000
+      },
+      {
+        "pool": "local",
+        "level": 0.003665,
+        "sweep_open": 1789024200000
+      },
+      {
+        "pool": "external",
+        "level": 0.003665,
+        "sweep_open": 1789024200000
+      },
+      {
+        "pool": "session",
+        "level": 0.003665,
+        "sweep_open": 1789024200000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "APEXUSDT",
+    "candle_time": 1789021200000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": false,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 0.2311,
+        "sweep_open": 1789020300000
+      },
+      {
+        "pool": "local",
+        "level": 0.2311,
+        "sweep_open": 1789020300000
+      },
+      {
+        "pool": "external",
+        "level": 0.2311,
+        "sweep_open": 1789020300000
+      },
+      {
+        "pool": "equal_highs",
+        "level": 0.2311,
+        "sweep_open": 1789020300000
+      },
+      {
+        "pool": "session",
+        "level": 0.2311,
+        "sweep_open": 1789020300000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "ARBUSDT",
+    "candle_time": 1789013700000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "ARKMUSDT",
+    "candle_time": 1789024800000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "ARUSDT",
+    "candle_time": 1789023600000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": false,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "ARUSDT",
+    "candle_time": 1789023900000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": false,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "ARUSDT",
+    "candle_time": 1789024800000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "ARXUSDT",
+    "candle_time": 1788989400000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": false,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 0.154,
+        "sweep_open": 1788987900000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "ARXUSDT",
+    "candle_time": 1788990300000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "ASTERUSDT",
+    "candle_time": 1789016400000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": false,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 0.7267,
+        "sweep_open": 1789015200000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "ATHUSDT",
+    "candle_time": 1789022100000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": false,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 0.004654,
+        "sweep_open": 1789020900000
+      },
+      {
+        "pool": "local",
+        "level": 0.004654,
+        "sweep_open": 1789020900000
+      },
+      {
+        "pool": "external",
+        "level": 0.004654,
+        "sweep_open": 1789020900000
+      },
+      {
+        "pool": "session",
+        "level": 0.004654,
+        "sweep_open": 1789020900000
+      },
+      {
+        "pool": "internal",
+        "level": 0.004645,
+        "sweep_open": 1789021500000
+      },
+      {
+        "pool": "local",
+        "level": 0.004645,
+        "sweep_open": 1789021500000
+      },
+      {
+        "pool": "external",
+        "level": 0.004645,
+        "sweep_open": 1789021500000
+      },
+      {
+        "pool": "session",
+        "level": 0.004645,
+        "sweep_open": 1789021500000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "ATOMUSDT",
+    "candle_time": 1789013400000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "ATOMUSDT",
+    "candle_time": 1789013700000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "ATOMUSDT",
+    "candle_time": 1789014000000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "AVAXUSDT",
+    "candle_time": 1789017000000,
+    "old_category": "A",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "AVNTUSDT",
+    "candle_time": 1789020900000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "AXSUSDT",
+    "candle_time": 1789024800000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": true,
+      "htf": false
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 0.9195,
+        "sweep_open": 1789023000000
+      }
+    ],
+    "htf": "RANGE"
+  },
+  {
+    "asset": "AXTIUSDT",
+    "candle_time": 1789025100000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "AZTECUSDT",
+    "candle_time": 1788991500000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "B3USDT",
+    "candle_time": 1788996600000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": false,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "B3USDT",
+    "candle_time": 1788998400000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "B3USDT",
+    "candle_time": 1789000500000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "BATUSDT",
+    "candle_time": 1788998400000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": false,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "BCHUSDT",
+    "candle_time": 1789016400000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "BEAMUSDT",
+    "candle_time": 1788995100000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": false,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "BERAUSDT",
+    "candle_time": 1789020000000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": false,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "BERAUSDT",
+    "candle_time": 1789020600000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "BEUSDT",
+    "candle_time": 1789025100000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "BIGTIMEUSDT",
+    "candle_time": 1788991500000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "BLUAIUSDT",
+    "candle_time": 1789025400000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "BLURUSDT",
+    "candle_time": 1789024500000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "BMNRUSDT",
+    "candle_time": 1789024800000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "BNCUSDT",
+    "candle_time": 1788983700000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "BOTUSDT",
+    "candle_time": 1789027200000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "BREVUSDT",
+    "candle_time": 1789029300000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "session",
+        "level": 0.08059,
+        "sweep_open": 1789027500000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "BRUSDT",
+    "candle_time": 1789014900000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "BRUSDT",
+    "candle_time": 1789019400000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "BRUSDT",
+    "candle_time": 1789020900000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "BSBUSDT",
+    "candle_time": 1789023300000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": false,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "BSBUSDT",
+    "candle_time": 1789023600000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "BSBUSDT",
+    "candle_time": 1789025400000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "BUSDT",
+    "candle_time": 1788991500000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "CASHCATUSDT",
+    "candle_time": 1789016100000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "CATSTOCKUSDT",
+    "candle_time": 1788997500000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "CBRSUSDT",
+    "candle_time": 1789019400000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": false,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 195.92,
+        "sweep_open": 1789018200000
+      },
+      {
+        "pool": "local",
+        "level": 195.92,
+        "sweep_open": 1789018200000
+      },
+      {
+        "pool": "equal_highs",
+        "level": 195.92,
+        "sweep_open": 1789018200000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "CBRSUSDT",
+    "candle_time": 1789019700000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": false,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 195.92,
+        "sweep_open": 1789018200000
+      },
+      {
+        "pool": "local",
+        "level": 195.92,
+        "sweep_open": 1789018200000
+      },
+      {
+        "pool": "equal_highs",
+        "level": 195.92,
+        "sweep_open": 1789018200000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "CBRSUSDT",
+    "candle_time": 1789021500000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 195.03,
+        "sweep_open": 1789020900000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "CETUSUSDT",
+    "candle_time": 1788967200000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "CETUSUSDT",
+    "candle_time": 1788968100000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": false,
+      "structure": false,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "external",
+        "level": 0.022566,
+        "sweep_open": 1788966600000
+      },
+      {
+        "pool": "internal",
+        "level": 0.022245,
+        "sweep_open": 1788967500000
+      },
+      {
+        "pool": "local",
+        "level": 0.022245,
+        "sweep_open": 1788967500000
+      },
+      {
+        "pool": "external",
+        "level": 0.022245,
+        "sweep_open": 1788967500000
+      },
+      {
+        "pool": "session",
+        "level": 0.022245,
+        "sweep_open": 1788967500000
+      },
+      {
+        "pool": "previous_day",
+        "level": 0.022471,
+        "sweep_open": 1788968100000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "CFXUSDT",
+    "candle_time": 1789002900000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": false,
+      "structure": false,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "CHILLGUYUSDT",
+    "candle_time": 1789026000000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": false,
+      "structure": false,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 0.011957,
+        "sweep_open": 1789025400000
+      },
+      {
+        "pool": "local",
+        "level": 0.011957,
+        "sweep_open": 1789025400000
+      },
+      {
+        "pool": "external",
+        "level": 0.011957,
+        "sweep_open": 1789025400000
+      },
+      {
+        "pool": "session",
+        "level": 0.011957,
+        "sweep_open": 1789025400000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "CHIPUSDT",
+    "candle_time": 1789014600000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "CHZUSDT",
+    "candle_time": 1789023900000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "CHZUSDT",
+    "candle_time": 1789024500000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "CLOUSDT",
+    "candle_time": 1789028700000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "COMPUSDT",
+    "candle_time": 1789024800000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "COTIUSDT",
+    "candle_time": 1789017900000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "CRCLUSDT",
+    "candle_time": 1789015200000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": true
+    },
+    "pools": [],
+    "htf": "DOWN"
+  },
+  {
+    "asset": "CRCLUSDT",
+    "candle_time": 1789017000000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": false,
+      "htf": false
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 92.71,
+        "sweep_open": 1789015500000
+      },
+      {
+        "pool": "internal",
+        "level": 92.6,
+        "sweep_open": 1789016700000
+      }
+    ],
+    "htf": "DOWN"
+  },
+  {
+    "asset": "CRVUSDT",
+    "candle_time": 1789014900000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": false,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "CRVUSDT",
+    "candle_time": 1789015200000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "CRVUSDT",
+    "candle_time": 1789015500000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "CRWVUSDT",
+    "candle_time": 1789025100000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": false,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "CSOPSKHYNIX2LUSDT",
+    "candle_time": 1788999000000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "session",
+        "level": 5.853,
+        "sweep_open": 1788998700000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "CSOPSKHYNIX2LUSDT",
+    "candle_time": 1789000200000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "session",
+        "level": 5.853,
+        "sweep_open": 1788998700000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "CSOPSKHYNIX2LUSDT",
+    "candle_time": 1789000500000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": false,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "session",
+        "level": 5.853,
+        "sweep_open": 1788998700000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "CUSDT",
+    "candle_time": 1788996600000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "CVXUSDT",
+    "candle_time": 1789024500000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "DEEPUSDT",
+    "candle_time": 1789023600000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": false,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 0.01571,
+        "sweep_open": 1789022400000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "DEEPUSDT",
+    "candle_time": 1789024800000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "DEEPUSDT",
+    "candle_time": 1789025100000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "DGAIUSDT",
+    "candle_time": 1789022700000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": false,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 0.7589,
+        "sweep_open": 1789021200000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "DOSUSDT",
+    "candle_time": 1789026000000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "DRAMUSDT",
+    "candle_time": 1789016400000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": false,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 61.5,
+        "sweep_open": 1789015200000
+      },
+      {
+        "pool": "local",
+        "level": 61.5,
+        "sweep_open": 1789015200000
+      },
+      {
+        "pool": "internal",
+        "level": 61.57,
+        "sweep_open": 1789016400000
+      },
+      {
+        "pool": "local",
+        "level": 61.57,
+        "sweep_open": 1789016400000
+      },
+      {
+        "pool": "equal_highs",
+        "level": 61.57,
+        "sweep_open": 1789016400000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "DYDXUSDT",
+    "candle_time": 1789023600000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": false,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 0.11664,
+        "sweep_open": 1789023000000
+      },
+      {
+        "pool": "local",
+        "level": 0.11664,
+        "sweep_open": 1789023000000
+      },
+      {
+        "pool": "equal_highs",
+        "level": 0.11664,
+        "sweep_open": 1789023000000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "DYDXUSDT",
+    "candle_time": 1789023900000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": false,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 0.11664,
+        "sweep_open": 1789023000000
+      },
+      {
+        "pool": "local",
+        "level": 0.11664,
+        "sweep_open": 1789023000000
+      },
+      {
+        "pool": "equal_highs",
+        "level": 0.11664,
+        "sweep_open": 1789023000000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "DYDXUSDT",
+    "candle_time": 1789025100000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": false,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "EDENUSDT",
+    "candle_time": 1789023900000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 0.05137,
+        "sweep_open": 1789022100000
+      },
+      {
+        "pool": "local",
+        "level": 0.05137,
+        "sweep_open": 1789022100000
+      },
+      {
+        "pool": "equal_highs",
+        "level": 0.05137,
+        "sweep_open": 1789022100000
+      },
+      {
+        "pool": "session",
+        "level": 0.05137,
+        "sweep_open": 1789022100000
+      },
+      {
+        "pool": "internal",
+        "level": 0.05173,
+        "sweep_open": 1789023300000
+      },
+      {
+        "pool": "local",
+        "level": 0.05173,
+        "sweep_open": 1789023300000
+      },
+      {
+        "pool": "session",
+        "level": 0.05173,
+        "sweep_open": 1789023300000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "EGLDUSDT",
+    "candle_time": 1789019700000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "ELSAUSDT",
+    "candle_time": 1789000200000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": false,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "session",
+        "level": 0.05054,
+        "sweep_open": 1788998700000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "ENSUSDT",
+    "candle_time": 1789016400000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "ERAUSDT",
+    "candle_time": 1788999900000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": false,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 0.05934,
+        "sweep_open": 1788998400000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "ESPORTSUSDT",
+    "candle_time": 1789017000000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": false,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "ESPORTSUSDT",
+    "candle_time": 1789017300000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "ETCUSDT",
+    "candle_time": 1789017000000,
+    "old_category": "A",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 7.904,
+        "sweep_open": 1789015800000
+      },
+      {
+        "pool": "internal",
+        "level": 7.889,
+        "sweep_open": 1789016700000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "ETHUSDT",
+    "candle_time": 1789026300000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": false,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 2462.75,
+        "sweep_open": 1789026000000
+      },
+      {
+        "pool": "local",
+        "level": 2462.75,
+        "sweep_open": 1789026000000
+      },
+      {
+        "pool": "equal_lows",
+        "level": 2462.75,
+        "sweep_open": 1789026000000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "EVAAUSDT",
+    "candle_time": 1789025100000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "EWTUSDT",
+    "candle_time": 1789001400000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "EWYUSDT",
+    "candle_time": 1789014300000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "EWYUSDT",
+    "candle_time": 1789014600000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "EWYUSDT",
+    "candle_time": 1789015800000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "EWYUSDT",
+    "candle_time": 1789019100000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": false,
+      "structure": false,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 191.92,
+        "sweep_open": 1789018500000
+      },
+      {
+        "pool": "local",
+        "level": 191.92,
+        "sweep_open": 1789018500000
+      },
+      {
+        "pool": "session",
+        "level": 191.92,
+        "sweep_open": 1789018500000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "EWYUSDT",
+    "candle_time": 1789019400000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": false,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 191.92,
+        "sweep_open": 1789018500000
+      },
+      {
+        "pool": "local",
+        "level": 191.92,
+        "sweep_open": 1789018500000
+      },
+      {
+        "pool": "session",
+        "level": 191.92,
+        "sweep_open": 1789018500000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "FFUSDT",
+    "candle_time": 1789014300000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "FFUSDT",
+    "candle_time": 1789015500000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": false,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 0.15144,
+        "sweep_open": 1789014900000
+      },
+      {
+        "pool": "internal",
+        "level": 0.15165,
+        "sweep_open": 1789015500000
+      },
+      {
+        "pool": "local",
+        "level": 0.15192,
+        "sweep_open": 1789015500000
+      },
+      {
+        "pool": "equal_highs",
+        "level": 0.15192,
+        "sweep_open": 1789015500000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "FFUSDT",
+    "candle_time": 1789015800000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": false,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 0.15144,
+        "sweep_open": 1789014900000
+      },
+      {
+        "pool": "internal",
+        "level": 0.15165,
+        "sweep_open": 1789015500000
+      },
+      {
+        "pool": "local",
+        "level": 0.15192,
+        "sweep_open": 1789015500000
+      },
+      {
+        "pool": "equal_highs",
+        "level": 0.15192,
+        "sweep_open": 1789015500000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "FILUSDT",
+    "candle_time": 1789017000000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 0.8141,
+        "sweep_open": 1789015800000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "FLOCKUSDT",
+    "candle_time": 1789016700000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": false,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 0.06183,
+        "sweep_open": 1789015800000
+      },
+      {
+        "pool": "local",
+        "level": 0.06183,
+        "sweep_open": 1789015800000
+      },
+      {
+        "pool": "session",
+        "level": 0.06183,
+        "sweep_open": 1789015800000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "FOGOUSDT",
+    "candle_time": 1789023900000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "FOGOUSDT",
+    "candle_time": 1789028400000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": false,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "local",
+        "level": 0.006459,
+        "sweep_open": 1789027200000
+      },
+      {
+        "pool": "equal_lows",
+        "level": 0.006459,
+        "sweep_open": 1789027200000
+      },
+      {
+        "pool": "internal",
+        "level": 0.006457,
+        "sweep_open": 1789028100000
+      },
+      {
+        "pool": "local",
+        "level": 0.006457,
+        "sweep_open": 1789028100000
+      },
+      {
+        "pool": "equal_lows",
+        "level": 0.006457,
+        "sweep_open": 1789028100000
+      },
+      {
+        "pool": "session",
+        "level": 0.006457,
+        "sweep_open": 1789028100000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "FORMUSDT",
+    "candle_time": 1789016400000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 0.2679,
+        "sweep_open": 1789016100000
+      },
+      {
+        "pool": "local",
+        "level": 0.2679,
+        "sweep_open": 1789016100000
+      },
+      {
+        "pool": "equal_highs",
+        "level": 0.2679,
+        "sweep_open": 1789016100000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "FORMUSDT",
+    "candle_time": 1789017900000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": false,
+      "structure": false,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 0.2624,
+        "sweep_open": 1789016700000
+      },
+      {
+        "pool": "internal",
+        "level": 0.2623,
+        "sweep_open": 1789017900000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "FORMUSDT",
+    "candle_time": 1789018800000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": false,
+      "structure": false,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 0.2623,
+        "sweep_open": 1789017900000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "FWDIUSDT",
+    "candle_time": 1788998100000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 6.558,
+        "sweep_open": 1788997500000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "GALAUSDT",
+    "candle_time": 1789016400000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": false,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "GIGGLEUSDT",
+    "candle_time": 1789020900000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "GMTUSDT",
+    "candle_time": 1789024800000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "GRASSUSDT",
+    "candle_time": 1789014600000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "previous_day",
+        "level": 0.3308,
+        "sweep_open": 1789013700000
+      },
+      {
+        "pool": "previous_day",
+        "level": 0.3308,
+        "sweep_open": 1789014600000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "GRASSUSDT",
+    "candle_time": 1789017000000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "previous_day",
+        "level": 0.3308,
+        "sweep_open": 1789016100000
+      },
+      {
+        "pool": "previous_day",
+        "level": 0.3308,
+        "sweep_open": 1789016700000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "GRIFFAINUSDT",
+    "candle_time": 1789023900000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "GRIFFAINUSDT",
+    "candle_time": 1789024500000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "GRVTUSDT",
+    "candle_time": 1789023900000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "GWEIUSDT",
+    "candle_time": 1789022400000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "GWEIUSDT",
+    "candle_time": 1789026300000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": false,
+      "structure": false,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 0.02249,
+        "sweep_open": 1789024800000
+      },
+      {
+        "pool": "internal",
+        "level": 0.02234,
+        "sweep_open": 1789026000000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "HBARUSDT",
+    "candle_time": 1789017000000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "HEIUSDT",
+    "candle_time": 1789027200000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "HEMIUSDT",
+    "candle_time": 1789014000000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "HEMIUSDT",
+    "candle_time": 1789016700000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "HEMIUSDT",
+    "candle_time": 1789019100000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "HOODUSDT",
+    "candle_time": 1789017000000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "HUMAUSDT",
+    "candle_time": 1789021500000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "HYPERUSDT",
+    "candle_time": 1789020900000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "INITUSDT",
+    "candle_time": 1788999000000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": false,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "previous_day",
+        "level": 0.06601,
+        "sweep_open": 1788997800000
+      },
+      {
+        "pool": "internal",
+        "level": 0.06606,
+        "sweep_open": 1788998100000
+      },
+      {
+        "pool": "previous_day",
+        "level": 0.06601,
+        "sweep_open": 1788998100000
+      },
+      {
+        "pool": "session",
+        "level": 0.06601,
+        "sweep_open": 1788999000000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "INITUSDT",
+    "candle_time": 1788999300000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": false,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "previous_day",
+        "level": 0.06601,
+        "sweep_open": 1788997800000
+      },
+      {
+        "pool": "internal",
+        "level": 0.06606,
+        "sweep_open": 1788998100000
+      },
+      {
+        "pool": "previous_day",
+        "level": 0.06601,
+        "sweep_open": 1788998100000
+      },
+      {
+        "pool": "session",
+        "level": 0.06601,
+        "sweep_open": 1788999000000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "INJUSDT",
+    "candle_time": 1789016700000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": false,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 6.051,
+        "sweep_open": 1789016400000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "INTCUSDT",
+    "candle_time": 1789013700000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "IOTAUSDT",
+    "candle_time": 1789024800000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "IRENUSDT",
+    "candle_time": 1789025100000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "JSTUSDT",
+    "candle_time": 1789025400000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": false,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 0.10487,
+        "sweep_open": 1789025100000
+      },
+      {
+        "pool": "local",
+        "level": 0.10487,
+        "sweep_open": 1789025100000
+      },
+      {
+        "pool": "equal_lows",
+        "level": 0.10487,
+        "sweep_open": 1789025100000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "JTOUSDT",
+    "candle_time": 1789016400000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "JTOUSDT",
+    "candle_time": 1789018200000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": false,
+      "structure": false,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 0.4124,
+        "sweep_open": 1789016700000
+      },
+      {
+        "pool": "previous_day",
+        "level": 0.4132,
+        "sweep_open": 1789017000000
+      },
+      {
+        "pool": "previous_day",
+        "level": 0.4132,
+        "sweep_open": 1789017600000
+      },
+      {
+        "pool": "previous_day",
+        "level": 0.4132,
+        "sweep_open": 1789017900000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "JTOUSDT",
+    "candle_time": 1789019100000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "previous_day",
+        "level": 0.4132,
+        "sweep_open": 1789017600000
+      },
+      {
+        "pool": "previous_day",
+        "level": 0.4132,
+        "sweep_open": 1789017900000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "JUPUSDT",
+    "candle_time": 1789013700000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "JUPUSDT",
+    "candle_time": 1789017000000,
+    "old_category": "A",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "KAITOUSDT",
+    "candle_time": 1789017000000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "KAITOUSDT",
+    "candle_time": 1789018500000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": false,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 0.3118,
+        "sweep_open": 1789018500000
+      },
+      {
+        "pool": "local",
+        "level": 0.3118,
+        "sweep_open": 1789018500000
+      },
+      {
+        "pool": "equal_highs",
+        "level": 0.3118,
+        "sweep_open": 1789018500000
+      },
+      {
+        "pool": "session",
+        "level": 0.3118,
+        "sweep_open": 1789018500000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "KAITOUSDT",
+    "candle_time": 1789018800000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": false,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 0.3118,
+        "sweep_open": 1789018500000
+      },
+      {
+        "pool": "local",
+        "level": 0.3118,
+        "sweep_open": 1789018500000
+      },
+      {
+        "pool": "equal_highs",
+        "level": 0.3118,
+        "sweep_open": 1789018500000
+      },
+      {
+        "pool": "session",
+        "level": 0.3118,
+        "sweep_open": 1789018500000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "KAITOUSDT",
+    "candle_time": 1789020600000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "KAITOUSDT",
+    "candle_time": 1789020900000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": false,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "KASUSDT",
+    "candle_time": 1789017000000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "KASUSDT",
+    "candle_time": 1789017300000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "KATUSDT",
+    "candle_time": 1789013400000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": false,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "KATUSDT",
+    "candle_time": 1789014000000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": false,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "KATUSDT",
+    "candle_time": 1789015200000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "KAVAUSDT",
+    "candle_time": 1789024800000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 0.06195,
+        "sweep_open": 1789023600000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "KAVAUSDT",
+    "candle_time": 1789025700000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "KITEUSDT",
+    "candle_time": 1789024800000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "KORUUSDT",
+    "candle_time": 1789014300000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": false,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "LIGHTUSDT",
+    "candle_time": 1789000200000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": false,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "session",
+        "level": 0.16051,
+        "sweep_open": 1788998700000
+      },
+      {
+        "pool": "internal",
+        "level": 0.16101,
+        "sweep_open": 1788999900000
+      },
+      {
+        "pool": "session",
+        "level": 0.1608,
+        "sweep_open": 1788999900000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "LITEUSDT",
+    "candle_time": 1789017600000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "LITEUSDT",
+    "candle_time": 1789017900000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "LITEUSDT",
+    "candle_time": 1789018200000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "LITEUSDT",
+    "candle_time": 1789021500000,
+    "old_category": "A",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": false,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 985.65,
+        "sweep_open": 1789021200000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "LLYUSDT",
+    "candle_time": 1789027200000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": false,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 1133.48,
+        "sweep_open": 1789027200000
+      },
+      {
+        "pool": "local",
+        "level": 1133.48,
+        "sweep_open": 1789027200000
+      },
+      {
+        "pool": "equal_highs",
+        "level": 1133.48,
+        "sweep_open": 1789027200000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "LRCUSDT",
+    "candle_time": 1788996000000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "LYNUSDT",
+    "candle_time": 1789002300000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "LYNUSDT",
+    "candle_time": 1789003500000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": false,
+      "structure": false,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 0.03417,
+        "sweep_open": 1789002000000
+      },
+      {
+        "pool": "session",
+        "level": 0.03417,
+        "sweep_open": 1789002000000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "MARSCOINUSDT",
+    "candle_time": 1789014900000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": false
+    },
+    "pools": [],
+    "htf": "DOWN"
+  },
+  {
+    "asset": "METUSDT",
+    "candle_time": 1789016400000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": false,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 0.2095,
+        "sweep_open": 1789016100000
+      },
+      {
+        "pool": "local",
+        "level": 0.2095,
+        "sweep_open": 1789016100000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "MINAUSDT",
+    "candle_time": 1789016400000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": false,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 0.0901,
+        "sweep_open": 1789014900000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "MIRAUSDT",
+    "candle_time": 1789022100000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": false,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 0.05072,
+        "sweep_open": 1789021200000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "MIRAUSDT",
+    "candle_time": 1789022400000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": false,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 0.05072,
+        "sweep_open": 1789021200000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "MMTUSDT",
+    "candle_time": 1789024800000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "MMTUSDT",
+    "candle_time": 1789025400000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "MNSTUSDT",
+    "candle_time": 1789022400000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "MNSTUSDT",
+    "candle_time": 1789023000000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "MNTUSDT",
+    "candle_time": 1789014900000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "MONUSDT",
+    "candle_time": 1789017000000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": false,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 0.02423,
+        "sweep_open": 1789016700000
+      },
+      {
+        "pool": "local",
+        "level": 0.02423,
+        "sweep_open": 1789016700000
+      },
+      {
+        "pool": "external",
+        "level": 0.0242,
+        "sweep_open": 1789016700000
+      },
+      {
+        "pool": "previous_day",
+        "level": 0.0242,
+        "sweep_open": 1789016700000
+      },
+      {
+        "pool": "session",
+        "level": 0.02423,
+        "sweep_open": 1789016700000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "MORPHOUSDT",
+    "candle_time": 1789020600000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": true
+    },
+    "pools": [],
+    "htf": "DOWN"
+  },
+  {
+    "asset": "MRVLUSDT",
+    "candle_time": 1789013700000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": false,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "MRVLUSDT",
+    "candle_time": 1789015800000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "MRVLUSDT",
+    "candle_time": 1789017900000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "MSFTUSDT",
+    "candle_time": 1789023900000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "MSTUUSDT",
+    "candle_time": 1788996900000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "MSTUUSDT",
+    "candle_time": 1788998400000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "MUBARAKUSDT",
+    "candle_time": 1789020300000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "MUSDT",
+    "candle_time": 1788990300000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": false,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 1.2006,
+        "sweep_open": 1788988800000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "MUUSDT",
+    "candle_time": 1789014600000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "MUUSDT",
+    "candle_time": 1789016400000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": false,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 1027.24,
+        "sweep_open": 1789015200000
+      },
+      {
+        "pool": "local",
+        "level": 1027.24,
+        "sweep_open": 1789015200000
+      },
+      {
+        "pool": "internal",
+        "level": 1028.49,
+        "sweep_open": 1789016400000
+      },
+      {
+        "pool": "local",
+        "level": 1028.49,
+        "sweep_open": 1789016400000
+      },
+      {
+        "pool": "equal_highs",
+        "level": 1028.49,
+        "sweep_open": 1789016400000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "MUUUSDT",
+    "candle_time": 1789018200000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "MUUUSDT",
+    "candle_time": 1789019100000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": false,
+      "structure": false,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 35.15,
+        "sweep_open": 1789018500000
+      },
+      {
+        "pool": "local",
+        "level": 35.15,
+        "sweep_open": 1789018500000
+      },
+      {
+        "pool": "session",
+        "level": 35.15,
+        "sweep_open": 1789018500000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "MVLLUSDT",
+    "candle_time": 1789025100000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "MVLLUSDT",
+    "candle_time": 1789027500000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "MYXUSDT",
+    "candle_time": 1789024500000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": false,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "MYXUSDT",
+    "candle_time": 1789025400000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "NAORISUSDT",
+    "candle_time": 1788990300000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "NAORISUSDT",
+    "candle_time": 1788991500000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "NBISUSDT",
+    "candle_time": 1789017600000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "NBISUSDT",
+    "candle_time": 1789017900000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "NIGHTUSDT",
+    "candle_time": 1788967800000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": false,
+      "structure": false,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 0.02257,
+        "sweep_open": 1788967500000
+      },
+      {
+        "pool": "local",
+        "level": 0.02257,
+        "sweep_open": 1788967500000
+      },
+      {
+        "pool": "session",
+        "level": 0.02257,
+        "sweep_open": 1788967500000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "NIGHTUSDT",
+    "candle_time": 1788968100000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": false,
+      "structure": false,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 0.02257,
+        "sweep_open": 1788967500000
+      },
+      {
+        "pool": "local",
+        "level": 0.02257,
+        "sweep_open": 1788967500000
+      },
+      {
+        "pool": "session",
+        "level": 0.02257,
+        "sweep_open": 1788967500000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "NILUSDT",
+    "candle_time": 1789019700000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": false,
+      "structure": false,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 0.0442,
+        "sweep_open": 1789018500000
+      },
+      {
+        "pool": "local",
+        "level": 0.0442,
+        "sweep_open": 1789018500000
+      },
+      {
+        "pool": "internal",
+        "level": 0.04425,
+        "sweep_open": 1789019400000
+      },
+      {
+        "pool": "local",
+        "level": 0.04425,
+        "sweep_open": 1789019400000
+      },
+      {
+        "pool": "equal_highs",
+        "level": 0.04425,
+        "sweep_open": 1789019400000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "OKTAUSDT",
+    "candle_time": 1789018200000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": false,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "OKTAUSDT",
+    "candle_time": 1789019400000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": false,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "ONDOUSDT",
+    "candle_time": 1789015200000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": false,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 0.3609,
+        "sweep_open": 1789014000000
+      },
+      {
+        "pool": "local",
+        "level": 0.3609,
+        "sweep_open": 1789014000000
+      },
+      {
+        "pool": "equal_highs",
+        "level": 0.3609,
+        "sweep_open": 1789014000000
+      },
+      {
+        "pool": "session",
+        "level": 0.3609,
+        "sweep_open": 1789014000000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "OPENUSDT",
+    "candle_time": 1789000500000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "session",
+        "level": 0.127,
+        "sweep_open": 1788999600000
+      },
+      {
+        "pool": "session",
+        "level": 0.12684,
+        "sweep_open": 1788999900000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "OPENUSDT",
+    "candle_time": 1789001100000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "session",
+        "level": 0.127,
+        "sweep_open": 1788999600000
+      },
+      {
+        "pool": "session",
+        "level": 0.12684,
+        "sweep_open": 1788999900000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "OPNUSDT",
+    "candle_time": 1789023900000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "OPUSDT",
+    "candle_time": 1789017000000,
+    "old_category": "A",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "ORCLUSDT",
+    "candle_time": 1789024500000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "ORDERUSDT",
+    "candle_time": 1789024200000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 0.03612,
+        "sweep_open": 1789023600000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "ORDERUSDT",
+    "candle_time": 1789024500000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 0.03612,
+        "sweep_open": 1789023600000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "ORDIUSDT",
+    "candle_time": 1789022700000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": true,
+      "htf": false
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 4.035,
+        "sweep_open": 1789021200000
+      }
+    ],
+    "htf": "RANGE"
+  },
+  {
+    "asset": "PAXGUSDT",
+    "candle_time": 1789017000000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "PAXGUSDT",
+    "candle_time": 1789018200000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "PAXGUSDT",
+    "candle_time": 1789020600000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": false,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 4426.3,
+        "sweep_open": 1789019100000
+      },
+      {
+        "pool": "local",
+        "level": 4426.3,
+        "sweep_open": 1789019100000
+      },
+      {
+        "pool": "equal_highs",
+        "level": 4426.3,
+        "sweep_open": 1789019100000
+      },
+      {
+        "pool": "session",
+        "level": 4426.3,
+        "sweep_open": 1789019100000
+      },
+      {
+        "pool": "internal",
+        "level": 4428.4,
+        "sweep_open": 1789020000000
+      },
+      {
+        "pool": "local",
+        "level": 4428.4,
+        "sweep_open": 1789020000000
+      },
+      {
+        "pool": "equal_highs",
+        "level": 4428.4,
+        "sweep_open": 1789020000000
+      },
+      {
+        "pool": "session",
+        "level": 4428.4,
+        "sweep_open": 1789020000000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "PENGSTOCKUSDT",
+    "candle_time": 1788816600000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "PENGSTOCKUSDT",
+    "candle_time": 1788818700000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 52.33,
+        "sweep_open": 1788817200000
+      },
+      {
+        "pool": "local",
+        "level": 52.33,
+        "sweep_open": 1788817200000
+      },
+      {
+        "pool": "external",
+        "level": 52.33,
+        "sweep_open": 1788817200000
+      },
+      {
+        "pool": "equal_highs",
+        "level": 52.33,
+        "sweep_open": 1788817200000
+      },
+      {
+        "pool": "session",
+        "level": 52.33,
+        "sweep_open": 1788817200000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "PENGSTOCKUSDT",
+    "candle_time": 1788819900000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "PENGSTOCKUSDT",
+    "candle_time": 1788820800000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "PENGUUSDT",
+    "candle_time": 1789017000000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "PEOPLEUSDT",
+    "candle_time": 1789023600000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 0.007858,
+        "sweep_open": 1789023000000
+      },
+      {
+        "pool": "local",
+        "level": 0.007858,
+        "sweep_open": 1789023000000
+      },
+      {
+        "pool": "equal_highs",
+        "level": 0.007858,
+        "sweep_open": 1789023000000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "PEOPLEUSDT",
+    "candle_time": 1789023900000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 0.007858,
+        "sweep_open": 1789023000000
+      },
+      {
+        "pool": "local",
+        "level": 0.007858,
+        "sweep_open": 1789023000000
+      },
+      {
+        "pool": "equal_highs",
+        "level": 0.007858,
+        "sweep_open": 1789023000000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "PEOPLEUSDT",
+    "candle_time": 1789024200000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": false,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 0.007858,
+        "sweep_open": 1789023000000
+      },
+      {
+        "pool": "local",
+        "level": 0.007858,
+        "sweep_open": 1789023000000
+      },
+      {
+        "pool": "equal_highs",
+        "level": 0.007858,
+        "sweep_open": 1789023000000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "PEOPLEUSDT",
+    "candle_time": 1789024800000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 0.007858,
+        "sweep_open": 1789023000000
+      },
+      {
+        "pool": "local",
+        "level": 0.007858,
+        "sweep_open": 1789023000000
+      },
+      {
+        "pool": "equal_highs",
+        "level": 0.007858,
+        "sweep_open": 1789023000000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "PEOPLEUSDT",
+    "candle_time": 1789025100000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": false,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "PHAROSUSDT",
+    "candle_time": 1789020900000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "PHAUSDT",
+    "candle_time": 1788987600000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "PIEVERSEUSDT",
+    "candle_time": 1789018200000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "PIEVERSEUSDT",
+    "candle_time": 1789020900000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": false,
+      "structure": false,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 1.2857,
+        "sweep_open": 1789019100000
+      },
+      {
+        "pool": "internal",
+        "level": 1.2878,
+        "sweep_open": 1789020300000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "PIPPINUSDT",
+    "candle_time": 1789024500000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": false,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "PIPPINUSDT",
+    "candle_time": 1789024800000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "PLTRUSDT",
+    "candle_time": 1789025100000,
+    "old_category": "A",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 169.94,
+        "sweep_open": 1789023600000
+      },
+      {
+        "pool": "local",
+        "level": 169.94,
+        "sweep_open": 1789023600000
+      },
+      {
+        "pool": "equal_highs",
+        "level": 169.94,
+        "sweep_open": 1789023600000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "PNUTUSDT",
+    "candle_time": 1789025400000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "POLUSDT",
+    "candle_time": 1789014300000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": false,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 0.0979,
+        "sweep_open": 1789013700000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "POLUSDT",
+    "candle_time": 1789015200000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": false,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 0.0979,
+        "sweep_open": 1789013700000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "POLUSDT",
+    "candle_time": 1789017000000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": false,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 0.0968,
+        "sweep_open": 1789016100000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "PONSUSDT",
+    "candle_time": 1789029900000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": false,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "PONSUSDT",
+    "candle_time": 1789030200000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "POPCATUSDT",
+    "candle_time": 1789020600000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": true
+    },
+    "pools": [],
+    "htf": "DOWN"
+  },
+  {
+    "asset": "PYTHUSDT",
+    "candle_time": 1789017000000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "PYTHUSDT",
+    "candle_time": 1789018800000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "QCOMUSDT",
+    "candle_time": 1789021500000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "QQQUSDT",
+    "candle_time": 1789017900000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "RAVEUSDT",
+    "candle_time": 1789017900000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "RAYDIUMUSDT",
+    "candle_time": 1789011300000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "RAYDIUMUSDT",
+    "candle_time": 1789013400000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "RAYDIUMUSDT",
+    "candle_time": 1789013700000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "RAYDIUMUSDT",
+    "candle_time": 1789014000000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "REDUSDT",
+    "candle_time": 1788995100000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": false,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "REDUSDT",
+    "candle_time": 1788995400000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": false,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "REDUSDT",
+    "candle_time": 1788996000000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "REUSDT",
+    "candle_time": 1789022100000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "REUSDT",
+    "candle_time": 1789022400000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "REUSDT",
+    "candle_time": 1789022700000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "ROSEUSDT",
+    "candle_time": 1789018200000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "SAHARAUSDT",
+    "candle_time": 1789013700000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "previous_day",
+        "level": 0.010728,
+        "sweep_open": 1789011900000
+      },
+      {
+        "pool": "previous_day",
+        "level": 0.010728,
+        "sweep_open": 1789012500000
+      },
+      {
+        "pool": "previous_day",
+        "level": 0.010728,
+        "sweep_open": 1789013700000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "SAHARAUSDT",
+    "candle_time": 1789014000000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "previous_day",
+        "level": 0.010728,
+        "sweep_open": 1789012500000
+      },
+      {
+        "pool": "previous_day",
+        "level": 0.010728,
+        "sweep_open": 1789013700000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "SAHARAUSDT",
+    "candle_time": 1789017000000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": false,
+      "structure": false,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 0.009991,
+        "sweep_open": 1789015500000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "SAMSUNGUSDT",
+    "candle_time": 1789014600000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "SANDUSDT",
+    "candle_time": 1789016400000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "SANDUSDT",
+    "candle_time": 1789017000000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": false,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "local",
+        "level": 0.03608,
+        "sweep_open": 1789016400000
+      },
+      {
+        "pool": "session",
+        "level": 0.03608,
+        "sweep_open": 1789016400000
+      },
+      {
+        "pool": "internal",
+        "level": 0.03607,
+        "sweep_open": 1789016700000
+      },
+      {
+        "pool": "local",
+        "level": 0.03607,
+        "sweep_open": 1789016700000
+      },
+      {
+        "pool": "equal_lows",
+        "level": 0.03607,
+        "sweep_open": 1789016700000
+      },
+      {
+        "pool": "session",
+        "level": 0.03607,
+        "sweep_open": 1789016700000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "SENTUSDT",
+    "candle_time": 1789023900000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "SENTUSDT",
+    "candle_time": 1789024500000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": false,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "SENTUSDT",
+    "candle_time": 1789026900000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "SHAZUSDT",
+    "candle_time": 1789025400000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "SHAZUSDT",
+    "candle_time": 1789027200000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 56.49,
+        "sweep_open": 1789026300000
+      },
+      {
+        "pool": "internal",
+        "level": 56.48,
+        "sweep_open": 1789026900000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "SHIB1000USDT",
+    "candle_time": 1789016400000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "SHIB1000USDT",
+    "candle_time": 1789017000000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": false,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 0.005219,
+        "sweep_open": 1789015800000
+      },
+      {
+        "pool": "internal",
+        "level": 0.005205,
+        "sweep_open": 1789016700000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "SIGNUSDT",
+    "candle_time": 1789025700000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": false,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "SKHYUSDT",
+    "candle_time": 1789014000000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": false,
+      "structure": false,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 192.46,
+        "sweep_open": 1789012500000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "SKRUSDT",
+    "candle_time": 1789015500000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": false,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 0.019432,
+        "sweep_open": 1789015200000
+      },
+      {
+        "pool": "local",
+        "level": 0.019432,
+        "sweep_open": 1789015200000
+      },
+      {
+        "pool": "external",
+        "level": 0.019432,
+        "sweep_open": 1789015200000
+      },
+      {
+        "pool": "session",
+        "level": 0.019432,
+        "sweep_open": 1789015200000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "SKRUSDT",
+    "candle_time": 1789019100000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "SKUUUSDT",
+    "candle_time": 1788999000000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "session",
+        "level": 32.99,
+        "sweep_open": 1788998700000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "SKUUUSDT",
+    "candle_time": 1789000200000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "session",
+        "level": 32.99,
+        "sweep_open": 1788998700000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "SKUUUSDT",
+    "candle_time": 1789000500000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": false,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "session",
+        "level": 32.99,
+        "sweep_open": 1788998700000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "SNDKUSDT",
+    "candle_time": 1789027200000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "SNXXUSDT",
+    "candle_time": 1789016400000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": false,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 17.79,
+        "sweep_open": 1789015200000
+      },
+      {
+        "pool": "local",
+        "level": 17.79,
+        "sweep_open": 1789015200000
+      },
+      {
+        "pool": "internal",
+        "level": 17.84,
+        "sweep_open": 1789016400000
+      },
+      {
+        "pool": "local",
+        "level": 17.84,
+        "sweep_open": 1789016400000
+      },
+      {
+        "pool": "equal_highs",
+        "level": 17.84,
+        "sweep_open": 1789016400000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "SOLAYERUSDT",
+    "candle_time": 1788994800000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "SOLAYERUSDT",
+    "candle_time": 1788999300000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 0.06901,
+        "sweep_open": 1788998100000
+      },
+      {
+        "pool": "internal",
+        "level": 0.0692,
+        "sweep_open": 1788999000000
+      },
+      {
+        "pool": "session",
+        "level": 0.0692,
+        "sweep_open": 1788999000000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "SOONUSDT",
+    "candle_time": 1789025100000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": false,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "SOXSUSDT",
+    "candle_time": 1789017900000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "SOXSUSDT",
+    "candle_time": 1789019400000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": false,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 43.42,
+        "sweep_open": 1789018500000
+      },
+      {
+        "pool": "local",
+        "level": 43.42,
+        "sweep_open": 1789018500000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "SPCHUSDT",
+    "candle_time": 1789025400000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "SPKUSDT",
+    "candle_time": 1789026300000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 0.0195,
+        "sweep_open": 1789025700000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "SPXUSDT",
+    "candle_time": 1789017000000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "SPXUSDT",
+    "candle_time": 1789017900000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "SQQQUSDT",
+    "candle_time": 1789001700000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": false,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "STABLEUSDT",
+    "candle_time": 1789005600000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "previous_day",
+        "level": 0.02937,
+        "sweep_open": 1789004400000
+      },
+      {
+        "pool": "internal",
+        "level": 0.02957,
+        "sweep_open": 1789005000000
+      },
+      {
+        "pool": "local",
+        "level": 0.02957,
+        "sweep_open": 1789005000000
+      },
+      {
+        "pool": "external",
+        "level": 0.02957,
+        "sweep_open": 1789005000000
+      },
+      {
+        "pool": "session",
+        "level": 0.02957,
+        "sweep_open": 1789005000000
+      },
+      {
+        "pool": "internal",
+        "level": 0.02958,
+        "sweep_open": 1789005300000
+      },
+      {
+        "pool": "local",
+        "level": 0.02958,
+        "sweep_open": 1789005300000
+      },
+      {
+        "pool": "external",
+        "level": 0.02958,
+        "sweep_open": 1789005300000
+      },
+      {
+        "pool": "equal_highs",
+        "level": 0.02958,
+        "sweep_open": 1789005300000
+      },
+      {
+        "pool": "session",
+        "level": 0.02958,
+        "sweep_open": 1789005300000
+      },
+      {
+        "pool": "previous_day",
+        "level": 0.02937,
+        "sweep_open": 1789005600000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "STABLEUSDT",
+    "candle_time": 1789005900000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": false,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "previous_day",
+        "level": 0.02937,
+        "sweep_open": 1789004400000
+      },
+      {
+        "pool": "internal",
+        "level": 0.02957,
+        "sweep_open": 1789005000000
+      },
+      {
+        "pool": "local",
+        "level": 0.02957,
+        "sweep_open": 1789005000000
+      },
+      {
+        "pool": "external",
+        "level": 0.02957,
+        "sweep_open": 1789005000000
+      },
+      {
+        "pool": "session",
+        "level": 0.02957,
+        "sweep_open": 1789005000000
+      },
+      {
+        "pool": "internal",
+        "level": 0.02958,
+        "sweep_open": 1789005300000
+      },
+      {
+        "pool": "local",
+        "level": 0.02958,
+        "sweep_open": 1789005300000
+      },
+      {
+        "pool": "external",
+        "level": 0.02958,
+        "sweep_open": 1789005300000
+      },
+      {
+        "pool": "equal_highs",
+        "level": 0.02958,
+        "sweep_open": 1789005300000
+      },
+      {
+        "pool": "session",
+        "level": 0.02958,
+        "sweep_open": 1789005300000
+      },
+      {
+        "pool": "previous_day",
+        "level": 0.02937,
+        "sweep_open": 1789005600000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "STABLEUSDT",
+    "candle_time": 1789006200000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "previous_day",
+        "level": 0.02937,
+        "sweep_open": 1789004400000
+      },
+      {
+        "pool": "internal",
+        "level": 0.02957,
+        "sweep_open": 1789005000000
+      },
+      {
+        "pool": "local",
+        "level": 0.02957,
+        "sweep_open": 1789005000000
+      },
+      {
+        "pool": "external",
+        "level": 0.02957,
+        "sweep_open": 1789005000000
+      },
+      {
+        "pool": "session",
+        "level": 0.02957,
+        "sweep_open": 1789005000000
+      },
+      {
+        "pool": "internal",
+        "level": 0.02958,
+        "sweep_open": 1789005300000
+      },
+      {
+        "pool": "local",
+        "level": 0.02958,
+        "sweep_open": 1789005300000
+      },
+      {
+        "pool": "external",
+        "level": 0.02958,
+        "sweep_open": 1789005300000
+      },
+      {
+        "pool": "equal_highs",
+        "level": 0.02958,
+        "sweep_open": 1789005300000
+      },
+      {
+        "pool": "session",
+        "level": 0.02958,
+        "sweep_open": 1789005300000
+      },
+      {
+        "pool": "previous_day",
+        "level": 0.02937,
+        "sweep_open": 1789005600000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "STABLEUSDT",
+    "candle_time": 1789006500000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": false,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 0.02957,
+        "sweep_open": 1789005000000
+      },
+      {
+        "pool": "local",
+        "level": 0.02957,
+        "sweep_open": 1789005000000
+      },
+      {
+        "pool": "external",
+        "level": 0.02957,
+        "sweep_open": 1789005000000
+      },
+      {
+        "pool": "session",
+        "level": 0.02957,
+        "sweep_open": 1789005000000
+      },
+      {
+        "pool": "internal",
+        "level": 0.02958,
+        "sweep_open": 1789005300000
+      },
+      {
+        "pool": "local",
+        "level": 0.02958,
+        "sweep_open": 1789005300000
+      },
+      {
+        "pool": "external",
+        "level": 0.02958,
+        "sweep_open": 1789005300000
+      },
+      {
+        "pool": "equal_highs",
+        "level": 0.02958,
+        "sweep_open": 1789005300000
+      },
+      {
+        "pool": "session",
+        "level": 0.02958,
+        "sweep_open": 1789005300000
+      },
+      {
+        "pool": "previous_day",
+        "level": 0.02937,
+        "sweep_open": 1789005600000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "STBLUSDT",
+    "candle_time": 1789009200000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": false,
+      "structure": false,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 0.02717,
+        "sweep_open": 1789008900000
+      },
+      {
+        "pool": "local",
+        "level": 0.02717,
+        "sweep_open": 1789008900000
+      },
+      {
+        "pool": "session",
+        "level": 0.02717,
+        "sweep_open": 1789008900000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "STXUSDT",
+    "candle_time": 1789017000000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "STXUSDT",
+    "candle_time": 1789019100000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "SUPERUSDT",
+    "candle_time": 1789023600000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "SUPERUSDT",
+    "candle_time": 1789024800000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": false,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "SUPERUSDT",
+    "candle_time": 1789025700000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "SUSDT",
+    "candle_time": 1789023600000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 0.02772,
+        "sweep_open": 1789023000000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "SUSDT",
+    "candle_time": 1789023900000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 0.02772,
+        "sweep_open": 1789023000000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "SUSHIUSDT",
+    "candle_time": 1789021500000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": false,
+      "structure": false,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 0.2161,
+        "sweep_open": 1789020600000
+      },
+      {
+        "pool": "local",
+        "level": 0.2161,
+        "sweep_open": 1789020600000
+      },
+      {
+        "pool": "equal_lows",
+        "level": 0.2161,
+        "sweep_open": 1789020600000
+      },
+      {
+        "pool": "session",
+        "level": 0.2152,
+        "sweep_open": 1789020600000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "SUSHIUSDT",
+    "candle_time": 1789021800000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": false,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 0.2161,
+        "sweep_open": 1789020600000
+      },
+      {
+        "pool": "local",
+        "level": 0.2161,
+        "sweep_open": 1789020600000
+      },
+      {
+        "pool": "equal_lows",
+        "level": 0.2161,
+        "sweep_open": 1789020600000
+      },
+      {
+        "pool": "session",
+        "level": 0.2152,
+        "sweep_open": 1789020600000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "TEMUSDT",
+    "candle_time": 1789016700000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "TEMUSDT",
+    "candle_time": 1789018200000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "THETAUSDT",
+    "candle_time": 1789027200000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "TIAUSDT",
+    "candle_time": 1789017000000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "TQQQUSDT",
+    "candle_time": 1789025100000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "TRIAUSDT",
+    "candle_time": 1789022100000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "TRIAUSDT",
+    "candle_time": 1789023900000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": false,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 0.00359,
+        "sweep_open": 1789023000000
+      },
+      {
+        "pool": "local",
+        "level": 0.00359,
+        "sweep_open": 1789023000000
+      },
+      {
+        "pool": "equal_highs",
+        "level": 0.00359,
+        "sweep_open": 1789023000000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "TSEMUSDT",
+    "candle_time": 1789026000000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": false,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 216.14,
+        "sweep_open": 1789024500000
+      },
+      {
+        "pool": "previous_day",
+        "level": 215.84,
+        "sweep_open": 1789024500000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "TSEMUSDT",
+    "candle_time": 1789026300000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": false,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 216.14,
+        "sweep_open": 1789024500000
+      },
+      {
+        "pool": "previous_day",
+        "level": 215.84,
+        "sweep_open": 1789024500000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "TSMUSDT",
+    "candle_time": 1789023600000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": false,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 436.29,
+        "sweep_open": 1789021800000
+      },
+      {
+        "pool": "local",
+        "level": 436.29,
+        "sweep_open": 1789021800000
+      },
+      {
+        "pool": "equal_highs",
+        "level": 436.29,
+        "sweep_open": 1789021800000
+      },
+      {
+        "pool": "session",
+        "level": 436.29,
+        "sweep_open": 1789021800000
+      },
+      {
+        "pool": "internal",
+        "level": 436.46,
+        "sweep_open": 1789023000000
+      },
+      {
+        "pool": "local",
+        "level": 436.46,
+        "sweep_open": 1789023000000
+      },
+      {
+        "pool": "equal_highs",
+        "level": 436.46,
+        "sweep_open": 1789023000000
+      },
+      {
+        "pool": "session",
+        "level": 436.46,
+        "sweep_open": 1789023000000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "TUSDT",
+    "candle_time": 1789023600000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": false,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 0.0042,
+        "sweep_open": 1789022400000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "UBUSDT",
+    "candle_time": 1788997200000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "UBUSDT",
+    "candle_time": 1788998400000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": false,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 0.12754,
+        "sweep_open": 1788997500000
+      },
+      {
+        "pool": "local",
+        "level": 0.12754,
+        "sweep_open": 1788997500000
+      },
+      {
+        "pool": "internal",
+        "level": 0.12764,
+        "sweep_open": 1788997800000
+      },
+      {
+        "pool": "local",
+        "level": 0.12764,
+        "sweep_open": 1788997800000
+      },
+      {
+        "pool": "equal_highs",
+        "level": 0.12764,
+        "sweep_open": 1788997800000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "VANAUSDT",
+    "candle_time": 1788999600000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": false,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 0.9259,
+        "sweep_open": 1788998100000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "VELODROMEUSDT",
+    "candle_time": 1788994500000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": false,
+      "structure": false,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 0.024936,
+        "sweep_open": 1788993600000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "VELODROMEUSDT",
+    "candle_time": 1788994800000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": false,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 0.024936,
+        "sweep_open": 1788993600000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "VELVETUSDT",
+    "candle_time": 1788990300000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": false,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "VELVETUSDT",
+    "candle_time": 1788991500000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "WAVESUSDT",
+    "candle_time": 1789014300000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 0.292,
+        "sweep_open": 1789014000000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "WAVESUSDT",
+    "candle_time": 1789015200000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 0.292,
+        "sweep_open": 1789014000000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "WDCUSDT",
+    "candle_time": 1789025100000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "WDCUSDT",
+    "candle_time": 1789025400000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "WIFUSDT",
+    "candle_time": 1789017900000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": false,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 0.2003,
+        "sweep_open": 1789016700000
+      },
+      {
+        "pool": "previous_day",
+        "level": 0.202,
+        "sweep_open": 1789017000000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "WOOUSDT",
+    "candle_time": 1789002900000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "WOOUSDT",
+    "candle_time": 1789003500000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": false,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "WOOUSDT",
+    "candle_time": 1789003800000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "XAUUSDT",
+    "candle_time": 1789029000000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "XCNUSDT",
+    "candle_time": 1789024500000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "XCNUSDT",
+    "candle_time": 1789024800000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "XLMUSDT",
+    "candle_time": 1789017000000,
+    "old_category": "A",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 0.1798,
+        "sweep_open": 1789015800000
+      },
+      {
+        "pool": "internal",
+        "level": 0.1797,
+        "sweep_open": 1789016700000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "XLMUSDT",
+    "candle_time": 1789017900000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 0.1797,
+        "sweep_open": 1789016700000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "XMRUSDT",
+    "candle_time": 1789015800000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "XOMUSDT",
+    "candle_time": 1788846900000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "XPINUSDT",
+    "candle_time": 1789026300000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": false,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 0.0009094,
+        "sweep_open": 1789025100000
+      },
+      {
+        "pool": "local",
+        "level": 0.0009094,
+        "sweep_open": 1789025100000
+      },
+      {
+        "pool": "session",
+        "level": 0.0009094,
+        "sweep_open": 1789025100000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "XPLUSDT",
+    "candle_time": 1789014600000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "XPLUSDT",
+    "candle_time": 1789016400000,
+    "old_category": "A",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 0.08852,
+        "sweep_open": 1789015200000
+      },
+      {
+        "pool": "internal",
+        "level": 0.0886,
+        "sweep_open": 1789015500000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "XVGUSDT",
+    "candle_time": 1789021500000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "XVGUSDT",
+    "candle_time": 1789022100000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": false,
+      "structure": false,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 0.00275,
+        "sweep_open": 1789021800000
+      },
+      {
+        "pool": "local",
+        "level": 0.00275,
+        "sweep_open": 1789021800000
+      },
+      {
+        "pool": "session",
+        "level": 0.00275,
+        "sweep_open": 1789021800000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "ZAMAUSDT",
+    "candle_time": 1789023600000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": false,
+      "structure": true,
+      "htf": true
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 0.0485,
+        "sweep_open": 1789023000000
+      }
+    ],
+    "htf": "DOWN"
+  },
+  {
+    "asset": "ZBCNUSDT",
+    "candle_time": 1789010100000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "ZENUSDT",
+    "candle_time": 1789016400000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "ZEREBROUSDT",
+    "candle_time": 1789025700000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 0.0356,
+        "sweep_open": 1789025400000
+      },
+      {
+        "pool": "local",
+        "level": 0.0356,
+        "sweep_open": 1789025400000
+      },
+      {
+        "pool": "external",
+        "level": 0.0356,
+        "sweep_open": 1789025400000
+      },
+      {
+        "pool": "equal_lows",
+        "level": 0.0356,
+        "sweep_open": 1789025400000
+      },
+      {
+        "pool": "session",
+        "level": 0.0356,
+        "sweep_open": 1789025400000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "ZHIPUUSDT",
+    "candle_time": 1788999000000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "internal",
+        "level": 116.65,
+        "sweep_open": 1788999000000
+      },
+      {
+        "pool": "local",
+        "level": 116.65,
+        "sweep_open": 1788999000000
+      },
+      {
+        "pool": "session",
+        "level": 116.65,
+        "sweep_open": 1788999000000
+      }
+    ],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "ZILUSDT",
+    "candle_time": 1788991500000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [],
+    "htf": "UNKNOWN"
+  },
+  {
+    "asset": "ZKCUSDT",
+    "candle_time": 1788994800000,
+    "old_category": "B",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": false,
+      "displacement": true,
+      "structure": true,
+      "htf": false
+    },
+    "pools": [],
+    "htf": "RANGE"
+  },
+  {
+    "asset": "ZROUSDT",
+    "candle_time": 1789017000000,
+    "old_category": "A",
+    "checks": {
+      "fvg": true,
+      "typed_liquidity": true,
+      "displacement": true,
+      "structure": true,
+      "htf": null
+    },
+    "pools": [
+      {
+        "pool": "previous_day",
+        "level": 1.0513,
+        "sweep_open": 1789015200000
+      },
+      {
+        "pool": "previous_day",
+        "level": 1.0513,
+        "sweep_open": 1789015500000
+      },
+      {
+        "pool": "previous_day",
+        "level": 1.0513,
+        "sweep_open": 1789016100000
+      },
+      {
+        "pool": "internal",
+        "level": 1.0458,
+        "sweep_open": 1789016700000
+      },
+      {
+        "pool": "previous_day",
+        "level": 1.0513,
+        "sweep_open": 1789017000000
+      }
+    ],
+    "htf": "UNKNOWN"
+  }
+]

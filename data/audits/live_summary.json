@@ -1,0 +1,777 @@
+{
+  "scan": {
+    "selected": 354,
+    "processed": 243,
+    "cycle_seconds": 31.34,
+    "last_completed_at": "2026-09-09T19:50:11.077463+00:00"
+  },
+  "rows": 354,
+  "market_contracts": 759,
+  "eligible": 354,
+  "old_eligible_now": 121,
+  "detected_assets": 166,
+  "stages": {
+    "WATCHLIST": 161,
+    "POTENTIAL": 53,
+    "INVALIDATED": 4,
+    "DEVELOPING": 2,
+    "ENTRY APPROACHING": 3
+  },
+  "diagnostics": {
+    "no_recent_retest": 189,
+    "prolonged_zone_residence": 19,
+    "no_bearish_rejection": 19,
+    "zone_exhausted": 2,
+    "entry_too_far": 2,
+    "low_relative_volume": 6,
+    "no_bullish_rejection": 2
+  },
+  "active_expanded_zone_count": 150,
+  "top_candidates": [
+    {
+      "asset": "STOUSDT",
+      "direction": "SHORT",
+      "score": 100,
+      "status": "ENTRY APPROACHING",
+      "current_price": 0.04005,
+      "zone": {
+        "type": "BEARISH",
+        "top": 0.04021,
+        "bottom": 0.04004,
+        "ce": 0.040125,
+        "candle_time": 1788982500000,
+        "formed_at": 1788982800000,
+        "gap_size": 0.4227804028848632,
+        "index": 348,
+        "touches": 1,
+        "touch_bars": 1,
+        "fill_fraction": 0.05882352941178151,
+        "displacement_atr": 2.0517241379310867,
+        "age": 1,
+        "state": "PARTIAL"
+      },
+      "assessment": {
+        "score": 100,
+        "score_kind": "pre-learning rule score",
+        "status": "ENTRY APPROACHING",
+        "signal_may_form": false,
+        "checks": {
+          "FVG": true,
+          "Zone eligibility": true,
+          "HTF bias": true,
+          "Structure": true,
+          "Liquidity": false,
+          "Entry": false
+        },
+        "structure": {
+          "direction": "DOWN",
+          "event": "CHOCH_DOWN",
+          "sweep": null,
+          "swing_high": 0.04043,
+          "swing_low": 0.04053
+        },
+        "current_price": 0.04005,
+        "rejections": [
+          "no_bearish_rejection"
+        ],
+        "analysis_bar": 1788983100000,
+        "required_next_conditions": [
+          "Retest after FVG formation within the configured closed-bar window.",
+          "Directional closed candle beyond CE, within the entry distance and volume limits.",
+          "All HTF/structure/price/cost/news/book/risk gates must pass; score >= 80."
+        ],
+        "policy": {
+          "min_score": 80,
+          "min_turnover": 500000.0
+        }
+      },
+      "htf": {
+        "trend": "DOWN",
+        "adx": 16.438169819674798,
+        "rsi": 39.77695167286244,
+        "atr_pct": 0.8782780801583392
+      },
+      "blockers": [],
+      "updated_at": "2026-09-09T19:50:08.849401+00:00"
+    },
+    {
+      "asset": "BSBUSDT",
+      "direction": "SHORT",
+      "score": 100,
+      "status": "ENTRY APPROACHING",
+      "current_price": 0.10087,
+      "zone": {
+        "type": "BEARISH",
+        "top": 0.10107,
+        "bottom": 0.10072,
+        "ce": 0.100895,
+        "candle_time": 1788982500000,
+        "formed_at": 1788982800000,
+        "gap_size": 0.34629464727415576,
+        "index": 348,
+        "touches": 1,
+        "touch_bars": 1,
+        "fill_fraction": 0.714285714285737,
+        "displacement_atr": 1.5170278637770316,
+        "age": 1,
+        "state": "PARTIAL"
+      },
+      "assessment": {
+        "score": 100,
+        "score_kind": "pre-learning rule score",
+        "status": "ENTRY APPROACHING",
+        "signal_may_form": false,
+        "checks": {
+          "FVG": true,
+          "Zone eligibility": true,
+          "HTF bias": true,
+          "Structure": true,
+          "Liquidity": false,
+          "Entry": false
+        },
+        "structure": {
+          "direction": "DOWN",
+          "event": "BOS_DOWN",
+          "sweep": null,
+          "swing_high": 0.10157,
+          "swing_low": 0.10099
+        },
+        "current_price": 0.10087,
+        "rejections": [
+          "no_bearish_rejection"
+        ],
+        "analysis_bar": 1788983100000,
+        "required_next_conditions": [
+          "Retest after FVG formation within the configured closed-bar window.",
+          "Directional closed candle beyond CE, within the entry distance and volume limits.",
+          "All HTF/structure/price/cost/news/book/risk gates must pass; score >= 80."
+        ],
+        "policy": {
+          "min_score": 80,
+          "min_turnover": 500000.0
+        }
+      },
+      "htf": {
+        "trend": "DOWN",
+        "adx": 23.099939681141286,
+        "rsi": 23.952095808383135,
+        "atr_pct": 1.1831985801617035
+      },
+      "blockers": [],
+      "updated_at": "2026-09-09T19:50:10.542707+00:00"
+    },
+    {
+      "asset": "BUSDT",
+      "direction": "LONG",
+      "score": 90,
+      "status": "ENTRY APPROACHING",
+      "current_price": 0.20654,
+      "zone": {
+        "type": "BULLISH",
+        "top": 0.20622,
+        "bottom": 0.20443,
+        "ce": 0.20532499999999998,
+        "candle_time": 1788981300000,
+        "formed_at": 1788981600000,
+        "gap_size": 0.8756053416817424,
+        "index": 344,
+        "touches": 1,
+        "touch_bars": 2,
+        "fill_fraction": 0.2346368715083683,
+        "displacement_atr": 2.289244186046524,
+        "age": 5,
+        "state": "PARTIAL"
+      },
+      "assessment": {
+        "score": 90,
+        "score_kind": "pre-learning rule score",
+        "status": "ENTRY APPROACHING",
+        "signal_may_form": false,
+        "checks": {
+          "FVG": true,
+          "Zone eligibility": true,
+          "HTF bias": true,
+          "Structure": true,
+          "Liquidity": false,
+          "Entry": false
+        },
+        "structure": {
+          "direction": "UP",
+          "event": "BOS_UP",
+          "sweep": null,
+          "swing_high": 0.21095,
+          "swing_low": 0.20114
+        },
+        "current_price": 0.20654,
+        "rejections": [
+          "no_bullish_rejection"
+        ],
+        "analysis_bar": 1788983100000,
+        "required_next_conditions": [
+          "Retest after FVG formation within the configured closed-bar window.",
+          "Directional closed candle beyond CE, within the entry distance and volume limits.",
+          "All HTF/structure/price/cost/news/book/risk gates must pass; score >= 80."
+        ],
+        "policy": {
+          "min_score": 80,
+          "min_turnover": 500000.0
+        }
+      },
+      "htf": {
+        "trend": "UP",
+        "adx": 31.715431692798976,
+        "rsi": 70.95681625740906,
+        "atr_pct": 1.732006610175451
+      },
+      "blockers": [],
+      "updated_at": "2026-09-09T19:50:05.277476+00:00"
+    },
+    {
+      "asset": "BTCUSDT",
+      "direction": "SHORT",
+      "score": 100,
+      "status": "POTENTIAL",
+      "current_price": 78202.1,
+      "zone": {
+        "type": "BEARISH",
+        "top": 78464.4,
+        "bottom": 78359.6,
+        "ce": 78412.0,
+        "candle_time": 1788982500000,
+        "formed_at": 1788982800000,
+        "gap_size": 0.1335637563022063,
+        "index": 348,
+        "touches": 0,
+        "touch_bars": 0,
+        "fill_fraction": 0.0,
+        "displacement_atr": 2.425730376628068,
+        "age": 1,
+        "state": "FRESH"
+      },
+      "assessment": {
+        "score": 100,
+        "score_kind": "pre-learning rule score",
+        "status": "POTENTIAL",
+        "signal_may_form": false,
+        "checks": {
+          "FVG": true,
+          "Zone eligibility": true,
+          "HTF bias": true,
+          "Structure": true,
+          "Liquidity": false,
+          "Entry": false
+        },
+        "structure": {
+          "direction": "DOWN",
+          "event": "BOS_DOWN",
+          "sweep": null,
+          "swing_high": 78554.0,
+          "swing_low": 78304.3
+        },
+        "current_price": 78302.8,
+        "rejections": [
+          "no_recent_retest"
+        ],
+        "analysis_bar": 1788983100000,
+        "required_next_conditions": [
+          "Retest after FVG formation within the configured closed-bar window.",
+          "Directional closed candle beyond CE, within the entry distance and volume limits.",
+          "All HTF/structure/price/cost/news/book/risk gates must pass; score >= 80."
+        ],
+        "policy": {
+          "min_score": 80,
+          "min_turnover": 500000.0
+        }
+      },
+      "htf": {
+        "trend": "DOWN",
+        "adx": 37.13476564558404,
+        "rsi": 40.631202858277156,
+        "atr_pct": 0.6956527761501338
+      },
+      "blockers": [],
+      "updated_at": "2026-09-09T19:50:27.068941+00:00"
+    },
+    {
+      "asset": "AAVEUSDT",
+      "direction": "SHORT",
+      "score": 100,
+      "status": "POTENTIAL",
+      "current_price": 126.73,
+      "zone": {
+        "type": "BEARISH",
+        "top": 127.6,
+        "bottom": 127.36,
+        "ce": 127.47999999999999,
+        "candle_time": 1788982500000,
+        "formed_at": 1788982800000,
+        "gap_size": 0.18808777429466683,
+        "index": 348,
+        "touches": 1,
+        "touch_bars": 1,
+        "fill_fraction": 0.0,
+        "displacement_atr": 1.6926952141057958,
+        "age": 1,
+        "state": "RETESTED"
+      },
+      "assessment": {
+        "score": 100,
+        "score_kind": "pre-learning rule score",
+        "status": "POTENTIAL",
+        "signal_may_form": false,
+        "checks": {
+          "FVG": true,
+          "Zone eligibility": true,
+          "HTF bias": true,
+          "Structure": true,
+          "Liquidity": false,
+          "Entry": false
+        },
+        "structure": {
+          "direction": "DOWN",
+          "event": "BOS_DOWN",
+          "sweep": null,
+          "swing_high": 128.15,
+          "swing_low": 127.51
+        },
+        "current_price": 127.15,
+        "rejections": [
+          "no_bearish_rejection"
+        ],
+        "analysis_bar": 1788983100000,
+        "required_next_conditions": [
+          "Retest after FVG formation within the configured closed-bar window.",
+          "Directional closed candle beyond CE, within the entry distance and volume limits.",
+          "All HTF/structure/price/cost/news/book/risk gates must pass; score >= 80."
+        ],
+        "policy": {
+          "min_score": 80,
+          "min_turnover": 500000.0
+        }
+      },
+      "htf": {
+        "trend": "DOWN",
+        "adx": 12.751815711252787,
+        "rsi": 39.687194525904154,
+        "atr_pct": 1.2181097526935765
+      },
+      "blockers": [],
+      "updated_at": "2026-09-09T19:50:32.728603+00:00"
+    },
+    {
+      "asset": "AAVEUSDT",
+      "direction": "SHORT",
+      "score": 100,
+      "status": "POTENTIAL",
+      "current_price": 126.73,
+      "zone": {
+        "type": "BEARISH",
+        "top": 127.94,
+        "bottom": 127.74,
+        "ce": 127.84,
+        "candle_time": 1788981900000,
+        "formed_at": 1788982200000,
+        "gap_size": 0.1563232765358784,
+        "index": 346,
+        "touches": 0,
+        "touch_bars": 0,
+        "fill_fraction": 0.0,
+        "displacement_atr": 0.9689737470166738,
+        "age": 3,
+        "state": "FRESH"
+      },
+      "assessment": {
+        "score": 100,
+        "score_kind": "pre-learning rule score",
+        "status": "POTENTIAL",
+        "signal_may_form": false,
+        "checks": {
+          "FVG": true,
+          "Zone eligibility": true,
+          "HTF bias": true,
+          "Structure": true,
+          "Liquidity": false,
+          "Entry": false
+        },
+        "structure": {
+          "direction": "DOWN",
+          "event": "BOS_DOWN",
+          "sweep": null,
+          "swing_high": 128.15,
+          "swing_low": 127.51
+        },
+        "current_price": 127.15,
+        "rejections": [
+          "no_recent_retest"
+        ],
+        "analysis_bar": 1788983100000,
+        "required_next_conditions": [
+          "Retest after FVG formation within the configured closed-bar window.",
+          "Directional closed candle beyond CE, within the entry distance and volume limits.",
+          "All HTF/structure/price/cost/news/book/risk gates must pass; score >= 80."
+        ],
+        "policy": {
+          "min_score": 80,
+          "min_turnover": 500000.0
+        }
+      },
+      "htf": {
+        "trend": "DOWN",
+        "adx": 12.751815711252787,
+        "rsi": 39.687194525904154,
+        "atr_pct": 1.2181097526935765
+      },
+      "blockers": [],
+      "updated_at": "2026-09-09T19:50:32.728603+00:00"
+    },
+    {
+      "asset": "PENGUUSDT",
+      "direction": "SHORT",
+      "score": 100,
+      "status": "POTENTIAL",
+      "current_price": 0.007705,
+      "zone": {
+        "type": "BEARISH",
+        "top": 0.007816,
+        "bottom": 0.007761,
+        "ce": 0.0077885,
+        "candle_time": 1788982500000,
+        "formed_at": 1788982800000,
+        "gap_size": 0.7036847492323486,
+        "index": 348,
+        "touches": 0,
+        "touch_bars": 0,
+        "fill_fraction": 0.0,
+        "displacement_atr": 3.4385964912280693,
+        "age": 1,
+        "state": "FRESH"
+      },
+      "assessment": {
+        "score": 100,
+        "score_kind": "pre-learning rule score",
+        "status": "POTENTIAL",
+        "signal_may_form": false,
+        "checks": {
+          "FVG": true,
+          "Zone eligibility": true,
+          "HTF bias": true,
+          "Structure": true,
+          "Liquidity": false,
+          "Entry": false
+        },
+        "structure": {
+          "direction": "DOWN",
+          "event": "BOS_DOWN",
+          "sweep": null,
+          "swing_high": 0.007995,
+          "swing_low": 0.007833
+        },
+        "current_price": 0.007746,
+        "rejections": [
+          "no_recent_retest"
+        ],
+        "analysis_bar": 1788983100000,
+        "required_next_conditions": [
+          "Retest after FVG formation within the configured closed-bar window.",
+          "Directional closed candle beyond CE, within the entry distance and volume limits.",
+          "All HTF/structure/price/cost/news/book/risk gates must pass; score >= 80."
+        ],
+        "policy": {
+          "min_score": 80,
+          "min_turnover": 500000.0
+        }
+      },
+      "htf": {
+        "trend": "DOWN",
+        "adx": 20.347571522926614,
+        "rsi": 30.54945054945064,
+        "atr_pct": 1.5939658306070514
+      },
+      "blockers": [],
+      "updated_at": "2026-09-09T19:50:37.037106+00:00"
+    },
+    {
+      "asset": "MONUSDT",
+      "direction": "SHORT",
+      "score": 100,
+      "status": "POTENTIAL",
+      "current_price": 0.02521,
+      "zone": {
+        "type": "BEARISH",
+        "top": 0.0256,
+        "bottom": 0.02532,
+        "ce": 0.02546,
+        "candle_time": 1788982500000,
+        "formed_at": 1788982800000,
+        "gap_size": 1.0937500000000095,
+        "index": 348,
+        "touches": 0,
+        "touch_bars": 0,
+        "fill_fraction": 0.0,
+        "displacement_atr": 3.0179640718562784,
+        "age": 1,
+        "state": "FRESH"
+      },
+      "assessment": {
+        "score": 100,
+        "score_kind": "pre-learning rule score",
+        "status": "POTENTIAL",
+        "signal_may_form": false,
+        "checks": {
+          "FVG": true,
+          "Zone eligibility": true,
+          "HTF bias": true,
+          "Structure": true,
+          "Liquidity": false,
+          "Entry": false
+        },
+        "structure": {
+          "direction": "DOWN",
+          "event": "CHOCH_DOWN",
+          "sweep": null,
+          "swing_high": 0.02616,
+          "swing_low": 0.02545
+        },
+        "current_price": 0.02524,
+        "rejections": [
+          "no_recent_retest"
+        ],
+        "analysis_bar": 1788983100000,
+        "required_next_conditions": [
+          "Retest after FVG formation within the configured closed-bar window.",
+          "Directional closed candle beyond CE, within the entry distance and volume limits.",
+          "All HTF/structure/price/cost/news/book/risk gates must pass; score >= 80."
+        ],
+        "policy": {
+          "min_score": 80,
+          "min_turnover": 500000.0
+        }
+      },
+      "htf": {
+        "trend": "DOWN",
+        "adx": 14.658633057936715,
+        "rsi": 49.290780141844,
+        "atr_pct": 1.6787232867634883
+      },
+      "blockers": [],
+      "updated_at": "2026-09-09T19:50:45.621931+00:00"
+    },
+    {
+      "asset": "COTIUSDT",
+      "direction": "LONG",
+      "score": 100,
+      "status": "POTENTIAL",
+      "current_price": 0.021596,
+      "zone": {
+        "type": "BULLISH",
+        "top": 0.020472,
+        "bottom": 0.020176,
+        "ce": 0.020324000000000002,
+        "candle_time": 1788978600000,
+        "formed_at": 1788978900000,
+        "gap_size": 1.4670896114195138,
+        "index": 335,
+        "touches": 0,
+        "touch_bars": 0,
+        "fill_fraction": 0.0,
+        "displacement_atr": 1.3600000000000094,
+        "age": 14,
+        "state": "FRESH"
+      },
+      "assessment": {
+        "score": 100,
+        "score_kind": "pre-learning rule score",
+        "status": "POTENTIAL",
+        "signal_may_form": false,
+        "checks": {
+          "FVG": true,
+          "Zone eligibility": true,
+          "HTF bias": true,
+          "Structure": true,
+          "Liquidity": false,
+          "Entry": false
+        },
+        "structure": {
+          "direction": "UP",
+          "event": "BOS_UP",
+          "sweep": null,
+          "swing_high": 0.021656,
+          "swing_low": 0.020594
+        },
+        "current_price": 0.021659,
+        "rejections": [
+          "no_recent_retest"
+        ],
+        "analysis_bar": 1788983100000,
+        "required_next_conditions": [
+          "Retest after FVG formation within the configured closed-bar window.",
+          "Directional closed candle beyond CE, within the entry distance and volume limits.",
+          "All HTF/structure/price/cost/news/book/risk gates must pass; score >= 80."
+        ],
+        "policy": {
+          "min_score": 80,
+          "min_turnover": 500000.0
+        }
+      },
+      "htf": {
+        "trend": "UP",
+        "adx": 49.800831963003645,
+        "rsi": 82.82287822878232,
+        "atr_pct": 3.5836991792326787
+      },
+      "blockers": [],
+      "updated_at": "2026-09-09T19:50:46.957477+00:00"
+    },
+    {
+      "asset": "XANUSDT",
+      "direction": "SHORT",
+      "score": 100,
+      "status": "POTENTIAL",
+      "current_price": 0.01054,
+      "zone": {
+        "type": "BEARISH",
+        "top": 0.01095,
+        "bottom": 0.010822,
+        "ce": 0.010886,
+        "candle_time": 1788980700000,
+        "formed_at": 1788981000000,
+        "gap_size": 1.1689497716894945,
+        "index": 342,
+        "touches": 0,
+        "touch_bars": 0,
+        "fill_fraction": 0.0,
+        "displacement_atr": 2.8467153284671545,
+        "age": 7,
+        "state": "FRESH"
+      },
+      "assessment": {
+        "score": 100,
+        "score_kind": "pre-learning rule score",
+        "status": "POTENTIAL",
+        "signal_may_form": false,
+        "checks": {
+          "FVG": true,
+          "Zone eligibility": true,
+          "HTF bias": true,
+          "Structure": true,
+          "Liquidity": false,
+          "Entry": false
+        },
+        "structure": {
+          "direction": "DOWN",
+          "event": "BOS_DOWN",
+          "sweep": null,
+          "swing_high": 0.011042,
+          "swing_low": 0.01035
+        },
+        "current_price": 0.010562,
+        "rejections": [
+          "no_recent_retest"
+        ],
+        "analysis_bar": 1788983100000,
+        "required_next_conditions": [
+          "Retest after FVG formation within the configured closed-bar window.",
+          "Directional closed candle beyond CE, within the entry distance and volume limits.",
+          "All HTF/structure/price/cost/news/book/risk gates must pass; score >= 80."
+        ],
+        "policy": {
+          "min_score": 80,
+          "min_turnover": 500000.0
+        }
+      },
+      "htf": {
+        "trend": "DOWN",
+        "adx": 23.97956071117091,
+        "rsi": 23.842739378566918,
+        "atr_pct": 3.1192995257205416
+      },
+      "blockers": [],
+      "updated_at": "2026-09-09T19:50:50.252558+00:00"
+    }
+  ],
+  "correlated_groups": {
+    "('1788983100000', 'BEARISH')": {
+      "ETHUSDT": 0.944,
+      "ZECUSDT": 0.659,
+      "SOLUSDT": 0.934,
+      "XRPUSDT": 0.884,
+      "BTCUSDT": 1.0,
+      "HYPEUSDT": 0.762,
+      "SUIUSDT": 0.866,
+      "ENAUSDT": 0.774,
+      "WLDUSDT": 0.794,
+      "AAVEUSDT": 0.905,
+      "MSTRUSDT": 0.684,
+      "XPLUSDT": 0.611,
+      "AVAXUSDT": 0.843,
+      "PENGUUSDT": 0.881,
+      "OPUSDT": 0.776,
+      "VIRTUALUSDT": 0.867,
+      "ETCUSDT": 0.686,
+      "XLMUSDT": 0.897,
+      "CRCLUSDT": 0.621,
+      "JUPUSDT": 0.755,
+      "HBARUSDT": 0.754,
+      "ASTERUSDT": 0.761,
+      "BCHUSDT": 0.873,
+      "ETHFIUSDT": 0.731,
+      "WIFUSDT": 0.748,
+      "TIAUSDT": 0.743,
+      "SEIUSDT": 0.754,
+      "RENDERUSDT": 0.657,
+      "ENSUSDT": 0.827,
+      "CRVUSDT": 0.641,
+      "MONUSDT": 0.75,
+      "SHIB1000USDT": 0.865,
+      "LDOUSDT": 0.773,
+      "SANDUSDT": 0.681,
+      "STXUSDT": 0.684,
+      "PENDLEUSDT": 0.767,
+      "PYTHUSDT": 0.669,
+      "KAITOUSDT": 0.733,
+      "ORDIUSDT": 0.853,
+      "COINUSDT": 0.655,
+      "JASMYUSDT": 0.755,
+      "1000FLOKIUSDT": 0.839,
+      "BANKUSDT": 0.667,
+      "POPCATUSDT": 0.792,
+      "NILUSDT": 0.721,
+      "OPNUSDT": 0.666,
+      "PIPPINUSDT": 0.617,
+      "AVNTUSDT": 0.695,
+      "BIOUSDT": 0.772,
+      "WUSDT": 0.617,
+      "BERAUSDT": 0.766,
+      "GIGGLEUSDT": 0.827,
+      "ZILUSDT": 0.687,
+      "DYDXUSDT": 0.757,
+      "DGAIUSDT": 0.779,
+      "BOMEUSDT": 0.776,
+      "GRTUSDT": 0.741,
+      "SLXUSDT": 0.676,
+      "AZTECUSDT": 0.745,
+      "CELOUSDT": 0.739,
+      "QNTUSDT": 0.694,
+      "CHZUSDT": 0.656,
+      "ARKMUSDT": 0.847,
+      "THETAUSDT": 0.737,
+      "LUNA2USDT": 0.791,
+      "GMTUSDT": 0.753,
+      "NOTUSDT": 0.785,
+      "IDUSDT": 0.758,
+      "BRETTUSDT": 0.765,
+      "PNUTUSDT": 0.811,
+      "CVXUSDT": 0.691,
+      "SPKUSDT": 0.756,
+      "STOUSDT": 0.716,
+      "NEOUSDT": 0.602,
+      "1000NEIROCTOUSDT": 0.834,
+      "IOUSDT": 0.627,
+      "HOMEUSDT": 0.7,
+      "BARDUSDT": 0.654,
+      "NEWTUSDT": 0.685,
+      "DRIFTUSDT": 0.632
+    }
+  },
+  "signal_may_form": 0
+}

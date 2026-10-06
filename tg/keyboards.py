@@ -8,6 +8,9 @@ def get_main_menu_kb() -> InlineKeyboardMarkup:
     
     return InlineKeyboardMarkup(inline_keyboard=[
         [InlineKeyboardButton(text=toggle_text, callback_data="toggle_bot")],
+        [InlineKeyboardButton(text="⚡ Быстрый сигнал", callback_data="quick_signal")],
+        [InlineKeyboardButton(text="🎯 Качество стратегии", callback_data="strategy_quality")],
+        [InlineKeyboardButton(text="📋 Сетапы и журнал", callback_data="setup_journal")],
         [InlineKeyboardButton(text="⚙️ Strategy Settings", callback_data="settings_menu")],
         [InlineKeyboardButton(text="📊 Trading Pairs", callback_data="manage_pairs:0")],
         [
@@ -29,6 +32,11 @@ def get_settings_kb() -> InlineKeyboardMarkup:
         [
             InlineKeyboardButton(text=f"⚡ Displacement: {int(cfg.fvg_min_body_pct)}%", callback_data="change_displacement"),
             InlineKeyboardButton(text=f"🎯 Strict CE (50%): {'ON' if cfg.fvg_strict_mitigation else 'OFF'}", callback_data="toggle_ce")
+        ],
+        [InlineKeyboardButton(text=f"🧠 Min Score: {cfg.min_signal_score}/100", callback_data="change_min_score")],
+        [
+            InlineKeyboardButton(text=f"📚 Learning: {'ON' if cfg.enable_factor_learning else 'OFF'}", callback_data="toggle_factor_learning"),
+            InlineKeyboardButton(text=f"🧊 Cooldown: {cfg.loss_cooldown_minutes}m", callback_data="change_loss_cooldown")
         ],
         [InlineKeyboardButton(text="🔙 Back to Main", callback_data="main_menu")]
     ])

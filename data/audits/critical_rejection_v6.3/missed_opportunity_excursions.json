@@ -1,0 +1,254 @@
+[
+  {
+    "setup_id": "KAITOUSDT_5_1788981600000_BEARISH",
+    "reference_open_ms": 1788981900000,
+    "future_bars": 12,
+    "favorable_excursion_pct": 4.193449647995095,
+    "adverse_excursion_pct": 0.06121824303644274,
+    "not_profitability": true,
+    "selection": "seeded_random"
+  },
+  {
+    "setup_id": "BRETTUSDT_5_1788979800000_BEARISH",
+    "reference_open_ms": 1788980100000,
+    "future_bars": 12,
+    "favorable_excursion_pct": 3.853992959051322,
+    "adverse_excursion_pct": 0.18528812303131303,
+    "not_profitability": true,
+    "selection": "seeded_random"
+  },
+  {
+    "setup_id": "ARKMUSDT_5_1788982500000_BEARISH",
+    "reference_open_ms": 1788982800000,
+    "future_bars": 12,
+    "favorable_excursion_pct": 1.8314333769388957,
+    "adverse_excursion_pct": 0.08409643057372129,
+    "not_profitability": true,
+    "selection": "seeded_random"
+  },
+  {
+    "setup_id": "ZECUSDT_5_1788982500000_BEARISH",
+    "reference_open_ms": 1788982800000,
+    "future_bars": 12,
+    "favorable_excursion_pct": 1.5329557527779203,
+    "adverse_excursion_pct": 0.6526445284104065,
+    "not_profitability": true,
+    "selection": "seeded_random"
+  },
+  {
+    "setup_id": "RENDERUSDT_5_1788982500000_BEARISH",
+    "reference_open_ms": 1788982800000,
+    "future_bars": 12,
+    "favorable_excursion_pct": 1.6361256544502711,
+    "adverse_excursion_pct": 0.19633507853402676,
+    "not_profitability": true,
+    "selection": "seeded_random"
+  },
+  {
+    "setup_id": "SHAZUSDT_5_1788981000000_BEARISH",
+    "reference_open_ms": 1788981300000,
+    "future_bars": 12,
+    "favorable_excursion_pct": 2.0913210177762376,
+    "adverse_excursion_pct": 0.27884280237016057,
+    "not_profitability": true,
+    "selection": "seeded_random"
+  },
+  {
+    "setup_id": "SAHARAUSDT_5_1788982800000_BEARISH",
+    "reference_open_ms": 1788983100000,
+    "future_bars": 12,
+    "favorable_excursion_pct": 0.7314843035659768,
+    "adverse_excursion_pct": 2.235090927562755,
+    "not_profitability": true,
+    "selection": "seeded_random"
+  },
+  {
+    "setup_id": "MARSCOINUSDT_5_1788983400000_BEARISH",
+    "reference_open_ms": 1788984000000,
+    "future_bars": 12,
+    "favorable_excursion_pct": 6.024808033077389,
+    "adverse_excursion_pct": 0.7003628385790162,
+    "not_profitability": true,
+    "selection": "requested_asset"
+  },
+  {
+    "setup_id": "NEWTUSDT_5_1788983400000_BEARISH",
+    "reference_open_ms": 1788984000000,
+    "future_bars": 12,
+    "favorable_excursion_pct": 0.7123161764705954,
+    "adverse_excursion_pct": 0.6433823529411686,
+    "not_profitability": true,
+    "selection": "seeded_random"
+  },
+  {
+    "setup_id": "APTUSDT_5_1788985800000_BULLISH",
+    "reference_open_ms": 1788986400000,
+    "future_bars": 12,
+    "favorable_excursion_pct": 1.098901098901095,
+    "adverse_excursion_pct": 0.6500541711809249,
+    "not_profitability": true,
+    "selection": "seeded_random"
+  },
+  {
+    "setup_id": "ORCAUSDT_5_1788989100000_BEARISH",
+    "reference_open_ms": 1788989400000,
+    "future_bars": 12,
+    "favorable_excursion_pct": 4.100620261888355,
+    "adverse_excursion_pct": 0.13094417643004785,
+    "not_profitability": true,
+    "selection": "seeded_random"
+  },
+  {
+    "setup_id": "SIGNUSDT_5_1788989400000_BEARISH",
+    "reference_open_ms": 1788989700000,
+    "future_bars": 12,
+    "favorable_excursion_pct": 3.9775809076116553,
+    "adverse_excursion_pct": 0.0723196528656711,
+    "not_profitability": true,
+    "selection": "seeded_random"
+  },
+  {
+    "setup_id": "BLESSUSDT_5_1788989700000_BEARISH",
+    "reference_open_ms": 1788991200000,
+    "future_bars": 12,
+    "favorable_excursion_pct": 14.865671641791046,
+    "adverse_excursion_pct": 0.0,
+    "not_profitability": true,
+    "selection": "requested_asset"
+  },
+  {
+    "setup_id": "KITEUSDT_5_1788989700000_BEARISH",
+    "reference_open_ms": 1788990000000,
+    "future_bars": 12,
+    "favorable_excursion_pct": 2.894088669950745,
+    "adverse_excursion_pct": 0.0791695988740182,
+    "not_profitability": true,
+    "selection": "seeded_random"
+  },
+  {
+    "setup_id": "FARTCOINUSDT_5_1788990300000_BEARISH",
+    "reference_open_ms": 1788991200000,
+    "future_bars": 12,
+    "favorable_excursion_pct": 4.828933189655182,
+    "adverse_excursion_pct": 0.0,
+    "not_profitability": true,
+    "selection": "requested_asset"
+  },
+  {
+    "setup_id": "CUSDT_5_1788990300000_BEARISH",
+    "reference_open_ms": 1788991500000,
+    "future_bars": 12,
+    "favorable_excursion_pct": 0.035417035594120794,
+    "adverse_excursion_pct": 4.444837967062143,
+    "not_profitability": true,
+    "selection": "seeded_random"
+  },
+  {
+    "setup_id": "NXPCUSDT_5_1788994800000_BULLISH",
+    "reference_open_ms": 1788995100000,
+    "future_bars": 8,
+    "favorable_excursion_pct": 2.1296734500710013,
+    "adverse_excursion_pct": 0.0,
+    "not_profitability": true,
+    "selection": "seeded_random"
+  },
+  {
+    "setup_id": "BIRBUSDT_5_1788998400000_BULLISH",
+    "reference_open_ms": 1788998700000,
+    "future_bars": 12,
+    "favorable_excursion_pct": 1.1704345037678365,
+    "adverse_excursion_pct": 1.5071348404681828,
+    "not_profitability": true,
+    "selection": "seeded_random"
+  },
+  {
+    "setup_id": "SNXXUSDT_5_1789000500000_BEARISH",
+    "reference_open_ms": 1789001100000,
+    "future_bars": 12,
+    "favorable_excursion_pct": 1.3097949886104798,
+    "adverse_excursion_pct": 0.17084282460138045,
+    "not_profitability": true,
+    "selection": "seeded_random"
+  },
+  {
+    "setup_id": "FARTCOINUSDT_5_1789002000000_BULLISH",
+    "reference_open_ms": 1789002300000,
+    "future_bars": 12,
+    "favorable_excursion_pct": 0.3333564830890978,
+    "adverse_excursion_pct": 1.8334606569900713,
+    "not_profitability": true,
+    "selection": "requested_asset"
+  },
+  {
+    "setup_id": "FARTCOINUSDT_5_1789007400000_BULLISH",
+    "reference_open_ms": 1789007700000,
+    "future_bars": 12,
+    "favorable_excursion_pct": 0.734122861694031,
+    "adverse_excursion_pct": 0.27010180760440594,
+    "not_profitability": true,
+    "selection": "requested_asset"
+  },
+  {
+    "setup_id": "FARTCOINUSDT_5_1789010400000_BEARISH",
+    "reference_open_ms": 1789011000000,
+    "future_bars": 12,
+    "favorable_excursion_pct": 0.29733093624670914,
+    "adverse_excursion_pct": 0.9818835569077589,
+    "not_profitability": true,
+    "selection": "requested_asset"
+  },
+  {
+    "setup_id": "TSMUSDT_5_1789011600000_BEARISH",
+    "reference_open_ms": 1789011900000,
+    "future_bars": 12,
+    "favorable_excursion_pct": 0.009237021984120908,
+    "adverse_excursion_pct": 0.2447810825789709,
+    "not_profitability": true,
+    "selection": "seeded_random"
+  },
+  {
+    "setup_id": "MARSCOINUSDT_5_1789009800000_BULLISH",
+    "reference_open_ms": 1789011000000,
+    "future_bars": 12,
+    "favorable_excursion_pct": 2.2310081897769063,
+    "adverse_excursion_pct": 1.0449025698955117,
+    "not_profitability": true,
+    "selection": "requested_asset"
+  },
+  {
+    "setup_id": "BLESSUSDT_5_1789010400000_BEARISH",
+    "reference_open_ms": 1789010700000,
+    "future_bars": 12,
+    "favorable_excursion_pct": 1.3503184713375749,
+    "adverse_excursion_pct": 0.025477707006382744,
+    "not_profitability": true,
+    "selection": "requested_asset"
+  },
+  {
+    "setup_id": "UAIUSDT_5_1789012200000_BULLISH",
+    "reference_open_ms": 1789012500000,
+    "future_bars": 12,
+    "favorable_excursion_pct": 4.308576118178076,
+    "adverse_excursion_pct": 4.9377650116263165,
+    "not_profitability": true,
+    "selection": "seeded_random"
+  },
+  {
+    "setup_id": "RESOLVUSDT_5_1788983400000_BEARISH",
+    "reference_open_ms": 1788985200000,
+    "future_bars": 12,
+    "favorable_excursion_pct": 0.6659267480577213,
+    "adverse_excursion_pct": 1.2763596004439437,
+    "not_profitability": true,
+    "selection": "seeded_random_replacement"
+  },
+  {
+    "setup_id": "GALAUSDT_5_1789002000000_BULLISH",
+    "reference_open_ms": 1789002900000,
+    "future_bars": 12,
+    "favorable_excursion_pct": 0.0,
+    "adverse_excursion_pct": 1.7182130584192379,
+    "not_profitability": true,
+    "selection": "seeded_random_replacement"
+  }
+]

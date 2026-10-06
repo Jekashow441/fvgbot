@@ -1,0 +1,17 @@
+{
+  "rows": 1623,
+  "reasons": {
+    "no_sweep_under_research_definition": 1091,
+    "expanded_pool_or_earlier_sweep_found": 381,
+    "INSUFFICIENT_DATA": 151
+  },
+  "pool_support": {
+    "session": 219,
+    "equal_lows": 48,
+    "internal": 223,
+    "local": 114,
+    "previous_day": 133,
+    "external": 54,
+    "equal_highs": 16
+  }
+}

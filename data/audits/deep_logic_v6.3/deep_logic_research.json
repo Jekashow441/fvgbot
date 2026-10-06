@@ -1,0 +1,2145 @@
+{
+  "scope": "V6.3 read-only research; counterfactuals are arithmetic on recorded blocker sets and not production authorization.",
+  "unique_candidates": 18,
+  "observations": 24,
+  "decision_tree": [
+    {
+      "setup_id": "AXSUSDT_5_1788990300000_BEARISH",
+      "asset": "AXSUSDT",
+      "direction": "SHORT",
+      "score": 87,
+      "tree": {
+        "candidate": "PASS",
+        "fvg_valid": "PASS",
+        "fvg_quality": "PASS",
+        "structure": "PASS",
+        "liquidity": "UNKNOWN",
+        "htf": "FAIL",
+        "vwap": "PASS",
+        "orderbook": "FAIL",
+        "spread": "PASS",
+        "mitigation": "PASS",
+        "rejection": "PASS",
+        "entry": "PASS",
+        "signal": "FAIL"
+      },
+      "blockers": [
+        "higher_4h_opposition",
+        "thin_orderbook"
+      ],
+      "fvg": {
+        "type": "BEARISH",
+        "top": 0.9365,
+        "bottom": 0.932,
+        "ce": 0.93425,
+        "candle_time": 1788990300000,
+        "formed_at": 1788990600000,
+        "gap_size": 0.4805125467164921,
+        "index": 347,
+        "touches": 1,
+        "touch_bars": 2,
+        "fill_fraction": 0.6666666666666748,
+        "displacement_atr": 3.0760563380281387,
+        "age": 2,
+        "state": "PARTIAL"
+      },
+      "structure_context": {
+        "direction": "DOWN",
+        "event": "CHOCH_DOWN",
+        "sweep": null,
+        "swing_high": 0.9422,
+        "swing_low": 0.928
+      },
+      "rejection_definition": "closed candle direction plus close beyond CE; no independent wick/engulfing rule"
+    },
+    {
+      "setup_id": "BASEDUSDT_5_1789000500000_BEARISH",
+      "asset": "BASEDUSDT",
+      "direction": "SHORT",
+      "score": 100,
+      "tree": {
+        "candidate": "PASS",
+        "fvg_valid": "PASS",
+        "fvg_quality": "PASS",
+        "structure": "PASS",
+        "liquidity": "UNKNOWN",
+        "htf": "PASS",
+        "vwap": "PASS",
+        "orderbook": "FAIL",
+        "spread": "PASS",
+        "mitigation": "FAIL",
+        "rejection": "PASS",
+        "entry": "PASS",
+        "signal": "FAIL"
+      },
+      "blockers": [
+        "fvg_fully_filled",
+        "thin_orderbook"
+      ],
+      "fvg": {
+        "type": "BEARISH",
+        "top": 0.0613,
+        "bottom": 0.06122,
+        "ce": 0.061259999999999995,
+        "candle_time": 1789000500000,
+        "formed_at": 1789000800000,
+        "gap_size": 0.1305057096248021,
+        "index": 346,
+        "touches": 1,
+        "touch_bars": 1,
+        "fill_fraction": 0.6249999999999891,
+        "displacement_atr": 0.8189415041782827,
+        "age": 3,
+        "state": "PARTIAL"
+      },
+      "structure_context": {
+        "direction": "DOWN",
+        "event": "BOS_DOWN",
+        "sweep": null,
+        "swing_high": 0.06213,
+        "swing_low": 0.06072
+      },
+      "rejection_definition": "closed candle direction plus close beyond CE; no independent wick/engulfing rule"
+    },
+    {
+      "setup_id": "BLESSUSDT_5_1788989700000_BEARISH",
+      "asset": "BLESSUSDT",
+      "direction": "SHORT",
+      "score": 100,
+      "tree": {
+        "candidate": "PASS",
+        "fvg_valid": "PASS",
+        "fvg_quality": "PASS",
+        "structure": "PASS",
+        "liquidity": "UNKNOWN",
+        "htf": "PASS",
+        "vwap": "FAIL",
+        "orderbook": "FAIL",
+        "spread": "PASS",
+        "mitigation": "PASS",
+        "rejection": "PASS",
+        "entry": "PASS",
+        "signal": "FAIL"
+      },
+      "blockers": [
+        "extended_from_vwap",
+        "thin_orderbook"
+      ],
+      "fvg": {
+        "type": "BEARISH",
+        "top": 0.00842,
+        "bottom": 0.008401,
+        "ce": 0.008410500000000001,
+        "candle_time": 1788989700000,
+        "formed_at": 1788990000000,
+        "gap_size": 0.22565320665083038,
+        "index": 345,
+        "touches": 1,
+        "touch_bars": 1,
+        "fill_fraction": 0.0,
+        "displacement_atr": 1.1748251748252114,
+        "age": 4,
+        "state": "RETESTED"
+      },
+      "structure_context": {
+        "direction": "DOWN",
+        "event": "CHOCH_DOWN",
+        "sweep": null,
+        "swing_high": 0.008477,
+        "swing_low": 0.008342
+      },
+      "rejection_definition": "closed candle direction plus close beyond CE; no independent wick/engulfing rule"
+    },
+    {
+      "setup_id": "CFGUSDT_5_1788988200000_BULLISH",
+      "asset": "CFGUSDT",
+      "direction": "LONG",
+      "score": 100,
+      "tree": {
+        "candidate": "PASS",
+        "fvg_valid": "PASS",
+        "fvg_quality": "PASS",
+        "structure": "PASS",
+        "liquidity": "UNKNOWN",
+        "htf": "PASS",
+        "vwap": "PASS",
+        "orderbook": "FAIL",
+        "spread": "FAIL",
+        "mitigation": "PASS",
+        "rejection": "PASS",
+        "entry": "PASS",
+        "signal": "FAIL"
+      },
+      "blockers": [
+        "correlated_btc_opposition",
+        "higher_4h_opposition",
+        "thin_orderbook",
+        "wide_spread"
+      ],
+      "fvg": {
+        "type": "BULLISH",
+        "top": 0.1195,
+        "bottom": 0.1192,
+        "ce": 0.11935,
+        "candle_time": 1788988200000,
+        "formed_at": 1788988500000,
+        "gap_size": 0.2516778523489889,
+        "index": 348,
+        "touches": 1,
+        "touch_bars": 1,
+        "fill_fraction": 0.3333333333333025,
+        "displacement_atr": 1.2499999999999993,
+        "age": 1,
+        "state": "PARTIAL"
+      },
+      "structure_context": {
+        "direction": "UP",
+        "event": "CHOCH_UP",
+        "sweep": null,
+        "swing_high": 0.1196,
+        "swing_low": 0.1169
+      },
+      "rejection_definition": "closed candle direction plus close beyond CE; no independent wick/engulfing rule"
+    },
+    {
+      "setup_id": "CRCLUSDT_5_1788990300000_BEARISH",
+      "asset": "CRCLUSDT",
+      "direction": "SHORT",
+      "score": 90,
+      "tree": {
+        "candidate": "PASS",
+        "fvg_valid": "PASS",
+        "fvg_quality": "PASS",
+        "structure": "PASS",
+        "liquidity": "UNKNOWN",
+        "htf": "PASS",
+        "vwap": "FAIL",
+        "orderbook": "PASS",
+        "spread": "PASS",
+        "mitigation": "PASS",
+        "rejection": "PASS",
+        "entry": "PASS",
+        "signal": "FAIL"
+      },
+      "blockers": [
+        "extended_from_vwap",
+        "higher_4h_opposition"
+      ],
+      "fvg": {
+        "type": "BEARISH",
+        "top": 92.17,
+        "bottom": 92.09,
+        "ce": 92.13,
+        "candle_time": 1788990300000,
+        "formed_at": 1788990600000,
+        "gap_size": 0.0867961375718762,
+        "index": 347,
+        "touches": 1,
+        "touch_bars": 2,
+        "fill_fraction": 0.2499999999999556,
+        "displacement_atr": 1.659259259259231,
+        "age": 2,
+        "state": "PARTIAL"
+      },
+      "structure_context": {
+        "direction": "DOWN",
+        "event": "BOS_DOWN",
+        "sweep": null,
+        "swing_high": 92.62,
+        "swing_low": 92.02
+      },
+      "rejection_definition": "closed candle direction plus close beyond CE; no independent wick/engulfing rule"
+    },
+    {
+      "setup_id": "EIGENUSDT_5_1788990300000_BEARISH",
+      "asset": "EIGENUSDT",
+      "direction": "SHORT",
+      "score": 82,
+      "tree": {
+        "candidate": "PASS",
+        "fvg_valid": "PASS",
+        "fvg_quality": "PASS",
+        "structure": "PASS",
+        "liquidity": "UNKNOWN",
+        "htf": "FAIL",
+        "vwap": "FAIL",
+        "orderbook": "FAIL",
+        "spread": "PASS",
+        "mitigation": "PASS",
+        "rejection": "PASS",
+        "entry": "PASS",
+        "signal": "FAIL"
+      },
+      "blockers": [
+        "extended_from_vwap",
+        "higher_4h_opposition",
+        "thin_orderbook"
+      ],
+      "fvg": {
+        "type": "BEARISH",
+        "top": 0.207,
+        "bottom": 0.2058,
+        "ce": 0.2064,
+        "candle_time": 1788990300000,
+        "formed_at": 1788990600000,
+        "gap_size": 0.579710144927526,
+        "index": 347,
+        "touches": 1,
+        "touch_bars": 2,
+        "fill_fraction": 0.6666666666666744,
+        "displacement_atr": 1.750000000000003,
+        "age": 2,
+        "state": "PARTIAL"
+      },
+      "structure_context": {
+        "direction": "DOWN",
+        "event": "BOS_DOWN",
+        "sweep": null,
+        "swing_high": 0.2109,
+        "swing_low": 0.2046
+      },
+      "rejection_definition": "closed candle direction plus close beyond CE; no independent wick/engulfing rule"
+    },
+    {
+      "setup_id": "EPICUSDT_5_1789000200000_BEARISH",
+      "asset": "EPICUSDT",
+      "direction": "SHORT",
+      "score": 82,
+      "tree": {
+        "candidate": "PASS",
+        "fvg_valid": "PASS",
+        "fvg_quality": "PASS",
+        "structure": "PASS",
+        "liquidity": "UNKNOWN",
+        "htf": "FAIL",
+        "vwap": "PASS",
+        "orderbook": "FAIL",
+        "spread": "PASS",
+        "mitigation": "PASS",
+        "rejection": "PASS",
+        "entry": "PASS",
+        "signal": "FAIL"
+      },
+      "blockers": [
+        "thin_orderbook"
+      ],
+      "fvg": {
+        "type": "BEARISH",
+        "top": 0.3758,
+        "bottom": 0.3743,
+        "ce": 0.37505,
+        "candle_time": 1789000200000,
+        "formed_at": 1789000500000,
+        "gap_size": 0.399148483235764,
+        "index": 343,
+        "touches": 1,
+        "touch_bars": 1,
+        "fill_fraction": 0.06666666666665927,
+        "displacement_atr": 2.163636363636387,
+        "age": 6,
+        "state": "PARTIAL"
+      },
+      "structure_context": {
+        "direction": "DOWN",
+        "event": "BOS_DOWN",
+        "sweep": null,
+        "swing_high": 0.3812,
+        "swing_low": 0.3714
+      },
+      "rejection_definition": "closed candle direction plus close beyond CE; no independent wick/engulfing rule"
+    },
+    {
+      "setup_id": "FARTCOINUSDT_5_1788990300000_BEARISH",
+      "asset": "FARTCOINUSDT",
+      "direction": "SHORT",
+      "score": 100,
+      "tree": {
+        "candidate": "PASS",
+        "fvg_valid": "PASS",
+        "fvg_quality": "PASS",
+        "structure": "PASS",
+        "liquidity": "UNKNOWN",
+        "htf": "PASS",
+        "vwap": "FAIL",
+        "orderbook": "FAIL",
+        "spread": "PASS",
+        "mitigation": "PASS",
+        "rejection": "PASS",
+        "entry": "PASS",
+        "signal": "FAIL"
+      },
+      "blockers": [
+        "extended_from_vwap",
+        "thin_orderbook"
+      ],
+      "fvg": {
+        "type": "BEARISH",
+        "top": 0.15005,
+        "bottom": 0.14861,
+        "ce": 0.14933,
+        "candle_time": 1788990300000,
+        "formed_at": 1788990600000,
+        "gap_size": 0.9596801066311209,
+        "index": 347,
+        "touches": 1,
+        "touch_bars": 1,
+        "fill_fraction": 0.3541666666666747,
+        "displacement_atr": 2.9424778761062167,
+        "age": 2,
+        "state": "PARTIAL"
+      },
+      "structure_context": {
+        "direction": "DOWN",
+        "event": "BOS_DOWN",
+        "sweep": null,
+        "swing_high": 0.1517,
+        "swing_low": 0.14688
+      },
+      "rejection_definition": "closed candle direction plus close beyond CE; no independent wick/engulfing rule"
+    },
+    {
+      "setup_id": "MARSCOINUSDT_5_1788983400000_BEARISH",
+      "asset": "MARSCOINUSDT",
+      "direction": "SHORT",
+      "score": 100,
+      "tree": {
+        "candidate": "PASS",
+        "fvg_valid": "PASS",
+        "fvg_quality": "PASS",
+        "structure": "PASS",
+        "liquidity": "UNKNOWN",
+        "htf": "PASS",
+        "vwap": "FAIL",
+        "orderbook": "FAIL",
+        "spread": "PASS",
+        "mitigation": "PASS",
+        "rejection": "PASS",
+        "entry": "PASS",
+        "signal": "FAIL"
+      },
+      "blockers": [
+        "extended_from_vwap",
+        "higher_4h_unavailable_or_stale",
+        "orderbook_unavailable"
+      ],
+      "fvg": {
+        "type": "BEARISH",
+        "top": 0.12016,
+        "bottom": 0.11919,
+        "ce": 0.119675,
+        "candle_time": 1788983400000,
+        "formed_at": 1788983700000,
+        "gap_size": 0.8072569906790934,
+        "index": 347,
+        "touches": 1,
+        "touch_bars": 2,
+        "fill_fraction": 0.3711340206185564,
+        "displacement_atr": 1.9366197183098615,
+        "age": 2,
+        "state": "PARTIAL"
+      },
+      "structure_context": {
+        "direction": "DOWN",
+        "event": "CHOCH_DOWN",
+        "sweep": null,
+        "swing_high": 0.12216,
+        "swing_low": 0.11745
+      },
+      "rejection_definition": "closed candle direction plus close beyond CE; no independent wick/engulfing rule"
+    },
+    {
+      "setup_id": "MORPHOUSDT_5_1788983400000_BEARISH",
+      "asset": "MORPHOUSDT",
+      "direction": "SHORT",
+      "score": 95,
+      "tree": {
+        "candidate": "PASS",
+        "fvg_valid": "PASS",
+        "fvg_quality": "PASS",
+        "structure": "PASS",
+        "liquidity": "UNKNOWN",
+        "htf": "PASS",
+        "vwap": "PASS",
+        "orderbook": "FAIL",
+        "spread": "PASS",
+        "mitigation": "PASS",
+        "rejection": "PASS",
+        "entry": "PASS",
+        "signal": "FAIL"
+      },
+      "blockers": [
+        "thin_orderbook"
+      ],
+      "fvg": {
+        "type": "BEARISH",
+        "top": 2.339,
+        "bottom": 2.322,
+        "ce": 2.3305,
+        "candle_time": 1788983400000,
+        "formed_at": 1788983700000,
+        "gap_size": 0.7268063274903763,
+        "index": 347,
+        "touches": 1,
+        "touch_bars": 2,
+        "fill_fraction": 0.4705882352941207,
+        "displacement_atr": 3.7333333333333427,
+        "age": 2,
+        "state": "PARTIAL"
+      },
+      "structure_context": {
+        "direction": "DOWN",
+        "event": "BOS_DOWN",
+        "sweep": null,
+        "swing_high": 2.348,
+        "swing_low": 2.33
+      },
+      "rejection_definition": "closed candle direction plus close beyond CE; no independent wick/engulfing rule"
+    },
+    {
+      "setup_id": "NOTUSDT_5_1788982200000_BEARISH",
+      "asset": "NOTUSDT",
+      "direction": "SHORT",
+      "score": 87,
+      "tree": {
+        "candidate": "PASS",
+        "fvg_valid": "PASS",
+        "fvg_quality": "PASS",
+        "structure": "PASS",
+        "liquidity": "UNKNOWN",
+        "htf": "FAIL",
+        "vwap": "PASS",
+        "orderbook": "FAIL",
+        "spread": "PASS",
+        "mitigation": "PASS",
+        "rejection": "PASS",
+        "entry": "PASS",
+        "signal": "FAIL"
+      },
+      "blockers": [
+        "higher_4h_opposition",
+        "thin_orderbook"
+      ],
+      "fvg": {
+        "type": "BEARISH",
+        "top": 0.0004498,
+        "bottom": 0.0004487,
+        "ce": 0.00044925,
+        "candle_time": 1788982200000,
+        "formed_at": 1788982500000,
+        "gap_size": 0.24455313472653903,
+        "index": 336,
+        "touches": 1,
+        "touch_bars": 1,
+        "fill_fraction": 0.1818181818181908,
+        "displacement_atr": 1.0335570469798336,
+        "age": 13,
+        "state": "PARTIAL"
+      },
+      "structure_context": {
+        "direction": "DOWN",
+        "event": "CHOCH_DOWN",
+        "sweep": null,
+        "swing_high": 0.0004483,
+        "swing_low": 0.0004424
+      },
+      "rejection_definition": "closed candle direction plus close beyond CE; no independent wick/engulfing rule"
+    },
+    {
+      "setup_id": "ORDIUSDT_5_1788982500000_BEARISH",
+      "asset": "ORDIUSDT",
+      "direction": "SHORT",
+      "score": 87,
+      "tree": {
+        "candidate": "PASS",
+        "fvg_valid": "PASS",
+        "fvg_quality": "PASS",
+        "structure": "PASS",
+        "liquidity": "UNKNOWN",
+        "htf": "FAIL",
+        "vwap": "PASS",
+        "orderbook": "FAIL",
+        "spread": "PASS",
+        "mitigation": "PASS",
+        "rejection": "PASS",
+        "entry": "PASS",
+        "signal": "FAIL"
+      },
+      "blockers": [
+        "higher_4h_opposition",
+        "thin_orderbook"
+      ],
+      "fvg": {
+        "type": "BEARISH",
+        "top": 4.161,
+        "bottom": 4.153,
+        "ce": 4.157,
+        "candle_time": 1788982500000,
+        "formed_at": 1788982800000,
+        "gap_size": 0.19226147560682547,
+        "index": 337,
+        "touches": 2,
+        "touch_bars": 2,
+        "fill_fraction": 0.7500000000000278,
+        "displacement_atr": 2.276422764227573,
+        "age": 12,
+        "state": "PARTIAL"
+      },
+      "structure_context": {
+        "direction": "DOWN",
+        "event": "BOS_DOWN",
+        "sweep": null,
+        "swing_high": 4.155,
+        "swing_low": 4.101
+      },
+      "rejection_definition": "closed candle direction plus close beyond CE; no independent wick/engulfing rule"
+    },
+    {
+      "setup_id": "ORDIUSDT_5_1788990300000_BEARISH",
+      "asset": "ORDIUSDT",
+      "direction": "SHORT",
+      "score": 87,
+      "tree": {
+        "candidate": "PASS",
+        "fvg_valid": "PASS",
+        "fvg_quality": "PASS",
+        "structure": "PASS",
+        "liquidity": "UNKNOWN",
+        "htf": "FAIL",
+        "vwap": "FAIL",
+        "orderbook": "FAIL",
+        "spread": "PASS",
+        "mitigation": "PASS",
+        "rejection": "PASS",
+        "entry": "PASS",
+        "signal": "FAIL"
+      },
+      "blockers": [
+        "extended_from_vwap",
+        "higher_4h_opposition",
+        "thin_orderbook"
+      ],
+      "fvg": {
+        "type": "BEARISH",
+        "top": 4.124,
+        "bottom": 4.101,
+        "ce": 4.1125,
+        "candle_time": 1788990300000,
+        "formed_at": 1788990600000,
+        "gap_size": 0.5577109602327762,
+        "index": 347,
+        "touches": 1,
+        "touch_bars": 2,
+        "fill_fraction": 0.4782608695652291,
+        "displacement_atr": 2.884422110552792,
+        "age": 2,
+        "state": "PARTIAL"
+      },
+      "structure_context": {
+        "direction": "DOWN",
+        "event": "BOS_DOWN",
+        "sweep": null,
+        "swing_high": 4.151,
+        "swing_low": 4.077
+      },
+      "rejection_definition": "closed candle direction plus close beyond CE; no independent wick/engulfing rule"
+    },
+    {
+      "setup_id": "POPCATUSDT_5_1788990300000_BEARISH",
+      "asset": "POPCATUSDT",
+      "direction": "SHORT",
+      "score": 100,
+      "tree": {
+        "candidate": "PASS",
+        "fvg_valid": "PASS",
+        "fvg_quality": "PASS",
+        "structure": "PASS",
+        "liquidity": "UNKNOWN",
+        "htf": "PASS",
+        "vwap": "FAIL",
+        "orderbook": "FAIL",
+        "spread": "PASS",
+        "mitigation": "PASS",
+        "rejection": "PASS",
+        "entry": "PASS",
+        "signal": "FAIL"
+      },
+      "blockers": [
+        "extended_from_vwap",
+        "higher_4h_opposition",
+        "thin_orderbook"
+      ],
+      "fvg": {
+        "type": "BEARISH",
+        "top": 0.04971,
+        "bottom": 0.04949,
+        "ce": 0.0496,
+        "candle_time": 1788990300000,
+        "formed_at": 1788990600000,
+        "gap_size": 0.44256688795010657,
+        "index": 347,
+        "touches": 1,
+        "touch_bars": 2,
+        "fill_fraction": 0.5,
+        "displacement_atr": 2.2935153583617844,
+        "age": 2,
+        "state": "PARTIAL"
+      },
+      "structure_context": {
+        "direction": "DOWN",
+        "event": "BOS_DOWN",
+        "sweep": null,
+        "swing_high": 0.05024,
+        "swing_low": 0.04923
+      },
+      "rejection_definition": "closed candle direction plus close beyond CE; no independent wick/engulfing rule"
+    },
+    {
+      "setup_id": "ROBOUSDT_5_1788982500000_BEARISH",
+      "asset": "ROBOUSDT",
+      "direction": "SHORT",
+      "score": 100,
+      "tree": {
+        "candidate": "PASS",
+        "fvg_valid": "PASS",
+        "fvg_quality": "PASS",
+        "structure": "PASS",
+        "liquidity": "UNKNOWN",
+        "htf": "PASS",
+        "vwap": "FAIL",
+        "orderbook": "FAIL",
+        "spread": "FAIL",
+        "mitigation": "PASS",
+        "rejection": "PASS",
+        "entry": "PASS",
+        "signal": "FAIL"
+      },
+      "blockers": [
+        "extended_from_vwap",
+        "thin_orderbook",
+        "wide_spread"
+      ],
+      "fvg": {
+        "type": "BEARISH",
+        "top": 0.01026,
+        "bottom": 0.01024,
+        "ce": 0.01025,
+        "candle_time": 1788982500000,
+        "formed_at": 1788982800000,
+        "gap_size": 0.19493177387913435,
+        "index": 341,
+        "touches": 1,
+        "touch_bars": 2,
+        "fill_fraction": 0.5,
+        "displacement_atr": 2.1538461538461586,
+        "age": 8,
+        "state": "PARTIAL"
+      },
+      "structure_context": {
+        "direction": "DOWN",
+        "event": "BOS_DOWN",
+        "sweep": null,
+        "swing_high": 0.01039,
+        "swing_low": 0.0101
+      },
+      "rejection_definition": "closed candle direction plus close beyond CE; no independent wick/engulfing rule"
+    },
+    {
+      "setup_id": "TRUMPUSDT_5_1789003800000_BEARISH",
+      "asset": "TRUMPUSDT",
+      "direction": "SHORT",
+      "score": 95,
+      "tree": {
+        "candidate": "PASS",
+        "fvg_valid": "PASS",
+        "fvg_quality": "PASS",
+        "structure": "PASS",
+        "liquidity": "UNKNOWN",
+        "htf": "PASS",
+        "vwap": "FAIL",
+        "orderbook": "PASS",
+        "spread": "PASS",
+        "mitigation": "PASS",
+        "rejection": "PASS",
+        "entry": "PASS",
+        "signal": "FAIL"
+      },
+      "blockers": [
+        "extended_from_vwap"
+      ],
+      "fvg": {
+        "type": "BEARISH",
+        "top": 2.013,
+        "bottom": 2.002,
+        "ce": 2.0075,
+        "candle_time": 1789003800000,
+        "formed_at": 1789004100000,
+        "gap_size": 0.5464480874316999,
+        "index": 347,
+        "touches": 1,
+        "touch_bars": 2,
+        "fill_fraction": 0.2727272727272801,
+        "displacement_atr": 1.0898203592814615,
+        "age": 2,
+        "state": "PARTIAL"
+      },
+      "structure_context": {
+        "direction": "DOWN",
+        "event": "CHOCH_DOWN",
+        "sweep": null,
+        "swing_high": 2.035,
+        "swing_low": 2.001
+      },
+      "rejection_definition": "closed candle direction plus close beyond CE; no independent wick/engulfing rule"
+    },
+    {
+      "setup_id": "ZAMAUSDT_5_1789012200000_BEARISH",
+      "asset": "ZAMAUSDT",
+      "direction": "SHORT",
+      "score": 100,
+      "tree": {
+        "candidate": "PASS",
+        "fvg_valid": "PASS",
+        "fvg_quality": "PASS",
+        "structure": "PASS",
+        "liquidity": "UNKNOWN",
+        "htf": "PASS",
+        "vwap": "FAIL",
+        "orderbook": "FAIL",
+        "spread": "PASS",
+        "mitigation": "PASS",
+        "rejection": "PASS",
+        "entry": "PASS",
+        "signal": "FAIL"
+      },
+      "blockers": [
+        "extended_from_vwap",
+        "thin_orderbook"
+      ],
+      "fvg": {
+        "type": "BEARISH",
+        "top": 0.04866,
+        "bottom": 0.04854,
+        "ce": 0.048600000000000004,
+        "candle_time": 1789012200000,
+        "formed_at": 1789012500000,
+        "gap_size": 0.2466091245376121,
+        "index": 347,
+        "touches": 1,
+        "touch_bars": 2,
+        "fill_fraction": 0.5833333333333285,
+        "displacement_atr": 1.1666666666666563,
+        "age": 2,
+        "state": "PARTIAL"
+      },
+      "structure_context": {
+        "direction": "DOWN",
+        "event": "BOS_DOWN",
+        "sweep": null,
+        "swing_high": 0.04883,
+        "swing_low": 0.04821
+      },
+      "rejection_definition": "closed candle direction plus close beyond CE; no independent wick/engulfing rule"
+    },
+    {
+      "setup_id": "ZKCUSDT_5_1789000800000_BEARISH",
+      "asset": "ZKCUSDT",
+      "direction": "SHORT",
+      "score": 82,
+      "tree": {
+        "candidate": "PASS",
+        "fvg_valid": "PASS",
+        "fvg_quality": "PASS",
+        "structure": "PASS",
+        "liquidity": "UNKNOWN",
+        "htf": "FAIL",
+        "vwap": "PASS",
+        "orderbook": "FAIL",
+        "spread": "PASS",
+        "mitigation": "FAIL",
+        "rejection": "PASS",
+        "entry": "PASS",
+        "signal": "FAIL"
+      },
+      "blockers": [
+        "fvg_fully_filled",
+        "higher_4h_opposition",
+        "thin_orderbook"
+      ],
+      "fvg": {
+        "type": "BEARISH",
+        "top": 0.04787,
+        "bottom": 0.04763,
+        "ce": 0.04775,
+        "candle_time": 1789000800000,
+        "formed_at": 1789001100000,
+        "gap_size": 0.5013578441612787,
+        "index": 345,
+        "touches": 1,
+        "touch_bars": 2,
+        "fill_fraction": 0.6250000000000072,
+        "displacement_atr": 1.8456591639871525,
+        "age": 4,
+        "state": "PARTIAL"
+      },
+      "structure_context": {
+        "direction": "DOWN",
+        "event": "CHOCH_DOWN",
+        "sweep": null,
+        "swing_high": 0.04844,
+        "swing_low": 0.04738
+      },
+      "rejection_definition": "closed candle direction plus close beyond CE; no independent wick/engulfing rule"
+    }
+  ],
+  "counterfactuals": {
+    "thin_orderbook": {
+      "current_blocked": 15,
+      "continue_if_only_removed": 2,
+      "setup_ids": [
+        "MORPHOUSDT_5_1788983400000_BEARISH",
+        "EPICUSDT_5_1789000200000_BEARISH"
+      ]
+    },
+    "extended_from_vwap": {
+      "current_blocked": 10,
+      "continue_if_only_removed": 1,
+      "setup_ids": [
+        "TRUMPUSDT_5_1789003800000_BEARISH"
+      ]
+    },
+    "higher_4h_opposition": {
+      "current_blocked": 9,
+      "continue_if_only_removed": 0,
+      "setup_ids": []
+    },
+    "wide_spread": {
+      "current_blocked": 2,
+      "continue_if_only_removed": 0,
+      "setup_ids": []
+    },
+    "fvg_fully_filled": {
+      "current_blocked": 2,
+      "continue_if_only_removed": 0,
+      "setup_ids": []
+    },
+    "orderbook_unavailable": {
+      "current_blocked": 1,
+      "continue_if_only_removed": 0,
+      "setup_ids": []
+    },
+    "higher_4h_unavailable_or_stale": {
+      "current_blocked": 1,
+      "continue_if_only_removed": 0,
+      "setup_ids": []
+    },
+    "correlated_btc_opposition": {
+      "current_blocked": 1,
+      "continue_if_only_removed": 0,
+      "setup_ids": []
+    }
+  },
+  "thin_orderbook_evidence": {
+    "rule": "depth in 20.0bps band; hard minimum 25000.0 USDT on entry side; complete band required for thin_orderbook label. Absolute minimum is not normalized by ATR/volume/market cap.",
+    "current_samples": [
+      {
+        "signal_id": "WLDUSDT_5_1789024800000_BEARISH",
+        "score": 87,
+        "rejections": [
+          "higher_4h_opposition"
+        ],
+        "bid_depth_usdt": 43378.73393,
+        "ask_depth_usdt": 65187.568340000005,
+        "spread_bps": 2.443494196701014,
+        "levels": [
+          1000,
+          1000
+        ],
+        "band_complete": [
+          true,
+          true
+        ],
+        "depth_band_bps": 20.0
+      },
+      {
+        "signal_id": "SYRUPUSDT_5_1789024800000_BEARISH",
+        "score": 82,
+        "rejections": [
+          "extended_from_vwap",
+          "thin_orderbook",
+          "higher_4h_opposition"
+        ],
+        "bid_depth_usdt": 2689.5459299999998,
+        "ask_depth_usdt": 3818.78874,
+        "spread_bps": 2.387603562304252,
+        "levels": [
+          920,
+          807
+        ],
+        "band_complete": [
+          true,
+          true
+        ],
+        "depth_band_bps": 20.0
+      },
+      {
+        "signal_id": "WLDUSDT_5_1789024800000_BEARISH",
+        "score": 87,
+        "rejections": [
+          "higher_4h_opposition"
+        ],
+        "bid_depth_usdt": 42407.740399999995,
+        "ask_depth_usdt": 68531.80267,
+        "spread_bps": 2.441108263151202,
+        "levels": [
+          1000,
+          1000
+        ],
+        "band_complete": [
+          true,
+          true
+        ],
+        "depth_band_bps": 20.0
+      },
+      {
+        "signal_id": "SYRUPUSDT_5_1789024800000_BEARISH",
+        "score": 82,
+        "rejections": [
+          "extended_from_vwap",
+          "thin_orderbook",
+          "higher_4h_opposition"
+        ],
+        "bid_depth_usdt": 2714.87404,
+        "ask_depth_usdt": 3025.6765100000002,
+        "spread_bps": 3.81861575178982,
+        "levels": [
+          918,
+          800
+        ],
+        "band_complete": [
+          true,
+          true
+        ],
+        "depth_band_bps": 20.0
+      },
+      {
+        "signal_id": "WLDUSDT_5_1789024800000_BEARISH",
+        "score": 87,
+        "rejections": [
+          "higher_4h_opposition"
+        ],
+        "bid_depth_usdt": 43294.276620000004,
+        "ask_depth_usdt": 62882.1071,
+        "spread_bps": 2.4423006472094024,
+        "levels": [
+          1000,
+          1000
+        ],
+        "band_complete": [
+          true,
+          true
+        ],
+        "depth_band_bps": 20.0
+      },
+      {
+        "signal_id": "SYRUPUSDT_5_1789024800000_BEARISH",
+        "score": 82,
+        "rejections": [
+          "extended_from_vwap",
+          "thin_orderbook",
+          "higher_4h_opposition"
+        ],
+        "bid_depth_usdt": 2777.17115,
+        "ask_depth_usdt": 3095.6025900000004,
+        "spread_bps": 3.818251240931498,
+        "levels": [
+          921,
+          798
+        ],
+        "band_complete": [
+          true,
+          true
+        ],
+        "depth_band_bps": 20.0
+      },
+      {
+        "signal_id": "WLDUSDT_5_1789024800000_BEARISH",
+        "score": 87,
+        "rejections": [
+          "higher_4h_opposition"
+        ],
+        "bid_depth_usdt": 64212.32432,
+        "ask_depth_usdt": 75663.10076,
+        "spread_bps": 2.445884798825706,
+        "levels": [
+          1000,
+          1000
+        ],
+        "band_complete": [
+          true,
+          true
+        ],
+        "depth_band_bps": 20.0
+      },
+      {
+        "signal_id": "SYRUPUSDT_5_1789024800000_BEARISH",
+        "score": 82,
+        "rejections": [
+          "extended_from_vwap",
+          "thin_orderbook",
+          "higher_4h_opposition"
+        ],
+        "bid_depth_usdt": 2457.2583,
+        "ask_depth_usdt": 3018.8836,
+        "spread_bps": 3.3418470866248176,
+        "levels": [
+          916,
+          805
+        ],
+        "band_complete": [
+          true,
+          true
+        ],
+        "depth_band_bps": 20.0
+      },
+      {
+        "signal_id": "WLDUSDT_5_1789024800000_BEARISH",
+        "score": 87,
+        "rejections": [
+          "higher_4h_opposition"
+        ],
+        "bid_depth_usdt": 50232.04132,
+        "ask_depth_usdt": 69554.55341,
+        "spread_bps": 2.445884798825706,
+        "levels": [
+          1000,
+          1000
+        ],
+        "band_complete": [
+          true,
+          true
+        ],
+        "depth_band_bps": 20.0
+      },
+      {
+        "signal_id": "SYRUPUSDT_5_1789024800000_BEARISH",
+        "score": 82,
+        "rejections": [
+          "extended_from_vwap",
+          "thin_orderbook",
+          "higher_4h_opposition"
+        ],
+        "bid_depth_usdt": 2579.43501,
+        "ask_depth_usdt": 3843.6508499999995,
+        "spread_bps": 1.9101284561392602,
+        "levels": [
+          912,
+          805
+        ],
+        "band_complete": [
+          true,
+          true
+        ],
+        "depth_band_bps": 20.0
+      },
+      {
+        "signal_id": "WLDUSDT_5_1789024800000_BEARISH",
+        "score": 87,
+        "rejections": [
+          "higher_4h_opposition"
+        ],
+        "bid_depth_usdt": 49761.69128,
+        "ask_depth_usdt": 60237.00643999999,
+        "spread_bps": 2.4482800832412535,
+        "levels": [
+          1000,
+          1000
+        ],
+        "band_complete": [
+          true,
+          true
+        ],
+        "depth_band_bps": 20.0
+      },
+      {
+        "signal_id": "SYRUPUSDT_5_1789024800000_BEARISH",
+        "score": 82,
+        "rejections": [
+          "extended_from_vwap",
+          "thin_orderbook",
+          "higher_4h_opposition"
+        ],
+        "bid_depth_usdt": 2485.8790700000004,
+        "ask_depth_usdt": 3186.90088,
+        "spread_bps": 3.345360701569296,
+        "levels": [
+          905,
+          799
+        ],
+        "band_complete": [
+          true,
+          true
+        ],
+        "depth_band_bps": 20.0
+      },
+      {
+        "signal_id": "PIPPINUSDT_5_1789023900000_BEARISH",
+        "score": 100,
+        "rejections": [
+          "extended_from_vwap",
+          "thin_orderbook"
+        ],
+        "bid_depth_usdt": 4390.7681,
+        "ask_depth_usdt": 6351.16418,
+        "spread_bps": 5.51724137931012,
+        "levels": [
+          646,
+          1000
+        ],
+        "band_complete": [
+          true,
+          true
+        ],
+        "depth_band_bps": 20.0
+      },
+      {
+        "signal_id": "PIPPINUSDT_5_1789023900000_BEARISH",
+        "score": 100,
+        "rejections": [
+          "extended_from_vwap",
+          "thin_orderbook"
+        ],
+        "bid_depth_usdt": 2593.0083,
+        "ask_depth_usdt": 3414.7353500000004,
+        "spread_bps": 5.508124483613106,
+        "levels": [
+          649,
+          1000
+        ],
+        "band_complete": [
+          true,
+          true
+        ],
+        "depth_band_bps": 20.0
+      },
+      {
+        "signal_id": "PIPPINUSDT_5_1789023900000_BEARISH",
+        "score": 100,
+        "rejections": [
+          "extended_from_vwap",
+          "thin_orderbook"
+        ],
+        "bid_depth_usdt": 2132.02938,
+        "ask_depth_usdt": 2654.53068,
+        "spread_bps": 5.523336095001155,
+        "levels": [
+          644,
+          1000
+        ],
+        "band_complete": [
+          true,
+          true
+        ],
+        "depth_band_bps": 20.0
+      },
+      {
+        "signal_id": "PIPPINUSDT_5_1789023900000_BEARISH",
+        "score": 100,
+        "rejections": [
+          "extended_from_vwap",
+          "thin_orderbook"
+        ],
+        "bid_depth_usdt": 1845.9886300000003,
+        "ask_depth_usdt": 3479.64087,
+        "spread_bps": 11.025358324145087,
+        "levels": [
+          647,
+          1000
+        ],
+        "band_complete": [
+          true,
+          true
+        ],
+        "depth_band_bps": 20.0
+      },
+      {
+        "signal_id": "PIPPINUSDT_5_1789023900000_BEARISH",
+        "score": 100,
+        "rejections": [
+          "extended_from_vwap",
+          "thin_orderbook"
+        ],
+        "bid_depth_usdt": 3001.76689,
+        "ask_depth_usdt": 2383.21212,
+        "spread_bps": 11.043622308116612,
+        "levels": [
+          644,
+          1000
+        ],
+        "band_complete": [
+          true,
+          true
+        ],
+        "depth_band_bps": 20.0
+      },
+      {
+        "signal_id": "PIPPINUSDT_5_1789023900000_BEARISH",
+        "score": 100,
+        "rejections": [
+          "extended_from_vwap",
+          "thin_orderbook"
+        ],
+        "bid_depth_usdt": 3962.0952599999996,
+        "ask_depth_usdt": 4943.33563,
+        "spread_bps": 5.523336095001155,
+        "levels": [
+          645,
+          1000
+        ],
+        "band_complete": [
+          true,
+          true
+        ],
+        "depth_band_bps": 20.0
+      },
+      {
+        "signal_id": "HEMIUSDT_5_1789027200000_BEARISH",
+        "score": 95,
+        "rejections": [
+          "thin_orderbook"
+        ],
+        "bid_depth_usdt": 900.5769740000001,
+        "ask_depth_usdt": 1593.685207,
+        "spread_bps": 4.355716878403482,
+        "levels": [
+          1000,
+          1000
+        ],
+        "band_complete": [
+          true,
+          true
+        ],
+        "depth_band_bps": 20.0
+      },
+      {
+        "signal_id": "HEMIUSDT_5_1789027200000_BEARISH",
+        "score": 95,
+        "rejections": [
+          "thin_orderbook"
+        ],
+        "bid_depth_usdt": 2511.755445,
+        "ask_depth_usdt": 1795.941206,
+        "spread_bps": 7.244801854670237,
+        "levels": [
+          1000,
+          1000
+        ],
+        "band_complete": [
+          true,
+          true
+        ],
+        "depth_band_bps": 20.0
+      },
+      {
+        "signal_id": "HEMIUSDT_5_1789027200000_BEARISH",
+        "score": 95,
+        "rejections": [
+          "thin_orderbook"
+        ],
+        "bid_depth_usdt": 1222.53563,
+        "ask_depth_usdt": 1659.386128,
+        "spread_bps": 4.368401892974734,
+        "levels": [
+          1000,
+          1000
+        ],
+        "band_complete": [
+          true,
+          true
+        ],
+        "depth_band_bps": 20.0
+      },
+      {
+        "signal_id": "HEMIUSDT_5_1789027200000_BEARISH",
+        "score": 95,
+        "rejections": [
+          "thin_orderbook"
+        ],
+        "bid_depth_usdt": 1477.479385,
+        "ask_depth_usdt": 1333.2539679999998,
+        "spread_bps": 4.365858982754174,
+        "levels": [
+          1000,
+          1000
+        ],
+        "band_complete": [
+          true,
+          true
+        ],
+        "depth_band_bps": 20.0
+      },
+      {
+        "signal_id": "HEMIUSDT_5_1789027200000_BEARISH",
+        "score": 95,
+        "rejections": [
+          "thin_orderbook"
+        ],
+        "bid_depth_usdt": 1209.6957660000003,
+        "ask_depth_usdt": 1452.881443,
+        "spread_bps": 4.376686848056603,
+        "levels": [
+          1000,
+          1000
+        ],
+        "band_complete": [
+          true,
+          true
+        ],
+        "depth_band_bps": 20.0
+      },
+      {
+        "signal_id": "HEMIUSDT_5_1789027200000_BEARISH",
+        "score": 95,
+        "rejections": [
+          "thin_orderbook"
+        ],
+        "bid_depth_usdt": 1065.313374,
+        "ask_depth_usdt": 1349.2691219999997,
+        "spread_bps": 4.375410194706334,
+        "levels": [
+          1000,
+          1000
+        ],
+        "band_complete": [
+          true,
+          true
+        ],
+        "depth_band_bps": 20.0
+      },
+      {
+        "signal_id": "HEMIUSDT_5_1789027200000_BEARISH",
+        "score": 95,
+        "rejections": [
+          "thin_orderbook"
+        ],
+        "bid_depth_usdt": 792.4699840000001,
+        "ask_depth_usdt": 1291.223897,
+        "spread_bps": 2.915451895044119,
+        "levels": [
+          1000,
+          1000
+        ],
+        "band_complete": [
+          true,
+          true
+        ],
+        "depth_band_bps": 20.0
+      },
+      {
+        "signal_id": "JASMYUSDT_5_1789027200000_BEARISH",
+        "score": 95,
+        "rejections": [
+          "thin_orderbook"
+        ],
+        "bid_depth_usdt": 4330.436731,
+        "ask_depth_usdt": 7467.071680000001,
+        "spread_bps": 7.484096295371163,
+        "levels": [
+          1000,
+          1000
+        ],
+        "band_complete": [
+          true,
+          true
+        ],
+        "depth_band_bps": 20.0
+      },
+      {
+        "signal_id": "JASMYUSDT_5_1789027200000_BEARISH",
+        "score": 95,
+        "rejections": [
+          "thin_orderbook"
+        ],
+        "bid_depth_usdt": 4108.096372,
+        "ask_depth_usdt": 6433.299167,
+        "spread_bps": 7.484096295371163,
+        "levels": [
+          1000,
+          1000
+        ],
+        "band_complete": [
+          true,
+          true
+        ],
+        "depth_band_bps": 20.0
+      },
+      {
+        "signal_id": "JASMYUSDT_5_1789027200000_BEARISH",
+        "score": 95,
+        "rejections": [
+          "thin_orderbook"
+        ],
+        "bid_depth_usdt": 5557.721485,
+        "ask_depth_usdt": 7222.163004,
+        "spread_bps": 7.484096295371163,
+        "levels": [
+          1000,
+          1000
+        ],
+        "band_complete": [
+          true,
+          true
+        ],
+        "depth_band_bps": 20.0
+      },
+      {
+        "signal_id": "JASMYUSDT_5_1789027200000_BEARISH",
+        "score": 95,
+        "rejections": [
+          "thin_orderbook"
+        ],
+        "bid_depth_usdt": 6911.060509,
+        "ask_depth_usdt": 6479.195887,
+        "spread_bps": 7.480364044382323,
+        "levels": [
+          1000,
+          1000
+        ],
+        "band_complete": [
+          true,
+          true
+        ],
+        "depth_band_bps": 20.0
+      },
+      {
+        "signal_id": "JASMYUSDT_5_1789027200000_BEARISH",
+        "score": 95,
+        "rejections": [
+          "thin_orderbook"
+        ],
+        "bid_depth_usdt": 5867.053331,
+        "ask_depth_usdt": 4844.477639,
+        "spread_bps": 7.4747726423331216,
+        "levels": [
+          1000,
+          1000
+        ],
+        "band_complete": [
+          true,
+          true
+        ],
+        "depth_band_bps": 20.0
+      }
+    ]
+  },
+  "reference_vs_bot": {
+    "saved_5m_files": 470,
+    "both": 105,
+    "bot_only": 0,
+    "reference_only": 3424,
+    "disagreement": 3424,
+    "note": "comparison is recent bot lookback against pure classic OHLC reference; bot adds body/ATR/volume/size and mitigation rules. Latest-window comparison is descriptive."
+  },
+  "candidate_prefix_reference_vs_bot": {
+    "both": 15,
+    "bot_only": 0,
+    "reference_only": 120,
+    "disagreement": 120,
+    "note": "prefix truncated at each recorded analysis_bar; no future candles used."
+  },
+  "quality_matrix": {
+    "definition": "A>=4 of sweep, displacement>=1.5 ATR, structure alignment, fresh, location within 1 ATR VWAP; B=2-3; C=0-1. Research classification only.",
+    "counts": {
+      "B": 74,
+      "C": 29,
+      "A": 2
+    }
+  },
+  "mtf_map": {
+    "AXSUSDT": {
+      "direction": "SHORT",
+      "setup_id": "AXSUSDT_5_1788990300000_BEARISH",
+      "1": {
+        "available": true,
+        "rows": 1000,
+        "fvgs_reference": 192,
+        "last_timestamp": 1789030080000
+      },
+      "5": {
+        "available": true,
+        "rows": 1000,
+        "fvgs_reference": 134,
+        "last_timestamp": 1789015200000
+      },
+      "15": {
+        "available": true,
+        "rows": 1000,
+        "fvgs_reference": 121,
+        "last_timestamp": 1789029900000
+      },
+      "60": {
+        "available": true,
+        "rows": 1000,
+        "fvgs_reference": 86,
+        "last_timestamp": 1789012800000
+      },
+      "240": {
+        "available": true,
+        "rows": 1000,
+        "fvgs_reference": 79,
+        "last_timestamp": 1789012800000
+      }
+    },
+    "BASEDUSDT": {
+      "direction": "SHORT",
+      "setup_id": "BASEDUSDT_5_1789000500000_BEARISH",
+      "1": {
+        "available": true,
+        "rows": 1000,
+        "fvgs_reference": 169,
+        "last_timestamp": 1789030080000
+      },
+      "5": {
+        "available": true,
+        "rows": 1000,
+        "fvgs_reference": 175,
+        "last_timestamp": 1789015200000
+      },
+      "15": {
+        "available": true,
+        "rows": 1000,
+        "fvgs_reference": 126,
+        "last_timestamp": 1789029900000
+      },
+      "60": {
+        "available": true,
+        "rows": 1000,
+        "fvgs_reference": 86,
+        "last_timestamp": 1789012800000
+      },
+      "240": {
+        "available": true,
+        "rows": 984,
+        "fvgs_reference": 73,
+        "last_timestamp": 1789012800000
+      }
+    },
+    "BLESSUSDT": {
+      "direction": "SHORT",
+      "setup_id": "BLESSUSDT_5_1788989700000_BEARISH",
+      "1": {
+        "available": true,
+        "rows": 1000,
+        "fvgs_reference": 169,
+        "last_timestamp": 1789030080000
+      },
+      "5": {
+        "available": true,
+        "rows": 1000,
+        "fvgs_reference": 94,
+        "last_timestamp": 1789015200000
+      },
+      "15": {
+        "available": true,
+        "rows": 1000,
+        "fvgs_reference": 101,
+        "last_timestamp": 1789029900000
+      },
+      "60": {
+        "available": true,
+        "rows": 1000,
+        "fvgs_reference": 86,
+        "last_timestamp": 1789012800000
+      },
+      "240": {
+        "available": true,
+        "rows": 1000,
+        "fvgs_reference": 86,
+        "last_timestamp": 1789012800000
+      }
+    },
+    "CFGUSDT": {
+      "direction": "LONG",
+      "setup_id": "CFGUSDT_5_1788988200000_BULLISH",
+      "1": {
+        "available": true,
+        "rows": 1000,
+        "fvgs_reference": 123,
+        "last_timestamp": 1789030080000
+      },
+      "5": {
+        "available": true,
+        "rows": 1000,
+        "fvgs_reference": 115,
+        "last_timestamp": 1789015200000
+      },
+      "15": {
+        "available": true,
+        "rows": 1000,
+        "fvgs_reference": 115,
+        "last_timestamp": 1789029900000
+      },
+      "60": {
+        "available": true,
+        "rows": 1000,
+        "fvgs_reference": 93,
+        "last_timestamp": 1789012800000
+      },
+      "240": {
+        "available": true,
+        "rows": 1000,
+        "fvgs_reference": 82,
+        "last_timestamp": 1789012800000
+      }
+    },
+    "CRCLUSDT": {
+      "direction": "SHORT",
+      "setup_id": "CRCLUSDT_5_1788990300000_BEARISH",
+      "1": {
+        "available": true,
+        "rows": 1000,
+        "fvgs_reference": 163,
+        "last_timestamp": 1789030080000
+      },
+      "5": {
+        "available": true,
+        "rows": 1000,
+        "fvgs_reference": 119,
+        "last_timestamp": 1789015200000
+      },
+      "15": {
+        "available": true,
+        "rows": 1000,
+        "fvgs_reference": 95,
+        "last_timestamp": 1789029900000
+      },
+      "60": {
+        "available": true,
+        "rows": 1000,
+        "fvgs_reference": 103,
+        "last_timestamp": 1789012800000
+      },
+      "240": {
+        "available": true,
+        "rows": 762,
+        "fvgs_reference": 89,
+        "last_timestamp": 1789012800000
+      }
+    },
+    "EIGENUSDT": {
+      "direction": "SHORT",
+      "setup_id": "EIGENUSDT_5_1788990300000_BEARISH",
+      "1": {
+        "available": true,
+        "rows": 1000,
+        "fvgs_reference": 159,
+        "last_timestamp": 1789030080000
+      },
+      "5": {
+        "available": true,
+        "rows": 1000,
+        "fvgs_reference": 112,
+        "last_timestamp": 1789015200000
+      },
+      "15": {
+        "available": true,
+        "rows": 1000,
+        "fvgs_reference": 118,
+        "last_timestamp": 1789029900000
+      },
+      "60": {
+        "available": true,
+        "rows": 1000,
+        "fvgs_reference": 93,
+        "last_timestamp": 1789012800000
+      },
+      "240": {
+        "available": true,
+        "rows": 1000,
+        "fvgs_reference": 86,
+        "last_timestamp": 1789012800000
+      }
+    },
+    "EPICUSDT": {
+      "direction": "SHORT",
+      "setup_id": "EPICUSDT_5_1789000200000_BEARISH",
+      "1": {
+        "available": true,
+        "rows": 1000,
+        "fvgs_reference": 146,
+        "last_timestamp": 1789030080000
+      },
+      "5": {
+        "available": true,
+        "rows": 1000,
+        "fvgs_reference": 118,
+        "last_timestamp": 1789015200000
+      },
+      "15": {
+        "available": true,
+        "rows": 1000,
+        "fvgs_reference": 109,
+        "last_timestamp": 1789029900000
+      },
+      "60": {
+        "available": true,
+        "rows": 1000,
+        "fvgs_reference": 73,
+        "last_timestamp": 1789012800000
+      },
+      "240": {
+        "available": true,
+        "rows": 1000,
+        "fvgs_reference": 77,
+        "last_timestamp": 1789012800000
+      }
+    },
+    "FARTCOINUSDT": {
+      "direction": "SHORT",
+      "setup_id": "FARTCOINUSDT_5_1788990300000_BEARISH",
+      "1": {
+        "available": true,
+        "rows": 1000,
+        "fvgs_reference": 132,
+        "last_timestamp": 1789030080000
+      },
+      "5": {
+        "available": true,
+        "rows": 1000,
+        "fvgs_reference": 96,
+        "last_timestamp": 1789015200000
+      },
+      "15": {
+        "available": true,
+        "rows": 1000,
+        "fvgs_reference": 107,
+        "last_timestamp": 1789029900000
+      },
+      "60": {
+        "available": true,
+        "rows": 1000,
+        "fvgs_reference": 94,
+        "last_timestamp": 1789012800000
+      },
+      "240": {
+        "available": true,
+        "rows": 1000,
+        "fvgs_reference": 85,
+        "last_timestamp": 1789012800000
+      }
+    },
+    "MARSCOINUSDT": {
+      "direction": "SHORT",
+      "setup_id": "MARSCOINUSDT_5_1788983400000_BEARISH",
+      "1": {
+        "available": true,
+        "rows": 1000,
+        "fvgs_reference": 101,
+        "last_timestamp": 1789030080000
+      },
+      "5": {
+        "available": true,
+        "rows": 1000,
+        "fvgs_reference": 88,
+        "last_timestamp": 1789015200000
+      },
+      "15": {
+        "available": true,
+        "rows": 857,
+        "fvgs_reference": 86,
+        "last_timestamp": 1789029900000
+      },
+      "60": {
+        "available": true,
+        "rows": 211,
+        "fvgs_reference": 37,
+        "last_timestamp": 1789012800000
+      },
+      "240": {
+        "available": true,
+        "rows": 54,
+        "fvgs_reference": 11,
+        "last_timestamp": 1789012800000
+      }
+    },
+    "MORPHOUSDT": {
+      "direction": "SHORT",
+      "setup_id": "MORPHOUSDT_5_1788983400000_BEARISH",
+      "1": {
+        "available": true,
+        "rows": 1000,
+        "fvgs_reference": 160,
+        "last_timestamp": 1789030080000
+      },
+      "5": {
+        "available": true,
+        "rows": 1000,
+        "fvgs_reference": 102,
+        "last_timestamp": 1789015200000
+      },
+      "15": {
+        "available": true,
+        "rows": 1000,
+        "fvgs_reference": 103,
+        "last_timestamp": 1789029900000
+      },
+      "60": {
+        "available": true,
+        "rows": 1000,
+        "fvgs_reference": 111,
+        "last_timestamp": 1789012800000
+      },
+      "240": {
+        "available": true,
+        "rows": 1000,
+        "fvgs_reference": 93,
+        "last_timestamp": 1789012800000
+      }
+    },
+    "NOTUSDT": {
+      "direction": "SHORT",
+      "setup_id": "NOTUSDT_5_1788982200000_BEARISH",
+      "1": {
+        "available": true,
+        "rows": 1000,
+        "fvgs_reference": 200,
+        "last_timestamp": 1789030080000
+      },
+      "5": {
+        "available": true,
+        "rows": 1000,
+        "fvgs_reference": 134,
+        "last_timestamp": 1789015200000
+      },
+      "15": {
+        "available": true,
+        "rows": 1000,
+        "fvgs_reference": 129,
+        "last_timestamp": 1789029900000
+      },
+      "60": {
+        "available": true,
+        "rows": 1000,
+        "fvgs_reference": 88,
+        "last_timestamp": 1789012800000
+      },
+      "240": {
+        "available": true,
+        "rows": 1000,
+        "fvgs_reference": 74,
+        "last_timestamp": 1789012800000
+      }
+    },
+    "ORDIUSDT": {
+      "direction": "SHORT",
+      "setup_id": "ORDIUSDT_5_1788990300000_BEARISH",
+      "1": {
+        "available": true,
+        "rows": 1000,
+        "fvgs_reference": 172,
+        "last_timestamp": 1789030080000
+      },
+      "5": {
+        "available": true,
+        "rows": 1000,
+        "fvgs_reference": 121,
+        "last_timestamp": 1789015200000
+      },
+      "15": {
+        "available": true,
+        "rows": 1000,
+        "fvgs_reference": 115,
+        "last_timestamp": 1789029900000
+      },
+      "60": {
+        "available": true,
+        "rows": 1000,
+        "fvgs_reference": 68,
+        "last_timestamp": 1789012800000
+      },
+      "240": {
+        "available": true,
+        "rows": 1000,
+        "fvgs_reference": 90,
+        "last_timestamp": 1789012800000
+      }
+    },
+    "POPCATUSDT": {
+      "direction": "SHORT",
+      "setup_id": "POPCATUSDT_5_1788990300000_BEARISH",
+      "1": {
+        "available": true,
+        "rows": 1000,
+        "fvgs_reference": 196,
+        "last_timestamp": 1789030080000
+      },
+      "5": {
+        "available": true,
+        "rows": 1000,
+        "fvgs_reference": 133,
+        "last_timestamp": 1789015200000
+      },
+      "15": {
+        "available": true,
+        "rows": 1000,
+        "fvgs_reference": 125,
+        "last_timestamp": 1789029900000
+      },
+      "60": {
+        "available": true,
+        "rows": 1000,
+        "fvgs_reference": 103,
+        "last_timestamp": 1789012800000
+      },
+      "240": {
+        "available": true,
+        "rows": 1000,
+        "fvgs_reference": 78,
+        "last_timestamp": 1789012800000
+      }
+    },
+    "ROBOUSDT": {
+      "direction": "SHORT",
+      "setup_id": "ROBOUSDT_5_1788982500000_BEARISH",
+      "1": {
+        "available": true,
+        "rows": 1000,
+        "fvgs_reference": 116,
+        "last_timestamp": 1789030080000
+      },
+      "5": {
+        "available": true,
+        "rows": 1000,
+        "fvgs_reference": 87,
+        "last_timestamp": 1789015200000
+      },
+      "15": {
+        "available": true,
+        "rows": 1000,
+        "fvgs_reference": 80,
+        "last_timestamp": 1789029900000
+      },
+      "60": {
+        "available": true,
+        "rows": 1000,
+        "fvgs_reference": 77,
+        "last_timestamp": 1789012800000
+      },
+      "240": {
+        "available": true,
+        "rows": 1000,
+        "fvgs_reference": 83,
+        "last_timestamp": 1789012800000
+      }
+    },
+    "TRUMPUSDT": {
+      "direction": "SHORT",
+      "setup_id": "TRUMPUSDT_5_1789003800000_BEARISH",
+      "1": {
+        "available": true,
+        "rows": 1000,
+        "fvgs_reference": 108,
+        "last_timestamp": 1789030080000
+      },
+      "5": {
+        "available": true,
+        "rows": 1000,
+        "fvgs_reference": 97,
+        "last_timestamp": 1789015200000
+      },
+      "15": {
+        "available": true,
+        "rows": 1000,
+        "fvgs_reference": 110,
+        "last_timestamp": 1789029900000
+      },
+      "60": {
+        "available": true,
+        "rows": 1000,
+        "fvgs_reference": 74,
+        "last_timestamp": 1789012800000
+      },
+      "240": {
+        "available": true,
+        "rows": 1000,
+        "fvgs_reference": 67,
+        "last_timestamp": 1789012800000
+      }
+    },
+    "ZAMAUSDT": {
+      "direction": "SHORT",
+      "setup_id": "ZAMAUSDT_5_1789012200000_BEARISH",
+      "1": {
+        "available": true,
+        "rows": 1000,
+        "fvgs_reference": 176,
+        "last_timestamp": 1789030080000
+      },
+      "5": {
+        "available": true,
+        "rows": 1000,
+        "fvgs_reference": 128,
+        "last_timestamp": 1789015200000
+      },
+      "15": {
+        "available": true,
+        "rows": 1000,
+        "fvgs_reference": 111,
+        "last_timestamp": 1789029900000
+      },
+      "60": {
+        "available": true,
+        "rows": 1000,
+        "fvgs_reference": 107,
+        "last_timestamp": 1789012800000
+      },
+      "240": {
+        "available": true,
+        "rows": 1000,
+        "fvgs_reference": 100,
+        "last_timestamp": 1789012800000
+      }
+    },
+    "ZKCUSDT": {
+      "direction": "SHORT",
+      "setup_id": "ZKCUSDT_5_1789000800000_BEARISH",
+      "1": {
+        "available": true,
+        "rows": 1000,
+        "fvgs_reference": 182,
+        "last_timestamp": 1789030080000
+      },
+      "5": {
+        "available": true,
+        "rows": 1000,
+        "fvgs_reference": 139,
+        "last_timestamp": 1789015200000
+      },
+      "15": {
+        "available": true,
+        "rows": 1000,
+        "fvgs_reference": 109,
+        "last_timestamp": 1789029900000
+      },
+      "60": {
+        "available": true,
+        "rows": 1000,
+        "fvgs_reference": 89,
+        "last_timestamp": 1789012800000
+      },
+      "240": {
+        "available": true,
+        "rows": 1000,
+        "fvgs_reference": 88,
+        "last_timestamp": 1789012800000
+      }
+    }
+  },
+  "data_quality_saved_5m": {
+    "files": 470,
+    "rows": 11223933,
+    "duplicate_rows": 0,
+    "out_of_order_files": 0
+  },
+  "rejection_rule": "Directional rejection is last/touched candle closing in its direction and beyond CE (LONG close>open and close>=CE; SHORT close<open and close<=CE). No separate wick, engulfing or rejection displacement criterion.",
+  "performance_note": "Per-operation timing is not available in V6.3 telemetry; whole-cycle timing remains the only persisted latency metric."
+}

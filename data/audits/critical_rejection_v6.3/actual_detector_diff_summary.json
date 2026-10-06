@@ -1,0 +1,13 @@
+{
+  "count": 3462,
+  "reasons": {
+    "volume": 914,
+    "body": 1298,
+    "atr": 640,
+    "accepted_with_full_warmup": 99,
+    "fvg_fully_filled": 322,
+    "lookback_or_confirmation_window": 54,
+    "size": 125,
+    "fvg_ce_invalidated": 10
+  }
+}

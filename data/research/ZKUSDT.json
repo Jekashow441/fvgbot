@@ -1,0 +1,120 @@
+{
+  "symbol": "ZKUSDT",
+  "version": "research_v6.3",
+  "fingerprint": "146d51e8aafb3a1686fa",
+  "as_of": 1791210425514,
+  "status": "COMPLETE",
+  "data_quality": {
+    "complete": true,
+    "bars": 25919,
+    "start_ms": 1783434600000,
+    "end_ms": 1791210000000,
+    "htf_bars": 2509,
+    "btc_bars": 25919
+  },
+  "baseline": {
+    "folds": [
+      {
+        "trades": 0,
+        "win_rate_pct": null,
+        "win_rate_95pct_interval": null,
+        "expectancy_r": null,
+        "net_r": 0.0,
+        "profit_factor": null,
+        "max_drawdown_r": 0.0
+      },
+      {
+        "trades": 1,
+        "win_rate_pct": 0.0,
+        "win_rate_95pct_interval": [
+          0.0,
+          79.34567085261071
+        ],
+        "expectancy_r": -1.1343955014058091,
+        "net_r": -1.1343955014058091,
+        "profit_factor": 0.0,
+        "max_drawdown_r": 1.1343955014058091
+      },
+      {
+        "trades": 8,
+        "win_rate_pct": 62.5,
+        "win_rate_95pct_interval": [
+          30.573785458380186,
+          86.3158240538479
+        ],
+        "expectancy_r": 0.36637999464164395,
+        "net_r": 2.9310399571331516,
+        "profit_factor": 1.8328811785160324,
+        "max_drawdown_r": 1.2476622470341898
+      }
+    ],
+    "out_of_sample": {
+      "trades": 9,
+      "win_rate_pct": 55.55555555555556,
+      "win_rate_95pct_interval": [
+        26.66473457440297,
+        81.1224570528086
+      ],
+      "expectancy_r": 0.19962716174748246,
+      "net_r": 1.7966444557273422,
+      "profit_factor": 1.386080162054881,
+      "max_drawdown_r": 2.3151840528076786
+    },
+    "open_at_fold_ends": 0
+  },
+  "enhanced": {
+    "folds": [
+      {
+        "trades": 0,
+        "win_rate_pct": null,
+        "win_rate_95pct_interval": null,
+        "expectancy_r": null,
+        "net_r": 0.0,
+        "profit_factor": null,
+        "max_drawdown_r": 0.0
+      },
+      {
+        "trades": 0,
+        "win_rate_pct": null,
+        "win_rate_95pct_interval": null,
+        "expectancy_r": null,
+        "net_r": 0.0,
+        "profit_factor": null,
+        "max_drawdown_r": 0.0
+      },
+      {
+        "trades": 4,
+        "win_rate_pct": 50.0,
+        "win_rate_95pct_interval": [
+          15.003570882017147,
+          84.99642911798286
+        ],
+        "expectancy_r": 0.07114673524865445,
+        "net_r": 0.2845869409946178,
+        "profit_factor": 1.1252861761381032,
+        "max_drawdown_r": 1.1807885514018694
+      }
+    ],
+    "out_of_sample": {
+      "trades": 4,
+      "win_rate_pct": 50.0,
+      "win_rate_95pct_interval": [
+        15.003570882017147,
+        84.99642911798286
+      ],
+      "expectancy_r": 0.07114673524865445,
+      "net_r": 0.2845869409946178,
+      "profit_factor": 1.1252861761381032,
+      "max_drawdown_r": 1.1807885514018694
+    },
+    "open_at_fold_ends": 0
+  },
+  "method": "Fixed parameters; chronological 40/20/20/20 split; next-open entries; SL first if ambiguous; fees/slippage deducted.",
+  "limitations": [
+    "Not full live portfolio execution: no trailing, cooldown or adaptive learning.",
+    "No historical news, orderbook, funding charges or universe snapshots in this price-only test.",
+    "Open positions at fold ends excluded from closed-trade metrics.",
+    "Current-listed universe can have survivorship bias; 90 days is not all market regimes.",
+    "Comparison tests a hypothesis and does not guarantee higher future winrate."
+  ]
+}

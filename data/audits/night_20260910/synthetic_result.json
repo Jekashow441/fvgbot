@@ -1,0 +1,18 @@
+{
+  "mode": "synthetic temporary database",
+  "score": 95,
+  "detected_zones": 1,
+  "confirmed": 1,
+  "generated": 1,
+  "queued": 1,
+  "sent": 1,
+  "temporary_paper_trades": 1,
+  "production_trades_created": 0,
+  "receipt": 1897,
+  "events": [
+    "ENTRY_CONTEXT_CHECK",
+    "SIGNAL_GENERATED",
+    "SIGNAL_QUEUED",
+    "SIGNAL_SENT"
+  ]
+}
