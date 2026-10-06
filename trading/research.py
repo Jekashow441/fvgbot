@@ -12,7 +12,7 @@ from trading.context import closed_candles
 from trading.backtest import run_backtest, metrics
 
 REPORT_DIR = Path(DATA_DIR)/"research"
-VERSION = "research_v6.4"
+VERSION = "research_v6.4.1"
 REPORTS = {}
 QUEUE = []
 QUEUED = set()
