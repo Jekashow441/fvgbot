@@ -122,7 +122,7 @@ def _overview():
 @app.get("/api/overview")
 async def api_overview():
     reload_settings()
-    return _overview()
+    return await asyncio.to_thread(_overview)
 
 
 @app.get("/api/equity_history")
@@ -144,7 +144,7 @@ async def ws(websocket: WebSocket):
     try:
         while True:
             reload_settings()
-            data = _overview()
+            data = await asyncio.to_thread(_overview)
             stamp = data.pop("generated_at")
             body = json.dumps(data, default=str, sort_keys=True)
             if body != last_payload:

@@ -38,7 +38,7 @@ def track(symbol, key, candidate, blockers, context=None, now=None):
     if not all(math.isfinite(x) and x > 0 for x in (entry, sl, tp)) or direction*(entry-sl) <= 0 or direction*(tp-entry) <= 0:
         return None
     features = {
-        "strategy_version": STRATEGY_VERSION, "timeframe": cfg.timeframe, "setup": candidate.get("setup"),
+        "strategy_version": STRATEGY_VERSION, "timeframe": cfg.timeframe, "strategy_profile": cfg.strategy_profile, "setup": candidate.get("setup"),
         "regime": candidate.get("regime"), "htf": candidate.get("htf"), "side": side,
         "score": candidate.get("score"), "min_score": cfg.min_signal_score,
         "blockers": sorted(set(blockers or [])), "traded": not blockers and candidate.get("score", 0) >= cfg.min_signal_score,
@@ -88,6 +88,18 @@ def update(symbol, price, now=None):
     return closed
 
 
+def abandon_unpriced(now=None):
+    """Shadows that could not be priced well past their hold limit are voided, not scored."""
+    now = time.time() if now is None else now
+    with _conn() as con:
+        _schema(con)
+        rows = con.execute("SELECT id, ml_features FROM shadow_signals WHERE outcome='OPEN'").fetchall()
+        for r in rows:
+            f = json.loads(r["ml_features"] or "{}")
+            if now-f.get("opened_at", now) > 3*f.get("max_hold_seconds", float("inf")):
+                con.execute("UPDATE shadow_signals SET outcome='VOID', exit_reason='unpriced', closed_ts=datetime('now') WHERE id=? AND outcome='OPEN'", (r["id"],))
+
+
 def open_symbols():
     with _conn() as con:
         _schema(con)
@@ -108,7 +120,9 @@ def outcomes(version=None, limit=5000):
             factors = json.loads(r["factors"] or "[]")
         except (TypeError, ValueError):
             continue
-        if f.get("strategy_version") != version or f.get("r") is None:
+        # Outcomes only transfer between identical entry timeframe and profile.
+        if (f.get("strategy_version") != version or f.get("r") is None or str(f.get("timeframe")) != str(cfg.timeframe)
+                or f.get("strategy_profile", cfg.strategy_profile) != cfg.strategy_profile):
             continue
         result.append({"symbol": r["symbol"], "side": r["side"], "factors": factors, "r": float(f["r"]),
                        "setup": f.get("setup"), "regime": f.get("regime"), "htf": f.get("htf"),

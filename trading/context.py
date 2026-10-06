@@ -127,13 +127,17 @@ def liquidity_levels(df, pivot=3, lookback=150):
     result = {"above": [], "below": [], "range_high": None, "range_low": None, "range_position": None}
     if len(d) < 2*pivot+2:
         return result
+    import numpy as np
     high, low, close = (d[c].to_numpy() for c in ("high", "low", "close"))
     last = float(close[-1])
+    # Highest/lowest close strictly after each bar: one pass instead of a scan per pivot.
+    after_max = np.append(np.maximum.accumulate(close[::-1])[::-1][1:], -np.inf)
+    after_min = np.append(np.minimum.accumulate(close[::-1])[::-1][1:], np.inf)
     for k in range(pivot, len(d)-pivot):
         hw, lw = high[k-pivot:k+pivot+1], low[k-pivot:k+pivot+1]
-        if high[k] == hw.max() and (hw == high[k]).sum() == 1 and not (close[k+1:] > high[k]).any() and high[k] > last:
+        if high[k] > last and after_max[k] <= high[k] and high[k] == hw.max() and (hw == high[k]).sum() == 1:
             result["above"].append(float(high[k]))
-        if low[k] == lw.min() and (lw == low[k]).sum() == 1 and not (close[k+1:] < low[k]).any() and low[k] < last:
+        if low[k] < last and after_min[k] >= low[k] and low[k] == lw.min() and (lw == low[k]).sum() == 1:
             result["below"].append(float(low[k]))
     result["above"].sort()
     result["below"].sort(reverse=True)

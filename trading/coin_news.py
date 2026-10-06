@@ -13,7 +13,7 @@ from urllib.parse import quote_plus
 import aiohttp
 
 from core.settings import cfg, DATA_DIR
-from trading.news import parse_rss, matches_symbol
+from trading.news import parse_rss, matches_symbol, read_capped
 
 COIN_NEWS_DB = Path(DATA_DIR)/"news.sqlite3"
 COIN_NEWS_STATE = {}
@@ -169,7 +169,7 @@ async def fetch(session, symbol):
     try:
         async with session.get(search_url(symbol), headers={"User-Agent": "Mozilla/5.0 FVGResearchBot/3.0 RSS reader"}) as response:
             response.raise_for_status()
-            payload = await response.content.read(2_000_001)
+            payload = await read_capped(response)
         rows = ingest(symbol, payload, now)
         COIN_NEWS_STATE[symbol] = {"status": "OK", "checked_at": now, "checked_at_s": now/1000, "items": len(rows)}
     except Exception as exc:
@@ -192,3 +192,20 @@ async def coin_news_worker(priority_source, background_source):
                 continue
             await fetch(session, due[0])
             await asyncio.sleep(cfg.coin_news_interval_seconds)
+
+
+def prune(max_age_hours=None, db_path=None, now=None):
+    """Headlines older than twice the lookback can no longer influence anything."""
+    now = int(time.time()*1000) if now is None else now
+    hours = 2*(max_age_hours or cfg.coin_news_max_age_hours)
+    path = Path(db_path or COIN_NEWS_DB)
+    if not path.exists():
+        return 0
+    with closing(sqlite3.connect(path)) as con, con:
+        _schema(con)
+        removed = con.execute("DELETE FROM coin_events WHERE published_at<?", (now-hours*3600000,)).rowcount
+        try:
+            removed += con.execute("DELETE FROM events WHERE published_at<?", (now-7*86400000,)).rowcount
+        except sqlite3.OperationalError:
+            pass
+    return removed

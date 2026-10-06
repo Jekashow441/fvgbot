@@ -31,6 +31,22 @@ RULES = [
 ]
 
 
+MAX_FEED_BYTES = 2_000_000
+
+
+async def read_capped(response, limit=MAX_FEED_BYTES):
+    """Whole body up to `limit`; StreamReader.read(n) alone may return only the first chunk."""
+    if (response.content_length or 0) > limit:
+        raise ValueError("Unsupported or oversized RSS document")
+    chunks, size = [], 0
+    async for chunk in response.content.iter_chunked(65536):
+        size += len(chunk)
+        if size > limit:
+            raise ValueError("Unsupported or oversized RSS document")
+        chunks.append(chunk)
+    return b"".join(chunks)
+
+
 def plain(text):
     return re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", " ", text or ""))).strip()
 
@@ -94,7 +110,7 @@ async def refresh_news():
             async with aiohttp.ClientSession(timeout=aiohttp.ClientTimeout(total=12)) as session:
                 async with session.get(url, headers={"User-Agent": "FVGResearchBot/3.0 RSS reader"}) as response:
                     response.raise_for_status()
-                    payload = await response.content.read(2_000_001)
+                    payload = await read_capped(response)
             rows = parse_rss(payload, url, now)
             if not rows:
                 raise ValueError("Feed contains no usable dated items")

@@ -215,15 +215,33 @@ async def process_symbol(bot: Optional[Bot], symbol: str, *, emit_signal: bool =
             blockers.append("insufficient_history" if _htf_status(htf_ctx) == "insufficient_history" else "htf_unavailable_or_stale")
         base_blockers = list(blockers)
         assessments=assess_zones(df,zones,htf_ctx,MARKET_DATA.get(symbol),effective) if zones else {}
+        chosen_key = None
+        skip_reasons = list(base_blockers)
+        if not MARKET_DATA.get(symbol, {}).get("eligible"):
+            skip_reasons.append("illiquid_market")
+        if htf and (not htf_ctx or htf_ctx.get("trend") == "UNKNOWN"):
+            skip_reasons.append("insufficient_history" if _htf_status(htf_ctx) == "insufficient_history" else "htf_unavailable_or_stale")
         if fvg and MARKET_DATA.get(symbol, {}).get("eligible") and allowed and (not htf or (htf_ctx and htf_ctx.get("trend") != "UNKNOWN")):
             candidates = [(zone,assessments[str(zone['candle_time'])+zone['type']]['candidate']) for zone in zones]
             for assessment in assessments.values():
                 for reason in assessment['rejections']:
                     setup_diagnostics[reason]=setup_diagnostics.get(reason,0)+1
-            candidates = sorted(((z,c) for z,c in candidates if c), key=lambda pair:(-pair[1]["score"], pair[0]["touches"], pair[0]["age"]))
+            ranked = []
+            for z, c in candidates:
+                if not c:
+                    continue
+                # Headline tone is applied before ranking so a weaker zone can still qualify.
+                apply_news_tone(c, news.get("coin"))
+                if c["score"] < cfg.min_signal_score:
+                    assessments[str(z['candle_time'])+z['type']]['execution_rejections'] = ["news_score_below_threshold"]
+                    blockers.append("news_score_below_threshold")
+                    continue
+                ranked.append((z, c))
+            candidates = sorted(ranked, key=lambda pair:(-pair[1]["score"], pair[0]["touches"], pair[0]["age"]))
             for zone, candidate in candidates:
                 zone_invalid = invalidation_reason(zone,observed_frame,cfg.timeframe,time.time()*1000,cfg.fvg_strict_mitigation)
                 if zone_invalid:
+                    assessments[str(zone['candle_time'])+zone['type']]['execution_rejections'] = [zone_invalid]
                     blockers.append(zone_invalid)
                     continue
                 if candidate:
@@ -280,12 +298,9 @@ async def process_symbol(bot: Optional[Bot], symbol: str, *, emit_signal: bool =
                                      intelligence=coin, news=news, qualification=qualification, microstructure=micro)
                     candidate.update(fvg=dict(zone), strict_ce=cfg.fvg_strict_mitigation, journal_id=setup_id(symbol,cfg.timeframe,zone), analyzed_at=time.time())
                     candidate["memory"] = assess_context(candidate)
-                    apply_news_tone(candidate, news.get("coin"))
                     fvg, signal = zone, candidate
+                    chosen_key = setup_id(symbol, cfg.timeframe, zone)
                     break
-        if signal is not None and signal["score"] < cfg.min_signal_score:
-            blockers.append("news_score_below_threshold")
-            signal = None
         had_candidate = signal is not None
         signal = apply_learning_to_signal(signal) if signal else None
         if had_candidate and signal is None:
@@ -322,8 +337,8 @@ async def process_symbol(bot: Optional[Bot], symbol: str, *, emit_signal: bool =
                 set_setting_text("signal:" + signal_id, "opened")
                 SENT_SIGNALS[symbol] = {signal_id}
 
-        if cfg.enable_shadow_learning:
-            track_shadows(symbol, zones, assessments, base_blockers, signal, news)
+        if cfg.enable_shadow_learning and symbol_selected(symbol):
+            track_shadows(symbol, zones, assessments, skip_reasons, chosen_key, blockers if chosen_key else [], signal is not None, news)
         before = dict(LATEST_DATA.get(symbol) or {})
         LATEST_DATA.setdefault(symbol, {})
         LATEST_DATA[symbol].update({
@@ -470,8 +485,9 @@ async def _scan_loop(bot: Optional[Bot]) -> None:
         if cfg.enable_coin_research:
             for symbol in selected:
                 request_research(symbol)
-        symbols = list(dict.fromkeys(list(selected) + [t["symbol"] for t in get_active_signals()]
-                                     + (shadow.open_symbols() if cfg.enable_shadow_learning else [])))
+        symbols = list(dict.fromkeys(list(selected) + [t["symbol"] for t in get_active_signals()]))
+        if cfg.enable_shadow_learning:
+            await refresh_orphan_shadows(set(symbols))
         for stale_symbol in set(LATEST_DATA)-set(symbols):
             LATEST_DATA.pop(stale_symbol,None)
             SCAN_RESULTS.pop(stale_symbol,None)
@@ -494,6 +510,21 @@ async def _scan_loop(bot: Optional[Bot]) -> None:
         SCAN_STATUS.update(coverage=coverage['counts'],htf=coverage['htf'])
         SCAN_STATUS.update(cycle_seconds=round(time.monotonic()-cycle_started,2),last_completed_at=datetime.now(timezone.utc).isoformat())
         await asyncio.sleep(15)
+
+
+async def refresh_orphan_shadows(scanned: set) -> None:
+    """Shadows on coins that left the scan set are resolved from a cheap price fetch."""
+    orphans = [s for s in shadow.open_symbols() if s not in scanned][:50]
+    semaphore = asyncio.Semaphore(max(1, int(cfg.bybit_max_concurrency)))
+    async def one(symbol):
+        async with semaphore:
+            try:
+                price = observed_price(await get_klines_async(symbol, cfg.timeframe, limit=3), cfg.timeframe, time.time()*1000)
+                shadow.update(symbol, price)
+            except Exception as exc:
+                event('SHADOW_UPDATE_FAILED', symbol=symbol, error=type(exc).__name__)
+    await asyncio.gather(*(one(s) for s in orphans))
+    shadow.abandon_unpriced()
 
 
 async def _news_loop():
@@ -543,9 +574,9 @@ async def _recovery_loop():
         await asyncio.sleep(30)
 
 
-def track_shadows(symbol: str, zones: list, assessments: dict, base_blockers: list, signal: Optional[dict], news: dict) -> None:
-    """Follow every valid setup virtually so learning sees what each filter cost or saved."""
-    chosen = (signal or {}).get("journal_id")
+def track_shadows(symbol: str, zones: list, assessments: dict, skip_reasons: list, chosen_key: Optional[str],
+                  final_blockers: list, emitted: bool, news: dict) -> None:
+    """Follow every valid setup virtually, labelled with what actually stopped it."""
     tone = ((news or {}).get("coin") or {}).get("sentiment")
     for zone in zones:
         key = setup_id(symbol, cfg.timeframe, zone)
@@ -553,18 +584,30 @@ def track_shadows(symbol: str, zones: list, assessments: dict, base_blockers: li
         raw = a.get('shadow')
         if not raw:
             continue
-        if key == chosen:
-            blockers = []
+        if key == chosen_key:
+            # Chosen, but later gates (learning, expiry, reuse) may still have stopped it.
+            blockers = [] if emitted and not final_blockers else (list(final_blockers) or ["not_emitted"])
         elif a.get('execution_rejections'):
             blockers = list(a['execution_rejections'])
+        elif raw['score'] < cfg.min_signal_score:
+            blockers = []
+        elif chosen_key:
+            blockers = ["lower_ranked_zone"]
         else:
-            blockers = list(base_blockers) or (["lower_ranked_zone"] if chosen else [])
+            blockers = list(skip_reasons) or ["not_evaluated"]
         if raw['score'] < cfg.min_signal_score:
             blockers.append("score_below_threshold")
         try:
-            shadow.track(symbol, key, raw, blockers, {"news_sentiment": tone})
+            shadow.track(symbol, key, raw, list(dict.fromkeys(blockers)), {"news_sentiment": tone})
         except Exception as exc:
             event('SHADOW_TRACK_FAILED', symbol=symbol, error=type(exc).__name__)
+
+
+def symbol_selected(symbol: str) -> bool:
+    """New shadows only for coins the scanner actually selected, so the scan set cannot snowball."""
+    if cfg.scan_all_symbols:
+        return bool(MARKET_DATA.get(symbol, {}).get("eligible"))
+    return symbol in cfg.symbols
 
 
 def news_priority_symbols() -> list:

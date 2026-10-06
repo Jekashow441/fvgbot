@@ -97,7 +97,11 @@ def prune(settings, now=None):
         removed["pipeline_events"] = con.execute("DELETE FROM pipeline_events WHERE observed_at<?", (now-settings.telemetry_retention_days*86400,)).rowcount
         if con.execute("SELECT 1 FROM sqlite_master WHERE name='setup_events'").fetchone():
             cutoff = now-settings.journal_retention_days*86400
-            stale = "SELECT setup_id FROM setup_events GROUP BY setup_id HAVING MAX(observed_at)<?"
+            has_hb = con.execute("SELECT 1 FROM sqlite_master WHERE name='setup_heartbeat'").fetchone()
+            # A setup re-observed only through its heartbeat is still alive.
+            stale = ("SELECT e.setup_id FROM setup_events e LEFT JOIN setup_heartbeat h ON h.setup_id=e.setup_id "
+                     "GROUP BY e.setup_id HAVING MAX(MAX(e.observed_at), COALESCE(MAX(h.observed_at),0))<?") if has_hb else \
+                "SELECT setup_id FROM setup_events GROUP BY setup_id HAVING MAX(observed_at)<?"
             open_ids = set()
             if con.execute("SELECT 1 FROM sqlite_master WHERE name='signals'").fetchone():
                 open_ids = {r[0] for r in con.execute("SELECT json_extract(ml_features,'$.journal_id') FROM signals WHERE outcome='OPEN'") if r[0]}
@@ -109,4 +113,9 @@ def prune(settings, now=None):
                 if con.execute("SELECT 1 FROM sqlite_master WHERE name='setup_heartbeat'").fetchone():
                     con.execute(f"DELETE FROM setup_heartbeat WHERE setup_id IN ({marks})", chunk)
             removed["setups"] = len(ids)
+    try:
+        from trading.coin_news import prune as prune_news
+        removed["headlines"] = prune_news()
+    except Exception as exc:
+        log_error(f"NEWS_RETENTION_FAILED error={type(exc).__name__}")
     return removed

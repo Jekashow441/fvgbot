@@ -38,6 +38,19 @@ class AntiSpamMiddleware(BaseMiddleware):
 
         return await handler(event, data)
 
+def fit(text: str, limit: int = 4000) -> str:
+    """Trim on line boundaries so escaped entities and tags are never cut in half."""
+    if len(text) <= limit:
+        return text
+    out, size = [], 0
+    for line in text.split("\n"):
+        if size + len(line) + 1 > limit - 2:
+            break
+        out.append(line)
+        size += len(line) + 1
+    return "\n".join(out) + "\n…"
+
+
 def _chat_id(event):
     if isinstance(event, Message):
         return event.chat.id
@@ -536,7 +549,7 @@ async def _answer_market(message):
     recent = feed(8)
     if recent:
         text += "\n\n<b>Последние наблюдения</b>\n" + "\n".join(f"• {escape(e['symbol'])}: {escape(e['text'])}" for e in recent)
-    await message.answer(text[:4000], parse_mode="HTML")
+    await message.answer(fit(text), parse_mode="HTML")
 
 
 @router.message(Command("market"))
@@ -563,7 +576,7 @@ async def cmd_coin(message: Message, command: CommandObject):
         return
     c = commentary(symbol, LATEST_DATA[symbol], news_context(symbol))
     text = f"<b>{escape(symbol)}</b>\n" + "\n".join(escape(x) for x in c["lines"]) + f"\n\n<b>Вывод:</b> {escape(c['verdict'])}"
-    await message.answer(text[:4000], parse_mode="HTML")
+    await message.answer(fit(text), parse_mode="HTML")
 
 
 @router.message(Command("learning"))
@@ -577,4 +590,4 @@ async def cmd_learning(message: Message):
     if useful:
         lines.append("\n<b>Фильтры</b>")
         lines += [f"• {escape(b['blocker'])}: {b['trades']} шт., {b['avg_r']:+.2f}R — {escape(b['verdict'])}" for b in useful]
-    await message.answer("\n".join(lines)[:4000], parse_mode="HTML")
+    await message.answer(fit("\n".join(lines)), parse_mode="HTML")
