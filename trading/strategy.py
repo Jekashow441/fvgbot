@@ -335,6 +335,10 @@ def validate_signal(df: pd.DataFrame, fvg: Optional[Dict], htf_ctx: Optional[Dic
 
     if htf_ctx and htf_ctx.get("trend") == ("DOWN" if side == "LONG" else "UP"):
         return reject("htf_opposition")
+    if cfg.require_htf_alignment and (not htf_ctx or htf_ctx.get("trend") != ("UP" if side == "LONG" else "DOWN")):
+        return reject("htf_not_aligned")
+    if state["regime"] not in cfg.allowed_regimes and not range_reclaim:
+        return reject("regime_not_allowed")
 
     if rsi is not None:
         if (side == "LONG" and rsi > cfg.rsi_overbought) or (side == "SHORT" and rsi < cfg.rsi_oversold):
@@ -360,6 +364,9 @@ def validate_signal(df: pd.DataFrame, fvg: Optional[Dict], htf_ctx: Optional[Dic
         return reject("invalid_risk")
     if cfg.sl_max_atr > 0 and risk > float(atr * cfg.sl_max_atr):
         return reject("stop_too_wide")
+    # A stop so tight that fees eat a large share of 1R cannot carry an edge.
+    if cfg.max_cost_r > 0 and last_close * 2 * (cfg.fee_bps + cfg.slippage_bps) / 10000 > cfg.max_cost_r * risk:
+        return reject("stop_too_tight_for_costs")
     typical_atr = df["atr"].tail(100).median()
     rr = _safe_dynamic_rr(cfg.risk_reward, atr, last_close, adx, cfg,
                           atr_ratio=float(atr/typical_atr) if typical_atr and typical_atr > 0 else None)

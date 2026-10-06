@@ -97,7 +97,7 @@ class NightTests(unittest.TestCase):
     def test_4h_failure_does_not_destroy_valid_book(self):
         from trading import engine
         now=time.time();data=fixture(now);market={'eligible':True,'volume_rank':1,'turnover_24h':1e8,'breadth':.5,'funding_rate':0}
-        cfg.timeframe='5';cfg.min_signal_score=65;cfg.strategy_profile='balanced';cfg.enable_coin_research=False;cfg.loss_cooldown_minutes=0
+        cfg.timeframe='5';cfg.min_signal_score=65;cfg.strategy_profile='balanced';cfg.enable_coin_research=False;cfg.loss_cooldown_minutes=0;cfg.allowed_regimes=['TREND','TRANSITION','RANGE'];cfg.require_htf_alignment=False
         async def candles(symbol,tf,**kwargs):
             if str(tf)=='5':return data
             if str(tf)=='240':return data.iloc[:0]

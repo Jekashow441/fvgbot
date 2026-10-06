@@ -44,7 +44,7 @@ async def run(real_bot=None,thin_first=False):
     try:
         cfg.timeframe='5';cfg.min_signal_score=65;cfg.strategy_profile='balanced';cfg.is_running=True
         cfg.tg_chat_id=cfg.tg_chat_id if real_bot else '123';cfg.enable_news=False;cfg.enable_coin_research=False
-        cfg.loss_cooldown_minutes=0;cfg.paper_balance=10000;cfg.research_gate_mode='paper'
+        cfg.loss_cooldown_minutes=0;cfg.paper_balance=10000;cfg.research_gate_mode='paper';cfg.allowed_regimes=['TREND','TRANSITION','RANGE'];cfg.require_htf_alignment=False
         with tempfile.TemporaryDirectory() as directory,patch.object(database,'DB_PATH',str(Path(directory)/'test.db')):
             database.init_db()
             thin={'book':dict(raw['book'],b=[['103.49','1']],a=[['103.50','1']]),'open_interest':[]}
